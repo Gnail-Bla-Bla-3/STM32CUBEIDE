@@ -32,3 +32,17 @@ Caused by: org.xml.sax.SAXParseException; lineNumber: 2; columnNumber: 10; DOCTY
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-02-22 16:32:02.033
 !MESSAGE ProjectImporter: already registered
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2024-02-22 16:41:20.183
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10001 2024-02-22 16:41:20.183
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 4 0 2024-02-22 16:41:20.183
+!MESSAGE Unexpected Error.  Could not process the request. Check the error log for details.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2024-02-22 16:41:20.244
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10001 2024-02-22 16:41:20.244
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 4 0 2024-02-22 16:41:20.244
+!MESSAGE Unexpected Error.  Could not process the request. Check the error log for details.
