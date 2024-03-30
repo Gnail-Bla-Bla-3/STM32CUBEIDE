@@ -96,7 +96,7 @@ extern const RC_ctrl_t *get_remote_control_point(void);
 
 int16_t getRCchannel(int8_t channelID);
 
-char getRCswitch(int8_t switchID);
+int8_t getRCswitch(int8_t switchID);
 
 int16_t getRCmouseMovement(char axis);
 

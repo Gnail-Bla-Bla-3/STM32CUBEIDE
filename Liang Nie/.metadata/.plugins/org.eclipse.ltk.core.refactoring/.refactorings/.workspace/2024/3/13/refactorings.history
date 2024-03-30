@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;RMTemplate&apos; to &apos;SecondPrototype&apos;" description="Rename resource &apos;RMTemplate&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/RMTemplate" name="SecondPrototype" stamp="1711757714743" updateReferences="true"/>
+</session>

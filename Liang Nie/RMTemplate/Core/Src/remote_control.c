@@ -162,7 +162,7 @@ int16_t getRCchannel(int8_t channelID) {
 	return rc_ptr->rc.ch[channelID];
 }
 
-char getRCswitch(int8_t switchID) {
+int8_t getRCswitch(int8_t switchID) {
 	return rc_ptr->rc.s[switchID];
 }
 

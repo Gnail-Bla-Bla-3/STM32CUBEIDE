@@ -36,6 +36,14 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+typedef enum {
+	x = 0,
+	X = 0,
+	y = 1,
+	Y = 1,
+	z = 2,
+	Z = 2,
+} axis_t;
 
 /* USER CODE END ET */
 
@@ -59,6 +67,11 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define INT1_ACCEL_Pin_Pin GPIO_PIN_4
+#define INT1_ACCEL_Pin_GPIO_Port GPIOC
+#define INT1_ACCEL_Pin_EXTI_IRQn EXTI4_IRQn
+#define INT1_GRYO_Pin_Pin GPIO_PIN_5
+#define INT1_GRYO_Pin_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 

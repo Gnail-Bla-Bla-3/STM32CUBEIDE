@@ -60,8 +60,8 @@ all: main-build
 main-build: First\ Project.elf secondary-outputs
 
 # Tool invocations
-First\ Project.elf First\ Project.map: $(OBJS) $(USER_OBJS) /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang\ Nie/First\ Project/STM32F407IGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "First Project.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/First Project/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="First Project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+First\ Project.elf First\ Project.map: $(OBJS) $(USER_OBJS) C:\Users\Liang\ Nie\Documents\GitHub\STM32CUBEIDE\Liang\ Nie\First\ Project\STM32F407IGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "First Project.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Liang Nie\Documents\GitHub\STM32CUBEIDE\Liang Nie\First Project\STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="First Project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

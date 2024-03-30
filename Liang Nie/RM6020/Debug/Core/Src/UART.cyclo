@@ -1,0 +1,3 @@
+UART.c:31:6:usart_Init	1
+UART.c:36:6:usart_printf	1
+UART.c:46:6:HAL_UARTEx_RxEventCallback	14

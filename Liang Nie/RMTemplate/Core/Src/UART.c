@@ -21,6 +21,10 @@ extern UART_HandleTypeDef huart6;
 game_status_t game_status;
 power_heat_data_t power_heat_data;
 robot_status_t robot_status;
+event_data_t event_data;
+ext_supply_projectile_action_t ext_supply_projectile_action;
+referee_warning_t referee_warning;
+dart_info_t dart_info;
 
 uint8_t mainHeaderOffset = 5;
 
@@ -61,6 +65,14 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 		    	//usart_printf("Received status message: type = %d | progress = %d | time = %d | stamp = %d\r\n", game_status.game_type, game_status.game_progress, game_status.stage_remain_time, game_status.SyncTimeStamp);
 		    	break;
 		    }
+		    case GAME_RESULT_HEADER : {
+		    	game_status.game_type = RxBuff_2[7];
+		    }
+		    case ROBOT_HP_HEADER : {}
+		    case EVENT_DATA_HEADER : {}
+		    case PROJECTILE_SUPPLY_HEADER : {}
+		    case REFEREE_WARNING_HEADER : {}
+		    case DART_INFO_HEADER : {}
 		    case ROBOT_HEADER : {
 		    	robot_status.robot_id = RxBuff_2[7];
 		    	robot_status.robot_level = RxBuff_2[8];
@@ -84,6 +96,27 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 		    	power_heat_data.shooter_42mm_barrel_heat = ((uint16_t) RxBuff_2[22] << 8) | RxBuff_2[21];
 
 		    }
+		    case POSITION_HEADER: {}
+		    case BUFF_HEADER: {}
+		    case AIR_SUPPORT_HEADER: {}
+		    case DAMAGE_SOURCE_HEADER: {}
+		    case PROJECTILE_INFO_HEADER: {}
+		    case PROJECTILE_ALLOWANCE_HEADER: {}
+		    case RFID_HEADER: {}
+		    case DART_COMMAND_HEADER: {}
+		    case TEAM_POSITION_HEADER: {}
+		    case RADAR_MARKING_HEADER: {}
+		    case SENTRY_HEADER: {}
+		    case RADAR_BUFF_HEADER: {}
+		    case ROBOT_INTERACTION_HEADER: {}
+		    case CUSTOM_CONTROLLER_ROBOT_HEADER: {}
+		    case MINIMAP_COMMAND_HEADER: {}
+		    case CONTROLLER_HEADER: {}
+		    case MINIMAP_TARGET_HEADER: {}
+		    case CUSTOM_CONTROLLER_CLIENT_HEADER: {}
+		    case MINIMAP_DATA_HEADER: {}
+		    case CUSTOM_INFO_HEADER: {}
+
 		    default: {
 		    	//usart_printf("no match \r\n");
 		        break;
