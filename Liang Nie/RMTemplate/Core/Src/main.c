@@ -930,7 +930,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-int16_t positionPIDByMe(int8_t *isNegativeRegion1, int8_t *previousRegion1, int16_t DifferenceBetweenCurrentAndWannabePosition, int16_t *sumI1, float kPu, float kIu, float kDu) {
+int16_t positionPIDByMe(int16_t *prevDiff, int8_t *isNegativeRegion1, int8_t *previousRegion1, int16_t DifferenceBetweenCurrentAndWannabePosition, int16_t *sumI1, float kPu, float kIu, float kDu) {
 	if (DifferenceBetweenCurrentAndWannabePosition >= 0) {
 		*isNegativeRegion1 = -1;
 	} else {
@@ -943,7 +943,8 @@ int16_t positionPIDByMe(int8_t *isNegativeRegion1, int8_t *previousRegion1, int1
 	*sumI1 += (int)((float)(DifferenceBetweenCurrentAndWannabePosition)*0.005f);
 	int16_t PositionToGo = (int)(kPu*(float)(DifferenceBetweenCurrentAndWannabePosition));
 	int16_t IntegralToGo = (int)(kIu*((float)(*sumI1)));
-	int16_t DerivativeToGo = (int)((kDu)*((float)(DifferenceBetweenCurrentAndWannabePosition))*(float)200);
+	int16_t DerivativeToGo = (int)((kDu)*((float)(DifferenceBetweenCurrentAndWannabePosition - *prevDiff))*(float)200);
+	*prevDiff = DifferenceBetweenCurrentAndWannabePosition;
 	return PositionToGo+IntegralToGo+DerivativeToGo;
 }
 /* USER CODE END 4 */
@@ -1030,6 +1031,11 @@ void TaskChassis(void *argument)
 	int8_t previousRegion2 = 0;
 	int8_t previousRegion3 = 0;
 	int8_t previousRegion4 = 0;
+	int16_t prevDiff1 = 0;
+	int16_t prevDiff2 = 0;
+	int16_t prevDiff3 = 0;
+	int16_t prevDiff4 = 0;
+
 	int16_t shooterMotor = 0;
 	// int16_t pR = 0;
 	//int8_t counter = 0;
@@ -1383,22 +1389,22 @@ void TaskChassis(void *argument)
 
 		// int16_t testingMax = getRCchannel(1)*1.15f;
 		// MAX SPEED = 759
-		htim1.Instance->CCR1=200+(500*motorOn);
-		htim1.Instance->CCR2=200+(500*motorOn);
+		htim1.Instance->CCR1=200+(350*motorOn);
+		htim1.Instance->CCR2=200+(350*motorOn);
 
 		// int32_t dividedRotation = rotationalVal * 0.01f;
 		// usart_printf("$%d %d %d\r\n;",rotationalVal, shooterMotor, rotationTarget);
 		testmotor = getMotorPosition(6);
 
-		// Turret Slope min, centre, max : 5573, 6161, 6751
+		// Turret Slope min, centre, max : 5573, 6161, 675s1
 		// min = 5600
 		// max = 6700
 		//(These are ABSOLUTE MAXES)
 		// Difference = 0, 589, 1178
 
-		float kPu =0.005; // 0.005
-		float kIu =0.0001; // -0.0001
-		float kDu =0.0005; // 0.0005
+		float kPu =0.7; // 0.005
+		float kIu =0; // 0.0001
+		float kDu =0.0001; // 0.0005
 
 
 
@@ -1430,7 +1436,7 @@ void TaskChassis(void *argument)
 			int16_t DerivativeToGo = kDu*(DifferenceBetweenCurrentAndWannabePosition)*200;
 			*/
 
-			setGM6020voltageRPM(6, positionPIDByMe(&isNegativeRegion1, &previousRegion1, DifferenceBetweenCurrentAndWannabePosition, &sumI1, kPu, kIu, kDu), DONUTMOTOR);
+			setGM6020voltageRPM(6, positionPIDByMe(&prevDiff1, &isNegativeRegion1, &previousRegion1, DifferenceBetweenCurrentAndWannabePosition, &sumI1, kPu, kIu, kDu), DONUTMOTOR);
 			// usart_printf("$%d %d %d\r\n;", PositionToGo, IntegralToGo, DerivativeToGo);
 		}
 
@@ -1440,12 +1446,13 @@ void TaskChassis(void *argument)
 		pivoter = getMotorPosition(7);
 		angle = ((pivoter-4755)*0.00024343f)*3.14159265f;
 
-		float kPr =0.022; // 0.001
-		float kIr =0.02; // -0.02
-		float kDr =0.00005; // 0.00015
+		float kPr =0.08; // 0.022
+		float kIr =0.000; // -0.02
+		float kDr =0.009; // 0.00005
+
 
 		float gyroPosition[3] = {IMU_get_gyro(x), IMU_get_gyro(y), IMU_get_gyro(z)};
-		int16_t convert[3] = { (int)(gyroPosition[0]*9.549), (int)(gyroPosition[1]*(9.549)), (int)(gyroPosition[2]*(-260))};
+		int16_t convert[3] = { (int)(gyroPosition[0]*9.549), (int)(gyroPosition[1]*(9.549)), (int)(gyroPosition[2]*(-230))};
 		/*
 		rotationPositionZ += gyroPosition[2]*0.2864788976;
 		rotationPositionY += gyroPosition[0]*0.2864788976;
@@ -1497,7 +1504,7 @@ void TaskChassis(void *argument)
 			if (chassisTurning == 2) {
 				setGM6020voltageRPM(7, convert[2], DONUTMOTOR);
 			} else {
-				setGM6020voltageRPM(7, positionPIDByMe(&isNegativeRegion2, &previousRegion2, DiffOfTurret, &sumI2, kPr, kIr, kDr), DONUTMOTOR);
+				setGM6020voltageRPM(7, positionPIDByMe(&prevDiff2, &isNegativeRegion2, &previousRegion2, DiffOfTurret, &sumI2, kPr, kIr, kDr), DONUTMOTOR);
 			}
 			// usart_printf("$%d %d\r\n;", DiffOfTurret, sumI2);
 		}

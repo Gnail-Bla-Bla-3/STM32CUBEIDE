@@ -1,0 +1,22 @@
+20:54:55 **** Incremental Build of configuration Debug for project Beans ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:995:11: warning: variable 'calcChassisPower' set but not used [-Wunused-but-set-variable]
+  995 |     float calcChassisPower = 0;                                 // range: 3376 ~ 2132
+      |           ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Beans.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Beans/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Beans.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: Beans.elf has a LOAD segment with RWX permissions
+Finished building target: Beans.elf
+ 
+arm-none-eabi-size  Beans.elf 
+arm-none-eabi-objdump -h -S Beans.elf  > "Beans.list"
+   text	   data	    bss	    dec	    hex	filename
+  68496	    600	  23544	  92640	  169e0	Beans.elf
+Finished building: default.size.stdout
+ 
+Finished building: Beans.list
+ 
+
+20:54:56 Build Finished. 0 errors, 2 warnings. (took 893ms)
+

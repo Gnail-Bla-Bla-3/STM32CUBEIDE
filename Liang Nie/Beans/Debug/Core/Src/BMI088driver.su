@@ -1,0 +1,10 @@
+../Core/Src/BMI088driver.c:93:9:BMI088_init	16	static
+../Core/Src/BMI088driver.c:106:9:BMI088_accel_init	16	static
+../Core/Src/BMI088driver.c:151:9:BMI088_gyro_init	16	static
+../Core/Src/BMI088driver.c:196:7:IMU_get_gyro	16	static
+../Core/Src/BMI088driver.c:209:7:IMU_get_accel	16	static
+../Core/Src/BMI088driver.c:221:7:IMU_get_temp	8	static
+../Core/Src/BMI088driver.c:225:6:BMI088_read	40	static
+../Core/Src/BMI088driver.c:263:13:BMI088_write_single_reg	16	static
+../Core/Src/BMI088driver.c:269:13:BMI088_read_single_reg	16	static
+../Core/Src/BMI088driver.c:288:13:BMI088_read_muli_reg	16	static
