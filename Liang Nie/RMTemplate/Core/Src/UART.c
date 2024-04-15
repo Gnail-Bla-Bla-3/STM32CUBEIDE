@@ -19,12 +19,33 @@ extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart6;
 
 game_status_t game_status;
-power_heat_data_t power_heat_data;
-robot_status_t robot_status;
+game_result_t game_result;
+game_robot_HP_t robot_HP;
 event_data_t event_data;
 ext_supply_projectile_action_t ext_supply_projectile_action;
 referee_warning_t referee_warning;
 dart_info_t dart_info;
+robot_status_t robot_status;
+power_heat_data_t power_heat_data;
+robot_pos_t robot_position;
+buffs_t buffs;
+damage_data_t damage_data;
+shoot_data_t shoot_data;
+projectile_allowance_t projectile_allowance;
+rfid_status_t rfid_status;
+dart_client_cmd_t dart_client_cmd;
+robot_positions_t robot_positions;
+radar_mark_data_t radar_mark_data;
+sentry_info_t sentry_info;
+radar_info_t radar_info;
+sentry_cmd_t sentry_cmd;
+radar_cmd_t radar_cmd;
+map_command_t map_command;
+map_robot_data_t map_robot_data;
+map_data_t map_data;
+custom_info_t custom_info;
+remote_control_t remote_control;
+custom_client_data_t custom_client_data;
 
 uint8_t mainHeaderOffset = 5;
 
@@ -50,51 +71,25 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 		//usart_printf("callback triggered at %d | %d | %d | %d || %d \r\n", RxBuff_2[0], RxBuff_2[1], RxBuff_2[2], RxBuff_2[3], RxBuff16);
 		switch (RxBuff16) {
 		    case GAME_STATUS_HEADER : {
-		    	game_status.game_type = RxBuff_2[7];
-		    	game_status.game_progress = RxBuff_2[8];
-		    	game_status.stage_remain_time = ((uint16_t) RxBuff_2[9] << 8) | RxBuff_2[10];
-		    	game_status.SyncTimeStamp =
-		    		((uint64_t) RxBuff_2[11] << 56) |
-		    		((uint64_t) RxBuff_2[12] << 48) |
-		    		((uint64_t) RxBuff_2[13] << 40) |
-		    		((uint64_t) RxBuff_2[14] << 32) |
-		    		((uint64_t) RxBuff_2[15] << 24) |
-		    		((uint64_t) RxBuff_2[16] << 16) |
-		    		((uint64_t) RxBuff_2[17] << 8) | RxBuff_2[18];
-		    	//usart_printf("-\r\n");
-		    	//usart_printf("Received status message: type = %d | progress = %d | time = %d | stamp = %d\r\n", game_status.game_type, game_status.game_progress, game_status.stage_remain_time, game_status.SyncTimeStamp);
-		    	break;
+		    	memcpy(&game_status, (RxBuff_2 + frame_header_offset), game_status_len);
 		    }
 		    case GAME_RESULT_HEADER : {
-		    	game_status.game_type = RxBuff_2[7];
+		    	memcpy(&game_result, (RxBuff_2 + frame_header_offset), game_result_len);
 		    }
-		    case ROBOT_HP_HEADER : {}
-		    case EVENT_DATA_HEADER : {}
+		    case ROBOT_HP_HEADER : {
+		    	memcpy(&robot_status, (RxBuff_2 + frame_header_offset), robot_status_len);
+		    }
+		    case EVENT_DATA_HEADER : {
+		    	//memcpy(&robot_status, (RxBuff_2 + frame_header_offset), robot_status_len);
+		    }
 		    case PROJECTILE_SUPPLY_HEADER : {}
 		    case REFEREE_WARNING_HEADER : {}
 		    case DART_INFO_HEADER : {}
 		    case ROBOT_HEADER : {
-		    	robot_status.robot_id = RxBuff_2[7];
-		    	robot_status.robot_level = RxBuff_2[8];
-		    	robot_status.current_HP = ((uint16_t) RxBuff_2[9] << 8) | RxBuff_2[10];
-		    	robot_status.maximum_HP = ((uint16_t) RxBuff_2[11] << 8) | RxBuff_2[12];
-		    	robot_status.shooter_barrel_cooling_value = ((uint16_t) RxBuff_2[13] << 8) | RxBuff_2[14];
-		    	robot_status.shooter_barrel_heat_limit = ((uint16_t) RxBuff_2[15] << 8) | RxBuff_2[16];
-		    	robot_status.chassis_power_limit = ((uint16_t) RxBuff_2[17] << 8) | RxBuff_2[18];
-		    	robot_status.power_management_gimbal_output = RxBuff_2[19];
-		    	robot_status.power_management_chassis_output = RxBuff_2[20];
-		    	robot_status.power_management_shooter_output = RxBuff_2[21];
-		    	//usart_printf("got %d\r\n", robot_status.robot_id);
+		    	memcpy(&robot_status, (RxBuff_2 + frame_header_offset), robot_status_len);
 		    }
 		    case POWER_HEAT_HEADER : {
-		    	power_heat_data.chassis_voltage = ((uint16_t) RxBuff_2[8] << 8) | RxBuff_2[7];
-		    	power_heat_data.chassis_current = ((uint16_t) RxBuff_2[10] << 8) | RxBuff_2[9];
-		    	power_heat_data.chassis_power = ((uint32_t) RxBuff_2[14] << 24) | ((uint32_t) RxBuff_2[13] << 16) | ((uint32_t) RxBuff_2[12] << 8) | RxBuff_2[11];
-		    	power_heat_data.buffer_energy = ((uint16_t) RxBuff_2[15] << 8) | RxBuff_2[16];
-		    	power_heat_data.shooter_17mm_1_barrel_heat = ((uint16_t) RxBuff_2[18] << 8) | RxBuff_2[17];
-		    	power_heat_data.shooter_17mm_2_barrel_heat = ((uint16_t) RxBuff_2[20] << 8) | RxBuff_2[19];
-		    	power_heat_data.shooter_42mm_barrel_heat = ((uint16_t) RxBuff_2[22] << 8) | RxBuff_2[21];
-
+		    	memcpy(&power_heat_data, (RxBuff_2 + frame_header_offset), power_heat_data_len);
 		    }
 		    case POSITION_HEADER: {}
 		    case BUFF_HEADER: {}

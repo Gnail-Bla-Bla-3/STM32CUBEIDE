@@ -113,11 +113,10 @@ PID_preset_t indexerPreset = {1.1f, 0.02f, -2.4f};
 PID_preset_t shooterPreset = {1.20f, 0.12f, 1.60f};
 PID_preset_t powerPreset = {0, 0.000000000001, 0};
 PID_preset_t customPreset = {0, 0, 0};
-PID_preset_t DONUTMOTOR = {50, 8.0, 2.0}; // 46, 10, 16.4
 
 int target = 2000;
 
-can_msg_id_e boardID = CAN_b2b_B_ID;               // remember to change the board ID, board A - chassis, board B - Pitch axis
+can_msg_id_e boardID = CAN_b2b_A_ID;               // remember to change the board ID, board A - chassis, board B - Pitch axis
 
 chassis_motor_config chassis = {{1,2,3,4,0,0,0,0}};
 chassis_motor_RPM chassisTargetRPM = {{0,0,0,0,0,0,0,0}};
@@ -169,6 +168,7 @@ void TaskTurret(void *argument);
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -254,7 +254,9 @@ int main(void)
 
   /* Start scheduler */
   osKernelStart();
+
   /* We should never get here as control is now taken by the scheduler */
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -481,9 +483,9 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 335;
+  htim1.Init.Prescaler = 83;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 999;
+  htim1.Init.Period = 19999;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -558,9 +560,9 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 83;
+  htim4.Init.Prescaler = 0;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 249;
+  htim4.Init.Period = 20999;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
@@ -930,7 +932,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-int16_t positionPIDByMe(int16_t *prevDiff, int8_t *isNegativeRegion1, int8_t *previousRegion1, int16_t DifferenceBetweenCurrentAndWannabePosition, int16_t *sumI1, float kPu, float kIu, float kDu) {
+int16_t positionPIDByMe(int8_t *isNegativeRegion1, int8_t *previousRegion1, int16_t *previousDifference,  int16_t DifferenceBetweenCurrentAndWannabePosition, int16_t *sumI1, float kPu, float kIu, float kDu) {
 	if (DifferenceBetweenCurrentAndWannabePosition >= 0) {
 		*isNegativeRegion1 = -1;
 	} else {
@@ -943,8 +945,8 @@ int16_t positionPIDByMe(int16_t *prevDiff, int8_t *isNegativeRegion1, int8_t *pr
 	*sumI1 += (int)((float)(DifferenceBetweenCurrentAndWannabePosition)*0.005f);
 	int16_t PositionToGo = (int)(kPu*(float)(DifferenceBetweenCurrentAndWannabePosition));
 	int16_t IntegralToGo = (int)(kIu*((float)(*sumI1)));
-	int16_t DerivativeToGo = (int)((kDu)*((float)(DifferenceBetweenCurrentAndWannabePosition - *prevDiff))*(float)200);
-	*prevDiff = DifferenceBetweenCurrentAndWannabePosition;
+	int16_t DerivativeToGo = (int)((kDu)*((float)(DifferenceBetweenCurrentAndWannabePosition - *previousDifference))*(float)200);
+	*previousDifference = DifferenceBetweenCurrentAndWannabePosition;
 	return PositionToGo+IntegralToGo+DerivativeToGo;
 }
 /* USER CODE END 4 */
@@ -961,22 +963,22 @@ void TaskMain(void *argument)
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
 	HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, 1);
-	// __HAL_TIM_PRESCALER(&htim4, 2);
-	// HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
-	// HAL_TIM_Base_Start(&htim4);
+	__HAL_TIM_PRESCALER(&htim4, 2);
+	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+	HAL_TIM_Base_Start(&htim4);
 	if (BMI088_accel_init()) {
-		// usart_printf("WARNING - BMI088 accelerometer init failed \r\n");
+		usart_printf("WARNING - BMI088 accelerometer init failed \r\n");
 	}
 	if (BMI088_gyro_init()) {
-		// usart_printf("WARNING - BMI088 gyroscope init failed \r\n");
+		usart_printf("WARNING - BMI088 gyroscope init failed \r\n");
 	}
 	if (ist8310_init()) {
-		// usart_printf("WARNING - IST8310 compass init failed \r\n");
+		usart_printf("WARNING - IST8310 compass init failed \r\n");
 	}
-	// osDelay(150);
-	// __HAL_TIM_PRESCALER(&htim4, 0);
-	// osDelay(150);
-	// HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
+	osDelay(150);
+	__HAL_TIM_PRESCALER(&htim4, 0);
+	osDelay(150);
+	HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
 
 	for(;;) {
 		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, 0);
@@ -1002,542 +1004,136 @@ void TaskMain(void *argument)
 void TaskChassis(void *argument)
 {
   /* USER CODE BEGIN TaskChassis */
-	/* USER CODE BEGIN TaskChassis */
-	int16_t rcRPM[4] = {0,0,0,0};                              // maps rc percentage reading to motors, assuming we're running M3508s at max 469RPM
-	int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
-	//int16_t targetRPM[4] = {0,0,0,0};
+    int16_t rcRPM[4] = {0,0,0,0};                              // maps rc percentage reading to motors, assuming we're running M3508s at max 469RPM
+    float calcChassisPower = 0;                                 // range: 3376 ~ 2132
+    int8_t jammed = 0;
+    int8_t indexerStopped = 1;
+    int8_t indexerTargetReached = 0;
+    // int8_t *isNegativeRegion1, int8_t *previousRegion1, int16_t previousDifference,  int16_t DifferenceBetweenCurrentAndWannabePosition, int16_t *sumI1, float kPu, float kIu, float kDu
+    int8_t N[1] = {1};
+    int8_t pN[1] = {1};
+    int16_t PD [1] = {0};
+    int16_t Diff [1] = {0};
+    int16_t sum[1] = {0};
+    //int16_t targetRPM[4] = {0,0,0,0};
   /* Infinite loop */
-
-	// Test Code
-	HAL_TIM_Base_Start(&htim1);
-	HAL_TIM_Base_Start(&htim4);
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
-	htim4.Instance->CCR3=0;
-	int8_t motorOn = 0;
-	int8_t switched = 0;
-	int8_t shot1Round = 0;
-	//int8_t RNC = 0;
-	int16_t sumI1 =0;
-	int16_t sumI2 =0;
-	int16_t sumI3 =0;
-	int16_t sumI4 =0;
-	int8_t isNegativeRegion1 = 0;
-	int8_t isNegativeRegion2 = 0;
-	int8_t isNegativeRegion3 = 0;
-	int8_t isNegativeRegion4 = 0;
-	int8_t previousRegion1 = 0;
-	int8_t previousRegion2 = 0;
-	int8_t previousRegion3 = 0;
-	int8_t previousRegion4 = 0;
-	int16_t prevDiff1 = 0;
-	int16_t prevDiff2 = 0;
-	int16_t prevDiff3 = 0;
-	int16_t prevDiff4 = 0;
-
-	int16_t shooterMotor = 0;
-	// int16_t pR = 0;
-	//int8_t counter = 0;
-	uint16_t testmotor = 6161;
-	uint16_t pivoter = 0;
-	double angle = 0;
-	int16_t xJoystickDirection = 0;
-	int16_t yJoystickDirection = 0;
-	int16_t rotationOfChassis = 0;
-	// Total Rotation is 1.25 times for 90degrees therefore motor has to rotate
-	// PID onto this (This is the hypothetical orientation)
-	int16_t chassisOrientation = 0;
-	int16_t chassisPID = 0;
-	int16_t rcVal2 = 0;
-
-	int16_t randomOrientations[24] = {-380, -202, 462, -114, 240, -210, 150, 170, 248, 106, 118, 538, -260, -288, -120, 86, -264, 452, -592, 390, -410, 414, 54, -542};
-	int16_t startingVal = 0;
-	int8_t started = 0;
-	uint8_t increment = 0;
-	int16_t instancesCounter = 0;
-
-	int16_t previousVal = 0;
-	int32_t rotationalVal = 0;
-	int16_t revolutions = 0;
-	int8_t resetPerStart = 0;
-	int32_t rotationTarget = 0;
-	int32_t posForGunMotor = 0;
-	int8_t burst = 3;
-
-	int8_t customFiringModeSwitcher = 0;
-	int8_t startedChecking = 0;
-	int8_t switchedDown = 0;
-	int8_t finalTHing = 0;
-	int16_t counterForSwitching = 0;
-
-	int16_t buzzLengthCounter = 0;
-	int8_t beepingInProgress = 0;
-	int8_t beeped = 1;
-	/*
-	float rotationPositionZ = 0;
-	float rotationPositionY = 0;
-	int8_t average = 5;
-	int16_t averageY[average];
-	for (int i = 0; i < average; i++) {
-		averageY[i] = 0;
-	}
-	*/
-
-	for(;;) {
-		for (int i = 0; i < 4; i++) {
-			rcRPM[i] = getRCchannel(i) * 13.645f;              // 13.645 = 469 / 187 / 660 * 3591, 660 = max reading in one direction
-		}
-		rcPitch = getRCchannel(1) * 0.94f + 2754;
-		int16_t leftDial = getRCchannel(4);
-
-		int8_t chassisTurning = getRCswitch(1);
-
-		float funnyKP = 0.022;
-		float funnyKI = -0.02;
-		float funnyKD = 0.00005;
-		float rotationScalar = -540; //-540
-
-		if (counterForSwitching > 200) {
-			startedChecking = 0;
-			switchedDown = 0;
-			finalTHing = 0;
-			counterForSwitching = 0;
-		}
-
-		if (startedChecking == 1) {
-			counterForSwitching++;
-		}
-
-		int8_t movementUpOrDown = 5;
-		if (increment == 18) {
-			increment = 0;
-		}
-
-		if (instancesCounter > 100) {
-			increment++;
-			instancesCounter = 0;
-		}
-
-		if (chassisTurning == 1 && startedChecking == 0) {
-			counterForSwitching = 0;
-			startedChecking = 1;
-
-		}
-		if (chassisTurning == 3 && startedChecking == 1) {
-			switchedDown = 1;
-		}
-		if (chassisTurning == 1 && startedChecking == 1 && switchedDown == 1) {
-			finalTHing = 1;
-		}
-
-		if (chassisTurning == 3 && startedChecking == 1 && switchedDown == 1 && finalTHing == 1 && counterForSwitching < 200) {
-			switchedDown = 0;
-			startedChecking = 0;
-			counterForSwitching = 0;
-			finalTHing = 0;
-			customFiringModeSwitcher++;
-			beeped = 0;
-			buzzLengthCounter = 0;
-
-		}
-		if (customFiringModeSwitcher > 2) {
-			customFiringModeSwitcher = 0;
-		}
-
-
-		// usart_printf("$%d %d %d %d\r\n;",customFiringModeSwitcher, startedChecking, switchedDown, counterForSwitching);
-
-		if (beeped == 0) {
-			switch (customFiringModeSwitcher) {
-			case 0:
-				if ((buzzLengthCounter == 0)) {
-					// HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
-					htim4.Instance->CCR3=150;
-					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 1);
-				}
-				else if (buzzLengthCounter >=60) {
-					// HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
-					beeped = 1;
-					htim4.Instance->CCR3=0;
-					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 0);
-				}
-				buzzLengthCounter++;
-				break;
-			case 1:
-				if (buzzLengthCounter == 0) {
-					// HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
-					htim4.Instance->CCR3=150;
-					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 1);
-				} else if (buzzLengthCounter >=12) {
-					// HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
-					beeped = 1;
-					htim4.Instance->CCR3=0;
-					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 0);
-				}
-				buzzLengthCounter++;
-				break;
-			case 2:
-				if ((buzzLengthCounter == 0) || (buzzLengthCounter == 30) || (buzzLengthCounter == 60)) {
-					// HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
-					htim4.Instance->CCR3=150;
-					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 1);
-				} else if ((buzzLengthCounter == 15) || (buzzLengthCounter == 45)) {
-					// HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
-					htim4.Instance->CCR3=0;
-					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 0);
-				} else if (buzzLengthCounter >=75) {
-					// HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
-					beeped = 1;
-					htim4.Instance->CCR3=0;
-					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 0);
-				}
-				buzzLengthCounter++;
-				break;
-			}
-		}
-
-
-
-		switch (chassisTurning) {
-		case 1:
-			xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
-			yJoystickDirection = rcRPM[2]*sin(angle) + rcRPM[3]*cos(angle);
-			rotationOfChassis = rcRPM[0];
-
-
-			started = 0;
-
-
-
-			break;
-		case 2:
-			int8_t delta = 5;
-			if (started == 0) {
-				startingVal = 0;
-				started = 1;
-			}
-			if (startingVal >= randomOrientations[increment]-delta && startingVal <= randomOrientations[increment]+delta) {
-				instancesCounter++;
-			} else if (startingVal > randomOrientations[increment]-delta) {
-				startingVal -= movementUpOrDown;
-			} else {
-				startingVal += movementUpOrDown;
-			}
-
-
-			xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
-			yJoystickDirection = rcRPM[2]*sin(angle) + rcRPM[3]*cos(angle);
-			int16_t hypotheticalP = funnyKP*(startingVal - chassisOrientation);
-			if (hypotheticalP >= 0) {
-				isNegativeRegion3 = -1;
-			} else {
-				isNegativeRegion3 = 1;
-			}
-			if (hypotheticalP != previousRegion3) {
-				sumI3 = 0;
-			}
-			previousRegion3 = hypotheticalP;
-			sumI3 += (startingVal - chassisOrientation)*0.005;
-			int16_t hypotheticalI = funnyKI*(sumI3);
-			int16_t hypotheticalD = funnyKD*(startingVal - chassisOrientation)*200;
-			chassisPID = hypotheticalP + hypotheticalI + hypotheticalD;
-			chassisOrientation += chassisPID;
-			//rotationOfChassis = rcRPM[0]+rotationScalar*chassisPID;
-
-			rotationOfChassis = rcRPM[0];
-
-			/*
-			xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
-			yJoystickDirection = rcRPM[2]*sin(angle) + rcRPM[3]*cos(angle);
-			int16_t hypotheticalP = funnyKP*(leftDial - chassisOrientation);
-			if (hypotheticalP >= 0) {
-				isNegativeRegion3 = -1;
-			} else {
-				isNegativeRegion3 = 1;
-			}
-			if (hypotheticalP != previousRegion3) {
-				sumI3 = 0;
-			}
-			previousRegion3 = hypotheticalP;
-			sumI3 += (leftDial - chassisOrientation)*0.005;
-			int16_t hypotheticalI = funnyKI*(sumI3);
-			int16_t hypotheticalD = funnyKD*(leftDial - chassisOrientation)*200;
-			chassisPID = hypotheticalP + hypotheticalI + hypotheticalD;
-			chassisOrientation += chassisPID;
-			rotationOfChassis = rcRPM[0]+rotationScalar*chassisPID;
-			*/
-
-			break;
-		default:
-			started = 0;
-			xJoystickDirection = rcRPM[2];
-			yJoystickDirection = rcRPM[3];
-			rotationOfChassis = rcRPM[0];
-		}
-		// int16_t chassisConvert = ((-1*(chassisOrientation))*3.32f)+4755;
-
-
-		chassisTargetRPM.motorRPM[0] = yJoystickDirection + rotationOfChassis + xJoystickDirection;
-		chassisTargetRPM.motorRPM[1] = yJoystickDirection + rotationOfChassis - xJoystickDirection;
-		chassisTargetRPM.motorRPM[2] = -yJoystickDirection + rotationOfChassis - xJoystickDirection;
-		chassisTargetRPM.motorRPM[3] = -yJoystickDirection + rotationOfChassis + xJoystickDirection;
-
-		//usart_printf("%d\r\n", targetMotorRPM.motorRPM[0]);
-	   // calcChassisPower = (float)power_heat_data.chassis_voltage * (float)power_heat_data.chassis_current / (float)1000000;
-
-		//if (calcChassisPower >= 30) {
-		//chassisTargetCurrent = applyPowerlimit(chassis, chassisTargetRPM, calcChassisPower);
-
-		//CAN1_cmd_b2b(CAN_b2b_A_ID, 1, 1, 1, 1);
-
-		float kPg = 0.1;
-		float kIg = 0;
-		float kDg = 0;
-		if (customFiringModeSwitcher == 1) {
-			burst = 1;
-		} else if (customFiringModeSwitcher == 2) {
-			burst = 3;
-		}
-
-
-
-
-
-		setM3508RPM(1, chassisTargetRPM.motorRPM[0], chassisPreset);
-		setM3508RPM(2, chassisTargetRPM.motorRPM[1], chassisPreset);
-		setM3508RPM(3, chassisTargetRPM.motorRPM[2], chassisPreset);
-		setM3508RPM(4, chassisTargetRPM.motorRPM[3], chassisPreset);
-
-		int16_t roundsPerSecond = 20;
-		// Constant SHOULD BE 1.3636, 0.08
-		int8_t rcSwitchToShoot = getRCswitch(0);
-		if (rcSwitchToShoot == 1) {
-			if (customFiringModeSwitcher == 0) {
-				setM3508RPM(5, roundsPerSecond * 270, chassisPreset);
-			} else {
-				shooterMotor = getMotorPosition(5);
-				// Resets the total rotationValue to avoid going too high
-				if (resetPerStart == 0) {
-					int32_t rotationTarget1 = (36860 * burst);// + shooterMotor
-					rotationTarget = rotationTarget1 + shooterMotor;
-
-					revolutions = 0;
-					rotationalVal = shooterMotor;
-					previousVal = shooterMotor;
-				}
-				resetPerStart = 1;
-				posForGunMotor = kPg*(rotationTarget - rotationalVal);
-
-				// counts the amount of rotations
-				if ((shooterMotor - previousVal) < -1000) {
-					 revolutions++;
-				} /* else if ((shooterMotor - previousVal) > 4500) {
-				revolutions --
-				}
-				*/
-				previousVal = shooterMotor;
-				rotationalVal = shooterMotor + (revolutions*8191);
-
-
-
-
-				// int16_t PositionToGo = kPu*(rcVal-testmotor);
-				if (posForGunMotor >= 0) {
-					isNegativeRegion4 = -1;
-				} else {
-					isNegativeRegion4 = 1;
-				}
-				if (posForGunMotor != previousRegion4) {
-					sumI4 = 0;
-				}
-				previousRegion4 = posForGunMotor;
-				sumI4 += (rotationTarget-testmotor)*0.005;
-				int32_t IntegralToGo4 = kIg*(sumI4);
-				int32_t DerivativeToGo4 = kDg*(rotationTarget-testmotor)*200;
-
-				int32_t finalRPM = 0;
-				if ((posForGunMotor+IntegralToGo4+DerivativeToGo4) > (roundsPerSecond * 270)) {
-					finalRPM =roundsPerSecond * 270;
-				} else {
-					finalRPM = posForGunMotor+IntegralToGo4+DerivativeToGo4;
-				}
-				setM3508RPM(5, finalRPM, chassisPreset);
-			}
-			switched = 0;
-			/*
-			switched = 0;
-			setM3508RPM(5, roundsPerSecond * 270, chassisPreset);
-			*/
-			// __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, rcVal + 252);
-			// __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, rcVal + 252);
-		} else {
-			resetPerStart = 0;
-			setM3508RPM(5, 0, chassisPreset);
-		}
-		if (rcSwitchToShoot == 2 && switched == 0 && motorOn == 0) {
-			motorOn = 1;
-			switched = 1;
-		} else if (rcSwitchToShoot == 2 && switched == 0 && motorOn == 1) {
-			motorOn = 0;
-			switched = 1;
-		}
-		if (rcSwitchToShoot == 3) {
-			switched = 0;
-		}
-
-
-		// int16_t testingMax = getRCchannel(1)*1.15f;
-		// MAX SPEED = 759
-		htim1.Instance->CCR1=200+(350*motorOn);
-		htim1.Instance->CCR2=200+(350*motorOn);
-
-		// int32_t dividedRotation = rotationalVal * 0.01f;
-		// usart_printf("$%d %d %d\r\n;",rotationalVal, shooterMotor, rotationTarget);
-		testmotor = getMotorPosition(6);
-
-		// Turret Slope min, centre, max : 5573, 6161, 675s1
-		// min = 5600
-		// max = 6700
-		//(These are ABSOLUTE MAXES)
-		// Difference = 0, 589, 1178
-
-		float kPu =0.7; // 0.005
-		float kIu =0; // 0.0001
-		float kDu =0.0001; // 0.0005
-
-
-
-		int16_t rcVal = (getRCchannel(1)*0.88f)+6161;
-
-		int16_t DifferenceBetweenCurrentAndWannabePosition = rcVal-testmotor;
-
-		if (testmotor < 5500) {
-			setGM6020voltageRPM(6, 5, DONUTMOTOR);
-		} else if (testmotor > 6800) {
-			setGM6020voltageRPM(6, -5, DONUTMOTOR);
-		} else {
-
-			//positionPIDByMe(int8_t &negativeRegion, int8_t &previousRegion, int16_t &differenceBetween, int16_t &integralVal float &kPVal, float &kIVal, float &kDVal);
-			// positionPIDByMe(isNegativeRegion1, previousRegion1, DifferenceBetweenCurrentAndWannabePosition, sumI1, kPu, kIu, kDu);
-			/*
-			if (PositionToGo >= 0) {
-				isNegativeRegion1 = -1;
-			} else {
-				isNegativeRegion1 = 1;
-			}
-			if (PositionToGo != previousRegion1) {
-				sumI1 = 0;
-			}
-			previousRegion1 = isNegativeRegion1;
-			sumI1 += (DifferenceBetweenCurrentAndWannabePosition)*0.005;
-			int16_t PositionToGo = kPu*(DifferenceBetweenCurrentAndWannabePosition);
-			int16_t IntegralToGo = kIu*(sumI1);
-			int16_t DerivativeToGo = kDu*(DifferenceBetweenCurrentAndWannabePosition)*200;
-			*/
-
-			setGM6020voltageRPM(6, positionPIDByMe(&prevDiff1, &isNegativeRegion1, &previousRegion1, DifferenceBetweenCurrentAndWannabePosition, &sumI1, kPu, kIu, kDu), DONUTMOTOR);
-			// usart_printf("$%d %d %d\r\n;", PositionToGo, IntegralToGo, DerivativeToGo);
-		}
-
-
-		// 2524-6986
-		// 90 degree = 2691, 6799
-		pivoter = getMotorPosition(7);
-		angle = ((pivoter-4755)*0.00024343f)*3.14159265f;
-
-		float kPr =0.08; // 0.022
-		float kIr =0.000; // -0.02
-		float kDr =0.009; // 0.00005
-
-
-		float gyroPosition[3] = {IMU_get_gyro(x), IMU_get_gyro(y), IMU_get_gyro(z)};
-		int16_t convert[3] = { (int)(gyroPosition[0]*9.549), (int)(gyroPosition[1]*(9.549)), (int)(gyroPosition[2]*(-230))};
-		/*
-		rotationPositionZ += gyroPosition[2]*0.2864788976;
-		rotationPositionY += gyroPosition[0]*0.2864788976;
-		int16_t convertY = (int)rotationPositionY;
-		int16_t convertZ = (int)rotationPositionZ;
-		*/
-
-		if (chassisTurning == 2) {
-			// rcVal2 = ((-1*(leftDial))*3.32f)+4755;
-			rcVal2 = (leftDial*3.32f)+4755;
-		} else {
-			rcVal2 = (leftDial*3.32f)+4755;
-		}
-		/*
-		for (int j = 0; j < average; j++) {
-			averageY[average-(j)] = averageY[average-(j+1)];
-		}
-		averageY[0] = convert[2];
-
-		int16_t fullAve = 0;
-		float multiplyFactor = 1/average;
-		for (int i = 0; i < average; i++) {
-			fullAve += averageY[i];
-		}
-		fullAve = fullAve*0.2f;
-		*/
-		int16_t DiffOfTurret = rcVal2-pivoter;
-		// usart_printf("$%d %d\r\n;", convert[2], fullAve);
-		if (pivoter < 2300) {
-			setGM6020voltageRPM(7, 5, DONUTMOTOR);
-		} else if (pivoter > 6900) {
-			setGM6020voltageRPM(7, -5, DONUTMOTOR);
-		} else {
-			/*
-			if (DiffOfTurret >= 0) {
-				isNegativeRegion2 = -1;
-			} else {
-				isNegativeRegion2 = 1;
-			}
-			if (isNegativeRegion2 != previousRegion2) {
-				sumI2 = 0;
-			}
-			previousRegion2 = PositionToGo2;
-			sumI2 += (DiffOfTurret)*0.005;
-			int16_t PositionToGo2 = kPr*(DiffOfTurret);
-			int16_t IntegralToGo2 = kIr*(sumI2);
-			int16_t DerivativeToGo2 = kDr*(DiffOfTurret)*200;
-			*/
-			if (chassisTurning == 2) {
-				setGM6020voltageRPM(7, convert[2], DONUTMOTOR);
-			} else {
-				setGM6020voltageRPM(7, positionPIDByMe(&prevDiff2, &isNegativeRegion2, &previousRegion2, DiffOfTurret, &sumI2, kPr, kIr, kDr), DONUTMOTOR);
-			}
-			// usart_printf("$%d %d\r\n;", DiffOfTurret, sumI2);
-		}
-
-		// usart_printf("$%d %d %d\r\n;", rcVal2, pivoter, chassisConvert);
-		//usart_printf("$%d\r\d;", rotationOfChassis);
-		// usart_printf("$%d %d\r\n;",rcVal2 ,pivoter);
-		// usart_printf("$%d\r\n;",pivoter);
-		// usart_printRC();
-
-		// sendB2bData(CAN_b2b_A_motorCtrl_ID, rcPitch, 0, 0, 0);
-
-	  /*
-		if (boardID == CAN_b2b_B_ID) {
-			setGM6020voltagePosition(9, b2bMotorCtrl.motor1_Ctrl, yawPresetVoltagePosition);
-			//setGM6020voltageRPM(9, 100, yawPresetVoltageRPM);
-			//CAN2_cmd_motors(CAN_GROUP3C_ID, 5000, 0, 0, 0);
-			sendB2bData(CAN_b2b_B_gyro_ID, b2bMotorCtrl.motor1_Ctrl, getMotorPosition(9), 0, 0);
-		}
-	  */
-		//set_GM6020_current(5, 8000);               getMotorPosition(9) getMotorCurrent(9)
-		//set_GM6020_voltage(5, 2000);
-		//setGM6020voltageRPM(5, 100, yawPresetVoltageRPM);
-		//setGM6020currentPosition(5, target, yawPresetPosition);
-		//setGM6020voltagePosition(5, target, yawPresetVoltagePosition);
-		//usart_printf("%d\r\n", getMotorRPM(5));
-		//usart_printRC();
-		//sprintf((char*)txbuf, "%f \r\n", power_heat_data.chassis_power);
-		//HAL_UART_Transmit(&huart1, txbuf, strlen((char*)txbuf), HAL_MAX_DELAY);
-		//txbuf = *((float*)&power_heat_data.chassis_power);
-		//usart_printf("%f %d\r\n", calcChassisPower, 30);
-
-		osDelay(5);
+    for(;;) {
+	    for (int i = 0; i < 4; i++) {
+	        rcRPM[i] = getRCchannel(i) * 13.645f;              // 13.645 = 469 / 187 / 660 * 3591, 660 = max reading in one direction
+	    }
+	    //rcPitch = getRCchannel(1) * 0.94f + 2754;
+
+	    chassisTargetRPM.motorRPM[0] = rcRPM[3] + rcRPM[0] + rcRPM[2];
+	    chassisTargetRPM.motorRPM[1] = rcRPM[3] + rcRPM[0] - rcRPM[2];
+	    chassisTargetRPM.motorRPM[2] = -rcRPM[3] + rcRPM[0] - rcRPM[2];
+	    chassisTargetRPM.motorRPM[3] = -rcRPM[3] + rcRPM[0] + rcRPM[2];
+
+	    //gyroReading[0] = IMU_get_gyro(x);
+	    //gyroReading[1] = IMU_get_gyro(y);
+	    //gyroReading[2] = IMU_get_gyro(z);
+	    //usart_printf("%f %f %f %f \r\n", getMagnetometerData(x), getMagnetometerData(y), getMagnetometerData(z), IMU_get_temp());
+	    //usart_printf("%d\r\n", targetMotorRPM.motorRPM[0]);
+	   calcChassisPower = power_heat_data.chassis_voltage * power_heat_data.chassis_current / 1000000;
+	   // usart_printf("%d %f %f \r\n", power_heat_data.chassis_voltage, power_heat_data.chassis_power, calcChassisPower);
+
+	    //if (calcChassisPower >= 30) {
+	    //chassisTargetCurrent = applyPowerlimit(chassis, chassisTargetRPM, calcChassisPower);
+
+	    //CAN1_cmd_b2b(CAN_b2b_A_ID, 1, 1, 1, 1);
+
+	    if (boardID == CAN_b2b_A_ID) {
+	    	setM3508RPM(1, chassisTargetRPM.motorRPM[0], chassisPreset);
+	    	setM3508RPM(2, chassisTargetRPM.motorRPM[1], chassisPreset);
+	    	setM3508RPM(3, chassisTargetRPM.motorRPM[2], chassisPreset);
+	    	setM3508RPM(4, chassisTargetRPM.motorRPM[3], chassisPreset);
+
+	    	if (getRCswitch(1) == 1) {
+		    	setM3508RPM(5, -6600, chassisPreset);
+		    	setM3508RPM(6, 6600, chassisPreset);
+	    	} else {
+		    	setM3508RPM(5, 0, chassisPreset);
+		    	setM3508RPM(6, 0, chassisPreset);
+	    	}
+
+	    	if (rcRPM[1] > 5) {
+	    		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, 1);
+	    	} else {
+	    		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, 0);
+	    	}
+
+	    	float kP = 0.06;
+	    	float kI = 0.001;
+	    	float kD = 0.0001;
+	    	int16_t currentMotorPositionTurret = getMotorPosition(7);
+	    	int16_t robotPositionToGo = (getRCchannel(1)*-1.212121f)+ 1900;
+	    	if (robotPositionToGo > 2600) {
+	    		robotPositionToGo = 2600;
+	    	}
+
+	    	Diff[1] = robotPositionToGo - currentMotorPositionTurret;
+	    	// positionPIDByMe(&N[1], &pN[1],& PD [1],  Diff [1] , &sum[1] , kP, kI, kD)
+	    	int16_t pidVal = positionPIDByMe(&N[1], &pN[1],& PD [1],  Diff [1] , &sum[1] , kP, kI, kD);
+	    	setGM6020voltageRPM(7,  pidVal  , yawPresetVoltageRPM );
+
+	    	usart_printf("$%d %d %d\r\n;",   currentMotorPositionTurret , robotPositionToGo, pidVal);
+	    	// 2650 lowest (womp womp)
+	    	// 1900 middle
+	    	// 1100 top
+	    	//sendB2bData(CAN_b2b_A_motorCtrl_ID, rcPitch, getRCswitch(1), 0, 0);
+	    	//usart_printf("%d %d\r\n", b2bGyro.gyro_x, b2bGyro.gyro_y);
+	    }
+
+	    if (boardID == CAN_b2b_B_ID) {
+	    	setGM6020voltagePosition(9, b2bMotorCtrl.motor1_Ctrl, yawPresetVoltagePosition);
+	    	//setGM6020voltageRPM(9, 100, yawPresetVoltageRPM);
+	    	//CAN2_cmd_motors(CAN_GROUP3C_ID, 5000, 0, 0, 0);
+	    	if (b2bMotorCtrl.motor2_Ctrl == 2) {                                         // IMPORTANT: top to bottom: 1 -> 3 -> 2
+	    		//setM2006RPM(6, -5400, indexerPreset);                             // THIS IS FUCKING STUPID
+	    		setM3508RPM(7, 8000, shooterPreset);
+	    		setM3508RPM(8, -8000, shooterPreset);
+
+	    		if (jammed > 0 && indexerStopped == 0) {
+	    			setM2006RPM(6, 15000, indexerPreset);
+	    			jammed--;
+	    		} else {
+	    			indexerStopped = 0;
+	    			setM2006RPM(6, -5400, indexerPreset);
+	    			if (indexerTargetReached == 0 && getMotorRPM(6) <= -10) {
+	    				indexerTargetReached = 1;
+	    			} else if (getMotorRPM(6) > -1 && indexerTargetReached == 1) {         // jammed
+	    				jammed = 12;
+	    				indexerTargetReached = 0;
+	    			}
+	    		}
+
+	    	} else if (b2bMotorCtrl.motor2_Ctrl == 3) {
+	    		setM2006RPM(6, 0, indexerPreset);
+	    		setM3508RPM(7, 8000, shooterPreset);
+	    		setM3508RPM(8, -8000, shooterPreset);
+	    		indexerStopped = 1;
+	    		indexerTargetReached = 0;
+	    	} else {       // = 1
+	    		setM2006RPM(6, 0, indexerPreset);
+	    		setM3508RPM(7, 0, shooterPreset);
+	    		setM3508RPM(8, 0, shooterPreset);
+	    		indexerStopped = 1;
+	    		indexerTargetReached = 0;
+	    	}
+	    	//sendB2bData(CAN_b2b_B_gyro_ID, jammed, -5400, 0, 0);
+	    }
+	    //set_GM6020_current(5, 8000);               getMotorPosition(9) getMotorCurrent(9)
+	    //set_GM6020_voltage(5, 2000);
+	    //setGM6020voltageRPM(5, 100, yawPresetVoltageRPM);
+	    //setGM6020currentPosition(5, target, yawPresetPosition);
+	    //setGM6020voltagePosition(5, target, yawPresetVoltagePosition);
+	    //usart_printf("%d\r\n", getMotorRPM(5));
+	    //usart_printRC();
+	    //sprintf((char*)txbuf, "%f \r\n", power_heat_data.chassis_power);
+	    //HAL_UART_Transmit(&huart1, txbuf, strlen((char*)txbuf), HAL_MAX_DELAY);
+	    //txbuf = *((float*)&power_heat_data.chassis_power);
+	    // usart_printf("%d\r\n", 30);
+
+        osDelay(5);
     }
   /* USER CODE END TaskChassis */
 }

@@ -1,9 +1,0 @@
-../Core/Src/BMI088Middleware.c:14:6:BMI088_GPIO_init	1
-../Core/Src/BMI088Middleware.c:19:6:BMI088_com_init	1
-../Core/Src/BMI088Middleware.c:25:6:BMI088_delay_ms	2
-../Core/Src/BMI088Middleware.c:33:6:BMI088_delay_us	4
-../Core/Src/BMI088Middleware.c:71:6:BMI088_ACCEL_NS_L	1
-../Core/Src/BMI088Middleware.c:75:6:BMI088_ACCEL_NS_H	1
-../Core/Src/BMI088Middleware.c:80:6:BMI088_GYRO_NS_L	1
-../Core/Src/BMI088Middleware.c:84:6:BMI088_GYRO_NS_H	1
-../Core/Src/BMI088Middleware.c:89:9:BMI088_read_write_byte	1

@@ -1,60 +1,22 @@
-19:12:37 **** Incremental Build of configuration Debug for project RMTemplate ****
-make -j3 all 
+18:16:06 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j20 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'TaskChassis':
-../Core/Src/main.c:1204:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
- 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
-      |                                                       ^~~
-../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
-   36 | #include "ist8310driver.h"
-  +++ |+#include <math.h>
-   37 | /* USER CODE END Includes */
-../Core/Src/main.c:1204:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
- 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
-      |                                                       ^~~
-../Core/Src/main.c:1204:55: note: include '<math.h>' or provide a declaration of 'cos'
-../Core/Src/main.c:1204:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
- 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
-      |                                                                             ^~~
-../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
-../Core/Src/main.c:1204:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
-../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
-../Core/Src/main.c:1099:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
- 1099 |                 float rotationScalar = -540; //-540
-      |                       ^~~~~~~~~~~~~~
-../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
- 1075 |         int8_t beepingInProgress = 0;
-      |                ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
- 1037 |         int16_t prevDiff4 = 0;
-      |                 ^~~~~~~~~
-../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
- 1036 |         int16_t prevDiff3 = 0;
-      |                 ^~~~~~~~~
-../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
- 1029 |         int8_t isNegativeRegion4 = 0;
-      |                ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
- 1028 |         int8_t isNegativeRegion3 = 0;
-      |                ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
- 1020 |         int8_t shot1Round = 0;
-      |                ^~~~~~~~~~
-../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
- 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
-      |                 ^~~~~~~
-arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+../Core/Src/main.c:1008:11: warning: variable 'calcChassisPower' set but not used [-Wunused-but-set-variable]
+ 1008 |     float calcChassisPower = 0;                                 // range: 3376 ~ 2132
+      |           ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Liang Nie\Documents\GitHub\STM32CUBEIDE\Liang Nie\RMTemplate\STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.12.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: RMTemplate.elf has a LOAD segment with RWX permissions
 Finished building target: RMTemplate.elf
  
 arm-none-eabi-size  RMTemplate.elf 
 arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
    text	   data	    bss	    dec	    hex	filename
-  74840	    576	  23240	  98656	  18160	RMTemplate.elf
+  69876	    612	  23728	  94216	  17008	RMTemplate.elf
 Finished building: default.size.stdout
  
 Finished building: RMTemplate.list
  
 
-19:12:39 Build Finished. 0 errors, 13 warnings. (took 1s.926ms)
+18:16:07 Build Finished. 0 errors, 2 warnings. (took 872ms)
 

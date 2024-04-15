@@ -1,0 +1,10 @@
+22:11:11 **** Incremental Build of configuration Debug for project testTurret ****
+make -j20 all 
+arm-none-eabi-size  testTurret.elf 
+   text	   data	    bss	    dec	    hex	filename
+  66228	    564	  23504	  90296	  160b8	testTurret.elf
+Finished building: default.size.stdout
+ 
+
+22:11:11 Build Finished. 0 errors, 0 warnings. (took 278ms)
+
