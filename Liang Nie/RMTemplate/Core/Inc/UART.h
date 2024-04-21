@@ -56,50 +56,6 @@ typedef enum
 
 } uart_headers;
 
-typedef enum {
-	frame_header_offset = 7,
-
-	game_status_len = 11,
-	game_result_len = 1,
-	game_robot_HP_len = 32,
-	event_data_len = 4,
-	ext_supply_projectile_action_len = 4,
-	referee_warning_len = 3,
-	dart_info_len = 3,
-	robot_status_len = 13,
-	power_heat_data_len = 16,
-	robot_pos_len = 16,
-	buff_len = 6,
-
-
-	hurt_data_len = 1,
-	shoot_data_len = 7,
-	projectile_allowance_len = 6,
-	rfid_status_len = 4,
-	dart_client_cmd_len = 6,
-	ground_robot_position_len = 40,
-	radar_mark_data_len = 6,
-	sentry_info_len = 4,
-	radar_info_len = 1,
-	robot_interaction_data_len = 128,
-	interaction_layer_delete_len = 1,
-	interaction_figure_len = 1,
-	interaction_figure_2_len = 1,
-	interaction_figure_3_len = 1,
-	interaction_figure_4_len = 1,
-	ext_client_custom_character_len = 1,
-
-	sentry_cmd_len = 103,
-	radar_cmd_len = 32,
-	map_command_len = 15,
-	map_robot_data_len = 10,
-	map_data_len = 103,
-	custom_info_len = 30,
-	remote_control_len = 12,
-	custom_client_data_len = 8,
-
-} lengths_and_offsets_t;
-
 typedef struct {
 	uint8_t game_type;
 	uint8_t game_progress;
@@ -187,12 +143,12 @@ typedef struct {
 	uint8_t defence_buff;
 	uint8_t vulnerability_buff;
 	uint16_t attack_buff;
-} buffs_t;
+} buff_t;
 
 typedef struct {
 	uint8_t armor_id : 4;
 	uint8_t HP_deduction_reason : 4;
-} damage_data_t;
+} hurt_data_t;
 
 typedef struct {
 	uint8_t bullet_type;
@@ -229,7 +185,7 @@ typedef struct {
 	float standard_4_y;
 	float standard_5_x;
 	float standard_5_y;
-} robot_positions_t;
+} ground_robot_position_t;
 
 typedef struct {
 	uint8_t mark_hero_progress;

@@ -930,3 +930,844 @@ Finished building: default.size.stdout
  
 Finished building: RMTemplate.list
  
+15:57:48 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/croutine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/croutine.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/croutine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/croutine.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/event_groups.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/event_groups.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/event_groups.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/list.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/list.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/list.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/list.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/queue.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/queue.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/queue.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/queue.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/tasks.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/tasks.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/tasks.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/tasks.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/timers.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/timers.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/timers.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/timers.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f407ighx.d" -MT"Core/Startup/startup_stm32f407ighx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f407ighx.o" "../Core/Startup/startup_stm32f407ighx.s"
+arm-none-eabi-gcc "../Core/Src/BMI088Middleware.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BMI088Middleware.d" -MT"Core/Src/BMI088Middleware.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BMI088Middleware.o"
+arm-none-eabi-gcc "../Core/Src/BMI088driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/BMI088driver.d" -MT"Core/Src/BMI088driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BMI088driver.o"
+arm-none-eabi-gcc "../Core/Src/CAN_receive.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/CAN_receive.d" -MT"Core/Src/CAN_receive.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/CAN_receive.o"
+../Core/Src/CAN_receive.c: In function 'applyPowerlimit':
+../Core/Src/CAN_receive.c:420:15: warning: variable 'diff' set but not used [-Wunused-but-set-variable]
+  420 |         float diff = 0;
+      |               ^~~~
+arm-none-eabi-gcc "../Core/Src/UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/UART.d" -MT"Core/Src/UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/UART.o"
+arm-none-eabi-gcc "../Core/Src/bsp_can.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/bsp_can.d" -MT"Core/Src/bsp_can.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/bsp_can.o"
+arm-none-eabi-gcc "../Core/Src/bsp_imu_pwm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/bsp_imu_pwm.d" -MT"Core/Src/bsp_imu_pwm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/bsp_imu_pwm.o"
+arm-none-eabi-gcc "../Core/Src/bsp_rc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/bsp_rc.d" -MT"Core/Src/bsp_rc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/bsp_rc.o"
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc "../Core/Src/imu_temp_control_task.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/imu_temp_control_task.d" -MT"Core/Src/imu_temp_control_task.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/imu_temp_control_task.o"
+arm-none-eabi-gcc "../Core/Src/ist8310driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ist8310driver.d" -MT"Core/Src/ist8310driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ist8310driver.o"
+arm-none-eabi-gcc "../Core/Src/ist8310driver_middleware.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/ist8310driver_middleware.d" -MT"Core/Src/ist8310driver_middleware.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ist8310driver_middleware.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/pid.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pid.d" -MT"Core/Src/pid.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pid.o"
+arm-none-eabi-gcc "../Core/Src/remote_control.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/remote_control.d" -MT"Core/Src/remote_control.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/remote_control.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1204:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1204:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1204:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1204:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1204:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1099:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1099 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+../Core/Src/stm32f4xx_it.c: In function 'EXTI3_IRQHandler':
+../Core/Src/stm32f4xx_it.c:204:3: warning: implicit declaration of function 'ist8310_read_mag' [-Wimplicit-function-declaration]
+  204 |   ist8310_read_mag(magnetometerData);
+      |   ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+Finished building target: RMTemplate.elf
+ 
+arm-none-eabi-size  RMTemplate.elf 
+arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
+   text	   data	    bss	    dec	    hex	filename
+  74840	    576	  23240	  98656	  18160	RMTemplate.elf
+Finished building: default.size.stdout
+ 
+Finished building: RMTemplate.list
+ 
+16:02:38 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1204:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1204:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1204:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1204:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1204:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1454:126: error: 'leftdial' undeclared (first use in this function); did you mean 'leftDial'?
+ 1454 |                 int16_t convert[3] = { (int)(gyroPosition[0]*9.549), (int)(gyroPosition[1]*(9.549)), (int)((gyroPosition[2]+(leftdial*0.01f))*(-230))};
+      |                                                                                                                              ^~~~~~~~
+      |                                                                                                                              leftDial
+../Core/Src/main.c:1454:126: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:1099:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1099 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+make: *** [Core/Src/subdir.mk:73: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:03:08 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1204:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1204:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1204:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1204:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1204:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1454:133: error: 'leftdial' undeclared (first use in this function); did you mean 'leftDial'?
+ 1454 |                 int16_t convert[3] = { (int)(gyroPosition[0]*9.549), (int)(gyroPosition[1]*(9.549)), (int)((gyroPosition[2]+((float)leftdial*0.01))*(-230))};
+      |                                                                                                                                     ^~~~~~~~
+      |                                                                                                                                     leftDial
+../Core/Src/main.c:1454:133: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:1099:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1099 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+make: *** [Core/Src/subdir.mk:73: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:03:29 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1204:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1204:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1204:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1204:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1204:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1099:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1099 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+Finished building target: RMTemplate.elf
+ 
+arm-none-eabi-size  RMTemplate.elf 
+arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
+   text	   data	    bss	    dec	    hex	filename
+  74920	    576	  23240	  98736	  181b0	RMTemplate.elf
+Finished building: default.size.stdout
+ 
+Finished building: RMTemplate.list
+ 
+16:04:45 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1204:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1204:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1204:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1204:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1204 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1204:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1204:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1099:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1099 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+Finished building target: RMTemplate.elf
+ 
+arm-none-eabi-size  RMTemplate.elf 
+arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
+   text	   data	    bss	    dec	    hex	filename
+  74920	    576	  23240	  98736	  181b0	RMTemplate.elf
+Finished building: default.size.stdout
+ 
+Finished building: RMTemplate.list
+ 
+16:16:07 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1206:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1206:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1206:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1206:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1206:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1478:17: warning: statement with no effect [-Wunused-value]
+ 1478 |                 rotationCompStab
+      |                 ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1478:33: error: expected ';' before 'int16_t'
+ 1478 |                 rotationCompStab
+      |                                 ^
+      |                                 ;
+......
+ 1492 |                 int16_t DiffOfTurret = rcVal2-pivoter;
+      |                 ~~~~~~~          
+../Core/Src/main.c:1517:122: error: 'DiffOfTurret' undeclared (first use in this function)
+ 1517 |                                 setGM6020voltageRPM(7, positionPIDByMe(&prevDiff2, &isNegativeRegion2, &previousRegion2, DiffOfTurret, &sumI2, kPr, kIr, kDr), DONUTMOTOR);
+      |                                                                                                                          ^~~~~~~~~~~~
+../Core/Src/main.c:1517:122: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:1101:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1101 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1052:17: warning: variable 'rcVal2' set but not used [-Wunused-but-set-variable]
+ 1052 |         int16_t rcVal2 = 0;
+      |                 ^~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+make: *** [Core/Src/subdir.mk:73: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+16:16:15 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1206:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1206:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1206:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1206:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1206:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1101:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1101 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1078:17: warning: unused variable 'rotationCompStab' [-Wunused-variable]
+ 1078 |         int16_t rotationCompStab = 0;
+      |                 ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+Finished building target: RMTemplate.elf
+ 
+arm-none-eabi-size  RMTemplate.elf 
+arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
+   text	   data	    bss	    dec	    hex	filename
+  75000	    576	  23240	  98816	  18200	RMTemplate.elf
+Finished building: default.size.stdout
+ 
+Finished building: RMTemplate.list
+ 
+16:18:54 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1206:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1206:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1206:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1206:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1206:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1101:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1101 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1078:17: warning: unused variable 'rotationCompStab' [-Wunused-variable]
+ 1078 |         int16_t rotationCompStab = 0;
+      |                 ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+Finished building target: RMTemplate.elf
+ 
+arm-none-eabi-size  RMTemplate.elf 
+arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
+   text	   data	    bss	    dec	    hex	filename
+  75000	    576	  23240	  98816	  18200	RMTemplate.elf
+Finished building: default.size.stdout
+ 
+Finished building: RMTemplate.list
+ 
+16:21:26 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1206:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1206:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1206:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1206:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1206:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1101:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1101 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+Finished building target: RMTemplate.elf
+ 
+arm-none-eabi-size  RMTemplate.elf 
+arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
+   text	   data	    bss	    dec	    hex	filename
+  75048	    576	  23240	  98864	  18230	RMTemplate.elf
+Finished building: default.size.stdout
+ 
+Finished building: RMTemplate.list
+ 
+16:23:08 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1206:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1206:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1206:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1206:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1206:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1101:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1101 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+Finished building target: RMTemplate.elf
+ 
+arm-none-eabi-size  RMTemplate.elf 
+arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
+   text	   data	    bss	    dec	    hex	filename
+  75064	    576	  23240	  98880	  18240	RMTemplate.elf
+Finished building: default.size.stdout
+ 
+Finished building: RMTemplate.list
+ 
+16:24:18 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1206:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1206:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1206:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1206:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1206:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1101:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1101 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+Finished building target: RMTemplate.elf
+ 
+arm-none-eabi-size  RMTemplate.elf 
+arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
+   text	   data	    bss	    dec	    hex	filename
+  75096	    576	  23240	  98912	  18260	RMTemplate.elf
+Finished building: default.size.stdout
+ 
+Finished building: RMTemplate.list
+ 
+16:31:16 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1206:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1206:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1206:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1206:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1206:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1101:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1101 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+Finished building target: RMTemplate.elf
+ 
+arm-none-eabi-size  RMTemplate.elf 
+arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
+   text	   data	    bss	    dec	    hex	filename
+  75080	    576	  23240	  98896	  18250	RMTemplate.elf
+Finished building: default.size.stdout
+ 
+Finished building: RMTemplate.list
+ 
+16:35:05 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1206:55: warning: implicit declaration of function 'cos' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:37:1: note: include '<math.h>' or provide a declaration of 'cos'
+   36 | #include "ist8310driver.h"
+  +++ |+#include <math.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c:1206:55: warning: incompatible implicit declaration of built-in function 'cos' [-Wbuiltin-declaration-mismatch]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                       ^~~
+../Core/Src/main.c:1206:55: note: include '<math.h>' or provide a declaration of 'cos'
+../Core/Src/main.c:1206:77: warning: implicit declaration of function 'sin' [-Wimplicit-function-declaration]
+ 1206 |                         xJoystickDirection = rcRPM[2]*cos(angle) - rcRPM[3]*sin(angle);
+      |                                                                             ^~~
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1206:77: warning: incompatible implicit declaration of built-in function 'sin' [-Wbuiltin-declaration-mismatch]
+../Core/Src/main.c:1206:77: note: include '<math.h>' or provide a declaration of 'sin'
+../Core/Src/main.c:1101:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1101 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1075:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1075 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1037 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1036:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1036 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1028:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1028 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1020:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1020 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1007:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1007 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+Finished building target: RMTemplate.elf
+ 
+arm-none-eabi-size  RMTemplate.elf 
+arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
+   text	   data	    bss	    dec	    hex	filename
+  75080	    576	  23240	  98896	  18250	RMTemplate.elf
+Finished building: default.size.stdout
+ 
+Finished building: RMTemplate.list
+ 
+21:49:38 **** Incremental Build of configuration Debug for project RMTemplate ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1102:23: warning: unused variable 'rotationScalar' [-Wunused-variable]
+ 1102 |                 float rotationScalar = -540; //-540
+      |                       ^~~~~~~~~~~~~~
+../Core/Src/main.c:1076:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
+ 1076 |         int8_t beepingInProgress = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1038:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
+ 1038 |         int16_t prevDiff4 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1037:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
+ 1037 |         int16_t prevDiff3 = 0;
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1030:16: warning: variable 'isNegativeRegion4' set but not used [-Wunused-but-set-variable]
+ 1030 |         int8_t isNegativeRegion4 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1029:16: warning: variable 'isNegativeRegion3' set but not used [-Wunused-but-set-variable]
+ 1029 |         int8_t isNegativeRegion3 = 0;
+      |                ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1021:16: warning: unused variable 'shot1Round' [-Wunused-variable]
+ 1021 |         int8_t shot1Round = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1008:17: warning: variable 'rcPitch' set but not used [-Wunused-but-set-variable]
+ 1008 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "RMTemplate.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplate/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplate.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplate.elf has a LOAD segment with RWX permissions
+Finished building target: RMTemplate.elf
+ 
+arm-none-eabi-size  RMTemplate.elf 
+arm-none-eabi-objdump -h -S RMTemplate.elf  > "RMTemplate.list"
+   text	   data	    bss	    dec	    hex	filename
+  75080	    576	  23240	  98896	  18250	RMTemplate.elf
+Finished building: default.size.stdout
+ 
+Finished building: RMTemplate.list
+ 

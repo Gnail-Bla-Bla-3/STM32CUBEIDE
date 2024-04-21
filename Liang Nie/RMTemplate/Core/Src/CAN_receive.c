@@ -223,7 +223,6 @@ void set_M3508_current(int8_t motorID, int16_t setCurrent) {
 		case (7):
 		case (8): {             // is group 2?
 			CAN2_cmd_motors(CAN_GROUP2_ID, motorCtrlVal[4], motorCtrlVal[5], motorCtrlVal[6], motorCtrlVal[7]);
-			// usart_printf("%d\r\n", 20);
 		}
 		default: {
 	        break;
