@@ -6,6 +6,7 @@
  */
 #include "pwm.h"
 #include "main.h"
+
 // #include "stm32f4xx_hal_tim.h"
 
 TIM_HandleTypeDef *tim1 = NULL;
@@ -60,16 +61,22 @@ int32_t calculateOutputPeriodToGetFrequency (TypesThatUsePWM_t Type, int16_t des
 }
 
 uint32_t safeOutputPeriodValueCalculator(int32_t maxVal, float ratioVal) {
-	// int32_t val = (int32_t)((maxVal)*ratioVal);
-	uint32_t val = 500;
+	// float val = (maxVal);
+	// uint32_t val = maxVal;
+	// uint32_t val = 500;
 
-	if (val > maxVal) {
-		val = maxVal;
-	} else if (val < 1) {
-		val = 1;
+	uint32_t val1 = 500;// maxVal;// (uint32_t)val;
+
+	if (val1 > maxVal) {
+		val1 = maxVal;
+	} else if (val1 < 1) {
+		val1 = 1;
 	}
-	// val--;
-	return val;
+
+	val1 = val1-1;
+	usart_printf("%d\r\n",val1);
+	return val1;
+
 }
 
 uint32_t calculateOutputPeriodValue (TypesThatUsePWM_t Type, msOrFullRange microsecondOrFullrange, int8_t position, float val) {

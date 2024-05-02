@@ -1,8 +1,8 @@
-../Core/Src/pwm.c:34:6:PWMInit	1
-../Core/Src/pwm.c:48:9:calculateOutputPeriodToGetFrequency	5
-../Core/Src/pwm.c:62:10:safeOutputPeriodValueCalculator	3
-../Core/Src/pwm.c:75:10:calculateOutputPeriodValue	8
-../Core/Src/pwm.c:108:6:PWMInitialize	16
-../Core/Src/pwm.c:164:6:initializePeriod	7
-../Core/Src/pwm.c:185:6:PWMOutput	5
-../Core/Src/pwm.c:208:6:PWMTimerStarter	24
+../Core/Src/pwm.c:35:6:PWMInit	1
+../Core/Src/pwm.c:49:9:calculateOutputPeriodToGetFrequency	5
+../Core/Src/pwm.c:63:10:safeOutputPeriodValueCalculator	3
+../Core/Src/pwm.c:82:10:calculateOutputPeriodValue	8
+../Core/Src/pwm.c:115:6:PWMInitialize	16
+../Core/Src/pwm.c:171:6:initializePeriod	7
+../Core/Src/pwm.c:192:6:PWMOutput	5
+../Core/Src/pwm.c:215:6:PWMTimerStarter	24
