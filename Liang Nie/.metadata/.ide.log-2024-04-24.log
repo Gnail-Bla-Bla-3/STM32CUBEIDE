@@ -1,0 +1,352 @@
+2024-04-29 15:20:31,658 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:20:31,667 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:20:31,668 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:20:31,668 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:20:31,943 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:20:31,943 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:20:31,944 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:20:31,944 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:20:32,202 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:20:32,202 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:20:32,202 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:20:32,202 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:22:17,034 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-29 15:22:22,008 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2024-04-29 15:22:37,226 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 475880128 Bytes (746586112)
+2024-04-29 15:22:39,010 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 503669440 Bytes (746586112)
+2024-04-29 15:22:39,547 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 591911024 Bytes (746586112)
+2024-04-29 15:22:41,562 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SPI
+2024-04-29 15:22:41,562 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: FREERTOS
+2024-04-29 15:22:41,562 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-04-29 15:22:41,562 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-04-29 15:22:41,562 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: CAN
+2024-04-29 15:22:41,562 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: CAN
+2024-04-29 15:22:41,562 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-04-29 15:22:41,562 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: SYS
+2024-04-29 15:22:41,563 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: RCC
+2024-04-29 15:22:41,563 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: I2C
+2024-04-29 15:22:41,563 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: NVIC
+2024-04-29 15:22:41,563 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-04-29 15:22:41,563 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-04-29 15:22:41,563 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: USART
+2024-04-29 15:22:41,563 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-04-29 15:22:41,563 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: DMA
+2024-04-29 15:22:41,563 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: TIM1_8
+2024-04-29 15:22:41,564 [INFO] BlockDiagram:2759 - set Specific Code input for plugin: GPIO
+2024-04-29 15:22:41,566 [INFO] CodeGenerator:807 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.11.0.202403141607//db/
+2024-04-29 15:22:41,578 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:22:41,579 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:22:41,655 [INFO] Argument:325 - Argument : hdmavalue: null
+2024-04-29 15:22:41,655 [INFO] Argument:327 - 	 sub Args: 
+2024-04-29 15:22:41,655 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream7
+2024-04-29 15:22:41,655 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream7
+2024-04-29 15:22:41,655 [INFO] Argument:325 - Argument : Initvalue: null
+2024-04-29 15:22:41,655 [INFO] Argument:327 - 	 sub Args: 
+2024-04-29 15:22:41,655 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_4
+2024-04-29 15:22:41,655 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_4
+2024-04-29 15:22:41,655 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2024-04-29 15:22:41,655 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2024-04-29 15:22:41,655 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-04-29 15:22:41,655 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-04-29 15:22:41,655 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-04-29 15:22:41,655 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-04-29 15:22:41,656 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2024-04-29 15:22:41,656 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2024-04-29 15:22:41,656 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2024-04-29 15:22:41,656 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2024-04-29 15:22:41,656 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2024-04-29 15:22:41,656 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2024-04-29 15:22:41,656 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-04-29 15:22:41,656 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-04-29 15:22:41,656 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-04-29 15:22:41,656 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-04-29 15:22:41,656 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2024-04-29 15:22:41,656 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2024-04-29 15:22:41,656 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2024-04-29 15:22:41,656 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2024-04-29 15:22:41,656 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2024-04-29 15:22:41,656 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2024-04-29 15:22:41,656 [INFO] Argument:325 - Argument : Lockvalue: null
+2024-04-29 15:22:41,656 [INFO] Argument:335 - Argument : Lockvalue: null
+2024-04-29 15:22:41,656 [INFO] Argument:325 - Argument : Statevalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:335 - Argument : Statevalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:325 - Argument : Parentvalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:335 - Argument : Parentvalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2024-04-29 15:22:41,657 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2024-04-29 15:22:41,658 [INFO] Argument:325 - Argument : hdmavalue: null
+2024-04-29 15:22:41,658 [INFO] Argument:327 - 	 sub Args: 
+2024-04-29 15:22:41,658 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream2
+2024-04-29 15:22:41,658 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream2
+2024-04-29 15:22:41,658 [INFO] Argument:325 - Argument : Initvalue: null
+2024-04-29 15:22:41,658 [INFO] Argument:327 - 	 sub Args: 
+2024-04-29 15:22:41,658 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_4
+2024-04-29 15:22:41,658 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_4
+2024-04-29 15:22:41,658 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : Lockvalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : Lockvalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : Statevalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : Statevalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : Parentvalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : Parentvalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2024-04-29 15:22:41,659 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2024-04-29 15:22:41,660 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2024-04-29 15:22:41,660 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2024-04-29 15:22:41,660 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2024-04-29 15:22:41,660 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2024-04-29 15:22:41,660 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2024-04-29 15:22:41,660 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2024-04-29 15:22:41,660 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2024-04-29 15:22:41,660 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2024-04-29 15:22:41,663 [INFO] Argument:325 - Argument : hdmavalue: null
+2024-04-29 15:22:41,663 [INFO] Argument:327 - 	 sub Args: 
+2024-04-29 15:22:41,663 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream1
+2024-04-29 15:22:41,663 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream1
+2024-04-29 15:22:41,663 [INFO] Argument:325 - Argument : Initvalue: null
+2024-04-29 15:22:41,663 [INFO] Argument:327 - 	 sub Args: 
+2024-04-29 15:22:41,663 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_4
+2024-04-29 15:22:41,663 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_4
+2024-04-29 15:22:41,663 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-04-29 15:22:41,663 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-04-29 15:22:41,663 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : Modevalue: DMA_CIRCULAR
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : Modevalue: DMA_CIRCULAR
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : Lockvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : Lockvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : Statevalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : Statevalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : Parentvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : Parentvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2024-04-29 15:22:41,664 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2024-04-29 15:22:41,666 [INFO] Argument:325 - Argument : hdmavalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:327 - 	 sub Args: 
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream1
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream1
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : Initvalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:327 - 	 sub Args: 
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_5
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_5
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : Lockvalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : Lockvalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : Statevalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:335 - Argument : Statevalue: null
+2024-04-29 15:22:41,667 [INFO] Argument:325 - Argument : Parentvalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:335 - Argument : Parentvalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:325 - Argument : hdmavalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:327 - 	 sub Args: 
+2024-04-29 15:22:41,668 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Stream6
+2024-04-29 15:22:41,668 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Stream6
+2024-04-29 15:22:41,668 [INFO] Argument:325 - Argument : Initvalue: null
+2024-04-29 15:22:41,668 [INFO] Argument:327 - 	 sub Args: 
+2024-04-29 15:22:41,668 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_5
+2024-04-29 15:22:41,668 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_5
+2024-04-29 15:22:41,668 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2024-04-29 15:22:41,668 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2024-04-29 15:22:41,668 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-04-29 15:22:41,668 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : Lockvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : Lockvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : Statevalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : Statevalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : Parentvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : Parentvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2024-04-29 15:22:41,669 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2024-04-29 15:22:41,784 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/license.tmp_save
+2024-04-29 15:22:41,900 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/license.tmp
+2024-04-29 15:22:41,945 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/gpio.tmp_save
+2024-04-29 15:22:42,022 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/gpio.tmp
+2024-04-29 15:22:43,857 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-04-29 15:22:43,861 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_inc.tmp_save
+2024-04-29 15:22:43,911 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_inc.tmp
+2024-04-29 15:22:43,914 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_kernelInit.tmp_save
+2024-04-29 15:22:43,963 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_kernelInit.tmp
+2024-04-29 15:22:43,965 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_kernelStart.tmp_save
+2024-04-29 15:22:44,014 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_kernelStart.tmp
+2024-04-29 15:22:44,017 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_typedefs.tmp_save
+2024-04-29 15:22:44,066 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_typedefs.tmp
+2024-04-29 15:22:44,069 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_vars.tmp_save
+2024-04-29 15:22:44,120 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_vars.tmp
+2024-04-29 15:22:44,122 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_pfp.tmp_save
+2024-04-29 15:22:44,171 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_pfp.tmp
+2024-04-29 15:22:44,173 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_obj_creat.tmp_save
+2024-04-29 15:22:44,223 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_obj_creat.tmp
+2024-04-29 15:22:44,225 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_default_thread.tmp_save
+2024-04-29 15:22:44,273 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_default_thread.tmp
+2024-04-29 15:22:44,276 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_threads.tmp_save
+2024-04-29 15:22:44,324 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_threads.tmp
+2024-04-29 15:22:44,332 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2024-04-29 15:22:44,336 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_inc.tmp_save
+2024-04-29 15:22:44,385 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_inc.tmp
+2024-04-29 15:22:44,387 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_kernelInit.tmp_save
+2024-04-29 15:22:44,432 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_kernelInit.tmp
+2024-04-29 15:22:44,435 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_kernelStart.tmp_save
+2024-04-29 15:22:44,480 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_kernelStart.tmp
+2024-04-29 15:22:44,482 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_typedefs.tmp_save
+2024-04-29 15:22:44,535 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_typedefs.tmp
+2024-04-29 15:22:44,537 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_vars.tmp_save
+2024-04-29 15:22:44,586 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_vars.tmp
+2024-04-29 15:22:44,588 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_pfp.tmp_save
+2024-04-29 15:22:44,637 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_pfp.tmp
+2024-04-29 15:22:44,638 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_obj_creat.tmp_save
+2024-04-29 15:22:44,688 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_obj_creat.tmp
+2024-04-29 15:22:44,691 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_default_thread.tmp_save
+2024-04-29 15:22:44,738 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_default_thread.tmp
+2024-04-29 15:22:44,739 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_threads.tmp_save
+2024-04-29 15:22:44,786 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/rtos_threads.tmp
+2024-04-29 15:22:44,789 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Inc/FreeRTOSConfig.h_save
+2024-04-29 15:22:44,858 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Inc/FreeRTOSConfig.h
+2024-04-29 15:22:44,861 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Src/freertos.c_save
+2024-04-29 15:22:44,936 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Src/freertos.c
+2024-04-29 15:22:45,044 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/dma.tmp_save
+2024-04-29 15:22:45,095 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/dma.tmp
+2024-04-29 15:22:45,096 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/dma_GV.tmp_save
+2024-04-29 15:22:45,142 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/dma_GV.tmp
+2024-04-29 15:22:45,159 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Src/stm32f4xx_it.c_save
+2024-04-29 15:22:45,295 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Src/stm32f4xx_it.c
+2024-04-29 15:22:45,297 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Inc/stm32f4xx_it.h_save
+2024-04-29 15:22:45,352 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Inc/stm32f4xx_it.h
+2024-04-29 15:22:45,367 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Src/stm32f4xx_hal_msp.c_save
+2024-04-29 15:22:45,466 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Src/stm32f4xx_hal_msp.c
+2024-04-29 15:22:45,469 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/system.tmp_save
+2024-04-29 15:22:45,519 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/MXTmpFiles/system.tmp
+2024-04-29 15:22:45,525 [INFO] CodeEngine:311 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Inc/stm32f4xx_hal_conf.h_save
+2024-04-29 15:22:45,581 [INFO] CodeEngine:335 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Inc/stm32f4xx_hal_conf.h
+2024-04-29 15:22:45,621 [WARN] IPConfigManager:3513 - IP not found : TIM
+2024-04-29 15:22:45,622 [WARN] CodeGenerator:3951 - IP not found : null
+2024-04-29 15:22:45,626 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Inc/main.h_save
+2024-04-29 15:22:45,693 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Inc/main.h
+2024-04-29 15:22:45,697 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Src/main.c_save
+2024-04-29 15:22:45,902 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/Core/Src/main.c
+2024-04-29 15:22:46,537 [INFO] ProjectBuilder:3163 - Time for Copy HAL[1] : 386mS.
+2024-04-29 15:22:46,545 [INFO] ProjectBuilder:4736 - Project Generator version: 4.3.0-B58
+2024-04-29 15:22:46,662 [INFO] ConfigFileManager:1503 - The Die is : DIE413
+2024-04-29 15:22:47,847 [INFO] ProjectBuilder:5002 - Time for Generating toolchain IDE Files: 1303mS.
+2024-04-29 15:22:47,847 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-04-29 15:22:47,851 [INFO] ProjectBuilder:3034 - Time for Copy CMSIS : 0mS.
+2024-04-29 15:26:58,958 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:26:58,960 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:26:58,960 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:26:58,960 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:26:59,093 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:26:59,093 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:26:59,093 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:26:59,093 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:26:59,244 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:26:59,244 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2024-04-29 15:26:59,244 [WARN] IP:2120 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2024-04-29 15:26:59,244 [WARN] IP:2120 - Analog_Filter not found: check if there is a RefParameter without a condition.
