@@ -170,6 +170,7 @@ void TaskTurret(void *argument);
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -255,7 +256,9 @@ int main(void)
 
   /* Start scheduler */
   osKernelStart();
+
   /* We should never get here as control is now taken by the scheduler */
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -1551,7 +1554,10 @@ void TaskChassis(void *argument)
 		//txbuf = *((float*)&power_heat_data.chassis_power);
 		//usart_printf("%f %d\r\n", calcChassisPower, 30);
 
-		osDelay(5);
+		uint8_t txDataBuffer = 0xff;
+		HAL_UART_Transmit(&huart1, txDataBuffer,8,0);
+
+		osDelay(5000);
     }
   /* USER CODE END TaskChassis */
 }

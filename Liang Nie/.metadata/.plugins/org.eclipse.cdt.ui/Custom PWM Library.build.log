@@ -1,58 +1,10 @@
-12:49:30 **** Incremental Build of configuration Debug for project Custom PWM Library ****
+21:03:27 **** Incremental Build of configuration Debug for project Custom PWM Library ****
 make -j3 all 
-arm-none-eabi-gcc "../Core/Src/pwm.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/pwm.d" -MT"Core/Src/pwm.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/pwm.o"
-../Core/Src/pwm.c: In function 'safeOutputPeriodValueCalculator':
-../Core/Src/pwm.c:77:9: warning: implicit declaration of function 'usart_printf' [-Wimplicit-function-declaration]
-   77 |         usart_printf("%d\r\n",val1);
-      |         ^~~~~~~~~~~~
-../Core/Src/pwm.c: In function 'PWMInit':
-../Core/Src/pwm.c:39:14: warning: storing the address of local variable 'htim8' in 'tim8' [-Wdangling-pointer=]
-   39 |         tim8 = &htim8;
-      |         ~~~~~^~~~~~~~
-../Core/Src/pwm.c:35:108: note: 'htim8' declared here
-   35 | void PWMInit (TIM_HandleTypeDef htim1, TIM_HandleTypeDef htim4, TIM_HandleTypeDef htim5, TIM_HandleTypeDef htim8) {
-      |                                                                                          ~~~~~~~~~~~~~~~~~~^~~~~
-../Core/Src/pwm.c:15:20: note: 'tim8' declared here
-   15 | TIM_HandleTypeDef *tim8 = NULL;
-      |                    ^~~~
-../Core/Src/pwm.c:38:14: warning: storing the address of local variable 'htim5' in 'tim5' [-Wdangling-pointer=]
-   38 |         tim5 = &htim5;
-      |         ~~~~~^~~~~~~~
-../Core/Src/pwm.c:35:83: note: 'htim5' declared here
-   35 | void PWMInit (TIM_HandleTypeDef htim1, TIM_HandleTypeDef htim4, TIM_HandleTypeDef htim5, TIM_HandleTypeDef htim8) {
-      |                                                                 ~~~~~~~~~~~~~~~~~~^~~~~
-../Core/Src/pwm.c:14:20: note: 'tim5' declared here
-   14 | TIM_HandleTypeDef *tim5 = NULL;
-      |                    ^~~~
-../Core/Src/pwm.c:37:14: warning: storing the address of local variable 'htim4' in 'tim4' [-Wdangling-pointer=]
-   37 |         tim4 = &htim4;
-      |         ~~~~~^~~~~~~~
-../Core/Src/pwm.c:35:58: note: 'htim4' declared here
-   35 | void PWMInit (TIM_HandleTypeDef htim1, TIM_HandleTypeDef htim4, TIM_HandleTypeDef htim5, TIM_HandleTypeDef htim8) {
-      |                                        ~~~~~~~~~~~~~~~~~~^~~~~
-../Core/Src/pwm.c:13:20: note: 'tim4' declared here
-   13 | TIM_HandleTypeDef *tim4 = NULL;
-      |                    ^~~~
-../Core/Src/pwm.c:36:14: warning: storing the address of local variable 'htim1' in 'tim1' [-Wdangling-pointer=]
-   36 |         tim1 = &htim1;
-      |         ~~~~~^~~~~~~~
-../Core/Src/pwm.c:35:33: note: 'htim1' declared here
-   35 | void PWMInit (TIM_HandleTypeDef htim1, TIM_HandleTypeDef htim4, TIM_HandleTypeDef htim5, TIM_HandleTypeDef htim8) {
-      |               ~~~~~~~~~~~~~~~~~~^~~~~
-../Core/Src/pwm.c:12:20: note: 'tim1' declared here
-   12 | TIM_HandleTypeDef *tim1 = NULL;
-      |                    ^~~~
-arm-none-eabi-gcc -o "Custom PWM Library.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Custom PWM Library.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Custom PWM Library.elf
- 
 arm-none-eabi-size  Custom\ PWM\ Library.elf 
-arm-none-eabi-objdump -h -S Custom\ PWM\ Library.elf  > "Custom PWM Library.list"
    text	   data	    bss	    dec	    hex	filename
-  42396	     96	  22840	  65332	   ff34	Custom PWM Library.elf
+  41024	     96	  23008	  64128	   fa80	Custom PWM Library.elf
 Finished building: default.size.stdout
  
-Finished building: Custom PWM Library.list
- 
 
-12:49:31 Build Finished. 0 errors, 5 warnings. (took 1s.515ms)
+21:03:27 Build Finished. 0 errors, 0 warnings. (took 299ms)
 

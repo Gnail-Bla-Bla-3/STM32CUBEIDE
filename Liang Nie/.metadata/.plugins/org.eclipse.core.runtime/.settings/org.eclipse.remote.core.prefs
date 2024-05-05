@@ -1,0 +1,6 @@
+connections/org.eclipse.remote.serial.core.connectionType/Top+Right/serial.baudRate=11
+connections/org.eclipse.remote.serial.core.connectionType/Top+Right/serial.byteSize=3
+connections/org.eclipse.remote.serial.core.connectionType/Top+Right/serial.parity=0
+connections/org.eclipse.remote.serial.core.connectionType/Top+Right/serial.portName=/dev/cu.usbserial-0001
+connections/org.eclipse.remote.serial.core.connectionType/Top+Right/serial.stopBits=0
+eclipse.preferences.version=1

@@ -14,6 +14,7 @@ struct individualTracker {
 	int32_t subPeriod;
 	int32_t period;
 };
+
 /*
 struct {
 	int On;
@@ -34,18 +35,23 @@ typedef enum {
 
 void PWMInitialize(TypesThatUsePWM_t Type, msOrFullRange microsecondOrFullrange, int8_t position, float val);
 
-void PWMInit (TIM_HandleTypeDef htim1, TIM_HandleTypeDef htim4, TIM_HandleTypeDef htim5, TIM_HandleTypeDef htim8);
+// void PWMInit (TIM_HandleTypeDef htim1, TIM_HandleTypeDef htim4, TIM_HandleTypeDef htim5, TIM_HandleTypeDef htim8);
 
-void initializePeriod (TypesThatUsePWM_t Type, int8_t Position, int16_t desiredFrequency);
+void PWMInit (TIM_HandleTypeDef *t1, TIM_HandleTypeDef *t4, TIM_HandleTypeDef *t5, TIM_HandleTypeDef *t8);
+
+void initializePeriod (TypesThatUsePWM_t Type, int8_t Position, uint32_t desiredFrequency);
 
 uint32_t calculateOutputPeriodValue (TypesThatUsePWM_t Type, msOrFullRange microsecondOrFullrange, int8_t position, float val);
 
 uint32_t safeOutputPeriodValueCalculator(int32_t maxVal, float ratioVal);
 
-void PWMOutput(TypesThatUsePWM_t Type, int8_t Position, int16_t desiredFrequency);
+void PWMOutput(TypesThatUsePWM_t Type, int8_t Position, uint32_t desiredFrequency);
 
 void PWMTimerStarter();
 
+void mainPrint();
+
+void PWMOff(TypesThatUsePWM_t Type, int8_t Position);
 
 /*
 typedef enum {
