@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Custom PWM Library/Core/Src/songs&apos; to &apos;songs.c&apos;" description="Rename resource &apos;songs&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/songs" name="songs.c" stamp="1714889483875" updateReferences="true"/>
+</session>

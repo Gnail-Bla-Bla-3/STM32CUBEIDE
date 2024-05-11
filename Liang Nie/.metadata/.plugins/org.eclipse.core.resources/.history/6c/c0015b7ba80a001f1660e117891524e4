@@ -1,0 +1,21 @@
+/*
+ * songs.h
+ *
+ *  Created on: May 4, 2024
+ *      Author: Liang Nie
+ */
+
+#ifndef INC_SONGS_H_
+#define INC_SONGS_H_
+#include "main.h"
+
+struct SongFormat {
+	uint16_t length;
+	uint32_t frequencys [];
+	uint8_t notes[];
+	uint8_t lengths[];
+};
+
+
+
+#endif /* INC_SONGS_H_ */

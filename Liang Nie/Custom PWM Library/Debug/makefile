@@ -64,8 +64,8 @@ all: main-build
 main-build: Custom\ PWM\ Library.elf secondary-outputs
 
 # Tool invocations
-Custom\ PWM\ Library.elf Custom\ PWM\ Library.map: $(OBJS) $(USER_OBJS) /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang\ Nie/Custom\ PWM\ Library/STM32F407IGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Custom PWM Library.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/Custom PWM Library/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Custom PWM Library.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Custom\ PWM\ Library.elf Custom\ PWM\ Library.map: $(OBJS) $(USER_OBJS) C:\Users\Liang\ Nie\Documents\GitHub\STM32CUBEIDE\Liang\ Nie\Custom\ PWM\ Library\STM32F407IGHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Custom PWM Library.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Liang Nie\Documents\GitHub\STM32CUBEIDE\Liang Nie\Custom PWM Library\STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Custom PWM Library.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

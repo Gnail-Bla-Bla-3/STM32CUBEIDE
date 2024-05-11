@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "pwm.h"
 #include "UART.h"
+#include "songs.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -1010,16 +1011,20 @@ void TaskChassis(void *argument)
   int16_t iVal2 = negativeComponent*-1;
 
   int16_t MotorCycle = 400;
-
+  /*
   uint16_t timeTracker = 0;
   uint16_t noteTracker = 0;
 
   uint32_t frequenciesAtA4[11] = {440, 494, 523, 587, 659, 698, 784, 880, 988, 1047, 10};
   uint8_t NeverGoingToGiveYouUpNotes[61] = {2, 3, 5, 3, 7, 10, 7, 6, 2, 3, 5, 3, 6, 10, 6, 5, 4, 3, 2, 3, 5, 3, 5, 6, 4, 3, 2, 10, 2, 6, 5, 2, 3, 5, 3, 7, 10, 7, 6, 2, 3, 5, 3, 9, 4, 5, 4, 3, 2, 3, 5, 3, 5, 6, 4, 3, 2, 10, 2, 6, 5};
   uint8_t NeverGoingToGiveYouUpRests[61] = {10, 10, 10, 10, 29, 1, 30, 60, 10, 10, 10, 10, 29, 1, 30, 30, 10, 20, 10, 10, 10, 10, 40, 20, 30, 10, 39, 1, 20, 40, 80, 10, 10, 10, 10, 29, 1, 30, 60, 10, 10, 10, 10, 40, 20, 30, 10, 20, 10, 10, 10, 10, 40, 20, 30, 10, 39, 1, 20, 40, 80};
+  */
   // int8_t iSwapper3 = 1;
   // int16_t buzzerVal = 0;
   // int8_t swapper = 0;
+
+  int16_t servoPosition = 1200;
+
   /*
   htim5.Init.Period = 99;
 
@@ -1028,7 +1033,7 @@ void TaskChassis(void *argument)
   // HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
   for(;;)
   {
-
+	  /*
 	if (timeTracker > NeverGoingToGiveYouUpRests[noteTracker]) {
 		noteTracker++;
 		timeTracker = 0;
@@ -1041,6 +1046,10 @@ void TaskChassis(void *argument)
 	PWMOutput(Buzzer, 1, frequenciesAtA4[NeverGoingToGiveYouUpNotes[noteTracker]]);
 
 	timeTracker++;
+	*/
+	// PWMOutput(Buzzer, 1, NeverGonnaGiveYouUpNotes());
+
+	  PWMOutput(Buzzer, 1, CaliforniaGirlsNotes());
 
 	if (iVal > speedOfPulse) {
 		iVal = speedOfPulse-1;
@@ -1112,15 +1121,18 @@ void TaskChassis(void *argument)
 	} else if (MotorCycle < 950) {
 		MotorCycle = 950;
 	}
+
+
 	if (KEY == 1) {
 		MotorCycle = MotorCycle - 6;
-
+		servoPosition = 1000;
 		// PWMOff(Buzzer, 1);
 
 	} else {
+		initializeCaliforniaGirls();
 		MotorCycle = MotorCycle + 6;
-		PWMOutput(Buzzer, 1, 1000);
-
+		servoPosition = 2500;
+		// PWMOutput(Buzzer, 1, 1000);
 	}
 	// usart_printf("%d %d\r\n", KEY, MotorCycle);
 	// usart_printf("%d %d %d  0\r\n", iVal, iVal1, iVal2);
@@ -1130,7 +1142,9 @@ void TaskChassis(void *argument)
 	PWMOutput(LED, 2, 500);
 	PWMOutput(LED, 1, 500);
 	//(htim1).Init.Period = 999;
-	PWMOutput(Motor, 5, 500);
+	// PWMOutput(Motor, 5, 500);
+
+	PWMOutput(Motor, 1, 50);
 
 	//PWMOutput(Buzzer, 1, 90);
 	// usart_printf("beanis7\r\n");
@@ -1141,8 +1155,9 @@ void TaskChassis(void *argument)
 	PWMInitialize(LED, FR, 1, realVal1);
 	// (htim1).Instance->CCR1=499;
 
-	PWMInitialize(Motor, FR, 1, 0.5);
-	PWMInitialize(Motor, MS, 5, MotorCycle);
+	// PWMInitialize(Motor, FR, 1, 0.5);
+	// PWMInitialize(Motor, MS, 5, MotorCycle);
+	PWMInitialize(Motor, MS, 1, servoPosition);
 
 	PWMInitialize(Buzzer, FR, 1, 0.5);
 
@@ -1156,9 +1171,9 @@ void TaskChassis(void *argument)
 		swapper = 1;
 	}
 	*/
-	PWMOutput(Motor, 1, 900);
-	htim1.Init.Period = 500;
-	PWMInitialize(Motor, FR, 1, 0.5);
+	// PWMOutput(Motor, 1, 900);
+	// htim1.Init.Period = 500;
+	// PWMInitialize(Motor, FR, 1, 0.5);
 	// htim4.Instance->CCR3=150;
 
     // int32_t value = calculateOutputPeriodValue (LED, FR, 2, 0.5);
