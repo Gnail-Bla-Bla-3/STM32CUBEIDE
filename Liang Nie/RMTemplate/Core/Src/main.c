@@ -35,6 +35,8 @@
 #include "bsp_imu_pwm.h"
 #include "ist8310driver.h"
 #include "math.h"
+#include "ctrl_handling.h"
+#include "pwm.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -62,8 +64,14 @@ SPI_HandleTypeDef hspi1;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim4;
+TIM_HandleTypeDef htim5;
 TIM_HandleTypeDef htim8;
 TIM_HandleTypeDef htim10;
+DMA_HandleTypeDef hdma_tim1_ch1;
+DMA_HandleTypeDef hdma_tim4_ch3;
+DMA_HandleTypeDef hdma_tim5_ch1;
+DMA_HandleTypeDef hdma_tim5_ch2;
+DMA_HandleTypeDef hdma_tim8_ch1_ch2_ch3;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart3;
@@ -129,6 +137,8 @@ extern power_heat_data_t power_heat_data;
 extern robot_status_t robot_status;
 extern b2b_motorCtrl_t b2bMotorCtrl;
 extern b2b_gyro_t b2bGyro;
+extern pc_control_t pc_control;
+extern int8_t whichPWMisOn[11];
 
 
 float calcChassisPower = 0;
@@ -150,6 +160,7 @@ static void MX_TIM8_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_TIM10_Init(void);
 static void MX_I2C3_Init(void);
+static void MX_TIM5_Init(void);
 void TaskMain(void *argument);
 void TaskChassis(void *argument);
 void imu_temp_control_task(void *argument);
@@ -205,6 +216,7 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM10_Init();
   MX_I2C3_Init();
+  MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
   can_filter_init();
   remote_control_init();
@@ -213,7 +225,7 @@ int main(void)
 
   //__HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);
   /* USER CODE END 2 */
-
+  PWMInit(&htim1, &htim4, &htim5, &htim8);
   /* Init scheduler */
   osKernelInitialize();
 
@@ -602,6 +614,63 @@ static void MX_TIM4_Init(void)
 }
 
 /**
+  * @brief TIM5 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM5_Init(void)
+{
+
+  /* USER CODE BEGIN TIM5_Init 0 */
+
+  /* USER CODE END TIM5_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM5_Init 1 */
+
+  /* USER CODE END TIM5_Init 1 */
+  htim5.Instance = TIM5;
+  htim5.Init.Prescaler = 83;
+  htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim5.Init.Period = 1999;
+  htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_PWM_Init(&htim5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim5, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim5, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_ConfigChannel(&htim5, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_ConfigChannel(&htim5, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM5_Init 2 */
+
+  /* USER CODE END TIM5_Init 2 */
+  HAL_TIM_MspPostInit(&htim5);
+
+}
+
+/**
   * @brief TIM8 Initialization Function
   * @param None
   * @retval None
@@ -833,12 +902,27 @@ static void MX_DMA_Init(void)
   /* DMA1_Stream1_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
+  /* DMA1_Stream2_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream2_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream2_IRQn);
+  /* DMA1_Stream4_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream4_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream4_IRQn);
+  /* DMA1_Stream7_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream7_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream7_IRQn);
   /* DMA2_Stream1_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream1_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream1_IRQn);
   /* DMA2_Stream2_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
+  /* DMA2_Stream3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
+  /* DMA2_Stream5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream5_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream5_IRQn);
   /* DMA2_Stream6_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream6_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream6_IRQn);
@@ -874,9 +958,6 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12|GPIO_PIN_11|GPIO_PIN_10, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
@@ -888,13 +969,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : PH12 PH11 PH10 */
-  GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_11|GPIO_PIN_10;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PG3 */
   GPIO_InitStruct.Pin = GPIO_PIN_3;
@@ -964,7 +1038,7 @@ void TaskMain(void *argument)
 {
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
-	HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, 1);
+	// HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, 1);
 	// __HAL_TIM_PRESCALER(&htim4, 2);
 	// HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
 	// HAL_TIM_Base_Start(&htim4);
@@ -977,18 +1051,30 @@ void TaskMain(void *argument)
 	if (ist8310_init()) {
 		// usart_printf("WARNING - IST8310 compass init failed \r\n");
 	}
+	// (htim5).Instance->CCR2=999;
 	// osDelay(150);
 	// __HAL_TIM_PRESCALER(&htim4, 0);
 	// osDelay(150);
 	// HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
-
 	for(;;) {
-		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, 0);
+		// HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, 0);
 		//set_motor_voltage(5, 4000);
+
+		// HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
+
+		// PWMOn(LED,1);
+		PWMOutput(LED, 1, 500);
+		PWMInitialize(LED, FR, 1, 0.9);
+		// PWMTimerStarter();
+		usart_printf("on\r\n");
 		osDelay(500);
 		//sendB2bData(CAN_b2b_A_ID, 1, 1, 1, 1);
-		HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, 1);
+		// HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, 1);
 		//set_motor_voltage(5, -4000);
+		// HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_2);
+		PWMOff(LED, 1);
+		// PWMTimerStarter();
+		usart_printf("off\r\n");
 		osDelay(500);
 		//sendB2bData(CAN_b2b_A_ID, 0, 0, 0, 0);
 		//usart_printf("ACTIVE = %d \r\n", power_heat_data.chassis_power);
@@ -1013,12 +1099,15 @@ void TaskChassis(void *argument)
   /* Infinite loop */
 
 	// Test Code
+	/*
 	HAL_TIM_Base_Start(&htim1);
 	HAL_TIM_Base_Start(&htim4);
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
 	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
 	htim4.Instance->CCR3=0;
+	*/
+
 	int8_t motorOn = 0;
 	int8_t switched = 0;
 	int8_t shot1Round = 0;
@@ -1080,6 +1169,8 @@ void TaskChassis(void *argument)
 	int8_t beeped = 1;
 
 	int16_t rotationCompStab = 0;
+	int16_t testTHing[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
 	/*
 	float rotationPositionZ = 0;
 	float rotationPositionY = 0;
@@ -1091,9 +1182,19 @@ void TaskChassis(void *argument)
 	*/
 
 	for(;;) {
+
+
 		for (int i = 0; i < 4; i++) {
 			rcRPM[i] = getRCchannel(i) * 13.645f;              // 13.645 = 469 / 187 / 660 * 3591, 660 = max reading in one direction
 		}
+		/*
+		int arrayOfMOvement[2] = {0, 0};
+		getKeyboardVelocity(arrayOfMOvement, 0.03, pc_control);
+		rcRPM[0] = 0;
+		rcRPM[1] = 0;
+		rcRPM[2] = arrayOfMOvement[0];
+		rcRPM[3] = arrayOfMOvement[1];
+		*/
 		rcPitch = getRCchannel(1) * 0.94f + 2754;
 		int16_t leftDial = getRCchannel(4);
 
@@ -1153,50 +1254,85 @@ void TaskChassis(void *argument)
 
 
 		// usart_printf("$%d %d %d %d\r\n;",customFiringModeSwitcher, startedChecking, switchedDown, counterForSwitching);
-
+		/*
+		PWMOutput(LED, 3, 500);
+		PWMOutput(Buzzer, 3, 1000);
+		PWMOff(LED, 3);
+		PWMOff(Buzzer, 3);
+		*/
+		PWMInitialize(Buzzer, 2, FR, 0.9);
+		PWMInitialize(LED, FR, 3, 0.9);
 		if (beeped == 0) {
 			switch (customFiringModeSwitcher) {
 			case 0:
 				if ((buzzLengthCounter == 0)) {
 					// HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+					/*
 					htim4.Instance->CCR3=150;
 					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 1);
+					*/
+					PWMOutput(LED, 3, 500);
+					PWMOutput(Buzzer, 3, 1000);
 				}
 				else if (buzzLengthCounter >=60) {
 					// HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
 					beeped = 1;
+					/*
 					htim4.Instance->CCR3=0;
 					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 0);
+					*/
+					PWMOff(LED, 3);
+					PWMOff(Buzzer, 3);
 				}
 				buzzLengthCounter++;
 				break;
 			case 1:
 				if (buzzLengthCounter == 0) {
 					// HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+					/*
 					htim4.Instance->CCR3=150;
 					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 1);
+					*/
+					PWMOutput(LED, 3, 500);
+					PWMOutput(Buzzer, 3, 1000);
 				} else if (buzzLengthCounter >=12) {
 					// HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
 					beeped = 1;
+					/*
 					htim4.Instance->CCR3=0;
 					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 0);
+					*/
+					PWMOff(LED, 3);
+					PWMOff(Buzzer, 3);
 				}
 				buzzLengthCounter++;
 				break;
 			case 2:
 				if ((buzzLengthCounter == 0) || (buzzLengthCounter == 30) || (buzzLengthCounter == 60)) {
 					// HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_3);
+					/*
 					htim4.Instance->CCR3=150;
 					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 1);
+					*/
+					PWMOutput(LED, 3, 500);
+					PWMOutput(Buzzer, 3, 1000);
 				} else if ((buzzLengthCounter == 15) || (buzzLengthCounter == 45)) {
 					// HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
+					/*
 					htim4.Instance->CCR3=0;
 					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 0);
+					*/
+					PWMOff(LED, 3);
+					PWMOff(Buzzer, 3);
 				} else if (buzzLengthCounter >=75) {
 					// HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
 					beeped = 1;
+					/*
 					htim4.Instance->CCR3=0;
 					HAL_GPIO_WritePin(GPIOH, GPIO_PIN_12, 0);
+					*/
+					PWMOff(LED, 3);
+					PWMOff(Buzzer, 3);
 				}
 				buzzLengthCounter++;
 				break;
@@ -1395,6 +1531,9 @@ void TaskChassis(void *argument)
 
 		// int16_t testingMax = getRCchannel(1)*1.15f;
 		// MAX SPEED = 759
+		PWMOutput(Motor, 1, 500);
+		PWMOutput(Motor, 2, 500);
+		//PWMInitialize(Motor, 1, )
 		htim1.Instance->CCR1=200+(350*motorOn);
 		htim1.Instance->CCR2=200+(350*motorOn);
 
@@ -1464,7 +1603,8 @@ void TaskChassis(void *argument)
 		int16_t convertY = (int)rotationPositionY;
 		int16_t convertZ = (int)rotationPositionZ;
 		*/
-
+		PWMOutput(LED, 2, 500);
+		PWMInitialize(LED, FR, 2, 0.9);
 		if (chassisTurning == 2) {
 			// rcVal2 = ((-1*(leftDial))*3.32f)+4755;
 			rcVal2 = (leftDial*3.32f)+4755;
@@ -1473,13 +1613,16 @@ void TaskChassis(void *argument)
 		}
 
 		if (pivoter <= 6799 && pivoter >= 2691) {
-			HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, 0);
+			// HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, 0);
+			PWMOff(LED, 2);
 			rotationCompStab = 0;
 		} else if (pivoter > 6799) {
-			HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, 1);
+			// HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, 1);
+			// PWMOutput(LED, 2, 500);
 			rotationCompStab = -25*(pivoter-6799);
 		} else {
-			HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, 1);
+			// HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, 1);
+			// PWMOutput(LED, 2, 500);
 			rotationCompStab = -25*(pivoter-2691);
 		}
 		//rotationCompStab
@@ -1553,11 +1696,20 @@ void TaskChassis(void *argument)
 		//HAL_UART_Transmit(&huart1, txbuf, strlen((char*)txbuf), HAL_MAX_DELAY);
 		//txbuf = *((float*)&power_heat_data.chassis_power);
 		//usart_printf("%f %d\r\n", calcChassisPower, 30);
-
+		/*
 		uint8_t txDataBuffer = 0xff;
 		HAL_UART_Transmit(&huart1, txDataBuffer,8,0);
-
-		osDelay(5000);
+		*/
+		/*
+		for(int i = 0; i < 11; i++) {
+			testTHing[i] = whichPWMisOn[i];
+		}
+		*/
+		//testTHing[11]
+		// usart_printf("|  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |\r\n", testTHing[0], testTHing[1], testTHing[2], testTHing[3], testTHing[4], testTHing[5], testTHing[6], testTHing[7], testTHing[8], testTHing[9], testTHing[10]);
+		//mainPrint();
+		PWMTimerStarter();
+		osDelay(5);
     }
   /* USER CODE END TaskChassis */
 }

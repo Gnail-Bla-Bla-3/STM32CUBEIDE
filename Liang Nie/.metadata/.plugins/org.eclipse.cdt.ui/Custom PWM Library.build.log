@@ -1,10 +1,10 @@
-21:03:27 **** Incremental Build of configuration Debug for project Custom PWM Library ****
+17:32:37 **** Incremental Build of configuration Debug for project Custom PWM Library ****
 make -j3 all 
 arm-none-eabi-size  Custom\ PWM\ Library.elf 
    text	   data	    bss	    dec	    hex	filename
-  41024	     96	  23008	  64128	   fa80	Custom PWM Library.elf
+  41152	     96	  23104	  64352	   fb60	Custom PWM Library.elf
 Finished building: default.size.stdout
  
 
-21:03:27 Build Finished. 0 errors, 0 warnings. (took 299ms)
+17:32:38 Build Finished. 0 errors, 0 warnings. (took 743ms)
 

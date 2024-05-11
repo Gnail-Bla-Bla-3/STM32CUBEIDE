@@ -12,12 +12,14 @@ C_SRCS += \
 ../Core/Src/bsp_can.c \
 ../Core/Src/bsp_imu_pwm.c \
 ../Core/Src/bsp_rc.c \
+../Core/Src/ctrl_handling.c \
 ../Core/Src/freertos.c \
 ../Core/Src/imu_temp_control_task.c \
 ../Core/Src/ist8310driver.c \
 ../Core/Src/ist8310driver_middleware.c \
 ../Core/Src/main.c \
 ../Core/Src/pid.c \
+../Core/Src/pwm.c \
 ../Core/Src/remote_control.c \
 ../Core/Src/stm32f4xx_hal_msp.c \
 ../Core/Src/stm32f4xx_it.c \
@@ -33,12 +35,14 @@ OBJS += \
 ./Core/Src/bsp_can.o \
 ./Core/Src/bsp_imu_pwm.o \
 ./Core/Src/bsp_rc.o \
+./Core/Src/ctrl_handling.o \
 ./Core/Src/freertos.o \
 ./Core/Src/imu_temp_control_task.o \
 ./Core/Src/ist8310driver.o \
 ./Core/Src/ist8310driver_middleware.o \
 ./Core/Src/main.o \
 ./Core/Src/pid.o \
+./Core/Src/pwm.o \
 ./Core/Src/remote_control.o \
 ./Core/Src/stm32f4xx_hal_msp.o \
 ./Core/Src/stm32f4xx_it.o \
@@ -54,12 +58,14 @@ C_DEPS += \
 ./Core/Src/bsp_can.d \
 ./Core/Src/bsp_imu_pwm.d \
 ./Core/Src/bsp_rc.d \
+./Core/Src/ctrl_handling.d \
 ./Core/Src/freertos.d \
 ./Core/Src/imu_temp_control_task.d \
 ./Core/Src/ist8310driver.d \
 ./Core/Src/ist8310driver_middleware.d \
 ./Core/Src/main.d \
 ./Core/Src/pid.d \
+./Core/Src/pwm.d \
 ./Core/Src/remote_control.d \
 ./Core/Src/stm32f4xx_hal_msp.d \
 ./Core/Src/stm32f4xx_it.d \
@@ -75,7 +81,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/BMI088Middleware.cyclo ./Core/Src/BMI088Middleware.d ./Core/Src/BMI088Middleware.o ./Core/Src/BMI088Middleware.su ./Core/Src/BMI088driver.cyclo ./Core/Src/BMI088driver.d ./Core/Src/BMI088driver.o ./Core/Src/BMI088driver.su ./Core/Src/CAN_receive.cyclo ./Core/Src/CAN_receive.d ./Core/Src/CAN_receive.o ./Core/Src/CAN_receive.su ./Core/Src/UART.cyclo ./Core/Src/UART.d ./Core/Src/UART.o ./Core/Src/UART.su ./Core/Src/bsp_can.cyclo ./Core/Src/bsp_can.d ./Core/Src/bsp_can.o ./Core/Src/bsp_can.su ./Core/Src/bsp_imu_pwm.cyclo ./Core/Src/bsp_imu_pwm.d ./Core/Src/bsp_imu_pwm.o ./Core/Src/bsp_imu_pwm.su ./Core/Src/bsp_rc.cyclo ./Core/Src/bsp_rc.d ./Core/Src/bsp_rc.o ./Core/Src/bsp_rc.su ./Core/Src/freertos.cyclo ./Core/Src/freertos.d ./Core/Src/freertos.o ./Core/Src/freertos.su ./Core/Src/imu_temp_control_task.cyclo ./Core/Src/imu_temp_control_task.d ./Core/Src/imu_temp_control_task.o ./Core/Src/imu_temp_control_task.su ./Core/Src/ist8310driver.cyclo ./Core/Src/ist8310driver.d ./Core/Src/ist8310driver.o ./Core/Src/ist8310driver.su ./Core/Src/ist8310driver_middleware.cyclo ./Core/Src/ist8310driver_middleware.d ./Core/Src/ist8310driver_middleware.o ./Core/Src/ist8310driver_middleware.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/pid.cyclo ./Core/Src/pid.d ./Core/Src/pid.o ./Core/Src/pid.su ./Core/Src/remote_control.cyclo ./Core/Src/remote_control.d ./Core/Src/remote_control.o ./Core/Src/remote_control.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su
+	-$(RM) ./Core/Src/BMI088Middleware.cyclo ./Core/Src/BMI088Middleware.d ./Core/Src/BMI088Middleware.o ./Core/Src/BMI088Middleware.su ./Core/Src/BMI088driver.cyclo ./Core/Src/BMI088driver.d ./Core/Src/BMI088driver.o ./Core/Src/BMI088driver.su ./Core/Src/CAN_receive.cyclo ./Core/Src/CAN_receive.d ./Core/Src/CAN_receive.o ./Core/Src/CAN_receive.su ./Core/Src/UART.cyclo ./Core/Src/UART.d ./Core/Src/UART.o ./Core/Src/UART.su ./Core/Src/bsp_can.cyclo ./Core/Src/bsp_can.d ./Core/Src/bsp_can.o ./Core/Src/bsp_can.su ./Core/Src/bsp_imu_pwm.cyclo ./Core/Src/bsp_imu_pwm.d ./Core/Src/bsp_imu_pwm.o ./Core/Src/bsp_imu_pwm.su ./Core/Src/bsp_rc.cyclo ./Core/Src/bsp_rc.d ./Core/Src/bsp_rc.o ./Core/Src/bsp_rc.su ./Core/Src/ctrl_handling.cyclo ./Core/Src/ctrl_handling.d ./Core/Src/ctrl_handling.o ./Core/Src/ctrl_handling.su ./Core/Src/freertos.cyclo ./Core/Src/freertos.d ./Core/Src/freertos.o ./Core/Src/freertos.su ./Core/Src/imu_temp_control_task.cyclo ./Core/Src/imu_temp_control_task.d ./Core/Src/imu_temp_control_task.o ./Core/Src/imu_temp_control_task.su ./Core/Src/ist8310driver.cyclo ./Core/Src/ist8310driver.d ./Core/Src/ist8310driver.o ./Core/Src/ist8310driver.su ./Core/Src/ist8310driver_middleware.cyclo ./Core/Src/ist8310driver_middleware.d ./Core/Src/ist8310driver_middleware.o ./Core/Src/ist8310driver_middleware.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/pid.cyclo ./Core/Src/pid.d ./Core/Src/pid.o ./Core/Src/pid.su ./Core/Src/pwm.cyclo ./Core/Src/pwm.d ./Core/Src/pwm.o ./Core/Src/pwm.su ./Core/Src/remote_control.cyclo ./Core/Src/remote_control.d ./Core/Src/remote_control.o ./Core/Src/remote_control.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su
 
 .PHONY: clean-Core-2f-Src
 

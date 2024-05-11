@@ -38,7 +38,7 @@ typedef enum
 	ROBOT_INTERACTION_HEADER = 0x0301,
 	CUSTOM_CONTROLLER_ROBOT_HEADER = 0x0302,
 	MINIMAP_COMMAND_HEADER = 0x0303,
-	CONTROLLER_HEADER = 0x0304,
+	PC_CONTROL_HEADER = 0x0304,
 	MINIMAP_TARGET_HEADER = 0x0305,
 	CUSTOM_CONTROLLER_CLIENT_HEADER = 0x0306,
 	MINIMAP_DATA_HEADER = 0x0307,
@@ -55,6 +55,50 @@ typedef enum
 	RADAR_CMD_HEADER = 0x0121,
 
 } uart_headers;
+
+typedef enum {
+	frame_header_offset = 7,
+
+	game_status_len = 11,
+	game_result_len = 1,
+	game_robot_HP_len = 32,
+	event_data_len = 4,
+	ext_supply_projectile_action_len = 4,
+	referee_warning_len = 3,
+	dart_info_len = 3,
+	robot_status_len = 13,
+	power_heat_data_len = 16,
+	robot_pos_len = 16,
+	buff_len = 6,
+
+
+	damage_data_len = 1,
+	shoot_data_len = 7,
+	projectile_allowance_len = 6,
+	rfid_status_len = 4,
+	dart_client_cmd_len = 6,
+	ground_robot_position_len = 40,
+	radar_mark_data_len = 6,
+	sentry_info_len = 4,
+	radar_info_len = 1,
+	robot_interaction_data_len = 128,
+	interaction_layer_delete_len = 1,
+	interaction_figure_len = 1,
+	interaction_figure_2_len = 1,
+	interaction_figure_3_len = 1,
+	interaction_figure_4_len = 1,
+	ext_client_custom_character_len = 1,
+
+	sentry_cmd_len = 103,
+	radar_cmd_len = 32,
+	map_command_len = 15,
+	map_robot_data_len = 10,
+	map_data_len = 103,
+	custom_info_len = 30,
+	pc_control_len = 12,
+	custom_client_data_len = 8,
+
+} lengths_and_offsets_t;
 
 typedef struct {
 	uint8_t game_type;
@@ -143,12 +187,12 @@ typedef struct {
 	uint8_t defence_buff;
 	uint8_t vulnerability_buff;
 	uint16_t attack_buff;
-} buff_t;
+} buffs_t;
 
 typedef struct {
 	uint8_t armor_id : 4;
 	uint8_t HP_deduction_reason : 4;
-} hurt_data_t;
+} damage_data_t;
 
 typedef struct {
 	uint8_t bullet_type;
@@ -185,7 +229,7 @@ typedef struct {
 	float standard_4_y;
 	float standard_5_x;
 	float standard_5_y;
-} ground_robot_position_t;
+} robot_positions_t;
 
 typedef struct {
 	uint8_t mark_hero_progress;
@@ -292,9 +336,28 @@ typedef struct {
 	int16_t mouse_z;
 	int8_t left_button_down;
 	int8_t right_button_down;
-	uint16_t keyboard_value;
+	uint8_t keyboard_values_1;
+	uint8_t keyboard_values_2;
 	uint16_t reserved;
-} remote_control_t;
+
+	uint8_t w;
+	uint8_t s;
+	uint8_t a;
+	uint8_t d;
+	uint8_t shift;
+	uint8_t ctrl;
+	uint8_t q;
+	uint8_t e;
+
+	uint8_t r;
+	uint8_t f;
+	uint8_t g;
+	uint8_t z;
+	uint8_t x;
+	uint8_t c;
+	uint8_t v;
+	uint8_t b;
+} pc_control_t;
 
 typedef struct {
 	uint16_t key_value;
