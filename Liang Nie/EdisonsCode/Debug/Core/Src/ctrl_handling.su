@@ -1,0 +1,2 @@
+../Core/Src/ctrl_handling.c:20:6:getKeyboardVelocity	32	static
+../Core/Src/ctrl_handling.c:64:5:timer2value	40	static

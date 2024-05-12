@@ -1,3 +1,4 @@
-../Core/Src/songs.c:31:6:initializeCaliforniaGirls	1
-../Core/Src/songs.c:37:10:CaliforniaGirlsNotes	6
-../Core/Src/songs.c:71:10:NeverGonnaGiveYouUpNotes	3
+../Core/Src/songs.c:39:6:initializeCaliforniaGirls	1
+../Core/Src/songs.c:45:10:HampsterNotes	11
+../Core/Src/songs.c:90:10:CaliforniaGirlsNotes	6
+../Core/Src/songs.c:124:10:NeverGonnaGiveYouUpNotes	3

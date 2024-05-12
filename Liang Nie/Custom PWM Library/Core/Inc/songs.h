@@ -21,6 +21,7 @@ struct SongFormat {
 
 uint32_t NeverGonnaGiveYouUpNotes();
 uint32_t CaliforniaGirlsNotes();
+uint32_t HampsterNotes();
 void initializeCaliforniaGirls();
 
 #endif /* INC_SONGS_H_ */
