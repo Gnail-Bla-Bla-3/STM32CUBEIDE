@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;RMTemplateMay12/Core/Inc/pwm.h&apos;" deleteContents="false" description="Delete resource &apos;RMTemplateMay12/Core/Inc/pwm.h&apos;" element1="/RMTemplateMay12/Core/Inc/pwm.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1716085470087"/>&#x0A;<refactoring comment="Delete resource &apos;RMTemplateMay12/Core/Src/pwm.c&apos;" deleteContents="false" description="Delete resource &apos;RMTemplateMay12/Core/Src/pwm.c&apos;" element1="/RMTemplateMay12/Core/Src/pwm.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1716085475427"/>
+</session>

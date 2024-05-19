@@ -1,165 +1,17 @@
-19:29:26 **** Incremental Build of configuration Debug for project EdisonsCode ****
+17:41:35 **** Incremental Build of configuration Debug for project EdisonsCode ****
 make -j3 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'TaskChassis':
-../Core/Src/main.c:1172:17: warning: unused variable 'testTHing' [-Wunused-variable]
- 1172 |         int16_t testTHing[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-      |                 ^~~~~~~~~
-../Core/Src/main.c:1171:17: warning: unused variable 'rotationCompStab' [-Wunused-variable]
- 1171 |         int16_t rotationCompStab = 0;
-      |                 ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:1169:16: warning: unused variable 'beeped' [-Wunused-variable]
- 1169 |         int8_t beeped = 1;
-      |                ^~~~~~
-../Core/Src/main.c:1168:16: warning: unused variable 'beepingInProgress' [-Wunused-variable]
- 1168 |         int8_t beepingInProgress = 0;
-      |                ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1167:17: warning: unused variable 'buzzLengthCounter' [-Wunused-variable]
- 1167 |         int16_t buzzLengthCounter = 0;
-      |                 ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1165:17: warning: unused variable 'counterForSwitching' [-Wunused-variable]
- 1165 |         int16_t counterForSwitching = 0;
-      |                 ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1164:16: warning: unused variable 'finalTHing' [-Wunused-variable]
- 1164 |         int8_t finalTHing = 0;
-      |                ^~~~~~~~~~
-../Core/Src/main.c:1163:16: warning: unused variable 'switchedDown' [-Wunused-variable]
- 1163 |         int8_t switchedDown = 0;
-      |                ^~~~~~~~~~~~
-../Core/Src/main.c:1162:16: warning: unused variable 'startedChecking' [-Wunused-variable]
- 1162 |         int8_t startedChecking = 0;
-      |                ^~~~~~~~~~~~~~~
-../Core/Src/main.c:1161:16: warning: unused variable 'customFiringModeSwitcher' [-Wunused-variable]
- 1161 |         int8_t customFiringModeSwitcher = 0;
-      |                ^~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1159:16: warning: unused variable 'burst' [-Wunused-variable]
- 1159 |         int8_t burst = 3;
-      |                ^~~~~
-../Core/Src/main.c:1158:17: warning: unused variable 'posForGunMotor' [-Wunused-variable]
- 1158 |         int32_t posForGunMotor = 0;
-      |                 ^~~~~~~~~~~~~~
-../Core/Src/main.c:1157:17: warning: unused variable 'rotationTarget' [-Wunused-variable]
- 1157 |         int32_t rotationTarget = 0;
-      |                 ^~~~~~~~~~~~~~
-../Core/Src/main.c:1156:16: warning: unused variable 'resetPerStart' [-Wunused-variable]
- 1156 |         int8_t resetPerStart = 0;
-      |                ^~~~~~~~~~~~~
-../Core/Src/main.c:1155:17: warning: unused variable 'revolutions' [-Wunused-variable]
- 1155 |         int16_t revolutions = 0;
-      |                 ^~~~~~~~~~~
-../Core/Src/main.c:1154:17: warning: unused variable 'rotationalVal' [-Wunused-variable]
- 1154 |         int32_t rotationalVal = 0;
-      |                 ^~~~~~~~~~~~~
-../Core/Src/main.c:1153:17: warning: unused variable 'previousVal' [-Wunused-variable]
- 1153 |         int16_t previousVal = 0;
-      |                 ^~~~~~~~~~~
-../Core/Src/main.c:1151:17: warning: unused variable 'instancesCounter' [-Wunused-variable]
- 1151 |         int16_t instancesCounter = 0;
-      |                 ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:1150:17: warning: unused variable 'increment' [-Wunused-variable]
- 1150 |         uint8_t increment = 0;
-      |                 ^~~~~~~~~
-../Core/Src/main.c:1149:16: warning: unused variable 'started' [-Wunused-variable]
- 1149 |         int8_t started = 0;
-      |                ^~~~~~~
-../Core/Src/main.c:1148:17: warning: unused variable 'startingVal' [-Wunused-variable]
- 1148 |         int16_t startingVal = 0;
-      |                 ^~~~~~~~~~~
-../Core/Src/main.c:1147:17: warning: unused variable 'randomOrientations' [-Wunused-variable]
- 1147 |         int16_t randomOrientations[24] = {-380, -202, 462, -114, 240, -210, 150, 170, 248, 106, 118, 538, -260, -288, -120, 86, -264, 452, -592, 390, -410, 414, 54, -542};
-      |                 ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1145:17: warning: unused variable 'rcVal2' [-Wunused-variable]
- 1145 |         int16_t rcVal2 = 0;
-      |                 ^~~~~~
-../Core/Src/main.c:1144:17: warning: unused variable 'chassisPID' [-Wunused-variable]
- 1144 |         int16_t chassisPID = 0;
-      |                 ^~~~~~~~~~
-../Core/Src/main.c:1143:17: warning: unused variable 'chassisOrientation' [-Wunused-variable]
- 1143 |         int16_t chassisOrientation = 0;
-      |                 ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1137:16: warning: unused variable 'angle' [-Wunused-variable]
- 1137 |         double angle = 0;
-      |                ^~~~~
-../Core/Src/main.c:1136:18: warning: unused variable 'pivoter' [-Wunused-variable]
- 1136 |         uint16_t pivoter = 0;
-      |                  ^~~~~~~
-../Core/Src/main.c:1135:18: warning: unused variable 'testmotor' [-Wunused-variable]
- 1135 |         uint16_t testmotor = 6161;
-      |                  ^~~~~~~~~
-../Core/Src/main.c:1132:17: warning: unused variable 'shooterMotor' [-Wunused-variable]
- 1132 |         int16_t shooterMotor = 0;
-      |                 ^~~~~~~~~~~~
-../Core/Src/main.c:1130:17: warning: unused variable 'prevDiff4' [-Wunused-variable]
- 1130 |         int16_t prevDiff4 = 0;
-      |                 ^~~~~~~~~
-../Core/Src/main.c:1129:17: warning: unused variable 'prevDiff3' [-Wunused-variable]
- 1129 |         int16_t prevDiff3 = 0;
-      |                 ^~~~~~~~~
-../Core/Src/main.c:1128:17: warning: unused variable 'prevDiff2' [-Wunused-variable]
- 1128 |         int16_t prevDiff2 = 0;
-      |                 ^~~~~~~~~
-../Core/Src/main.c:1127:17: warning: unused variable 'prevDiff1' [-Wunused-variable]
- 1127 |         int16_t prevDiff1 = 0;
-      |                 ^~~~~~~~~
-../Core/Src/main.c:1126:16: warning: unused variable 'previousRegion4' [-Wunused-variable]
- 1126 |         int8_t previousRegion4 = 0;
-      |                ^~~~~~~~~~~~~~~
-../Core/Src/main.c:1125:16: warning: unused variable 'previousRegion3' [-Wunused-variable]
- 1125 |         int8_t previousRegion3 = 0;
-      |                ^~~~~~~~~~~~~~~
-../Core/Src/main.c:1124:16: warning: unused variable 'previousRegion2' [-Wunused-variable]
- 1124 |         int8_t previousRegion2 = 0;
-      |                ^~~~~~~~~~~~~~~
-../Core/Src/main.c:1123:16: warning: unused variable 'previousRegion1' [-Wunused-variable]
- 1123 |         int8_t previousRegion1 = 0;
-      |                ^~~~~~~~~~~~~~~
-../Core/Src/main.c:1122:16: warning: unused variable 'isNegativeRegion4' [-Wunused-variable]
- 1122 |         int8_t isNegativeRegion4 = 0;
-      |                ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1121:16: warning: unused variable 'isNegativeRegion3' [-Wunused-variable]
- 1121 |         int8_t isNegativeRegion3 = 0;
-      |                ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1120:16: warning: unused variable 'isNegativeRegion2' [-Wunused-variable]
- 1120 |         int8_t isNegativeRegion2 = 0;
-      |                ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1119:16: warning: unused variable 'isNegativeRegion1' [-Wunused-variable]
- 1119 |         int8_t isNegativeRegion1 = 0;
-      |                ^~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1118:17: warning: unused variable 'sumI4' [-Wunused-variable]
- 1118 |         int16_t sumI4 =0;
-      |                 ^~~~~
-../Core/Src/main.c:1117:17: warning: unused variable 'sumI3' [-Wunused-variable]
- 1117 |         int16_t sumI3 =0;
-      |                 ^~~~~
-../Core/Src/main.c:1116:17: warning: unused variable 'sumI2' [-Wunused-variable]
- 1116 |         int16_t sumI2 =0;
-      |                 ^~~~~
-../Core/Src/main.c:1115:17: warning: unused variable 'sumI1' [-Wunused-variable]
- 1115 |         int16_t sumI1 =0;
-      |                 ^~~~~
-../Core/Src/main.c:1113:16: warning: unused variable 'shot1Round' [-Wunused-variable]
- 1113 |         int8_t shot1Round = 0;
-      |                ^~~~~~~~~~
-../Core/Src/main.c:1112:16: warning: unused variable 'switched' [-Wunused-variable]
- 1112 |         int8_t switched = 0;
-      |                ^~~~~~~~
-../Core/Src/main.c:1111:16: warning: unused variable 'motorOn' [-Wunused-variable]
- 1111 |         int8_t motorOn = 0;
-      |                ^~~~~~~
-../Core/Src/main.c:1097:17: warning: unused variable 'rcPitch' [-Wunused-variable]
- 1097 |         int16_t rcPitch = 0;                                   // range: 3376 ~ 2132
-      |                 ^~~~~~~
+arm-none-eabi-gcc "../Core/Src/songs.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/songs.d" -MT"Core/Src/songs.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/songs.o"
 arm-none-eabi-gcc -o "EdisonsCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/EdisonsCode/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EdisonsCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: EdisonsCode.elf
  
 arm-none-eabi-size  EdisonsCode.elf 
 arm-none-eabi-objdump -h -S EdisonsCode.elf  > "EdisonsCode.list"
    text	   data	    bss	    dec	    hex	filename
-  56728	    180	  24336	  81244	  13d5c	EdisonsCode.elf
+  59172	    328	  24336	  83836	  1477c	EdisonsCode.elf
 Finished building: default.size.stdout
  
 Finished building: EdisonsCode.list
  
 
-19:29:28 Build Finished. 0 errors, 49 warnings. (took 1s.977ms)
+17:41:37 Build Finished. 0 errors, 0 warnings. (took 2s.216ms)
 

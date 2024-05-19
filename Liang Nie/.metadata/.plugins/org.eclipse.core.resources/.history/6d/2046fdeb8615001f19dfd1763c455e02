@@ -1,0 +1,31 @@
+/*
+ * pwm.h
+ *
+ *  Created on: Apr 5, 2024
+ *      Author: swjxw
+ */
+
+#ifndef INC_PWM_H_
+#define INC_PWM_H_
+#include "UART.h"
+#include "remote_control.h"
+#include "bsp_rc.h"
+#include "stdio.h"
+#include "stdarg.h"
+#include "string.h"
+#include "main.h"
+#include "cmsis_os.h"
+
+extern TIM_HandleTypeDef htim1;
+extern TIM_HandleTypeDef htim5;
+extern TIM_HandleTypeDef htim8;
+
+void servoPWM_Start(void);
+void servoPWM_Stop(void);
+void servoPWM_SetRange(uint8_t channel, uint16_t lowerLimit, uint16_t upperLimit);
+void servo_GoToPosition(uint8_t channel, float position);
+void LED_PWM_Start(void);
+void LED_PWM_Stop(void);
+void LED_SetBrightness(uint8_t color, float brightness);
+
+#endif /* INC_PWM_H_ */

@@ -1,0 +1,10 @@
+19:44:27 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
+make -j3 all 
+arm-none-eabi-size  RMTemplateMay12.elf 
+   text	   data	    bss	    dec	    hex	filename
+  71824	    744	  24096	  96664	  17998	RMTemplateMay12.elf
+Finished building: default.size.stdout
+ 
+
+19:44:27 Build Finished. 0 errors, 0 warnings. (took 367ms)
+

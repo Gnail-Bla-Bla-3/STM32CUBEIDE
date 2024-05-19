@@ -1,0 +1,98 @@
+#include "UART.h"
+#include "remote_control.h"
+#include "bsp_rc.h"
+#include "stdio.h"
+#include "stdarg.h"
+#include "string.h"
+#include "main.h"
+#include "pwm.h"
+
+static uint16_t lowerLimits[7] = {500, 500, 500, 500, 500, 500, 500};
+static uint16_t upperLimits[7] = {2500, 2500, 2500, 2500, 2500, 2500, 2500};
+
+static uint16_t LED_CompareVal[3] = {0, 0, 0};
+
+// assuming the dev board is facing the direction where the "PWM" text is facing up:
+// ch1 = top (sectioned off from the rest, next to the "PWM" text), ch7 = bottom (above DBUS channel)
+
+void servoPWM_Start(void) {                            // starts all servo PWM outputs
+	HAL_TIM_Base_Start(&htim1);
+	HAL_TIM_Base_Start(&htim8);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+}
+
+void servoPWM_Stop(void) {                            // stops all servo PWM outputs
+	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_4);
+	HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Stop(&htim8, TIM_CHANNEL_1);
+}
+
+void servoPWM_SetRange(uint8_t channel, uint16_t lowerLimit, uint16_t upperLimit) {  // units: microseconds (us)
+	if (channel >= 1 && channel <=7) {
+		lowerLimits[channel - 1] = lowerLimit;
+		upperLimits[channel - 1] = upperLimit;
+	}
+}
+
+void servo_GoToPosition(uint8_t channel, float position) {  // position range: 0 (lower limit) ~ 1 (upper limit)
+	if (channel >= 1 && channel <=7) {
+		uint16_t adjCompareVal = (upperLimits[channel-1] - lowerLimits[channel-1]) * position + lowerLimits[channel-1];
+
+		if (adjCompareVal > upperLimits[channel-1]) {
+			adjCompareVal = upperLimits[channel-1];
+		} else if (adjCompareVal < lowerLimits[channel-1]) {
+			adjCompareVal = lowerLimits[channel-1];
+		}
+
+		switch (channel) {
+			case 1: {__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_1, adjCompareVal);}
+			case 2: {__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_2, adjCompareVal);}
+			case 3: {__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_3, adjCompareVal);}
+			case 4: {__HAL_TIM_SetCompare(&htim1, TIM_CHANNEL_4, adjCompareVal);}
+			case 5: {__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, adjCompareVal);}
+			case 6: {__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, adjCompareVal);}
+			case 7: {__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1, adjCompareVal);}
+			default : {
+				break;
+			}
+		}
+	}
+}
+
+void LED_PWM_Start(void) {                            // starts all servo PWM outputs
+	HAL_TIM_Base_Start(&htim5);
+	HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
+}
+
+void LED_PWM_Stop(void) {                            // stops all servo PWM outputs
+	HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_3);
+}
+
+void LED_SetBrightness(uint8_t color, float brightness) {
+	uint16_t adjCompareVal = 20000 * brightness;
+	switch (color) {
+		case 0: {LED_CompareVal[2] = adjCompareVal;}
+		case 1: {LED_CompareVal[1] = adjCompareVal;}
+		case 2: {LED_CompareVal[0] = adjCompareVal;}
+		default : {
+			break;
+		}
+	}
+	__HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_3, LED_CompareVal[2]);
+	__HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_2, LED_CompareVal[1]);
+	__HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, LED_CompareVal[0]);
+}

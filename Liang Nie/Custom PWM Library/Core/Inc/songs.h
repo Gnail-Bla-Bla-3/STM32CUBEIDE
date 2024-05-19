@@ -19,6 +19,8 @@ struct SongFormat {
 	uint8_t lengths[128];
 };
 
+uint32_t CountryRoadsNotes();
+uint32_t MarryHadALittleLambNotes();
 uint32_t NeverGonnaGiveYouUpNotes();
 uint32_t CaliforniaGirlsNotes();
 uint32_t HampsterNotes();

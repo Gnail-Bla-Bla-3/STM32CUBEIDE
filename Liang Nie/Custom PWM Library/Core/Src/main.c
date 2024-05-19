@@ -1049,8 +1049,8 @@ void TaskChassis(void *argument)
 	*/
 	// PWMOutput(Buzzer, 1, NeverGonnaGiveYouUpNotes());
 	// PWMOutput(Buzzer, 1, CaliforniaGirlsNotes());
-	PWMOutput(Buzzer, 1, HampsterNotes());
-
+	// PWMOutput(Buzzer, 1, HampsterNotes());
+	// PWMOutput(Buzzer, 1, 100);
 	if (iVal > speedOfPulse) {
 		iVal = speedOfPulse-1;
 		iSwapper = 1;
@@ -1143,7 +1143,7 @@ void TaskChassis(void *argument)
 	PWMOutput(LED, 1, 500);
 	//(htim1).Init.Period = 999;
 	// PWMOutput(Motor, 5, 500);
-
+	PWMOutput(Buzzer, 1, frequenciesAtA4[NeverGoingToGiveYouUpNotes[noteTracker]]);
 	PWMOutput(Motor, 1, 50);
 
 	//PWMOutput(Buzzer, 1, 90);
