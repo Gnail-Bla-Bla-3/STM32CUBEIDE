@@ -30,6 +30,8 @@ motorControlBuffer_t motorControlBuffer[2] = {{{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0
 motorFeedback_t motorFeedback[2][11];
 PID_data_t PID_data[2][11];
 
+
+
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
     CAN_RxHeaderTypeDef rx_header;
     uint8_t rx_data[8];
@@ -333,10 +335,13 @@ void CAN_setMotorVoltage(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, in
 	}
 }
 
+
+// Max Power *
 void CAN_setMotorCtrlVal(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16_t ctrlVal) {
 	switch(motorType) {
 		case (1):
 		case (2): {
+
 			switch(motorID) {
 				case (1):
 				case (2):
@@ -375,7 +380,7 @@ void CAN_setMotorCtrlVal(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, in
 				case (7): {             // 0x2FF
 					motorControlBuffer[bus - 1].Group3[motorID - 5] = ctrlVal;
 					CAN_DriveMotor(bus, CAN_DJI_GROUP3_ID, motorControlBuffer[bus - 1].Group3[0], motorControlBuffer[bus - 1].Group3[1], motorControlBuffer[bus - 1].Group3[2], motorControlBuffer[bus - 1].Group3[3]);
-					usart_printf("trig \r\n");
+					// usart_printf("trig \r\n");
 					break;
 				}
 				case (8): {

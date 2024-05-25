@@ -106,7 +106,7 @@ typedef struct {
     int32_t dVal;
 } PID_data_t;
 
-
+// void settingMaxCurrentVal (float bufferValFromPMM);
 
 void CAN_ResetID(CAN_Bus bus);
 void CAN_DriveMotor(CAN_Bus bus, CAN_ID headerID, int16_t m1, int16_t m2, int16_t m3, int16_t m4);

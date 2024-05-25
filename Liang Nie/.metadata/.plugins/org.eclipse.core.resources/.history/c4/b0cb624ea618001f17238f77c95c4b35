@@ -1,0 +1,19 @@
+/*
+ * buffer.h
+ *
+ *  Created on: May 22, 2024
+ *      Author: liangnie
+ */
+
+#ifndef INC_BUFFER_H_
+#define INC_BUFFER_H_
+
+#include "main.h"
+
+void driveMotorRPM (int8_t motorID, int16_t RPMtarget, PID_preset_t preset);
+void ScaleAllCurrentValuesForDriveMotors ();
+void findingKIScaler();
+void settingMaxCurrentVal (float bufferValFromPMM);
+void createDriveMotorCAN();
+
+#endif /* INC_BUFFER_H_ */

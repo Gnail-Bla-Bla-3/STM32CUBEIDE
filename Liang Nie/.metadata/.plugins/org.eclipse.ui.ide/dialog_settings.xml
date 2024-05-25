@@ -7,8 +7,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="true"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="C:\Users\Liang Nie\Documents\GitHub\STM32CUBEIDE\Liang Nie"/>
 			<item value="/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie"/>
+			<item value="C:\Users\Liang Nie\Documents\GitHub\STM32CUBEIDE\Liang Nie"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>

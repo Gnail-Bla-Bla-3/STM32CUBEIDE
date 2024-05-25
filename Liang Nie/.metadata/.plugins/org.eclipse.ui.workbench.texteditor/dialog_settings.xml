@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="GPIO"/>
+		<item key="selection" value="usart"/>
 		<list key="findhistory">
+			<item value="usart"/>
 			<item value="GPIO"/>
 			<item value=" usart_printf"/>
 			<item value="usart_print"/>

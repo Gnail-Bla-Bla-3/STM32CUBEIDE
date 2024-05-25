@@ -4,7 +4,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=macosx
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SecondPrototype Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Custom PWM Library Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:EdisonsCode Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:EdisonsActualRobot Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TurretCode Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:RMTemplate Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:RMTemplateMay12 Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SecondPrototype Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:EdisonsCode Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:EdisonsActualRobot Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TurretCode Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:RMTemplate Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Custom PWM Library Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:RMTemplateMay12 Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Beans\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Beans\ Debug/activeLaunchTarget=null\:---

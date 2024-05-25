@@ -37,6 +37,7 @@
 #include "ist8310driver.h"
 #include "pwm.h"
 #include "songs.h"
+#include "buffer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -68,6 +69,8 @@ TIM_HandleTypeDef htim5;
 TIM_HandleTypeDef htim8;
 TIM_HandleTypeDef htim10;
 DMA_HandleTypeDef hdma_tim4_ch3;
+DMA_HandleTypeDef hdma_tim5_ch1;
+DMA_HandleTypeDef hdma_tim5_ch2;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart3;
@@ -108,13 +111,20 @@ const osThreadAttr_t turretTask_attributes = {
 };
 /* USER CODE BEGIN PV */
 const RC_ctrl_t *local_rc_ctrl;
-
-PID_preset_t chassisPreset = {3.6, 0.015, 4.2};  //0.8f, 0.025f, 0.95f   {1.6, 0.045, 0.10}; 32 0.42
+//3.6 0.015, 4.2
+PID_preset_t chassisPreset = {3.6, 0, 0};  //0.8f, 0.025f, 0.95f   {1.6, 0.045, 0.10}; 32 0.4
 PID_preset_t yawPresetCurrentRPM = {46, 10.0, 16.4};
-PID_preset_t yawPresetVoltageRPM = {30, 0.2, 0.1};
+
+
+PID_preset_t yawPresetVoltageRPM = {30, 0, 0};
+
+
 PID_preset_t yawPresetCurrentPosition = {12, 1, 0.0};
 PID_preset_t yawPresetVoltagePosition = {36, 0.3, 0.0};
-PID_preset_t pitchPresetVoltagePosition = {32, 0.0, 0.0};
+
+
+// 50, 0, 110
+PID_preset_t pitchPresetVoltagePosition = {50, 0.0, 110.0};
 PID_preset_t indexerPreset = {1.1f, 0.02f, -2.4f};
 PID_preset_t shooterPreset = {1.20f, 0.12f, 1.60f};
 PID_preset_t powerPreset = {0, 0.000000000001, 0};
@@ -122,6 +132,9 @@ PID_preset_t flywheel = {12, 0, 0};
 PID_preset_t customPreset = {0, 0, 0};
 
 int target = 2000;
+float JoulesBuffer = 60;
+float maxPower = 0;
+uint32_t PowerLimitor = 60;
 
 extern game_status_t game_status;
 extern power_heat_data_t power_heat_data;
@@ -210,7 +223,6 @@ int main(void)
   remote_control_init();
   usart_Init();
   local_rc_ctrl = get_remote_control_point();
-  PWMInit(&htim1, &htim4, &htim5, &htim8);
   //__HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);
   /* USER CODE END 2 */
 
@@ -562,7 +574,7 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 0;
+  htim4.Init.Prescaler = 83;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 20999;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -620,9 +632,9 @@ static void MX_TIM5_Init(void)
 
   /* USER CODE END TIM5_Init 1 */
   htim5.Instance = TIM5;
-  htim5.Init.Prescaler = 42;
+  htim5.Init.Prescaler = 83;
   htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim5.Init.Period = 19999;
+  htim5.Init.Period = 1999;
   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim5) != HAL_OK)
@@ -890,6 +902,12 @@ static void MX_DMA_Init(void)
   /* DMA1_Stream1_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
+  /* DMA1_Stream2_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream2_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream2_IRQn);
+  /* DMA1_Stream4_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream4_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream4_IRQn);
   /* DMA1_Stream7_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream7_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream7_IRQn);
@@ -1017,23 +1035,26 @@ void TaskMain(void *argument)
 	CAN_defineMotor(Bus2, GM6020, 1);
 
 	osDelay(150);
-	// __HAL_TIM_PRESCALER(&htim4, 0);
-	osDelay(150);
+	PWMOutput(LED, 2, 500);
+	PWMInitialize(LED, FR, 2, 0.9);
 	// HAL_TIM_PWM_Stop(&htim4, TIM_CHANNEL_3);
-
+	JoulesBuffer = 60;
 	for(;;) {
-		//HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, 0);
-		//set_motor_voltage(5, 4000);
-		// LED_SetBrightness(blue, 0.3);
-		//usart_printf("%d \r\n", getRotorPosition(1, 1, 1));
-		osDelay(500);
-		//sendB2bData(CAN_b2b_A_ID, 1, 1, 1, 1);
-		//HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, 1);
-		// LED_SetBrightness(blue, 1);
-		//set_motor_voltage(5, -4000);
-		osDelay(500);
-		//sendB2bData(CAN_b2b_A_ID, 0, 0, 0, 0);
-		//usart_printf("ACTIVE = %d \r\n", power_heat_data.chassis_power);
+		JoulesBuffer += ((PowerLimitor-6)-maxPower)*0.1;
+		if (JoulesBuffer > 60) {
+			JoulesBuffer = 60;
+		}
+		if (JoulesBuffer < 0) {
+			JoulesBuffer = 0;
+		}
+		if (JoulesBuffer == 0) {
+			PWMOn(LED, 2);
+		} else {
+			PWMOff(LED, 2);
+		}
+		settingMaxCurrentVal(JoulesBuffer, PowerLimitor);
+		osDelay(100);
+
 	}
   /* USER CODE END 5 */
 }
@@ -1048,6 +1069,7 @@ void TaskMain(void *argument)
 void TaskChassis(void *argument)
 {
   /* USER CODE BEGIN TaskChassis */
+	PWMInit(&htim1, &htim4, &htim5, &htim8);
     int16_t rcRPM[4] = {0,0,0,0};                              // maps rc percentage reading to motors, assuming we're running M3508s at max 469RPM
     int16_t chassisTargetRPM[4] = {0, 0, 0, 0};
     int16_t rcYaw = 0;
@@ -1055,7 +1077,29 @@ void TaskChassis(void *argument)
     int8_t jammed = 0;
     int8_t indexerStopped = 1;
     int8_t indexerTargetReached = 0;
+
+    int8_t bufferDead = 0;
+    int8_t M3508Voltage = 24;
+
+    maxPower = 0;
+    float scuffedMaxedPower = 0;
+    float percentagePowerLimit = 1;
+
+    float gyroidValue = 0;
+
+    int8_t switchForShooter = 0;
+    int8_t motorOn = 0;
+
+    float MC[4] = {0, 0, 0, 0};
+
+
+    int8_t switcherForBuzzer = 0;
+    int16_t counterForBuzzer = 0;
+
+    int16_t turretPitchNew = 2735;
+
     //int16_t targetRPM[4] = {0,0,0,0};
+
   /* Infinite loop */
     for(;;) {
 	    for (int i = 0; i < 4; i++) {
@@ -1067,19 +1111,44 @@ void TaskChassis(void *argument)
 	    //CAN_setMotorCurrent(1, M3508, 7, 2000);
 	    //rcPitch = getRotorPosition(1, 1, 2);
 
-	    int16_t turretPitch = (getRCchannel(1)*0.63f)+2640;
+	    // int16_t turretPitch = (getRCchannel(1)*0.63f)+2640;
 
-	    setMotorPosition(Bus1, GM6020, 5, turretPitch, pitchPresetVoltagePosition);
+	    turretPitchNew += getRCchannel(1)*0.1;
 
+	    if (turretPitchNew > 5000) {
+	    	turretPitchNew = 5000;
+	    } else if (turretPitchNew < 2299) {
+	    	turretPitchNew = 2299;
+	    }
+
+	    setMotorPosition(Bus1, GM6020, 5, turretPitchNew, pitchPresetVoltagePosition);
+
+	    // usart_printf("%d %d\r\n", turretPitchNew, getRotorPosition(Bus1, GM6020, 5));
 	    // setMotorRPM(Bus2, GM6020, 5, chassisTargetRPM[0], chassisPreset);
 
 	    //CAN_DriveMotor(Bus1, 0x2FF, 2000, 0, 0, 0);
 	    osDelay(2);
 
 	    //setMotorRPM(Bus2, M3508, 8, 50, shooterPreset);
-	    setMotorRPM(Bus2, GM6020, 1, rcYaw, yawPresetVoltageRPM);
+	    int8_t leftSwitch = getRCswitch(0);
+	    float gyroVel[3] = {IMU_get_gyro(x), IMU_get_gyro(y), IMU_get_gyro(z)};
 
-	    int16_t rcPitch = getRCchannel(1) * 1.91f + 3462;        // range: 4968 ~ 7490       110.85deg
+
+	    if (leftSwitch == 1) {
+	    	// usart_printf("%f, %f, %f\r\n", gyroVel[0], gyroVel[1], gyroVel[2]);
+	    	// gyroidValue += gyroVel[2]*0.005;
+	    	if (((gyroVel[2] > -0.02) && (gyroVel[2] < 0.02))) {
+	    		gyroVel[2] = 0;
+	    	}
+	    	gyroidValue += (gyroVel[2] + -0.008*rcYaw)*0.01;
+	    	setMotorRPM(Bus2, GM6020, 1, (int16_t)(-3000*gyroidValue), yawPresetVoltageRPM);
+	    } else {
+	    	setMotorRPM(Bus2, GM6020, 1, rcYaw, yawPresetVoltageRPM);
+	    }
+
+
+	    // usart_printf("%f\r\n", gyroidValue);
+	    // int16_t rcPitch = getRCchannel(1) * 1.91f + 3462;        // range: 4968 ~ 7490       110.85deg
 	    //usart_printf("ch1: %d\r\n", getRotorPosition(2,3,5));
 	    //setMotorPosition(Bus2, GM6020, 5, 3462, pitchPresetVoltagePosition);
 
@@ -1093,28 +1162,144 @@ void TaskChassis(void *argument)
 
 	    // setM3508RPM(7, CountryRoadsNotes() /*CountryRoadsNotes()*/, customPreset);
 
-	    setMotorRPM(Bus2, M3508, 1, chassisTargetRPM[0], chassisPreset);
-	    setMotorRPM(Bus2, M3508, 2, chassisTargetRPM[1], chassisPreset);
-	    setMotorRPM(Bus2, M3508, 3, chassisTargetRPM[2], chassisPreset);
-	    setMotorRPM(Bus2, M3508, 4, chassisTargetRPM[3], chassisPreset);
+	    // CURRENT LIMITOR
+	    // 0.0012207 = 20/16384
+
+
+	    for (int i = 0; i < 4; i++) {
+	    	MC[i] = getMotorCurrent(Bus2, M3508, (i+1)) * 0.0012207f;
+	    	if (MC[i] < 0) {
+	    		MC[i] = -1* MC[i];
+	    	}
+	    }
+	    maxPower = 0;
+	    scuffedMaxedPower = 0;
+	    for (int i = 0; i < 4; i++) {
+	    	maxPower += ((MC[i])) * M3508Voltage;
+	    	scuffedMaxedPower += MC[i];
+	    }
+
+	    usart_printf("%f, %f, %f, %f, %f, %f, %f\r\n", MC[0], MC[1], MC[2], MC[3], scuffedMaxedPower, PowerLimitor*0.04166, JoulesBuffer);
+	    PWMOutput(Buzzer, 1, 2000);
+	    PWMInitialize(Buzzer, FR, 1, 0.5);
+
+	    PWMOutput(LED, 1, 500);
+	    PWMOutput(LED, 3, 500);
+	    PWMInitialize(LED, FR, 1, 0.9);
+	    PWMInitialize(LED, FR, 3, 0.9);
+	    if (JoulesBuffer < 1) {
+	    	bufferDead = 1;
+	    }
+	    if (bufferDead == 1) {
+	    	PWMOn(LED, 3);
+	    } else {
+	    	PWMOff(LED, 3);
+	    }
+	    PWMOff(Buzzer, 1);
+	    /*
+	    if (switcherForBuzzer == 0) {
+	    	counterForBuzzer++;
+	    }
+	    if (switcherForBuzzer == 1) {
+	    	counterForBuzzer--;
+	    }
+
+	    if (counterForBuzzer < 0) {
+	    	switcherForBuzzer = 0;
+	    	counterForBuzzer = 0;
+	    } else if (counterForBuzzer > 50) {
+	    	switcherForBuzzer = 1;
+	    	counterForBuzzer = 50;
+	    }
+
+	    if (maxPower < (float)(percentagePowerLimit*PowerLimitor)) {
+		    if (switcherForBuzzer == 0) {
+		    	PWMOff(Buzzer, 1);
+		    	PWMOn(LED, 1);
+		    	PWMOff(LED, 3);
+		    }
+		    if (switcherForBuzzer == 1) {
+		    	PWMOff(Buzzer, 1);
+		    	PWMOff(LED, 1);
+		    	PWMOff(LED, 3);
+		    }
+	    } else {
+	    	PWMOff(Buzzer, 1);
+	    	PWMOn(LED, 1);
+	    	PWMOn(LED, 3);
+	    }
+		*/
+	    //usart_printf("%d\r\n", M1C);
+
+
+	    bufferLimitedDriveMode(chassisTargetRPM, chassisPreset);
+
+	    /*
+	    setM3508Current(Bus2, M3508, 1, chassisTargetRPM[0], chassisPreset);
+	    setM3508Current(Bus2, M3508, 2, chassisTargetRPM[1], chassisPreset);
+	    setM3508Current(Bus2, M3508, 3, chassisTargetRPM[2], chassisPreset);
+	    setM3508Current(Bus2, M3508, 4, chassisTargetRPM[3], chassisPreset);
+	    findingKIScaler();
+	    ScaleAllCurrentValuesForDriveMotors ();
+	    createCANforM3508ONLY(Bus2, M3508);
+	    */
+
+
 	    // ^^^^^^^^^ chassis code
 
-	    uint32_t notes = CountryRoadsNotes();
-	    setMotorRPM(Bus2, M3508, 7, notes, flywheel);
-	    setMotorRPM(Bus2, M3508, 8, -1*notes, flywheel);
 
-	    //setGM6020voltageRPM(5, getRCchannel(4) * 0.45, yawPresetVoltageRPM);
-	    //setGM6020voltagePosition(9, 6229, pitchPresetVoltagePosition);
-		if (getRCswitch(0) == 2) {                                         // IMPORTANT: top to bottom: 1 -> 3 -> 2
-			//setM2006RPM(6, -5400, indexerPreset);                             // THIS IS FUCKING STUPID
-			//setM3508RPM(7, 8000, shooterPreset);
-			//setM3508RPM(8, -8000, shooterPreset);
+	    uint32_t notes = CountryRoadsNotes();
+	    if (leftSwitch == 2 && switchForShooter == 0 && motorOn == 0) {
+	    	/*
+		    setMotorRPM(Bus2, M3508, 7, notes, flywheel);
+		    setMotorRPM(Bus2, M3508, 8, -1*notes, flywheel);
+		    */
+	    	switchForShooter = 1;
+	    	motorOn = 1;
+	    } else if (leftSwitch == 2 && switchForShooter == 0 && motorOn == 1) {
+			switchForShooter = 1;
+			motorOn = 0;
+	    }
+	    if (leftSwitch == 3) {
+	    	switchForShooter = 0;
+	    }
+
+	    if (leftSwitch == 4) {
+	    	// setMotorRPM(Bus2, M2006, 6, (100), indexerPreset);
+
 			if (jammed > 0 && indexerStopped == 0) {
-				//setM2006RPM(6, 15000, indexerPreset);
+				setMotorRPM(Bus2, M2006, 6, 15000, indexerPreset);
 				jammed--;
 			} else {
 				indexerStopped = 0;
-				//setM2006RPM(6, -5400, indexerPreset);
+				setMotorRPM(Bus2, M2006, 6, -100, indexerPreset);
+				if (indexerTargetReached == 0 && getMotorRPM(1, 2, 6) <= -10) {
+					indexerTargetReached = 1;
+				} else if (getMotorRPM(1, 2, 6) > -1 && indexerTargetReached == 1) {         // jammed
+					jammed = 12;
+					indexerTargetReached = 0;
+				}
+			}
+	    }
+
+		setMotorRPM(Bus2, M3508, 7, (800*motorOn), flywheel);
+		setMotorRPM(Bus2, M3508, 8, (-800*motorOn), flywheel);
+
+	    //setGM6020voltageRPM(5, getRCchannel(4) * 0.45, yawPresetVoltageRPM);
+	    //setGM6020voltagePosition(9, 6229, pitchPresetVoltagePosition);
+	    /*
+		if (getRCswitch(0) == 2) {                                         // IMPORTANT: top to bottom: 1 -> 3 -> 2
+
+			setM2006RPM(6, -5400, indexerPreset);                             // THIS IS FUCKING STUPID
+			setM3508RPM(7, 8000, shooterPreset);
+			setM3508RPM(8, -8000, shooterPreset);
+
+			if (jammed > 0 && indexerStopped == 0) {
+				setM2006RPM(6, 15000, indexerPreset);
+				jammed--;
+			} else {
+				indexerStopped = 0;
+				setM2006RPM(6, -5400, indexerPreset);
 				if (indexerTargetReached == 0 && getMotorRPM(1, 2, 6) <= -10) {
 					indexerTargetReached = 1;
 				} else if (getMotorRPM(1, 2, 6) > -1 && indexerTargetReached == 1) {         // jammed
@@ -1123,18 +1308,24 @@ void TaskChassis(void *argument)
 				}
 			}
 		} else if (getRCswitch(0) == 3) {
-			//setM2006RPM(6, 0, indexerPreset);
-			//setM3508RPM(7, 8000, shooterPreset);
-			//setM3508RPM(8, -8000, shooterPreset);
+
+			setM2006RPM(6, 0, indexerPreset);
+			setM3508RPM(7, 8000, shooterPreset);
+			setM3508RPM(8, -8000, shooterPreset);
+
 			indexerStopped = 1;
 			indexerTargetReached = 0;
 		} else {       // = 1
-			//setM2006RPM(6, 0, indexerPreset);
-			//setM3508RPM(7, 0, shooterPreset);
-			//setM3508RPM(8, 0, shooterPreset);
+
+			setM2006RPM(6, 0, indexerPreset);
+			setM3508RPM(7, 0, shooterPreset);
+			setM3508RPM(8, 0, shooterPreset);
+
 			indexerStopped = 1;
 			indexerTargetReached = 0;
 		}
+		*/
+		// usart_printf("%f\r\n", JoulesBuffer);
 		PWMTimerStarter();
         osDelay(5);
     }
@@ -1169,12 +1360,24 @@ __weak void imu_temp_control_task(void *argument)
 void TaskTurret(void *argument)
 {
   /* USER CODE BEGIN TaskTurret */
+	// JoulesBuffer = 60;
   /* Infinite loop */
-  for(;;)
-  {
-
-	  osDelay(5);
-  }
+	for(;;)
+	{
+		/*
+		JoulesBuffer += (45-maxPower)*0.1;
+		if (JoulesBuffer > 60) {
+			JoulesBuffer = 60;
+		}
+		if (JoulesBuffer < 0) {
+			JoulesBuffer = 0;
+		}
+		if (JoulesBuffer == 0) {
+			PWMOutput(Buzzer, 1, 6000);
+		}
+		*/
+		osDelay(5);
+	}
   /* USER CODE END TaskTurret */
 }
 

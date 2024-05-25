@@ -25,6 +25,10 @@
 /* USER CODE END Includes */
 extern DMA_HandleTypeDef hdma_tim4_ch3;
 
+extern DMA_HandleTypeDef hdma_tim5_ch1;
+
+extern DMA_HandleTypeDef hdma_tim5_ch2;
+
 extern DMA_HandleTypeDef hdma_usart1_tx;
 
 extern DMA_HandleTypeDef hdma_usart1_rx;
@@ -403,6 +407,44 @@ void HAL_TIM_PWM_MspInit(TIM_HandleTypeDef* htim_pwm)
   /* USER CODE END TIM5_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_TIM5_CLK_ENABLE();
+
+    /* TIM5 DMA Init */
+    /* TIM5_CH1 Init */
+    hdma_tim5_ch1.Instance = DMA1_Stream2;
+    hdma_tim5_ch1.Init.Channel = DMA_CHANNEL_6;
+    hdma_tim5_ch1.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_tim5_ch1.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_tim5_ch1.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_tim5_ch1.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
+    hdma_tim5_ch1.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
+    hdma_tim5_ch1.Init.Mode = DMA_NORMAL;
+    hdma_tim5_ch1.Init.Priority = DMA_PRIORITY_LOW;
+    hdma_tim5_ch1.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+    if (HAL_DMA_Init(&hdma_tim5_ch1) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(htim_pwm,hdma[TIM_DMA_ID_CC1],hdma_tim5_ch1);
+
+    /* TIM5_CH2 Init */
+    hdma_tim5_ch2.Instance = DMA1_Stream4;
+    hdma_tim5_ch2.Init.Channel = DMA_CHANNEL_6;
+    hdma_tim5_ch2.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_tim5_ch2.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_tim5_ch2.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_tim5_ch2.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
+    hdma_tim5_ch2.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
+    hdma_tim5_ch2.Init.Mode = DMA_NORMAL;
+    hdma_tim5_ch2.Init.Priority = DMA_PRIORITY_LOW;
+    hdma_tim5_ch2.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+    if (HAL_DMA_Init(&hdma_tim5_ch2) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(htim_pwm,hdma[TIM_DMA_ID_CC2],hdma_tim5_ch2);
+
   /* USER CODE BEGIN TIM5_MspInit 1 */
 
   /* USER CODE END TIM5_MspInit 1 */
@@ -624,6 +666,10 @@ void HAL_TIM_PWM_MspDeInit(TIM_HandleTypeDef* htim_pwm)
   /* USER CODE END TIM5_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_TIM5_CLK_DISABLE();
+
+    /* TIM5 DMA DeInit */
+    HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_CC1]);
+    HAL_DMA_DeInit(htim_pwm->hdma[TIM_DMA_ID_CC2]);
   /* USER CODE BEGIN TIM5_MspDeInit 1 */
 
   /* USER CODE END TIM5_MspDeInit 1 */
