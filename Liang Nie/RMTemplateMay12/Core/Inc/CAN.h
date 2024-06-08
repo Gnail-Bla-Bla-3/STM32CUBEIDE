@@ -57,6 +57,11 @@ typedef enum {
 	CAN_b2b_B_gyro_xy_ID = 0x112,
 	CAN_b2b_B_gyro_z_ID = 0x113,
 	CAN_b2b_B_motorFeedback_ID = 0x114,
+
+	CAN_POWER_ID = 0x101,
+	CAN_HEAT_ID = 0x102,
+	CAN_STATUS_1_ID = 0x103,
+	CAN_STATUS_2_ID = 0x104,
 } CAN_ID;
 
 typedef enum {
@@ -113,6 +118,7 @@ void CAN_DriveMotor(CAN_Bus bus, CAN_ID headerID, int16_t m1, int16_t m2, int16_
 void CAN_defineMotor(CAN_Bus bus, MotorType_ID motorType, int8_t motorID);
 void CAN_setMotorDefinition(int8_t *Declaration, MotorType_ID motorType);
 int8_t CAN_getMotorDefinition(CAN_Bus bus, uint8_t group, int8_t groupID);
+void CAN_transmit(CAN_Bus bus, CAN_ID headerID, uint64_t data);
 void CAN_setMotorCurrent(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16_t setCurrent);
 void CAN_setMotorVoltage(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16_t setVoltage);
 void CAN_setMotorCtrlVal(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16_t ctrlVal);

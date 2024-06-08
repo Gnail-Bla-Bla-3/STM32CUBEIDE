@@ -32,6 +32,9 @@ PID_data_t PID_data[2][11];
 
 
 
+extern robot_status_t robot_status;
+extern power_heat_data_t power_heat_data;
+
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
     CAN_RxHeaderTypeDef rx_header;
     uint8_t rx_data[8];
@@ -48,18 +51,37 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
         case CAN_G3M1_ID:
         case CAN_G3M2_ID:
         case CAN_G3M3_ID: {
-        	uint8_t i = rx_header.StdId - CAN_G1M1_ID; // get motor id
-        	if (hcan == &hcan1) {
-        		//memcpy(&motorFeedback[0][i].rotor_position, &rx_data[1], 1);
-        		//memcpy((motorFeedback[0][i].rotor_position + 1), &rx_data[0], 1);
-        		get_motor_feedback(&motorFeedback[0][i], rx_data);
-        	} else if (hcan == &hcan2) {
-        		//memcpy(&motorFeedback[1][i], &rx_data[0], 8);
-        		get_motor_feedback(&motorFeedback[1][i], rx_data);
-        		//usart_printf("%d \r\n", motorFeedback[1][0].rotor_position);
-        	}
-        	break;
+            uint8_t i = rx_header.StdId - CAN_G1M1_ID; // get motor id
+            if (hcan == &hcan1) {
+                //memcpy(&motorFeedback[0][i].rotor_position, &rx_data[1], 1);
+                //memcpy((motorFeedback[0][i].rotor_position + 1), &rx_data[0], 1);
+                get_motor_feedback(&motorFeedback[0][i], rx_data);
+            } else if (hcan == &hcan2) {
+                //memcpy(&motorFeedback[1][i], &rx_data[0], 8);
+                get_motor_feedback(&motorFeedback[1][i], rx_data);
+                //usart_printf("%d \r\n", motorFeedback[1][0].rotor_position);
+            }
+            break;
         }
+        case CAN_POWER_ID: {
+
+            memcpy(&power_heat_data, &rx_data, 8);
+            break;
+        }
+        case CAN_HEAT_ID: {
+            memcpy((&power_heat_data.buffer_energy), &rx_data, 8);
+            break;
+        }
+
+        case CAN_STATUS_1_ID: {
+            //memcpy(&robot_status, &rx_data, 8);
+            break;
+        }
+        case CAN_STATUS_2_ID: {
+            //memcpy((&robot_status.shooter_barrel_heat_limit), &rx_data, 6);
+            break;
+        }
+
         default: {
             break;
         }
@@ -67,14 +89,13 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
 }
 
 // CAN_transmit needs some work, right now it's "CAN1_sendFloats"
-void CAN_transmit(CAN_Bus bus, CAN_ID headerID, float data1, float data2) {
+void CAN_transmit(CAN_Bus bus, CAN_ID headerID, uint64_t data) {
     uint32_t send_mail_box;
     B2bTransmitHeader.StdId = headerID;
     B2bTransmitHeader.IDE = CAN_ID_STD;
     B2bTransmitHeader.RTR = CAN_RTR_DATA;
     B2bTransmitHeader.DLC = 0x08;
-    memcpy(&b2b_can_send_data[0], &data1, 4);
-    memcpy(&b2b_can_send_data[4], &data2, 4);
+    memcpy(&b2b_can_send_data[0], &data, 8);
     HAL_CAN_AddTxMessage(&CAN_1, &B2bTransmitHeader, b2b_can_send_data, &send_mail_box);
 }
 

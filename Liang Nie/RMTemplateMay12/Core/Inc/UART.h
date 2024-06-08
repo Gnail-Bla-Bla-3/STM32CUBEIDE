@@ -378,6 +378,4 @@ void usart_printRC(void);
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size);
 
-void usart_decode_keyboard(void);
-
 #endif /* INC_UART_H_ */

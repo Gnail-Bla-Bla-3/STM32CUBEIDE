@@ -21,7 +21,7 @@
 #include "UART.h"
 #include "main.h"
 
-
+extern pc_control_t pc_control;
 extern UART_HandleTypeDef huart3;
 extern DMA_HandleTypeDef hdma_usart3_rx;
 
@@ -166,20 +166,123 @@ int8_t getRCswitch(int8_t switchID) {
 	return rc_ptr->rc.s[switchID];
 }
 
-int16_t getRCmouseMovement(char axis) {
-	char xyz[6] = "xXyYzZ";
-	if(axis == xyz[0] || axis == xyz[1]){
+int16_t getRCmouseMovement(int8_t axis) {
+	if(axis == 0){
 		return rc_ptr->mouse.x;
-	} else if (axis == xyz[2] || axis == xyz[3]) {
+	} else if (axis == 1) {
 		return rc_ptr->mouse.y;
-	} else if (axis == xyz[4] || axis == xyz[5]) {
+	} else if (axis == 2) {
 		return rc_ptr->mouse.z;
 	} else {
 		return 0;
 	}
 }
 
-uint16_t getRCkey(int8_t keyID) {
-	// code is not finished
-	return 0;
+void RCkeysRefresh(void) {//temporary until uart fixed
+	uint16_t key = rc_ptr->key.v;
+	if(key > 32767){
+		pc_control.b = 1;
+		key= key - 32768;
+	}else{
+		pc_control.b = 0;
+	}
+	if(key>16383){
+		pc_control.v = 1;
+		key= key - 16384;
+	}else{
+		pc_control.v = 0;
+	}
+	if(key>8191){
+		pc_control.c = 1;
+		key= key - 8192;
+	}else{
+		pc_control.c = 0;
+	}
+	if(key>4095){
+		pc_control.x = 1;
+		key= key - 4096;
+	}else{
+		pc_control.x = 0;
+	}
+	if(key>2047){
+		pc_control.z = 1;
+		key= key - 2048;
+	}else{
+		pc_control.z = 0;
+	}
+	if(key>1023){
+		pc_control.g = 1;
+		key= key - 1024;
+	}else{
+		pc_control.g = 0;
+	}
+	if(key>511){
+		pc_control.f = 1;
+		key= key - 512;
+	}else{
+		pc_control.f = 0;
+	}
+	if(key > 255){
+		pc_control.r = 1;
+		key = key - 256;
+	}else{
+		pc_control.r = 0;
+	}
+
+
+	if(key > 127){
+		pc_control.e = 1;
+		key = key - 128;
+	}else{
+		pc_control.e = 0;
+
+	}
+	if(key>63){
+		pc_control.q = 1;
+		key= key - 64;
+	}else{
+		pc_control.q = 0;
+	}
+	if(key>31){
+		pc_control.ctrl = 1;
+		key =key - 32;
+	}else{
+		pc_control.ctrl = 0;
+	}
+	if(key>15){
+		pc_control.shift = 1;
+		key= key - 16;
+	}else{
+		pc_control.shift = 0;
+	}
+	if(key>7){
+		pc_control.d = 1;
+		key= key - 8;
+	}else{
+		pc_control.d = 0;
+	}
+	if(key>3){
+		pc_control.a = 1;
+		key= key - 4;
+	}else{
+		pc_control.a = 0;
+	}
+	if(key>1){
+		pc_control.s = 1;
+		key= key - 2;
+	}else{
+		pc_control.s = 0;
+	}
+	if(key > 0){
+		pc_control.w = 1;
+	}else{
+		pc_control.w = 0;
+	}
+
+	pc_control.mouse_x = rc_ptr->mouse.x;
+	pc_control.mouse_y = rc_ptr->mouse.y;
+	pc_control.mouse_z = rc_ptr->mouse.z;
+
+	pc_control.left_button_down = rc_ptr->mouse.press_l;
+	pc_control.right_button_down = rc_ptr->mouse.press_r;
 }

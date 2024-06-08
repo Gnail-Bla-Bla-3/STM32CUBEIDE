@@ -8,6 +8,7 @@
 #include "UART.h"
 #include "remote_control.h"
 #include "bsp_rc.h"
+#include "CAN.h"
 #include "stdio.h"
 #include "stdarg.h"
 #include "string.h"
@@ -65,201 +66,118 @@ void usart_printf(const char *fmt,...) {
 }
 
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
-	if (huart == &huart6) {
-		HAL_UARTEx_ReceiveToIdle_DMA(&huart6, RxBuff_2, 256);
-		uint16_t RxBuff16 = ((uint16_t) RxBuff_2[6] << 8) | RxBuff_2[5];
-		switch (RxBuff16) {
-		    case GAME_STATUS_HEADER : {
-		    	memcpy(&game_status, (RxBuff_2 + frame_header_offset), game_status_len);
-		    }
-		    case GAME_RESULT_HEADER : {
-		    	memcpy(&game_result, (RxBuff_2 + frame_header_offset), game_result_len);
-		    }
-		    case ROBOT_HP_HEADER : {
-		    	memcpy(&robot_status, (RxBuff_2 + frame_header_offset), robot_status_len);
-		    }
-		    case EVENT_DATA_HEADER : {
-		    	//memcpy(&robot_status, (RxBuff_2 + frame_header_offset), robot_status_len);
-		    }
-		    case PROJECTILE_SUPPLY_HEADER : {
-		    	memcpy(&ext_supply_projectile_action, (RxBuff_2 + frame_header_offset), ext_supply_projectile_action_len);
-		    }
-		    case REFEREE_WARNING_HEADER : {
-		    	memcpy(&referee_warning, (RxBuff_2 + frame_header_offset), referee_warning_len);
-		    }
-		    case DART_INFO_HEADER : {
-		    	memcpy(&dart_info, (RxBuff_2 + frame_header_offset), dart_info_len);
-		    }
-		    case ROBOT_HEADER : {
-		    	memcpy(&robot_status, (RxBuff_2 + frame_header_offset), robot_status_len);
-		    }
-		    case POWER_HEAT_HEADER : {
-		    	memcpy(&power_heat_data, (RxBuff_2 + frame_header_offset), power_heat_data_len);
-		    }
-		    case POSITION_HEADER: {
-		    	memcpy(&robot_position, (RxBuff_2 + frame_header_offset), robot_pos_len);
-		    }// edit below
-		    case BUFF_HEADER: {
-		    	memcpy(&buffs, (RxBuff_2 + frame_header_offset), buff_len);
-		    }
-		    case AIR_SUPPORT_HEADER: {
-		    	//memcpy(&robot_position, (RxBuff_2 + frame_header_offset), robot_pos_len);
-		    }
-		    case DAMAGE_SOURCE_HEADER: {
-		    	memcpy(&damage_data, (RxBuff_2 + frame_header_offset), damage_data_len);
-		    }
-		    case PROJECTILE_INFO_HEADER: {
-		    	memcpy(&shoot_data, (RxBuff_2 + frame_header_offset), shoot_data_len);
-		    }
-		    case PROJECTILE_ALLOWANCE_HEADER: {
-		    	memcpy(&projectile_allowance, (RxBuff_2 + frame_header_offset), projectile_allowance_len);
-		    }
-		    case RFID_HEADER: {
-		    	memcpy(&rfid_status, (RxBuff_2 + frame_header_offset), rfid_status_len);
-		    }
-		    case DART_COMMAND_HEADER: {
-		    	memcpy(&dart_client_cmd, (RxBuff_2 + frame_header_offset), dart_client_cmd_len);
-		    }
-		    case TEAM_POSITION_HEADER: {
-		    	memcpy(&robot_positions, (RxBuff_2 + frame_header_offset), ground_robot_position_len);
-		    }
-		    case RADAR_MARKING_HEADER: {
-		    	memcpy(&radar_mark_data, (RxBuff_2 + frame_header_offset), radar_mark_data_len);
-		    }
-		    case SENTRY_HEADER: {
-		    	memcpy(&sentry_info, (RxBuff_2 + frame_header_offset), sentry_info_len);
-		    }
-		    case RADAR_BUFF_HEADER: {
-		    	memcpy(&radar_info, (RxBuff_2 + frame_header_offset), radar_info_len);
-		    }
-		    case ROBOT_INTERACTION_HEADER: {
-		    	memcpy(&robot_position, (RxBuff_2 + frame_header_offset), robot_interaction_data_len);
-		    }
-		    case CUSTOM_CONTROLLER_ROBOT_HEADER: {
-		    	//memcpy(&robot_position, (RxBuff_2 + frame_header_offset), custom_info_len);
-		    }
-		    case MINIMAP_COMMAND_HEADER: {
-		    	//memcpy(&robot_position, (RxBuff_2 + frame_header_offset), map_command_len);
-		    }
-		    case PC_CONTROL_HEADER: {
-		    	memcpy(&pc_control, (RxBuff_2 + frame_header_offset), pc_control_len);
-		    	usart_decode_keyboard();
-		    }
-		    case MINIMAP_TARGET_HEADER: {
-		    	//memcpy(&robot_position, (RxBuff_2 + frame_header_offset), robot_pos_len);
-		    }
-		    case CUSTOM_CONTROLLER_CLIENT_HEADER: {
-		    	//memcpy(&robot_position, (RxBuff_2 + frame_header_offset), robot_pos_len);
-		    }
-		    case MINIMAP_DATA_HEADER: {
-		    	memcpy(&robot_position, (RxBuff_2 + frame_header_offset), map_data_len);
-		    }
-		    case CUSTOM_INFO_HEADER: {
-		    	//memcpy(&robot_position, (RxBuff_2 + frame_header_offset), robot_pos_len);
-		    }
+/*
+	if (1) {
+			HAL_UARTEx_ReceiveToIdle_DMA(&huart6, RxBuff_2, 256);
+			//usart_printf("beanus");
+			uint16_t RxBuff16 = ((uint16_t) RxBuff_2[6] << 8) | RxBuff_2[5];
 
-		    default: {
-		    	//usart_printf("no match \r\n");
-		        break;
-		    }
-		}
-	}
-}
+			switch (RxBuff16) {
+					    case GAME_STATUS_HEADER : {
+					    	//memcpy(&game_status, (RxBuff_2 + frame_header_offset), game_status_len);
+					    	break;
+					    }
+					    case GAME_RESULT_HEADER : {
+					    	//memcpy(&game_result, (RxBuff_2 + frame_header_offset), game_result_len);
+					    	break;
+					    }
+					    case ROBOT_HP_HEADER : {
+					    	//memcpy(&robot_status, (RxBuff_2 + frame_header_offset), robot_status_len);
+					    	break;
+					    }
+					    case EVENT_DATA_HEADER : {
+					    	//memcpy(&robot_status, (RxBuff_2 + frame_header_offset), robot_status_len);
+					    	break;
+					    }
+					    //case PROJECTILE_SUPPLY_HEADER : {
+					    	//memcpy(&ext_supply_projectile_action, (RxBuff_2 + frame_header_offset), ext_supply_projectile_action_len);
+					    	//break;
+					    //}
+					    case REFEREE_WARNING_HEADER : {
+					    	//memcpy(&referee_warning, (RxBuff_2 + frame_header_offset), referee_warning_len);
+					    	break;
+					    }
+					    case DART_INFO_HEADER : {
+					    	//memcpy(&dart_info, (RxBuff_2 + frame_header_offset), dart_info_len);
+					    	break;
+					    }
+					    case ROBOT_HEADER : {
 
-void usart_decode_keyboard(void) {
-	if(pc_control.keyboard_values_1 > 127){
-		pc_control.e = 1;
-		pc_control.keyboard_values_1= pc_control.keyboard_values_1 - 128;
-	}else{
-		pc_control.e = 0;
+					    	//memcpy(&robot_status, (RxBuff_2 + frame_header_offset), robot_status_len);
+					    	uint64_t statusData[2] = {0, 0};
+					    	memcpy(&statusData[0], (RxBuff_2 + frame_header_offset), 8);
+					    	memcpy(&statusData[1], (RxBuff_2 + frame_header_offset + 8), 8);
+					    	CAN_transmit(Bus1, CAN_STATUS_1_ID, statusData[0]);
+					    	CAN_transmit(Bus1, CAN_STATUS_2_ID, statusData[1]);
+					    	break;
+					    }
+					    case POWER_HEAT_HEADER : {
+					    	memcpy(&power_heat_data, (RxBuff_2 + frame_header_offset), power_heat_data_len);
+					    	uint64_t powerHeatData[2] = {0, 0};
+					    	memcpy(&powerHeatData[0], (RxBuff_2 + frame_header_offset), 8);
+					    	memcpy(&powerHeatData[1], (RxBuff_2 + frame_header_offset + 8), 8);
+					    	CAN_transmit(Bus1, CAN_POWER_ID, powerHeatData[0]);
+					    	CAN_transmit(Bus1, CAN_HEAT_ID, powerHeatData[1]);
+					    	break;
+					    }
+					    case POSITION_HEADER: {
+					    	//memcpy(&robot_position, (RxBuff_2 + frame_header_offset), robot_pos_len);
+					    	break;
+					    }// edit below
+					    case BUFF_HEADER: {
+					    	//memcpy(&buffs, (RxBuff_2 + frame_header_offset), buff_len);
+					    	break;
+					    }
+					    case AIR_SUPPORT_HEADER: {
+					    	//memcpy(&robot_position, (RxBuff_2 + frame_header_offset), robot_pos_len);
+					    	break;
+					    }
+					    case DAMAGE_SOURCE_HEADER: {
+					    	//memcpy(&damage_data, (RxBuff_2 + frame_header_offset), damage_data_len);
+					    	break;
+					    }
+					    case PROJECTILE_INFO_HEADER: {
+					    	//memcpy(&shoot_data, (RxBuff_2 + frame_header_offset), shoot_data_len);
+					    	break;
+					    }
+					    case PROJECTILE_ALLOWANCE_HEADER: {
+					    	//memcpy(&projectile_allowance, (RxBuff_2 + frame_header_offset), projectile_allowance_len);
+					    	break;
+					    }
+					    case RFID_HEADER: {
+					    	//memcpy(&rfid_status, (RxBuff_2 + frame_header_offset), rfid_status_len);
+					    	break;
+					    }
+					    case DART_COMMAND_HEADER: {
+					    	//memcpy(&dart_client_cmd, (RxBuff_2 + frame_header_offset), dart_client_cmd_len);
+					    	break;
+					    }
+					    case TEAM_POSITION_HEADER: {
+					    	//memcpy(&robot_positions, (RxBuff_2 + frame_header_offset), ground_robot_position_len);
+					    	break;
+					    }
+					    case RADAR_MARKING_HEADER: {
+					    	//memcpy(&radar_mark_data, (RxBuff_2 + frame_header_offset), radar_mark_data_len);
+					    	break;
+					    }
+					    case SENTRY_HEADER: {
+					    	//memcpy(&sentry_info, (RxBuff_2 + frame_header_offset), sentry_info_len);
+					    	break;
+					    }
+					    case RADAR_BUFF_HEADER: {
+					    	//memcpy(&radar_info, (RxBuff_2 + frame_header_offset), radar_info_len);
+					    	break;
+					    }
+					    case ROBOT_INTERACTION_HEADER: {
+					    	//memcpy(&robot_position, (RxBuff_2 + frame_header_offset), robot_interaction_data_len);
+					    	break;
+					    }default: {
+					    	//usart_printf("no match \r\n");
+					        break;
+					    }
+			}
+
 	}
-	if(pc_control.keyboard_values_1>63){
-		pc_control.q = 1;
-		pc_control.keyboard_values_1= pc_control.keyboard_values_1 - 64;
-	}else{
-		pc_control.q = 0;
-	}
-	if(pc_control.keyboard_values_1>31){
-		pc_control.ctrl = 1;
-		pc_control.keyboard_values_1= pc_control.keyboard_values_1 - 32;
-	}else{
-		pc_control.ctrl = 0;
-	}
-	if(pc_control.keyboard_values_1>15){
-		pc_control.shift = 1;
-		pc_control.keyboard_values_1= pc_control.keyboard_values_1 - 16;
-	}else{
-		pc_control.shift = 0;
-	}
-	if(pc_control.keyboard_values_1>7){
-		pc_control.d = 1;
-		pc_control.keyboard_values_1= pc_control.keyboard_values_1 - 8;
-	}else{
-		pc_control.d = 0;
-	}
-	if(pc_control.keyboard_values_1>3){
-		pc_control.a = 1;
-		pc_control.keyboard_values_1= pc_control.keyboard_values_1 - 4;
-	}else{
-		pc_control.a = 0;
-	}
-	if(pc_control.keyboard_values_1>1){
-		pc_control.s = 1;
-		pc_control.keyboard_values_1= pc_control.keyboard_values_1 - 2;
-	}else{
-		pc_control.s = 0;
-	}
-	if(pc_control.keyboard_values_1 > 0){
-		pc_control.w = 1;
-	}else{
-		pc_control.w = 0;
-	}
-	if(pc_control.keyboard_values_2 > 127){
-		pc_control.b = 1;
-		pc_control.keyboard_values_2= pc_control.keyboard_values_2 - 128;
-	}else{
-		pc_control.b = 0;
-	}
-	if(pc_control.keyboard_values_2>63){
-		pc_control.v = 1;
-		pc_control.keyboard_values_2= pc_control.keyboard_values_2 - 64;
-	}else{
-		pc_control.v = 0;
-	}
-	if(pc_control.keyboard_values_2>31){
-		pc_control.c = 1;
-		pc_control.keyboard_values_2= pc_control.keyboard_values_2 - 32;
-	}else{
-		pc_control.c = 0;
-	}
-	if(pc_control.keyboard_values_2>15){
-		pc_control.x = 1;
-		pc_control.keyboard_values_2= pc_control.keyboard_values_2 - 16;
-	}else{
-		pc_control.x = 0;
-	}
-	if(pc_control.keyboard_values_2>7){
-		pc_control.z = 1;
-		pc_control.keyboard_values_2= pc_control.keyboard_values_2 - 8;
-	}else{
-		pc_control.z = 0;
-	}
-	if(pc_control.keyboard_values_2>3){
-		pc_control.g = 1;
-		pc_control.keyboard_values_2= pc_control.keyboard_values_2 - 4;
-	}else{
-		pc_control.g = 0;
-	}
-	if(pc_control.keyboard_values_2>1){
-		pc_control.f = 1;
-		pc_control.keyboard_values_2= pc_control.keyboard_values_2 - 2;
-	}else{
-		pc_control.f = 0;
-	}
-	if(pc_control.keyboard_values_2 > 0){
-		pc_control.r = 1;
-	}else{
-		pc_control.r = 0;
-	}
+	*/
 }
 

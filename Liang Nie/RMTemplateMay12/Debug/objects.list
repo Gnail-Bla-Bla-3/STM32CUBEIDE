@@ -7,6 +7,7 @@
 "./Core/Src/bsp_imu_pwm.o"
 "./Core/Src/bsp_rc.o"
 "./Core/Src/buffer.o"
+"./Core/Src/driving.o"
 "./Core/Src/freertos.o"
 "./Core/Src/imu_temp_control_task.o"
 "./Core/Src/ist8310driver.o"

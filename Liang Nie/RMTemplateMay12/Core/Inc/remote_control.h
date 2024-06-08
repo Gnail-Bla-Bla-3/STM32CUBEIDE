@@ -76,6 +76,8 @@ typedef struct
 
 } RC_ctrl_t;
 
+
+
 /* ----------------------- Internal Data ----------------------------------- */
 
 /**
@@ -98,9 +100,9 @@ int16_t getRCchannel(int8_t channelID);
 
 int8_t getRCswitch(int8_t switchID);
 
-int16_t getRCmouseMovement(char axis);
+int16_t getRCmouseMovement(int8_t axis);
 
-uint16_t getRCkey(int8_t keyID);
+void RCkeysRefresh(void);
 
 
 #endif

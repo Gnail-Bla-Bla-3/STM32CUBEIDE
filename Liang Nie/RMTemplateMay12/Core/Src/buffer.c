@@ -39,11 +39,11 @@ void settingMaxCurrentVal (float bufferValFromPMM, uint16_t powerLimit) {
 
 	float maxPowerForRobot = 0;
 	if (powerLimit > 100) {
-		maxPowerForRobot = 2;
+		maxPowerForRobot = 4;
 	} if (powerLimit >= 60 && powerLimit <=100) {
-		maxPowerForRobot = (0.025*powerLimit)-0.5;
+		maxPowerForRobot = (0.05*powerLimit)-1;
 	} if (powerLimit < 60) {
-		maxPowerForRobot = 1;
+		maxPowerForRobot = 2;
 	}
 
 	if (bufferValFromPMM > 50) {
@@ -59,7 +59,7 @@ void settingMaxCurrentVal (float bufferValFromPMM, uint16_t powerLimit) {
 
 void driveMotorRPM (int16_t RPMtarget[], PID_preset_t preset) {
 	for (int i = 0; i < 4; i++) {
-		M3508Current[i] = calcRPM_PID(Bus2, M3508, i+1, RPMtarget[i], preset);
+		M3508Current[i] = calcRPM_PID(Bus1, M3508, i+1, RPMtarget[i], preset);
 	}
 	// M3508Current[motorID-1] = calcRPM_PID(Bus2, M3508, motorID, RPMtarget, preset);
 }
@@ -73,7 +73,7 @@ void ScaleAllCurrentValuesForDriveMotors () {
 
 void createDriveMotorCAN() {
 	for (int j = 0; j < 4; j++) {
-		CAN_setMotorCtrlVal(Bus2, M3508, j+1, M3508ScaledCurrent[j]);
+		CAN_setMotorCtrlVal(Bus1, M3508, j+1, M3508ScaledCurrent[j]);
 	}
 }
 

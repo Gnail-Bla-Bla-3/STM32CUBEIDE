@@ -32,7 +32,8 @@ Core/Src/UART.o: ../Core/Src/UART.c ../Core/Inc/UART.h ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/remote_control.h ../Core/Inc/bsp_rc.h \
- ../Core/Inc/remote_control.h ../Core/Inc/bsp_rc.h ../Core/Inc/main.h
+ ../Core/Inc/remote_control.h ../Core/Inc/bsp_rc.h ../Core/Inc/CAN.h \
+ ../Core/Inc/main.h
 ../Core/Inc/UART.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -71,4 +72,5 @@ Core/Src/UART.o: ../Core/Src/UART.c ../Core/Inc/UART.h ../Core/Inc/main.h \
 ../Core/Inc/bsp_rc.h:
 ../Core/Inc/remote_control.h:
 ../Core/Inc/bsp_rc.h:
+../Core/Inc/CAN.h:
 ../Core/Inc/main.h:

@@ -23,5 +23,6 @@ uint32_t NeverGonnaGiveYouUpNotes();
 uint32_t CaliforniaGirlsNotes();
 uint32_t HampsterNotes();
 void initializeCaliforniaGirls();
+uint32_t CountryRoadsNotes();
 
 #endif /* INC_SONGS_H_ */
