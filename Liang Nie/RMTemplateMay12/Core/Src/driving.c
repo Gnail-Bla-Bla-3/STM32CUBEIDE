@@ -114,13 +114,13 @@ void allCheShit(uint8_t w, uint8_t a, uint8_t s, uint8_t d, uint8_t q, uint8_t e
 	int16_t rcQE = 9005.7*((scaledMovementCounter[5]-scaledMovementCounter[4]));
 
 	if (chassisVsTurretDrive == 1) {
-		xJoystickDirection = (rcRPM[0]*cos(convertedAngle) - rcRPM[1]*sin(convertedAngle) + (rcAD*cos(convertedAngle) - rcWS*sin(convertedAngle)));
-		yJoystickDirection = (rcRPM[0]*sin(convertedAngle) + rcRPM[1]*cos(convertedAngle) + (rcAD*sin(convertedAngle) + rcWS*cos(convertedAngle)));
+		xJoystickDirection = (rcRPM[2]*cos(convertedAngle) - rcRPM[3]*sin(convertedAngle) + (rcAD*cos(convertedAngle) - rcWS*sin(convertedAngle)));
+		yJoystickDirection = (rcRPM[2]*sin(convertedAngle) + rcRPM[3]*cos(convertedAngle) + (rcAD*sin(convertedAngle) + rcWS*cos(convertedAngle)));
 		rotationOfChassis = rotationSpeedOfChassis * qeRotationWOWS;
 	} else {
-		xJoystickDirection = (rcRPM[0] + rcWS);
-		yJoystickDirection = (rcRPM[1] + rcQE);
-		rotationOfChassis = (rcRPM[2] + rcAD);
+		xJoystickDirection = (rcRPM[2] + rcWS);
+		yJoystickDirection = (rcRPM[3] + rcQE);
+		rotationOfChassis = (rcRPM[0] + rcAD);
 	}
 
 	usart_printf("3\r\n");

@@ -33,17 +33,17 @@ void findingKIScaler() {
 	// usart_printf("%f/%d = %f\r\n", maxPowerLimitor, sum, powerScaler);
 }
 
-void settingMaxCurrentVal (float bufferValFromPMM, uint16_t powerLimit) {
+void settingMaxCurrentVal (float bufferValFromPMM, uint16_t powerLimit, uint8_t shift) {
 
 	// uint16_t adjustedPowerLimit = powerLimit - 6;
-
+	uint8_t shiftedValue = shift+1;
 	float maxPowerForRobot = 0;
 	if (powerLimit > 100) {
-		maxPowerForRobot = 4;
+		maxPowerForRobot = 4*shiftedValue;
 	} if (powerLimit >= 60 && powerLimit <=100) {
-		maxPowerForRobot = (0.05*powerLimit)-1;
+		maxPowerForRobot = ((0.05*powerLimit)-1)*shiftedValue;
 	} if (powerLimit < 60) {
-		maxPowerForRobot = 2;
+		maxPowerForRobot = 2*shiftedValue;
 	}
 
 	if (bufferValFromPMM > 50) {

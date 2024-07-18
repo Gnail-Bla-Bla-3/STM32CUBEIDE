@@ -1,0 +1,10 @@
+10:03:27 **** Build of configuration Debug for project SentryCode ****
+make -j3 all 
+arm-none-eabi-size  SentryCode.elf 
+   text	   data	    bss	    dec	    hex	filename
+  73648	    592	  24304	  98544	  180f0	SentryCode.elf
+Finished building: default.size.stdout
+ 
+
+10:03:28 Build Finished. 0 errors, 0 warnings. (took 1s.141ms)
+

@@ -12,7 +12,7 @@
 #include "CAN.h"
 
 
-void settingMaxCurrentVal(float bufferValFromPMM, uint16_t powerLimit);
+void settingMaxCurrentVal(float bufferValFromPMM, uint16_t powerLimit, uint8_t shift);
 void bufferLimitedDriveMode(int16_t RPMtarget[], PID_preset_t preset);
 /*
 void driveMotorRPM (int16_t RPMtarget[], PID_preset_t preset);

@@ -1,299 +1,114 @@
-19:21:08 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
+10:03:27 **** Build of configuration Debug for project SentryCode ****
 make -j3 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-size  SentryCode.elf 
+   text	   data	    bss	    dec	    hex	filename
+  73648	    592	  24304	  98544	  180f0	SentryCode.elf
+Finished building: default.size.stdout
+ 
+09:29:59 **** Build of configuration Debug for project HeroBallFondlerCode ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskMain':
+../Core/Src/main.c:1040:17: warning: unused variable 'firingCounter' [-Wunused-variable]
+ 1040 |         int16_t firingCounter = 0;
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c:1039:17: warning: unused variable 'aimingCounter' [-Wunused-variable]
+ 1039 |         int16_t aimingCounter = 0;
+      |                 ^~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'TaskChassis':
-../Core/Src/main.c:1435:21: warning: unused variable 'motorSpeeddd' [-Wunused-variable]
- 1435 |             int16_t motorSpeeddd = getMotorRPM(Bus1, GM6020, 1);
-      |                     ^~~~~~~~~~~~
-../Core/Src/main.c:1246:21: warning: unused variable 'turretPitch' [-Wunused-variable]
- 1246 |             int16_t turretPitch = getRCchannel(1)* 0.85f;
-      |                     ^~~~~~~~~~~
-../Core/Src/main.c:1154:16: warning: unused variable 'rightSwitch' [-Wunused-variable]
- 1154 |         int8_t rightSwitch = getRCswitch(0);
-      |                ^~~~~~~~~~~
-../Core/Src/main.c:1135:13: warning: variable 'rotationSpeedOfChassis' set but not used [-Wunused-but-set-variable]
- 1135 |     int16_t rotationSpeedOfChassis = 0;
-      |             ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1091:13: warning: variable 'chassisrcYaw' set but not used [-Wunused-but-set-variable]
- 1091 |     int16_t chassisrcYaw = 0;
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:1090:13: warning: variable 'rcYaw' set but not used [-Wunused-but-set-variable]
- 1090 |     int16_t rcYaw = 0;
+../Core/Src/main.c:1092:13: warning: variable 'rcRPM' set but not used [-Wunused-but-set-variable]
+ 1092 |     int16_t rcRPM[4] = {0,0,0,0};                              // maps rc percentage reading to motors, assuming we're running M3508s at max 469RPM
       |             ^~~~~
-../Core/Src/main.c:1087:13: warning: unused variable 'chassisTargetRPM' [-Wunused-variable]
- 1087 |     int16_t chassisTargetRPM[4] = {0, 0, 0, 0};
-      |             ^~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "RMTemplateMay12.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplateMay12/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplateMay12.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplateMay12.elf has a LOAD segment with RWX permissions
-Finished building target: RMTemplateMay12.elf
+arm-none-eabi-gcc -o "HeroBallFondlerCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/HeroBallFondlerCode/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HeroBallFondlerCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HeroBallFondlerCode.elf
  
-arm-none-eabi-size  RMTemplateMay12.elf 
-arm-none-eabi-objdump -h -S RMTemplateMay12.elf  > "RMTemplateMay12.list"
+arm-none-eabi-size  HeroBallFondlerCode.elf 
+arm-none-eabi-objdump -h -S HeroBallFondlerCode.elf  > "HeroBallFondlerCode.list"
    text	   data	    bss	    dec	    hex	filename
-  82984	    644	  24260	 107888	  1a570	RMTemplateMay12.elf
+  58884	    216	  24248	  83348	  14594	HeroBallFondlerCode.elf
 Finished building: default.size.stdout
  
-Finished building: RMTemplateMay12.list
+Finished building: HeroBallFondlerCode.list
  
-19:21:17 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
+09:30:20 **** Incremental Build of configuration Debug for project HeroBallFondlerCode ****
 make -j3 all 
-arm-none-eabi-size  RMTemplateMay12.elf 
+arm-none-eabi-size  HeroBallFondlerCode.elf 
    text	   data	    bss	    dec	    hex	filename
-  82984	    644	  24260	 107888	  1a570	RMTemplateMay12.elf
+  58884	    216	  24248	  83348	  14594	HeroBallFondlerCode.elf
 Finished building: default.size.stdout
  
-19:22:49 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
+09:32:29 **** Incremental Build of configuration Debug for project HeroBallFondlerCode ****
 make -j3 all 
-arm-none-eabi-gcc "../Core/Src/driving.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/driving.d" -MT"Core/Src/driving.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/driving.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskMain':
+../Core/Src/main.c:1040:17: warning: unused variable 'firingCounter' [-Wunused-variable]
+ 1040 |         int16_t firingCounter = 0;
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c:1039:17: warning: unused variable 'aimingCounter' [-Wunused-variable]
+ 1039 |         int16_t aimingCounter = 0;
+      |                 ^~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'TaskChassis':
-../Core/Src/main.c:1435:21: warning: unused variable 'motorSpeeddd' [-Wunused-variable]
- 1435 |             int16_t motorSpeeddd = getMotorRPM(Bus1, GM6020, 1);
-      |                     ^~~~~~~~~~~~
-../Core/Src/main.c:1246:21: warning: unused variable 'turretPitch' [-Wunused-variable]
- 1246 |             int16_t turretPitch = getRCchannel(1)* 0.85f;
-      |                     ^~~~~~~~~~~
-../Core/Src/main.c:1154:16: warning: unused variable 'rightSwitch' [-Wunused-variable]
- 1154 |         int8_t rightSwitch = getRCswitch(0);
-      |                ^~~~~~~~~~~
-../Core/Src/main.c:1135:13: warning: variable 'rotationSpeedOfChassis' set but not used [-Wunused-but-set-variable]
- 1135 |     int16_t rotationSpeedOfChassis = 0;
-      |             ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1091:13: warning: variable 'chassisrcYaw' set but not used [-Wunused-but-set-variable]
- 1091 |     int16_t chassisrcYaw = 0;
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:1090:13: warning: variable 'rcYaw' set but not used [-Wunused-but-set-variable]
- 1090 |     int16_t rcYaw = 0;
+../Core/Src/main.c:1092:13: warning: variable 'rcRPM' set but not used [-Wunused-but-set-variable]
+ 1092 |     int16_t rcRPM[4] = {0,0,0,0};                              // maps rc percentage reading to motors, assuming we're running M3508s at max 469RPM
       |             ^~~~~
-../Core/Src/main.c:1087:13: warning: unused variable 'chassisTargetRPM' [-Wunused-variable]
- 1087 |     int16_t chassisTargetRPM[4] = {0, 0, 0, 0};
-      |             ^~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "RMTemplateMay12.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplateMay12/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplateMay12.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplateMay12.elf has a LOAD segment with RWX permissions
-Finished building target: RMTemplateMay12.elf
+arm-none-eabi-gcc -o "HeroBallFondlerCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/HeroBallFondlerCode/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HeroBallFondlerCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HeroBallFondlerCode.elf
  
-arm-none-eabi-size  RMTemplateMay12.elf 
-arm-none-eabi-objdump -h -S RMTemplateMay12.elf  > "RMTemplateMay12.list"
+arm-none-eabi-size  HeroBallFondlerCode.elf 
+arm-none-eabi-objdump -h -S HeroBallFondlerCode.elf  > "HeroBallFondlerCode.list"
    text	   data	    bss	    dec	    hex	filename
-  83024	    644	  24260	 107928	  1a598	RMTemplateMay12.elf
+  58900	    216	  24248	  83364	  145a4	HeroBallFondlerCode.elf
 Finished building: default.size.stdout
  
-Finished building: RMTemplateMay12.list
+Finished building: HeroBallFondlerCode.list
  
-19:25:41 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
+16:41:49 **** Incremental Build of configuration Debug for project HeroBallFondlerCode ****
 make -j3 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskMain':
+../Core/Src/main.c:1040:17: warning: unused variable 'firingCounter' [-Wunused-variable]
+ 1040 |         int16_t firingCounter = 0;
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c:1039:17: warning: unused variable 'aimingCounter' [-Wunused-variable]
+ 1039 |         int16_t aimingCounter = 0;
+      |                 ^~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'TaskChassis':
-../Core/Src/main.c:1435:21: warning: unused variable 'motorSpeeddd' [-Wunused-variable]
- 1435 |             int16_t motorSpeeddd = getMotorRPM(Bus1, GM6020, 1);
-      |                     ^~~~~~~~~~~~
-../Core/Src/main.c:1246:21: warning: unused variable 'turretPitch' [-Wunused-variable]
- 1246 |             int16_t turretPitch = getRCchannel(1)* 0.85f;
-      |                     ^~~~~~~~~~~
-../Core/Src/main.c:1154:16: warning: unused variable 'rightSwitch' [-Wunused-variable]
- 1154 |         int8_t rightSwitch = getRCswitch(0);
-      |                ^~~~~~~~~~~
-../Core/Src/main.c:1135:13: warning: variable 'rotationSpeedOfChassis' set but not used [-Wunused-but-set-variable]
- 1135 |     int16_t rotationSpeedOfChassis = 0;
-      |             ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1091:13: warning: variable 'chassisrcYaw' set but not used [-Wunused-but-set-variable]
- 1091 |     int16_t chassisrcYaw = 0;
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:1090:13: warning: variable 'rcYaw' set but not used [-Wunused-but-set-variable]
- 1090 |     int16_t rcYaw = 0;
+../Core/Src/main.c:1092:13: warning: variable 'rcRPM' set but not used [-Wunused-but-set-variable]
+ 1092 |     int16_t rcRPM[4] = {0,0,0,0};                              // maps rc percentage reading to motors, assuming we're running M3508s at max 469RPM
       |             ^~~~~
-../Core/Src/main.c:1087:13: warning: unused variable 'chassisTargetRPM' [-Wunused-variable]
- 1087 |     int16_t chassisTargetRPM[4] = {0, 0, 0, 0};
-      |             ^~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "RMTemplateMay12.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplateMay12/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplateMay12.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplateMay12.elf has a LOAD segment with RWX permissions
-Finished building target: RMTemplateMay12.elf
+arm-none-eabi-gcc -o "HeroBallFondlerCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/HeroBallFondlerCode/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HeroBallFondlerCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HeroBallFondlerCode.elf
  
-arm-none-eabi-size  RMTemplateMay12.elf 
-arm-none-eabi-objdump -h -S RMTemplateMay12.elf  > "RMTemplateMay12.list"
+arm-none-eabi-size  HeroBallFondlerCode.elf 
+arm-none-eabi-objdump -h -S HeroBallFondlerCode.elf  > "HeroBallFondlerCode.list"
    text	   data	    bss	    dec	    hex	filename
-  83024	    644	  24260	 107928	  1a598	RMTemplateMay12.elf
+  58900	    216	  24248	  83364	  145a4	HeroBallFondlerCode.elf
 Finished building: default.size.stdout
  
-Finished building: RMTemplateMay12.list
+Finished building: HeroBallFondlerCode.list
  
-19:25:57 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
+16:54:05 **** Incremental Build of configuration Debug for project HeroBallFondlerCode ****
 make -j3 all 
-arm-none-eabi-size  RMTemplateMay12.elf 
-   text	   data	    bss	    dec	    hex	filename
-  83024	    644	  24260	 107928	  1a598	RMTemplateMay12.elf
-Finished building: default.size.stdout
- 
-19:27:11 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskMain':
+../Core/Src/main.c:1040:17: warning: unused variable 'firingCounter' [-Wunused-variable]
+ 1040 |         int16_t firingCounter = 0;
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c:1039:17: warning: unused variable 'aimingCounter' [-Wunused-variable]
+ 1039 |         int16_t aimingCounter = 0;
+      |                 ^~~~~~~~~~~~~
 ../Core/Src/main.c: In function 'TaskChassis':
-../Core/Src/main.c:1435:21: warning: unused variable 'motorSpeeddd' [-Wunused-variable]
- 1435 |             int16_t motorSpeeddd = getMotorRPM(Bus1, GM6020, 1);
-      |                     ^~~~~~~~~~~~
-../Core/Src/main.c:1246:21: warning: unused variable 'turretPitch' [-Wunused-variable]
- 1246 |             int16_t turretPitch = getRCchannel(1)* 0.85f;
-      |                     ^~~~~~~~~~~
-../Core/Src/main.c:1154:16: warning: unused variable 'rightSwitch' [-Wunused-variable]
- 1154 |         int8_t rightSwitch = getRCswitch(0);
-      |                ^~~~~~~~~~~
-../Core/Src/main.c:1135:13: warning: variable 'rotationSpeedOfChassis' set but not used [-Wunused-but-set-variable]
- 1135 |     int16_t rotationSpeedOfChassis = 0;
-      |             ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1134:12: warning: variable 'convertedAngle' set but not used [-Wunused-but-set-variable]
- 1134 |     double convertedAngle = 0;
-      |            ^~~~~~~~~~~~~~
-../Core/Src/main.c:1091:13: warning: variable 'chassisrcYaw' set but not used [-Wunused-but-set-variable]
- 1091 |     int16_t chassisrcYaw = 0;
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:1090:13: warning: variable 'rcYaw' set but not used [-Wunused-but-set-variable]
- 1090 |     int16_t rcYaw = 0;
+../Core/Src/main.c:1092:13: warning: variable 'rcRPM' set but not used [-Wunused-but-set-variable]
+ 1092 |     int16_t rcRPM[4] = {0,0,0,0};                              // maps rc percentage reading to motors, assuming we're running M3508s at max 469RPM
       |             ^~~~~
-../Core/Src/main.c:1087:13: warning: unused variable 'chassisTargetRPM' [-Wunused-variable]
- 1087 |     int16_t chassisTargetRPM[4] = {0, 0, 0, 0};
-      |             ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:1086:13: warning: variable 'rcRPM' set but not used [-Wunused-but-set-variable]
- 1086 |     int16_t rcRPM[4] = {0,0,0,0};                              // maps rc percentage reading to motors, assuming we're running M3508s at max 469RPM
-      |             ^~~~~
-arm-none-eabi-gcc -o "RMTemplateMay12.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplateMay12/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplateMay12.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplateMay12.elf has a LOAD segment with RWX permissions
-Finished building target: RMTemplateMay12.elf
+arm-none-eabi-gcc -o "HeroBallFondlerCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/HeroBallFondlerCode/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HeroBallFondlerCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HeroBallFondlerCode.elf
  
-arm-none-eabi-size  RMTemplateMay12.elf 
-arm-none-eabi-objdump -h -S RMTemplateMay12.elf  > "RMTemplateMay12.list"
+arm-none-eabi-size  HeroBallFondlerCode.elf 
+arm-none-eabi-objdump -h -S HeroBallFondlerCode.elf  > "HeroBallFondlerCode.list"
    text	   data	    bss	    dec	    hex	filename
-  75640	    632	  24224	 100496	  18890	RMTemplateMay12.elf
+  58900	    216	  24248	  83364	  145a4	HeroBallFondlerCode.elf
 Finished building: default.size.stdout
  
-Finished building: RMTemplateMay12.list
- 
-19:28:50 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/driving.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/driving.d" -MT"Core/Src/driving.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/driving.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'TaskChassis':
-../Core/Src/main.c:1435:21: warning: unused variable 'motorSpeeddd' [-Wunused-variable]
- 1435 |             int16_t motorSpeeddd = getMotorRPM(Bus1, GM6020, 1);
-      |                     ^~~~~~~~~~~~
-../Core/Src/main.c:1246:21: warning: unused variable 'turretPitch' [-Wunused-variable]
- 1246 |             int16_t turretPitch = getRCchannel(1)* 0.85f;
-      |                     ^~~~~~~~~~~
-../Core/Src/main.c:1154:16: warning: unused variable 'rightSwitch' [-Wunused-variable]
- 1154 |         int8_t rightSwitch = getRCswitch(0);
-      |                ^~~~~~~~~~~
-../Core/Src/main.c:1135:13: warning: variable 'rotationSpeedOfChassis' set but not used [-Wunused-but-set-variable]
- 1135 |     int16_t rotationSpeedOfChassis = 0;
-      |             ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:1091:13: warning: variable 'chassisrcYaw' set but not used [-Wunused-but-set-variable]
- 1091 |     int16_t chassisrcYaw = 0;
-      |             ^~~~~~~~~~~~
-../Core/Src/main.c:1090:13: warning: variable 'rcYaw' set but not used [-Wunused-but-set-variable]
- 1090 |     int16_t rcYaw = 0;
-      |             ^~~~~
-../Core/Src/main.c:1087:13: warning: unused variable 'chassisTargetRPM' [-Wunused-variable]
- 1087 |     int16_t chassisTargetRPM[4] = {0, 0, 0, 0};
-      |             ^~~~~~~~~~~~~~~~
-../Core/Src/driving.c: In function 'allCheShit':
-../Core/Src/driving.c:44:17: warning: unused variable 'chassisTargetRPM' [-Wunused-variable]
-   44 |         int16_t chassisTargetRPM[4] = {0, 0, 0, 0};
-      |                 ^~~~~~~~~~~~~~~~
-../Core/Src/driving.c:43:17: warning: unused variable 'rotationOfChassis' [-Wunused-variable]
-   43 |         int16_t rotationOfChassis = 0;
-      |                 ^~~~~~~~~~~~~~~~~
-../Core/Src/driving.c:42:17: warning: unused variable 'yJoystickDirection' [-Wunused-variable]
-   42 |         int16_t yJoystickDirection = 0;
-      |                 ^~~~~~~~~~~~~~~~~~
-../Core/Src/driving.c:41:17: warning: unused variable 'xJoystickDirection' [-Wunused-variable]
-   41 |         int16_t xJoystickDirection = 0;
-      |                 ^~~~~~~~~~~~~~~~~~
-../Core/Src/driving.c:40:15: warning: unused variable 'scaledMovementCounter' [-Wunused-variable]
-   40 |         float scaledMovementCounter[6] = {0, 0, 0, 0, 0, 0};
-      |               ^~~~~~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "RMTemplateMay12.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplateMay12/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplateMay12.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplateMay12.elf has a LOAD segment with RWX permissions
-Finished building target: RMTemplateMay12.elf
- 
-arm-none-eabi-size  RMTemplateMay12.elf 
-arm-none-eabi-objdump -h -S RMTemplateMay12.elf  > "RMTemplateMay12.list"
-   text	   data	    bss	    dec	    hex	filename
-  75864	    644	  24220	 100728	  18978	RMTemplateMay12.elf
-Finished building: default.size.stdout
- 
-Finished building: RMTemplateMay12.list
- 
-19:29:13 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/driving.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/driving.d" -MT"Core/Src/driving.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/driving.o"
-../Core/Src/driving.c: In function 'allCheShit':
-../Core/Src/driving.c:44:17: warning: unused variable 'chassisTargetRPM' [-Wunused-variable]
-   44 |         int16_t chassisTargetRPM[4] = {0, 0, 0, 0};
-      |                 ^~~~~~~~~~~~~~~~
-../Core/Src/driving.c:43:17: warning: unused variable 'rotationOfChassis' [-Wunused-variable]
-   43 |         int16_t rotationOfChassis = 0;
-      |                 ^~~~~~~~~~~~~~~~~
-../Core/Src/driving.c:42:17: warning: unused variable 'yJoystickDirection' [-Wunused-variable]
-   42 |         int16_t yJoystickDirection = 0;
-      |                 ^~~~~~~~~~~~~~~~~~
-../Core/Src/driving.c:41:17: warning: unused variable 'xJoystickDirection' [-Wunused-variable]
-   41 |         int16_t xJoystickDirection = 0;
-      |                 ^~~~~~~~~~~~~~~~~~
-../Core/Src/driving.c:40:15: warning: unused variable 'scaledMovementCounter' [-Wunused-variable]
-   40 |         float scaledMovementCounter[6] = {0, 0, 0, 0, 0, 0};
-      |               ^~~~~~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "RMTemplateMay12.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplateMay12/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplateMay12.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplateMay12.elf has a LOAD segment with RWX permissions
-Finished building target: RMTemplateMay12.elf
- 
-arm-none-eabi-size  RMTemplateMay12.elf 
-arm-none-eabi-objdump -h -S RMTemplateMay12.elf  > "RMTemplateMay12.list"
-   text	   data	    bss	    dec	    hex	filename
-  76168	    644	  24236	 101048	  18ab8	RMTemplateMay12.elf
-Finished building: default.size.stdout
- 
-Finished building: RMTemplateMay12.list
- 
-19:29:48 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/driving.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/driving.d" -MT"Core/Src/driving.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/driving.o"
-arm-none-eabi-gcc -o "RMTemplateMay12.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplateMay12/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplateMay12.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplateMay12.elf has a LOAD segment with RWX permissions
-Finished building target: RMTemplateMay12.elf
- 
-arm-none-eabi-size  RMTemplateMay12.elf 
-arm-none-eabi-objdump -h -S RMTemplateMay12.elf  > "RMTemplateMay12.list"
-   text	   data	    bss	    dec	    hex	filename
-  83024	    644	  24268	 107936	  1a5a0	RMTemplateMay12.elf
-Finished building: default.size.stdout
- 
-Finished building: RMTemplateMay12.list
- 
-19:32:35 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/driving.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/driving.d" -MT"Core/Src/driving.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/driving.o"
-arm-none-eabi-gcc -o "RMTemplateMay12.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplateMay12/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplateMay12.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplateMay12.elf has a LOAD segment with RWX permissions
-Finished building target: RMTemplateMay12.elf
- 
-arm-none-eabi-size  RMTemplateMay12.elf 
-arm-none-eabi-objdump -h -S RMTemplateMay12.elf  > "RMTemplateMay12.list"
-   text	   data	    bss	    dec	    hex	filename
-  83024	    644	  24268	 107936	  1a5a0	RMTemplateMay12.elf
-Finished building: default.size.stdout
- 
-Finished building: RMTemplateMay12.list
- 
-19:34:23 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
-make -j3 all 
-arm-none-eabi-gcc "../Core/Src/driving.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/driving.d" -MT"Core/Src/driving.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/driving.o"
-arm-none-eabi-gcc -o "RMTemplateMay12.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplateMay12/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplateMay12.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplateMay12.elf has a LOAD segment with RWX permissions
-Finished building target: RMTemplateMay12.elf
- 
-arm-none-eabi-size  RMTemplateMay12.elf 
-arm-none-eabi-objdump -h -S RMTemplateMay12.elf  > "RMTemplateMay12.list"
-   text	   data	    bss	    dec	    hex	filename
-  83024	    644	  24268	 107936	  1a5a0	RMTemplateMay12.elf
-Finished building: default.size.stdout
- 
-Finished building: RMTemplateMay12.list
+Finished building: HeroBallFondlerCode.list
  

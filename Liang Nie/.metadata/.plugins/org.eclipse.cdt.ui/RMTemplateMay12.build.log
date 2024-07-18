@@ -1,6 +1,52 @@
-19:34:23 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
+08:20:24 **** Incremental Build of configuration Debug for project RMTemplateMay12 ****
 make -j3 all 
-arm-none-eabi-gcc "../Core/Src/driving.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/driving.d" -MT"Core/Src/driving.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/driving.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1254:24: warning: variable 'firingType' set but not used [-Wunused-but-set-variable]
+ 1254 |                 int8_t firingType = 0;
+      |                        ^~~~~~~~~~
+../Core/Src/main.c:1253:25: warning: variable 'firingHeatTemp' set but not used [-Wunused-but-set-variable]
+ 1253 |                 int16_t firingHeatTemp = 0;
+      |                         ^~~~~~~~~~~~~~
+../Core/Src/main.c:1251:25: warning: unused variable 'barrelHeatingMaxVal' [-Wunused-variable]
+ 1251 |                 int16_t barrelHeatingMaxVal[2][10] = {{50, 85, 120, 155, 190, 225, 260, 295, 330, 400}, {200, 250, 300, 350, 400, 450, 500, 550, 600, 650}};
+      |                         ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1163:17: warning: unused variable 'rotationOfChassis' [-Wunused-variable]
+ 1163 |         int16_t rotationOfChassis = 0;
+      |                 ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1162:17: warning: unused variable 'yJoystickDirection' [-Wunused-variable]
+ 1162 |         int16_t yJoystickDirection = 0;
+      |                 ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1161:17: warning: unused variable 'xJoystickDirection' [-Wunused-variable]
+ 1161 |         int16_t xJoystickDirection = 0;
+      |                 ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1157:16: warning: unused variable 'previouslyPressedX' [-Wunused-variable]
+ 1157 |         int8_t previouslyPressedX = 0;
+      |                ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1156:16: warning: unused variable 'previouslyPressedZ' [-Wunused-variable]
+ 1156 |         int8_t previouslyPressedZ = 0;
+      |                ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1154:16: warning: unused variable 'firingType' [-Wunused-variable]
+ 1154 |         int8_t firingType = 0;
+      |                ^~~~~~~~~~
+../Core/Src/main.c:1153:17: warning: unused variable 'firingHeatTemp' [-Wunused-variable]
+ 1153 |         int16_t firingHeatTemp = 0;
+      |                 ^~~~~~~~~~~~~~
+../Core/Src/main.c:1151:17: warning: unused variable 'barrelHeatingMaxVal' [-Wunused-variable]
+ 1151 |         int16_t barrelHeatingMaxVal[2][10] = {{200, 250, 300, 350, 400, 450, 500, 550, 600, 650}, {50, 85, 120, 155, 190, 225, 260, 295, 330, 400}};
+      |                 ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1142:13: warning: variable 'rotationSpeedOfChassis' set but not used [-Wunused-but-set-variable]
+ 1142 |     int16_t rotationSpeedOfChassis = 0;
+      |             ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:1114:12: warning: unused variable 'songToggle' [-Wunused-variable]
+ 1114 |     int8_t songToggle = 0;
+      |            ^~~~~~~~~~
+../Core/Src/main.c:1095:13: warning: variable 'chassisrcYaw' set but not used [-Wunused-but-set-variable]
+ 1095 |     int16_t chassisrcYaw = 0;
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:1091:13: warning: unused variable 'chassisTargetRPM' [-Wunused-variable]
+ 1091 |     int16_t chassisTargetRPM[4] = {0, 0, 0, 0};
+      |             ^~~~~~~~~~~~~~~~
 arm-none-eabi-gcc -o "RMTemplateMay12.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/RMTemplateMay12/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RMTemplateMay12.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.0.100.202403111906/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: warning: RMTemplateMay12.elf has a LOAD segment with RWX permissions
 Finished building target: RMTemplateMay12.elf
@@ -8,11 +54,11 @@ Finished building target: RMTemplateMay12.elf
 arm-none-eabi-size  RMTemplateMay12.elf 
 arm-none-eabi-objdump -h -S RMTemplateMay12.elf  > "RMTemplateMay12.list"
    text	   data	    bss	    dec	    hex	filename
-  83024	    644	  24268	 107936	  1a5a0	RMTemplateMay12.elf
+  83840	    820	  24276	 108936	  1a988	RMTemplateMay12.elf
 Finished building: default.size.stdout
  
 Finished building: RMTemplateMay12.list
  
 
-19:34:24 Build Finished. 0 errors, 1 warnings. (took 1s.118ms)
+08:20:26 Build Finished. 0 errors, 16 warnings. (took 1s.839ms)
 

@@ -1,0 +1,28 @@
+16:54:05 **** Incremental Build of configuration Debug for project HeroBallFondlerCode ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskMain':
+../Core/Src/main.c:1040:17: warning: unused variable 'firingCounter' [-Wunused-variable]
+ 1040 |         int16_t firingCounter = 0;
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c:1039:17: warning: unused variable 'aimingCounter' [-Wunused-variable]
+ 1039 |         int16_t aimingCounter = 0;
+      |                 ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1092:13: warning: variable 'rcRPM' set but not used [-Wunused-but-set-variable]
+ 1092 |     int16_t rcRPM[4] = {0,0,0,0};                              // maps rc percentage reading to motors, assuming we're running M3508s at max 469RPM
+      |             ^~~~~
+arm-none-eabi-gcc -o "HeroBallFondlerCode.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/HeroBallFondlerCode/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HeroBallFondlerCode.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HeroBallFondlerCode.elf
+ 
+arm-none-eabi-size  HeroBallFondlerCode.elf 
+arm-none-eabi-objdump -h -S HeroBallFondlerCode.elf  > "HeroBallFondlerCode.list"
+   text	   data	    bss	    dec	    hex	filename
+  58900	    216	  24248	  83364	  145a4	HeroBallFondlerCode.elf
+Finished building: default.size.stdout
+ 
+Finished building: HeroBallFondlerCode.list
+ 
+
+16:54:07 Build Finished. 0 errors, 3 warnings. (took 2s.450ms)
+

@@ -1,0 +1,12 @@
+../Core/Src/UART.c:123:6:usart_Init	8	static
+../Core/Src/UART.c:128:6:usart_printf	8	static
+../Core/Src/UART.c:138:6:HAL_UARTEx_RxEventCallback	16	static
+../Core/Src/UART.c:200:9:Get_CRC8_Check_Sum	32	static
+../Core/Src/UART.c:218:9:Verify_CRC8_Check_Sum	24	static
+../Core/Src/UART.c:236:10:Get_CRC16_Check_Sum	32	static
+../Core/Src/UART.c:258:10:Verify_CRC16_Check_Sum	24	static
+../Core/Src/UART.c:276:6:Append_CRC16_Check_Sum	24	static
+../Core/Src/UART.c:289:9:getRedX	4	static
+../Core/Src/UART.c:292:9:getRedY	4	static
+../Core/Src/UART.c:295:9:getBlueX	4	static
+../Core/Src/UART.c:298:9:getBlueY	4	static
