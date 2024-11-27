@@ -1193,10 +1193,10 @@ void TaskChassis(void *argument)
 		yJoystickDirection = rcRPM[3];
 		rotationOfChassis = rcRPM[0];
 
-		chassisTargetRPM.motorRPM[0] = yJoystickDirection + rotationOfChassis + xJoystickDirection;
-		chassisTargetRPM.motorRPM[1] = yJoystickDirection + rotationOfChassis - xJoystickDirection;
-		chassisTargetRPM.motorRPM[2] = -yJoystickDirection + rotationOfChassis - xJoystickDirection;
-		chassisTargetRPM.motorRPM[3] = -yJoystickDirection + rotationOfChassis + xJoystickDirection;
+		chassisTargetRPM.motorRPM[0] = 1000;
+		chassisTargetRPM.motorRPM[1] = 1000;
+		chassisTargetRPM.motorRPM[2] = 1000;
+		chassisTargetRPM.motorRPM[3] = 1000;
 
 		//2640
 		// 420

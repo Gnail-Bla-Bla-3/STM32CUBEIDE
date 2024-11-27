@@ -3161,3 +3161,22 @@ Caused by: java.nio.channels.UnresolvedAddressException
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-11-09 15:34:58.587
 !MESSAGE Indexed 'STM_BLACKPILL' (21 sources, 81 headers) in 2.91 sec: 4,309 declarations; 18,244 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0089%)
+!SESSION 2024-11-16 15:25:26.235 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+Framework arguments:  -keyring /Users/liangnie/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/liangnie/.eclipse_keyring
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-11-16 15:25:41.781
+!MESSAGE Log4j2 initialized with config file /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-11-16 15:26:04.116
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-23 15:30:03.117
+!MESSAGE Indexed 'projectthingamabob' (19 sources, 81 headers) in 3.44 sec: 4,302 declarations; 18,136 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0089%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-23 16:32:03.955
+!MESSAGE Indexed 'duplicate yayyyy' (37 sources, 114 headers) in 6.52 sec: 10,881 declarations; 73,531 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0024%)

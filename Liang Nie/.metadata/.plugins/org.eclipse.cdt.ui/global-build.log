@@ -1,4 +1,18 @@
-16:07:04 **** Incremental Build of configuration Debug for project STM_BLACKPILL ****
+16:02:55 **** Incremental Build of configuration Debug for project projectthingamabob ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "projectthingamabob.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/projectthingamabob/STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="projectthingamabob.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: projectthingamabob.elf
+ 
+arm-none-eabi-size  projectthingamabob.elf 
+arm-none-eabi-objdump -h -S projectthingamabob.elf  > "projectthingamabob.list"
+   text	   data	    bss	    dec	    hex	filename
+   5704	     12	   1572	   7288	   1c78	projectthingamabob.elf
+Finished building: default.size.stdout
+ 
+Finished building: projectthingamabob.list
+ 
+16:11:12 **** Incremental Build of configuration Debug for project projectthingamabob ****
 make -j3 all 
 arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
 arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
@@ -19,42 +33,42 @@ arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -D
 arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
 arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
 arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
-arm-none-eabi-gcc -o "STM_BLACKPILL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM_BLACKPILL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: STM_BLACKPILL.elf
+arm-none-eabi-gcc -o "projectthingamabob.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/projectthingamabob/STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="projectthingamabob.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: projectthingamabob.elf
  
-arm-none-eabi-size  STM_BLACKPILL.elf 
-arm-none-eabi-objdump -h -S STM_BLACKPILL.elf  > "STM_BLACKPILL.list"
+arm-none-eabi-size  projectthingamabob.elf 
+arm-none-eabi-objdump -h -S projectthingamabob.elf  > "projectthingamabob.list"
    text	   data	    bss	    dec	    hex	filename
-   5904	     12	   1572	   7488	   1d40	STM_BLACKPILL.elf
+   5720	     12	   1572	   7304	   1c88	projectthingamabob.elf
 Finished building: default.size.stdout
  
-Finished building: STM_BLACKPILL.list
+Finished building: projectthingamabob.list
  
-16:07:16 **** Incremental Build of configuration Debug for project STM_BLACKPILL ****
+16:11:32 **** Incremental Build of configuration Debug for project projectthingamabob ****
+make -j3 all 
+arm-none-eabi-size  projectthingamabob.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5720	     12	   1572	   7304	   1c88	projectthingamabob.elf
+Finished building: default.size.stdout
+ 
+16:25:26 **** Incremental Build of configuration Debug for project projectthingamabob ****
 make -j3 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "STM_BLACKPILL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM_BLACKPILL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: STM_BLACKPILL.elf
+arm-none-eabi-gcc -o "projectthingamabob.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/projectthingamabob/STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="projectthingamabob.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: projectthingamabob.elf
  
-arm-none-eabi-size  STM_BLACKPILL.elf 
-arm-none-eabi-objdump -h -S STM_BLACKPILL.elf  > "STM_BLACKPILL.list"
+arm-none-eabi-size  projectthingamabob.elf 
+arm-none-eabi-objdump -h -S projectthingamabob.elf  > "projectthingamabob.list"
    text	   data	    bss	    dec	    hex	filename
-   5904	     12	   1572	   7488	   1d40	STM_BLACKPILL.elf
+   5820	     12	   1572	   7404	   1cec	projectthingamabob.elf
 Finished building: default.size.stdout
  
-Finished building: STM_BLACKPILL.list
+Finished building: projectthingamabob.list
  
-16:16:12 **** Incremental Build of configuration Debug for project STM_BLACKPILL ****
+16:47:32 **** Incremental Build of configuration Debug for project STM_BLACKPILL ****
 make -j3 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "STM_BLACKPILL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM_BLACKPILL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: STM_BLACKPILL.elf
- 
 arm-none-eabi-size  STM_BLACKPILL.elf 
-arm-none-eabi-objdump -h -S STM_BLACKPILL.elf  > "STM_BLACKPILL.list"
    text	   data	    bss	    dec	    hex	filename
-   5888	     12	   1572	   7472	   1d30	STM_BLACKPILL.elf
+   8600	     12	   1644	  10256	   2810	STM_BLACKPILL.elf
 Finished building: default.size.stdout
- 
-Finished building: STM_BLACKPILL.list
  
