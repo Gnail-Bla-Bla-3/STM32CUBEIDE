@@ -1,4 +1,4 @@
-16:47:32 **** Incremental Build of configuration Debug for project STM_BLACKPILL ****
+14:41:29 **** Incremental Build of configuration Debug for project STM_BLACKPILL ****
 make -j3 all 
 arm-none-eabi-size  STM_BLACKPILL.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  STM_BLACKPILL.elf
 Finished building: default.size.stdout
  
 
-16:47:34 Build Finished. 0 errors, 0 warnings. (took 1s.83ms)
+14:41:30 Build Finished. 0 errors, 0 warnings. (took 529ms)
 

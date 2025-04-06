@@ -1,0 +1,10 @@
+16:41:21 **** Incremental Build of configuration Debug for project SentrySwerve2025 ****
+make -j3 all 
+arm-none-eabi-size  SentrySwerve2025.elf 
+   text	   data	    bss	    dec	    hex	filename
+  58404	    124	  24124	  82652	  142dc	SentrySwerve2025.elf
+Finished building: default.size.stdout
+ 
+
+16:41:21 Build Finished. 0 errors, 0 warnings. (took 334ms)
+

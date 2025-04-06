@@ -1,0 +1,42 @@
+17:06:56 **** Incremental Build of configuration Debug for project SuperCapController ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H723xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1533:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1533 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:32:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   31 | #include "remote_control.h"
+  +++ |+#include <stdlib.h>
+   32 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'PD':
+../Core/Src/main.c:1568:16: warning: implicit declaration of function 'applyCtrlLimit' [-Wimplicit-function-declaration]
+ 1568 |         return applyCtrlLimit(motorType, (currentDelta*kP + (*previousDelta - currentDelta)*kD));
+      |                ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartDefaultTask':
+../Core/Src/main.c:1601:17: warning: unused variable 'motorInfo' [-Wunused-variable]
+ 1601 |         int16_t motorInfo[4][4];
+      |                 ^~~~~~~~~
+../Core/Src/main.c:1598:17: warning: unused variable 'forwardsID' [-Wunused-variable]
+ 1598 |         int16_t forwardsID[4] = {380, 5070, 348, 5140};
+      |                 ^~~~~~~~~~
+../Core/Src/main.c:1593:16: warning: unused variable 'rotationVectors' [-Wunused-variable]
+ 1593 |         int8_t rotationVectors[4][2] =  {{1,  -1},
+      |                ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1585:17: warning: unused variable 'wheelPrev' [-Wunused-variable]
+ 1585 |         int16_t wheelPrev[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+      |                 ^~~~~~~~~
+arm-none-eabi-gcc -o "SuperCapController.elf" @"objects.list"   -mcpu=cortex-m7 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SuperCapController/STM32H723ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SuperCapController.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SuperCapController.elf
+ 
+arm-none-eabi-size  SuperCapController.elf 
+arm-none-eabi-objdump -h -S SuperCapController.elf  > "SuperCapController.list"
+   text	   data	    bss	    dec	    hex	filename
+  80140	    100	  22676	 102916	  19204	SuperCapController.elf
+Finished building: default.size.stdout
+ 
+Finished building: SuperCapController.list
+ 
+
+17:06:57 Build Finished. 0 errors, 6 warnings. (took 1s.235ms)
+

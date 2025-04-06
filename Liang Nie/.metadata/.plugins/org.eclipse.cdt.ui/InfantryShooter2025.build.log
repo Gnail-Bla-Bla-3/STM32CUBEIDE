@@ -1,0 +1,10 @@
+19:10:29 **** Incremental Build of configuration Debug for project InfantryShooter2025 ****
+make -j3 all 
+arm-none-eabi-size  InfantryShooter2025.elf 
+   text	   data	    bss	    dec	    hex	filename
+  53320	    124	  23548	  76992	  12cc0	InfantryShooter2025.elf
+Finished building: default.size.stdout
+ 
+
+19:10:30 Build Finished. 0 errors, 0 warnings. (took 1s.11ms)
+

@@ -100,23 +100,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  // if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) {
-	  // 	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 1);
-	  // } else {
-	  // 	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 0);
-	  // }
-	  // HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0));
-	  // HAL_Delay(1);
-	  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) {
-
-		  TIM4->CCR4 = 1999;
-	  } else {
-
-		  TIM4->CCR4 = 999;
-	  }
-	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0));
-	  HAL_Delay(1);
-
   }
   /* USER CODE END 3 */
 }

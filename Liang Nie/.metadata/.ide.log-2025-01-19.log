@@ -1,0 +1,4 @@
+2025-01-19 04:44:58,325 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path validation failed: java.security.cert.CertPathValidatorException: validity check failed
+2025-01-19 04:44:58,419 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path validation failed: java.security.cert.CertPathValidatorException: validity check failed
+2025-01-19 04:44:58,507 [ERROR] ConfigurationRetriever:142 - IOException on connection: PKIX path validation failed: java.security.cert.CertPathValidatorException: validity check failed
+2025-01-19 04:44:59,681 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 

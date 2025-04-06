@@ -1,0 +1,21 @@
+19:34:22 **** Incremental Build of configuration Debug for project SentryShooter2025 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1041:17: warning: unused variable 'returnScaler' [-Wunused-variable]
+ 1041 |         int16_t returnScaler = 2;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025.elf
+ 
+arm-none-eabi-size  SentryShooter2025.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025.elf  > "SentryShooter2025.list"
+   text	   data	    bss	    dec	    hex	filename
+  56440	    124	  23820	  80384	  13a00	SentryShooter2025.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025.list
+ 
+
+19:34:23 Build Finished. 0 errors, 1 warnings. (took 877ms)
+

@@ -1,0 +1,23 @@
+2025-03-29 12:24:05,329 [INFO] WebApp:189 - Connection lost
+2025-03-29 15:00:15,606 [INFO] WebApp:186 - Connection restablished
+2025-03-29 17:09:15,397 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,399 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,399 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,399 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,553 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-03-29 17:09:15,660 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,660 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,660 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,660 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,766 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-03-29 17:09:15,858 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,858 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,859 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,859 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-03-29 17:09:15,971 [ERROR] RtosPanel:558 - Can not restore the selected Tab for FREERTOS(A reason can be that the tab is no more available.)
+2025-03-29 20:13:22,522 [INFO] WebApp:189 - Connection lost
+2025-03-29 20:13:45,836 [INFO] WebApp:186 - Connection restablished
+2025-03-29 21:11:21,788 [INFO] WebApp:189 - Connection lost
+2025-03-29 22:11:03,974 [INFO] WebApp:186 - Connection restablished
+2025-03-29 22:11:04,696 [INFO] WebApp:189 - Connection lost
+2025-03-29 22:11:06,931 [INFO] WebApp:186 - Connection restablished
