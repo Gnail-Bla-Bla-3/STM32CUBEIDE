@@ -1,0 +1,109 @@
+/*
+ * SwerveBuffer.c
+ *
+ *  Created on: Jun 14, 2025
+ *      Author: liangnie
+ */
+
+// First Half is GM6020, Second Half is M3508
+int16_t M3508AndGM6020Scaled[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+float maxPowerLimitM3508 = 0;
+float maxPowerLimitGM6020 = 0;
+
+float M3508PowerScaler = 0;
+float GM6020PowerScaler = 0;
+
+void AllBufferCalculations(uint16_t bufferValFromPMM, uint8_t shift) {
+	/*
+	 * This is for the 3508s, and it's from the Mechanum Buffer
+	 * The old library had a shift keybind for a boost mode? i decided to ignore it for now but ive kept a uint8_t var for the shift key
+	 * This shift key will only apply to the M3508s for now, i may decide to apply it to the GM6020s later
+	 */
+
+	shiftBoost = (shift+1)*2;
+
+	if (bufferValFromPMM > 50) {
+		maxPowerLimitM3508 = 8192;
+	} if (bufferValFromPMM > 5 && bufferValFromPMM <= 50) {
+		maxPowerLimitM3508 = (179.8*bufferValFromPMM) - 798.0f;
+	} if (bufferValFromPMM <= 5) {
+		maxPowerLimitM3508 = 0.00001;
+	}
+
+	if (bufferValFromPMM > 30) {
+		maxPowerLimitGM6020 = 8192;
+	} if (bufferValFromPMM > 5 && bufferValFromPMM <= 30) {
+		maxPowerLimitGM6020 = (327.6*bufferValFromPMM) - 1638.4f;
+	} if (bufferValFromPMM <= 5) {
+		maxPowerLimitGM6020 = 0.00001;
+	}
+
+
+	maxPowerLimitM3508 = maxPowerLimitM3508 * shiftBoost;
+	maxPowerLimitGM6020 = maxPowerLimitGM6020 * 2;
+
+}
+
+void M3508MaxBufferCurve (int16_t allMotors[8]) {
+	uint32_t sum2 = 0;
+	for (uint8_t i = 4; i < 8; i++) {
+		if (allMotors[i] > 0) {
+			sum2 += allMotors[i];
+		} else {
+			sum2 -= allMotors[i];
+		}
+	}
+	M3508PowerScaler = maxPowerLimitM3508/sum2;
+
+	if (M3508PowerScaler > 1) {
+		M3508PowerScaler = 1;
+	} else if (M3508PowerScaler < 0) {
+		M3508PowerScaler = 0;
+	}
+}
+
+void GM6020MaxBufferCurve (int16_t allMotors[8]) {
+	uint32_t sum1 = 0;
+	for (uint8_t i = 0; i < 4; i++) {
+		if (allMotors[i] > 0) {
+			sum1 += allMotors[i];
+		} else {
+			sum1 -= allMotors[i];
+		}
+	}
+	GM6020PowerScaler = maxPowerLimitGM6020/sum1;
+
+	if (GM6020PowerScaler > 1) {
+		GM6020PowerScaler = 1;
+	} else if (GM6020PowerScaler < 0) {
+		GM6020PowerScaler = 0;
+	}
+}
+
+void DriveAllMotors() {
+	for (uint8_t i = 0; i < 4; i++) {
+		CAN_setMotorCtrlVal(Bus1, GM6020, j+1, M3508AndGM6020Scaled[j]);
+		CAN_setMotorCtrlVal(Bus1, M3508, j+5, M3508AndGM6020Scaled[j]);
+	}
+}
+
+void M3508Scaling (int16_t allMotors[8]) {
+	for (uint8_t i = 4; i < 8; i++) {
+		M3508AndGM6020Scaled[i] = allMotors[i]*M3508PowerScaler;
+	}
+}
+
+void GM6020Scaling (int16_t allMotors[8]) {
+	for (uint8_t i = 0; i < 4; i++) {
+		M3508AndGM6020Scaled[i] = allMotors[i]*GM6020PowerScaler;
+	}
+}
+
+void AllCheShit2 (int16_t allMotors[8]) {
+	M3508MaxBufferCurve(allMotors);
+	GM6020MaxBufferCurve(allMotors);
+	M3508Scaling(allMotors);
+	GM6020Scaling(allMotors);
+	DriveAllMotors();
+}

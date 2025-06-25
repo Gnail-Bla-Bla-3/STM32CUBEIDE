@@ -41,6 +41,7 @@
 #include "math.h"
 #include "driving.h"
 #include "I2C.h"
+#include "SWERVE.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -1005,7 +1006,8 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-float determiningTrigAngle (int16_t motorAngle[4]) {
+/*
+float determiningTrigAngle (int16_t motorAngle[5]) {
 	if (motorAngle[0] < 0 && motorAngle[1] < 0) {
 		return (-M_PI + atanf(((float)motorAngle[0])/((float)motorAngle[1])));
 	} else if (motorAngle[0] >= 0 && motorAngle[1] < 0) {
@@ -1032,18 +1034,14 @@ int16_t wheelRotation (int16_t currentRotation, int16_t destinationRotation) {
     return ((destinationRotation + (8191*newTargetRotationCounter)) - currentRotation);
 }
 
-float swerveScaler (int16_t motorInfo[4][4]) {
+float swerveScaler (int16_t motorInfo[4][5]) {
 	int16_t largestVal = 0;
 	for (int8_t i = 0; i < 4; i++) {
 		if (motorInfo[i][2] > largestVal) {
 			largestVal = motorInfo[i][2];
 		}
 	}
-	/*
-	if (largestVal == 0) {
-		usart_printf("ERROR_WITH_SCALER\r\n");
-	}
-	*/
+
 	// usart_printf("Hello %d there!\r\n", 5);
 	if (largestVal <= maxValAllowed) {
 		return 1;
@@ -1056,7 +1054,7 @@ int16_t PD (MotorType_ID motorType, int16_t *previousDelta, int16_t currentDelta
 
 	return applyCtrlLimit(motorType, (currentDelta*kP + (*previousDelta - currentDelta)*kD));
 }
-
+*/
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_TaskMain */
@@ -1072,7 +1070,7 @@ void TaskMain(void *argument)
 
 	for(;;) {
 		osDelay(5);
-
+		// usart_printf("%d, %d, %d, %d, %d, %d, %d\r\n", getRCfakechannel(0), getRCfakechannel(1), getRCfakechannel(2), getRCfakechannel(3), getRCfakechannel(4), getRCfakechannel(5), getRCfakechannel(6));
 
 	}
   /* USER CODE END 5 */
@@ -1089,8 +1087,9 @@ void TaskChassis(void *argument)
 {
   /* USER CODE BEGIN TaskChassis */
 	PWMInit(&htim1, &htim4, &htim5, &htim8);
+
 	PID_preset_t test = {5.0, 0.0, 0.0};
-	PID_preset_t test2 = {300.0, 0.0, 30.0};
+	PID_preset_t test2 = {500.0, 0.0, 120.0};
 
 	//
 	int16_t wheelPrev[8] = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -1108,30 +1107,84 @@ void TaskChassis(void *argument)
 
 	int16_t forwardsID[4] = {380, 5070, 348, 5140};
 
-	// [MotorID][0 = MotorXVal, 1 = MotorYVal, 2 = MotorABSVal, 3 = MotorConvertedAngle]
-	int16_t motorInfo[4][4];
+	// [MotorID][0 = MotorXVal, 1 = MotorYVal, 2 = MotorABSVal, 3 = MotorConvertedAngle], 4 = Reversal Of Motor
+	int16_t motorInfo[4][5];
+	int16_t DP[3] = {0, 0, 0};
+	int8_t noVelocity = 0;
+	int16_t axiesMod[3] = {0, 0, 0};
+
 
   /* Infinite loop */
     for(;;) {
-		int16_t FB = getRCchannel(3);
-		int16_t LR = getRCchannel(2);
-		int16_t Rotate = getRCchannel(0);
 
+		int16_t FB = getRCfakechannel(0);
+		int16_t LR = getRCfakechannel(1);
+		int16_t Rotate = getRCfakechannel(3);
+
+		// usart_printf("%d, %d, %d, %d\r\n", getRCfakechannel(0),getRCfakechannel(1),getRCfakechannel(2),getRCfakechannel(3));
+
+		axiesMod[0] = getRCfakechannel(0);
+		axiesMod[1] = getRCfakechannel(1);
+		axiesMod[2] = getRCfakechannel(3);
+
+		Loop(axiesMod);
+		// int8_t altDrivingMode = getRCswitch(0);
+
+		/*
+		 * Checks if All joystick Values are 0 to make the wheels maintain last orientation
+		 */
+		/*
+		if (FB == 0 && LR == 0 && Rotate == 0) {
+			FB = DP[0];
+			LR = DP[1];
+			Rotate = DP[2];
+			noVelocity = 1;
+		} else {
+			noVelocity = 0;
+		}
+		DP[0] = FB;
+		DP[1] = LR;
+		DP[2] = Rotate;
+		*/
+		/*
+		 * Starts by Calculating the motors X and Y Values.
+		 * Then it Calculates the ABS value of the motors.
+		 * Unless Velocity is 0 in which it'll then just not rotate the Motors and set the ABS value to 0
+		 */
+		/*
 		for (int8_t i = 0; i < 4; i++ ) {
 			motorInfo[i][0] = LR + (Rotate * rotationVectors[i][0]);
 			motorInfo[i][1] = FB + (Rotate * rotationVectors[i][1]);
-			motorInfo[i][2] = (int16_t)(sqrtf((float)((motorInfo[i][0]*motorInfo[i][0])+(motorInfo[i][1]*motorInfo[i][1]))));
+			if (noVelocity == 0) {
+				motorInfo[i][2] = (int16_t)(sqrtf((float)((motorInfo[i][0]*motorInfo[i][0])+(motorInfo[i][1]*motorInfo[i][1]))));
+			} else {
+				motorInfo[i][2] = 0;
+			}
 		}
-
-		float SScalerVal = swerveScaler(motorInfo);
+		*/
+		/*
+		 * Scales ABS values of the Motor Speeds
+		 */
+		// float SScalerVal = swerveScaler(motorInfo);
 
 		// Swerve Motor
+
+		/*
+		 * Finds the appropriate Angle for each wheel
+		 * Secondly it converts it into encoder increments
+		 * Next it adds the offsets.
+		 *
+		 * Finally it makes sure that all values are within the min and max of the encoder
+		 */
+		/*
 		for (int8_t j = 0; j < 4; j++) {
 			// Scales Motor Speed Output
 			// 800*11.25 = 9000
 			motorInfo[j][2] = (float)motorInfo[j][2] * SScalerVal * 11.25;
 
-			int16_t tempAngle = (int16_t)((4095.5f*(determiningTrigAngle(motorInfo[j])/M_PI))+forwardsID[j]);
+			int16_t trigAng = (int16_t)(4095.5f*(determiningTrigAngle(motorInfo[j])/M_PI));
+
+			int16_t tempAngle = trigAng+forwardsID[j];
 			if (tempAngle > 8191) {
 				tempAngle = tempAngle-8191;
 			} else if (tempAngle < 0) {
@@ -1139,13 +1192,23 @@ void TaskChassis(void *argument)
 			}
 			motorInfo[j][3] = tempAngle;
 		}
-
+		*/
 		// Drive Motor
 
+		/*
+		 * This function outputs the power to the wheels.
+		 * wheelRotation fines the optimal direction to rotate to
+		 */
+		/*
 		for (int8_t k = 0; k < 4; k++) {
 			CAN_setMotorCtrlVal(Bus1, GM6020, k+1, PD(GM6020, &wheelPrev[k], wheelRotation (getRotorPosition(Bus1, GM6020, k+1), motorInfo[k][3]), 20, 10));
-			setMotorRPM(Bus1, M3508, k+1, motorInfo[k][2], test);
+			if (motorInfo[k][4] == 1) {
+				setMotorRPM(Bus1, M3508, k+1, -1*motorInfo[k][2], test);
+			} else {
+				setMotorRPM(Bus1, M3508, k+1, motorInfo[k][2], test);
+			}
 		}
+		*/
 		//setMotorRPM(Bus1, M3508, 3, 500, test);
 		// setMotorRPM(Bus1, M3508, 3, 500, test);
 

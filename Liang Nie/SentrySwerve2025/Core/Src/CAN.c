@@ -29,6 +29,7 @@ DJI_MotorDeclaration_t DJI_MotorDeclaration[2] = {{{-1, -1, -1, -1}, {-1, -1, -1
 motorControlBuffer_t motorControlBuffer[2] = {{{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}, {{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}};
 motorFeedback_t motorFeedback[2][11];
 PID_data_t PID_data[2][11];
+int16_t RCVAL[7] = {0, 0, 0, 0, 0, 0, 0};
 
 
 
@@ -81,11 +82,51 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
             //memcpy((&robot_status.shooter_barrel_heat_limit), &rx_data, 6);
             break;
         }
+        case CAN_b2b_A_RC_Val_ID1: {
+        	if (hcan == &hcan2) {
+        		// usart_printf("CAN_Recv = %x %x %x %x %x %x %x %x\r\n", rx_data[0], rx_data[1], rx_data[2], rx_data[3], rx_data[4], rx_data[5], rx_data[6], rx_data[7]);
+        		uint16_t Temparary[4] = {0, 0, 0, 0};
+
+        		for (int8_t i = 0; i < 4; i++) {
+        			Temparary[i] = Temparary[i] + ((uint16_t)rx_data[2*i] << 0);
+        			Temparary[i] = Temparary[i] + ((uint16_t)rx_data[(2*i)+1] << 8);
+        			RCVAL[i] = ((int16_t)Temparary[i]) - 660;
+        			// usart_printf("beans2\r\n");
+        		}
+
+        		// usart_printf("%d %d %d %d\r\n", RCVAL[0], RCVAL[1], RCVAL[2], RCVAL[3]);
+        		break;
+        	}
+        	break;
+		}
+		case CAN_b2b_A_RC_Val_ID2: {
+			if (hcan == &hcan2) {
+				uint16_t Temparary2[3] = {0, 0, 0};
+
+				Temparary2[0] = (((uint16_t)rx_data[6] << 0) + ((uint16_t)rx_data[7] << 8));//-660;
+				Temparary2[1] = (uint16_t)rx_data[2] << 0;
+				Temparary2[2] = (uint16_t)rx_data[4] << 0;
+
+			//for (int8_t i = 0; i < 3; i++) {
+			//	RCVAL[i+4] = ((int16_t)Temparary2[i]);
+			//}
+				RCVAL[4] = ((int16_t)Temparary2[0]) - 660;
+				RCVAL[5] = ((int16_t)Temparary2[1]);
+				RCVAL[6] = ((int16_t)Temparary2[2]);
+				//usart_printf("num = %d \r\n", RCVAL[4]);
+				break;
+			}
+			break;
+		}
 
         default: {
             break;
         }
     }
+}
+
+int16_t getRCfakechannel(uint8_t index) {
+	return RCVAL[index];
 }
 
 // CAN_transmit needs some work, right now it's "CAN1_sendFloats"

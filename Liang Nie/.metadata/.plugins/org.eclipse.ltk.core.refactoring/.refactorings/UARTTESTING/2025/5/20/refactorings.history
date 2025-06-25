@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;UARTTESTING/Core/Inc/IST8310&apos; to &apos;IST8310.h&apos;" description="Rename resource &apos;IST8310&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/IST8310" name="IST8310.h" stamp="1747520222138" updateReferences="true"/>
+</session>

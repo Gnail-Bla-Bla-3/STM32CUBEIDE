@@ -3,10 +3,17 @@
 	<section name="NewWizardAction">
 	</section>
 	<section name="ImportExportAction">
-		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.ExternalProject"/>
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.FileSystem"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
+		<section name="ImportExportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="507"/>
+			<item key="DIALOG_Y_ORIGIN" value="127"/>
+			<item key="DIALOG_WIDTH" value="586"/>
+			<item key="DIALOG_HEIGHT" value="550"/>
+			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		</section>
 	</section>
 	<section name="WorkbenchPreferenceDialog">
 		<item key="DIALOG_X_ORIGIN" value="241"/>
@@ -16,7 +23,33 @@
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
 	</section>
 	<section name="FileSystemImportWizard">
+		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
+		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="/Users/liangnie/Downloads"/>
+			<item value="/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentrySwerve2025FINAL/Core/Inc"/>
+			<item value="/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentrySwerve2025FINAL/Core/Src"/>
+			<item value="/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/Core/Inc"/>
+			<item value="/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/Core/Src"/>
+			<item value="/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025/Core/Src"/>
+			<item value="/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025/Core/Inc"/>
+			<item value="/Users/liangnie/Downloads/CAL Library Rev0 w- Supporting Files"/>
+		</list>
+		<section name="FileSystemImportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="507"/>
+			<item key="DIALOG_Y_ORIGIN" value="127"/>
+			<item key="DIALOG_WIDTH" value="691"/>
+			<item key="DIALOG_HEIGHT" value="620"/>
+			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+		</section>
 	</section>
 	<section name="ZipFileImportWizard">
+	</section>
+	<section name="WorkbenchPreferenceDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="334"/>
+		<item key="DIALOG_Y_ORIGIN" value="0"/>
+		<item key="DIALOG_WIDTH" value="772"/>
+		<item key="DIALOG_HEIGHT" value="756"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
 	</section>
 </section>

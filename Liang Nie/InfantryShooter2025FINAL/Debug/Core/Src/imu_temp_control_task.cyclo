@@ -1,0 +1,2 @@
+../Core/Src/imu_temp_control_task.c:51:6:imu_temp_control_task	4
+../Core/Src/imu_temp_control_task.c:88:6:HAL_GPIO_EXTI_Callback	5

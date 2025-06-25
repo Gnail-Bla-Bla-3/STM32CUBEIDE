@@ -1,0 +1,67 @@
+/*
+ * CAL_RM25.h
+ *
+ *  Created on: Jun 8, 2025
+ *      Author: moose
+ */
+
+#ifndef INC_CAL_RM25_H_
+#define INC_CAL_RM25_H_
+#include "main.h"
+
+typedef enum {
+	CAL_GAME_STATUS = 0x0211,
+	CAL_ROBOT_STATUS = 0x0212,
+	CAL_POWER_HEAT_DATA = 0x0213,
+	CAL_CHASSIS_CONTROL_DATA = 0x0214,
+	CAL_CV_DATA = 0x0301,
+}B2B_CAN_ID;
+
+
+void CAL_Update();
+void CAL_SendChassisCommands(int16_t frontBack, int16_t rightLeft, int16_t chassisSpin, int16_t turretSpin, int16_t currentGyro, uint8_t triggerPressed,uint8_t fireMode);
+uint8_t CAL_getBits(uint8_t data, uint8_t startBit, uint8_t len);
+
+
+int16_t CAL_getCH0();
+int16_t CAL_getCH1();
+int16_t CAL_getCH2();
+int16_t CAL_getCH3();
+int16_t CAL_getCH4();
+uint8_t CAL_getS1();
+uint8_t CAL_getShift();
+uint8_t CAL_getCtrl();
+uint8_t CAL_getQ();
+uint8_t CAL_getE();
+uint8_t CAL_getR();
+uint8_t CAL_getF();
+uint8_t CAL_getG();
+uint8_t CAL_getZ();
+uint8_t CAL_getX();
+uint8_t CAL_getC();
+uint8_t CAL_getV();
+uint8_t CAL_getB();
+uint8_t CAL_getLMB();
+uint8_t CAL_getRMB();
+uint8_t CAL_getGameType();
+uint8_t CAL_getCurrentStage();
+uint16_t CAL_getBufferEnergy();
+uint16_t CAL_getBarrel1Heat();
+uint16_t CAL_getBarrel2Heat();
+uint16_t CAL_getHeroHeat();
+uint8_t CAL_getRobotId();
+uint8_t CAL_getRobotLevel();
+uint16_t CAL_getCoolingValue();
+uint16_t CAL_getPowerLimit();
+uint16_t CAL_getHeatLimit();
+int16_t CAL_getFrontBack();
+int16_t CAL_getRightLeft();
+int16_t CAL_getChassisSpin();
+int16_t CAL_getTurretSpin();
+int16_t CAL_getCurrentGyro();
+uint8_t CAL_getTriggerPressed();
+uint8_t CAL_getFireMode();
+
+
+
+#endif /* INC_CAL_RM25_H_ */

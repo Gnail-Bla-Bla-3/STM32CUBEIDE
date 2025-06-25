@@ -6,7 +6,7 @@
  */
 #include "pwm.h"
 #include "main.h"
-#include "UART.h"
+// #include "UART.h"
 #include <math.h>
 // #include "stm32f4xx_hal_tim.h"
 
@@ -282,9 +282,9 @@ int32_t subPeriod[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 int32_t period[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 */
 
-void mainPrint() {
 
-	usart_printf("|  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |\r\n", whichPWMisOn[0], whichPWMisOn[1], whichPWMisOn[2], whichPWMisOn[3], whichPWMisOn[4], whichPWMisOn[5], whichPWMisOn[6], whichPWMisOn[7], whichPWMisOn[8], whichPWMisOn[9], whichPWMisOn[10]);
+void mainPrint() {
+	// usart_printf("|  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |\r\n", whichPWMisOn[0], whichPWMisOn[1], whichPWMisOn[2], whichPWMisOn[3], whichPWMisOn[4], whichPWMisOn[5], whichPWMisOn[6], whichPWMisOn[7], whichPWMisOn[8], whichPWMisOn[9], whichPWMisOn[10]);
 	/*
 	usart_printf("-----------------------------MAIN PWM INFORMATION-------------------------------\r\n");
 	usart_printf("          |                  Motors                 |       LED       | Buzzer |\r\n");
@@ -294,6 +294,7 @@ void mainPrint() {
 
 	// usart_printf("||| %d | %d | %d \r\n", whichPWMisOn[10], period[10], subPeriod[10]);
 }
+
 
 void PWMTimerStarter() {
 	for (int i = 0; i < 11; i++) {

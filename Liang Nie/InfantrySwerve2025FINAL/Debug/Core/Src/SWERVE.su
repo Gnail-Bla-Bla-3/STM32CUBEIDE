@@ -1,0 +1,5 @@
+../Core/Src/SWERVE.c:41:7:determiningTrigAngle	16	static
+../Core/Src/SWERVE.c:53:9:wheelRotation	24	static
+../Core/Src/SWERVE.c:68:7:swerveScaler	24	static
+../Core/Src/SWERVE.c:88:9:PD	32	static
+../Core/Src/SWERVE.c:98:6:Loop	72	static

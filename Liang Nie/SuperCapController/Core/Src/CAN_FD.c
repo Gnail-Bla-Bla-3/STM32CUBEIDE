@@ -19,6 +19,8 @@ extern FDCAN_HandleTypeDef hfdcan3;
 FDCAN_RxHeaderTypeDef fdcan1_RxHeader;
 FDCAN_TxHeaderTypeDef fdcan1_TxHeader;
 
+int16_t RCVAL[7] = {0, 0, 0, 0, 0, 0, 0};
+
 #define get_motor_feedback(ptr, data) \
 { \
     (ptr)->rotor_position = (uint16_t)((data)[0] << 8 | (data)[1]); \
@@ -31,6 +33,11 @@ motorControlBuffer_t motorControlBuffer[2] = {{{0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0
 motorFeedback_t motorFeedback[2][11];
 PID_data_t PID_data[2][11];
 
+uint16_t RC_ch_val[5] = {0, 0, 0, 0, 0};
+uint8_t RC_sw_val[2] = {0, 0};
+uint16_t RC_mouse_val[5] = {0, 0, 0, 0, 0};
+uint16_t RC_keys_val = 0;
+
 static uint8_t CAN_MotorSendBuffer[8];
 
 void bsp_can_init(void) {
@@ -41,8 +48,8 @@ void bsp_can_init(void) {
 	HAL_FDCAN_Start(&hfdcan1);
 	HAL_FDCAN_Start(&hfdcan2);
 	HAL_FDCAN_Start(&hfdcan3);
-	//HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
-	HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_BUS_OFF, 0);
+	HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
+	//HAL_FDCAN_ActivateNotification(&hfdcan1, FDCAN_IT_BUS_OFF, 0);
 	HAL_FDCAN_ActivateNotification(&hfdcan2, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
 	HAL_FDCAN_ActivateNotification(&hfdcan3, FDCAN_IT_RX_FIFO0_NEW_MESSAGE, 0);
 }
@@ -134,6 +141,7 @@ uint8_t fdcanx_send_extended(hcan_t *hfdcan, uint32_t id, uint8_t *data, uint32_
 
 uint8_t fdcanx_receive(hcan_t *hfdcan, uint32_t *rec_id, uint8_t *buf) {
 	FDCAN_RxHeaderTypeDef pRxHeader;
+	// usart_printf("IM BEGGING UUUU\r\n");
 	if(HAL_FDCAN_GetRxMessage(hfdcan ,FDCAN_RX_FIFO0, &pRxHeader, buf)==HAL_OK) {
 		*rec_id = pRxHeader.Identifier;
 		return CANFD_GetRxHeaderDataLength(pRxHeader);
@@ -147,8 +155,10 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 	uint8_t rxDecodeBuffer1[4] = {0};
 	uint16_t rxDecodeBuffer2[4] = {0};
 	fdcanx_receive(hfdcan, &rec_id, rx_data);
+	// usart_printf("%x\r\n", hfdcan);
 	//usart_printf("CAN_Recv = %x %x %x %x %x %x %x %x\r\n", rx_data[0], rx_data[1], rx_data[2], rx_data[3], rx_data[4], rx_data[5], rx_data[6], rx_data[7]);
 	if (hfdcan == &hfdcan1) {		// DJI motors
+		// usart_printf("PLEASEEEE :<\r\n");
 		switch (rec_id) {
 			case CAN_G1M1_ID:
 			case CAN_G1M2_ID:
@@ -162,11 +172,8 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 			case CAN_G3M2_ID:
 			case CAN_G3M3_ID: {
 				uint8_t i = rec_id - CAN_G1M1_ID;  // get motor id
-				if (hfdcan == &hfdcan1) {
-					get_motor_feedback(&motorFeedback[0][i], rx_data);
-				} else if (0) {
-					get_motor_feedback(&motorFeedback[1][i], rx_data);
-				}
+				get_motor_feedback(&motorFeedback[0][i], rx_data);
+				// usart_printf("balls\r\n");
 				break;
 			}
 			case 0X7F:
@@ -209,7 +216,61 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 		//usart_printf("CAN_Recv = %d\r\n", rxDecodeBuffer2[0]);
 		cybergear_rx_callback(rxDecodeBuffer1, rxDecodeBuffer2);
 	}
+	if (hfdcan == &hfdcan3) {	//b2b
+		switch (rec_id) {
+			case CAN_b2b_A_RC_Val_ID1: {
+				// usart_printf("CAN_Recv = %x %x %x %x %x %x %x %x\r\n", rx_data[0], rx_data[1], rx_data[2], rx_data[3], rx_data[4], rx_data[5], rx_data[6], rx_data[7]);
+				uint16_t Temparary[4] = {0, 0, 0, 0};
 
+				for (int8_t i = 0; i < 4; i++) {
+					Temparary[i] = Temparary[i] + ((uint16_t)rx_data[2*i] << 0);
+					Temparary[i] = Temparary[i] + ((uint16_t)rx_data[(2*i)+1] << 8);
+					RCVAL[i] = ((int16_t)Temparary[i]) - 660;
+				}
+
+				// usart_printf("%d %d %d %d\r\n", RCVAL[0], RCVAL[1], RCVAL[2], RCVAL[3]);
+				break;
+			}
+			case CAN_b2b_A_RC_Val_ID2: {
+				uint16_t Temparary2[3] = {0, 0, 0};
+
+				Temparary2[0] = (((uint16_t)rx_data[6] << 0) + ((uint16_t)rx_data[7] << 8));//-660;
+				Temparary2[1] = (uint16_t)rx_data[2] << 0;
+				Temparary2[2] = (uint16_t)rx_data[4] << 0;
+
+				//for (int8_t i = 0; i < 3; i++) {
+				//	RCVAL[i+4] = ((int16_t)Temparary2[i]);
+				//}
+				RCVAL[4] = ((int16_t)Temparary2[0]) - 660;
+				RCVAL[5] = ((int16_t)Temparary2[1]);
+				RCVAL[6] = ((int16_t)Temparary2[2]);
+				//usart_printf("num = %d \r\n", RCVAL[4]);
+				break;
+			}
+			case CAN_POWER_ID: {
+				//memcpy(&power_heat_data, &rx_data, 8);
+				break;
+			}
+			case CAN_HEAT_ID: {
+				//memcpy((&power_heat_data.buffer_energy), &rx_data, 8);
+				break;
+			}
+
+			case CAN_STATUS_1_ID: {
+				//memcpy(&robot_status, &rx_data, 8);
+				break;
+			}
+
+			default: {
+				break;
+			}
+		}
+
+	}
+}
+
+int16_t getRCfakechannel(uint8_t index) {
+	return RCVAL[index];
 }
 
 void CAN_DriveMotor(CAN_Bus bus, CAN_ID headerID, int16_t m1, int16_t m2, int16_t m3, int16_t m4) {
@@ -505,6 +566,7 @@ void setMotorPosition(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16
 }
 
 uint16_t getRotorPosition(CAN_Bus bus, MotorType_ID motorType, int8_t motorID) {
+	// usart_printf("rotor = %d\r\n", motorFeedback[bus - 1][motorID - 1].rotor_position);
 	switch (motorType) {
 		case (1):
 		case (2): {

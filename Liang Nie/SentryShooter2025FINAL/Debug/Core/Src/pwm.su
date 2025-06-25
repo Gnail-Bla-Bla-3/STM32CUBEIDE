@@ -1,0 +1,12 @@
+../Core/Src/pwm.c:36:6:PWMInit	24	static
+../Core/Src/pwm.c:47:10:calculateOutputPeriodToGetFrequency	24	static
+../Core/Src/pwm.c:67:10:safeOutputPeriodValueCalculator	24	static
+../Core/Src/pwm.c:85:10:calculateOutputPeriodValue	24	static
+../Core/Src/pwm.c:122:6:PWMInitialize	24	static
+../Core/Src/pwm.c:180:6:MotorPositionForInitializingPeriod	16	static
+../Core/Src/pwm.c:195:6:initializePeriod	24	static
+../Core/Src/pwm.c:219:6:PWMOutput	16	static
+../Core/Src/pwm.c:243:6:PWMOn	16	static
+../Core/Src/pwm.c:260:6:PWMOff	16	static
+../Core/Src/pwm.c:285:6:mainPrint	4	static
+../Core/Src/pwm.c:298:6:PWMTimerStarter	16	static

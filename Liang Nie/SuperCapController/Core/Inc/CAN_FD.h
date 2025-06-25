@@ -43,6 +43,8 @@ typedef enum {
 	CAN_b2b_A_ID = 0x101,
 	CAN_b2b_A_motorCtrl_set_1_ID = 0x102,
 	CAN_b2b_A_motorCtrl_set_2_ID = 0x103,
+	CAN_b2b_A_RC_Val_ID1 = 0x104,
+	CAN_b2b_A_RC_Val_ID2 = 0x105,
 
 	CAN_b2b_B_ID = 0x111,
 	CAN_b2b_B_gyro_xy_ID = 0x112,
@@ -133,6 +135,7 @@ typedef enum {
 
 void bsp_can_init(void);
 void can_filter_init(void);
+int16_t getRCfakechannel(uint8_t index);
 uint8_t fdcanx_send_data(hcan_t *hfdcan, uint16_t id, uint8_t *data, uint32_t len);
 uint8_t fdcanx_send_extended(hcan_t *hfdcan, uint32_t id, uint8_t *data, uint32_t len);
 uint8_t fdcanx_receive(hcan_t *hfdcan, uint32_t *rec_id, uint8_t *buf);
@@ -140,9 +143,14 @@ void fdcan1_rx_callback(void);
 void fdcan2_rx_callback(void);
 void fdcan3_rx_callback(void);
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs);
-
+void CAN_setMotorCtrlVal(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16_t ctrlVal);
 void setMotorRPM(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16_t RPMtarget, PID_preset_t preset);
 void setMotorPosition(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16_t positionTarget, PID_preset_t preset);
+int32_t applyCtrlLimit(MotorType_ID motorType, int32_t val);
+uint16_t getRotorPosition(CAN_Bus bus, MotorType_ID motorType, int8_t motorID);
+int16_t getMotorRPM(CAN_Bus bus, MotorType_ID motorType, int8_t motorID);
+int16_t getMotorCurrent(CAN_Bus bus, MotorType_ID motorType, int8_t motorID);
+uint8_t getMotorTemperature(CAN_Bus bus, MotorType_ID motorType, int8_t motorID);
 
 
 #endif /* INC_CAN_FD_H_ */

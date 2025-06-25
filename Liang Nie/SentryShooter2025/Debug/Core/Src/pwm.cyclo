@@ -8,5 +8,5 @@
 ../Core/Src/pwm.c:219:6:PWMOutput	5
 ../Core/Src/pwm.c:243:6:PWMOn	5
 ../Core/Src/pwm.c:260:6:PWMOff	5
-../Core/Src/pwm.c:285:6:mainPrint	1
-../Core/Src/pwm.c:298:6:PWMTimerStarter	24
+../Core/Src/pwm.c:286:6:mainPrint	1
+../Core/Src/pwm.c:299:6:PWMTimerStarter	24

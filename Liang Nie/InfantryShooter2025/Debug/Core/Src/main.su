@@ -15,7 +15,7 @@
 ../Core/Src/main.c:894:13:MX_DMA_Init	16	static
 ../Core/Src/main.c:925:13:MX_GPIO_Init	64	static
 ../Core/Src/main.c:1012:6:TaskMain	16	static
-../Core/Src/main.c:1031:6:TaskChassis	72	static
-../Core/Src/main.c:1080:13:imu_temp_control_task	16	static
-../Core/Src/main.c:1098:6:TaskTurret	16	static
-../Core/Src/main.c:1114:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:1031:6:TaskChassis	112	static
+../Core/Src/main.c:1201:13:imu_temp_control_task	16	static
+../Core/Src/main.c:1219:6:TaskTurret	16	static
+../Core/Src/main.c:1235:6:Error_Handler	4	static,ignoring_inline_asm

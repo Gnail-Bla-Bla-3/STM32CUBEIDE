@@ -3,6 +3,7 @@
 "./Core/Src/CAN.o"
 "./Core/Src/CAN_receive.o"
 "./Core/Src/I2C.o"
+"./Core/Src/SWERVE.o"
 "./Core/Src/UART.o"
 "./Core/Src/bsp_can.o"
 "./Core/Src/bsp_imu_pwm.o"

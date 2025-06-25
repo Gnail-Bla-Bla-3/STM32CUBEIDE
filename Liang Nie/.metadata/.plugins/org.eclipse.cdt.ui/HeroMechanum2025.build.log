@@ -1,0 +1,25 @@
+18:54:32 **** Incremental Build of configuration Debug for project HeroMechanum2025 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1022:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1022 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:44:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   43 | #include "I2C.h"
+  +++ |+#include <stdlib.h>
+   44 | /* USER CODE END Includes */
+arm-none-eabi-gcc -o "HeroMechanum2025.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/HeroMechanum2025/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HeroMechanum2025.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HeroMechanum2025.elf
+ 
+arm-none-eabi-size  HeroMechanum2025.elf 
+arm-none-eabi-objdump -h -S HeroMechanum2025.elf  > "HeroMechanum2025.list"
+   text	   data	    bss	    dec	    hex	filename
+  57304	    124	  24140	  81568	  13ea0	HeroMechanum2025.elf
+Finished building: default.size.stdout
+ 
+Finished building: HeroMechanum2025.list
+ 
+
+18:54:32 Build Finished. 0 errors, 1 warnings. (took 935ms)
+

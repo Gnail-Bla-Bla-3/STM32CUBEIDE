@@ -52,6 +52,8 @@ typedef enum {
 	CAN_b2b_A_ID = 0x101,
 	CAN_b2b_A_motorCtrl_set_1_ID = 0x102,
 	CAN_b2b_A_motorCtrl_set_2_ID = 0x103,
+	CAN_b2b_A_RC_control = 0x104,
+	CAN_b2b_A_RC_control2 = 0x105,
 
 	CAN_b2b_B_ID = 0x111,
 	CAN_b2b_B_gyro_xy_ID = 0x112,
@@ -114,6 +116,7 @@ typedef struct {
 // void settingMaxCurrentVal (float bufferValFromPMM);
 
 void CAN_ResetID(CAN_Bus bus);
+void CAN_Updater(CAN_Bus bus);
 void CAN_DriveMotor(CAN_Bus bus, CAN_ID headerID, int16_t m1, int16_t m2, int16_t m3, int16_t m4);
 void CAN_defineMotor(CAN_Bus bus, MotorType_ID motorType, int8_t motorID);
 void CAN_setMotorDefinition(int8_t *Declaration, MotorType_ID motorType);
@@ -127,7 +130,8 @@ int32_t calcPosition_PID(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, in
 int32_t applyCtrlLimit(MotorType_ID motorType, int32_t val);
 void setMotorRPM(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16_t RPMtarget, PID_preset_t preset);
 void setMotorPosition(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16_t positionTarget, PID_preset_t preset);
-
+uint64_t fourBitShift(uint16_t data1, uint16_t data2, uint16_t data3, uint16_t data4);
+uint64_t otherSignals(uint16_t data1, int8_t switch1, int8_t switch2);
 uint16_t getRotorPosition(CAN_Bus bus, MotorType_ID motorType, int8_t motorID);
 
 int16_t getMotorRPM(CAN_Bus bus, MotorType_ID motorType, int8_t motorID);

@@ -1,33 +1,39 @@
-22:44:36 **** Incremental Build of configuration Debug for project MotorHaptic ****
+23:56:03 **** Incremental Build of configuration Debug for project MotorHaptic ****
 make -j3 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'TaskChassis':
-../Core/Src/main.c:1123:9: warning: "/*" within comment [-Wcomment]
- 1123 |         /*
+../Core/Src/main.c:1143:9: warning: "/*" within comment [-Wcomment]
+ 1143 |         /*
       |          
-../Core/Src/main.c:1072:17: warning: variable 'turnVal' set but not used [-Wunused-but-set-variable]
- 1072 |         int16_t turnVal = 0;
+../Core/Src/main.c:1064:17: warning: unused variable 'stallCounter' [-Wunused-variable]
+ 1064 |         int16_t stallCounter = 0;
+      |                 ^~~~~~~~~~~~
+../Core/Src/main.c:1063:17: warning: variable 'turnVal' set but not used [-Wunused-but-set-variable]
+ 1063 |         int16_t turnVal = 0;
       |                 ^~~~~~~
-../Core/Src/main.c:1053:13: warning: unused variable 'maxAmp' [-Wunused-variable]
- 1053 |     int16_t maxAmp = 1*819.2; // 819.2 is the scaler for 1 amp
+../Core/Src/main.c:1044:13: warning: unused variable 'maxAmp' [-Wunused-variable]
+ 1044 |     int16_t maxAmp = 1*819.2; // 819.2 is the scaler for 1 amp
       |             ^~~~~~
-../Core/Src/main.c:1052:13: warning: variable 'rpmOutput' set but not used [-Wunused-but-set-variable]
- 1052 |     int16_t rpmOutput = 0;
+../Core/Src/main.c:1043:13: warning: variable 'rpmOutput' set but not used [-Wunused-but-set-variable]
+ 1043 |     int16_t rpmOutput = 0;
       |             ^~~~~~~~~
-../Core/Src/main.c:1050:13: warning: unused variable 'clickScaler' [-Wunused-variable]
- 1050 |     int16_t clickScaler = 1;
+../Core/Src/main.c:1041:13: warning: unused variable 'clickScaler' [-Wunused-variable]
+ 1041 |     int16_t clickScaler = 1;
       |             ^~~~~~~~~~~
+../Core/Src/main.c:1039:22: warning: unused variable 'CMT' [-Wunused-variable]
+ 1039 |         PID_preset_t CMT = {10, 0.0, 0.0};
+      |                      ^~~
 arm-none-eabi-gcc -o "MotorHaptic.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/MotorHaptic/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotorHaptic.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: MotorHaptic.elf
  
 arm-none-eabi-size  MotorHaptic.elf 
 arm-none-eabi-objdump -h -S MotorHaptic.elf  > "MotorHaptic.list"
    text	   data	    bss	    dec	    hex	filename
-  56236	    124	  24108	  80468	  13a54	MotorHaptic.elf
+  53836	    124	  23820	  77780	  12fd4	MotorHaptic.elf
 Finished building: default.size.stdout
  
 Finished building: MotorHaptic.list
  
 
-22:44:37 Build Finished. 0 errors, 5 warnings. (took 1s.465ms)
+23:56:04 Build Finished. 0 errors, 7 warnings. (took 1s.529ms)
 

@@ -1,0 +1,27 @@
+14:05:01 **** Incremental Build of configuration Debug for project UARTTESTING ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:176:11: warning: unused variable 'whoAmI' [-Wunused-variable]
+  176 |   uint8_t whoAmI = 0;
+      |           ^~~~~~
+../Core/Src/main.c:175:11: warning: unused variable 'processedValues' [-Wunused-variable]
+  175 |   int16_t processedValues[3] = {0, 0, 0};
+      |           ^~~~~~~~~~~~~~~
+../Core/Src/main.c:174:11: warning: unused variable 'tx_buff' [-Wunused-variable]
+  174 |   uint8_t tx_buff[6]={0, 0, 0, 0, 0, 0};
+      |           ^~~~~~~
+arm-none-eabi-gcc -o "UARTTESTING.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/UARTTESTING/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UARTTESTING.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UARTTESTING.elf
+ 
+arm-none-eabi-size  UARTTESTING.elf 
+arm-none-eabi-objdump -h -S UARTTESTING.elf  > "UARTTESTING.list"
+   text	   data	    bss	    dec	    hex	filename
+  15060	     12	   2172	  17244	   435c	UARTTESTING.elf
+Finished building: default.size.stdout
+ 
+Finished building: UARTTESTING.list
+ 
+
+14:05:03 Build Finished. 0 errors, 3 warnings. (took 1s.831ms)
+

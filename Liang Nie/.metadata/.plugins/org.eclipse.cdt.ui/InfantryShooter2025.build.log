@@ -1,10 +1,45 @@
-19:10:29 **** Incremental Build of configuration Debug for project InfantryShooter2025 ****
+20:45:17 **** Incremental Build of configuration Debug for project InfantryShooter2025 ****
 make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'TaskChassis':
+../Core/Src/main.c:1054:17: warning: unused variable 'currentAim' [-Wunused-variable]
+ 1054 |         int16_t currentAim = 6150+upAdd;
+      |                 ^~~~~~~~~~
+../Core/Src/main.c:1051:17: warning: unused variable 'reverseCounter' [-Wunused-variable]
+ 1051 |         int16_t reverseCounter = 30;
+      |                 ^~~~~~~~~~~~~~
+../Core/Src/main.c:1050:16: warning: unused variable 'jammed' [-Wunused-variable]
+ 1050 |         int8_t jammed = 0;
+      |                ^~~~~~
+../Core/Src/main.c:1049:16: warning: unused variable 'initialCounter' [-Wunused-variable]
+ 1049 |         int8_t initialCounter = 0;
+      |                ^~~~~~~~~~~~~~
+../Core/Src/main.c:1044:16: warning: unused variable 'tog' [-Wunused-variable]
+ 1044 |         int8_t tog = 0;
+      |                ^~~
+../Core/Src/main.c:1043:16: warning: unused variable 'prevTog' [-Wunused-variable]
+ 1043 |         int8_t prevTog = 1;
+      |                ^~~~~~~
+../Core/Src/main.c:1039:22: warning: unused variable 'testBoi2' [-Wunused-variable]
+ 1039 |         PID_preset_t testBoi2 = {100.0, 0.0, 10};
+      |                      ^~~~~~~~
+../Core/Src/main.c:1038:22: warning: unused variable 'testBoi' [-Wunused-variable]
+ 1038 |         PID_preset_t testBoi = {1.0, 0.0, 0.5};
+      |                      ^~~~~~~
+../Core/Src/main.c:1036:22: warning: unused variable 'YPVoltageRPM' [-Wunused-variable]
+ 1036 |         PID_preset_t YPVoltageRPM = {10.0, 0.0, 0.0};
+      |                      ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "InfantryShooter2025.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/InfantryShooter2025/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="InfantryShooter2025.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: InfantryShooter2025.elf
+ 
 arm-none-eabi-size  InfantryShooter2025.elf 
+arm-none-eabi-objdump -h -S InfantryShooter2025.elf  > "InfantryShooter2025.list"
    text	   data	    bss	    dec	    hex	filename
-  53320	    124	  23548	  76992	  12cc0	InfantryShooter2025.elf
+  55320	    124	  23860	  79304	  135c8	InfantryShooter2025.elf
 Finished building: default.size.stdout
  
+Finished building: InfantryShooter2025.list
+ 
 
-19:10:30 Build Finished. 0 errors, 0 warnings. (took 1s.11ms)
+20:45:18 Build Finished. 0 errors, 9 warnings. (took 1s.834ms)
 

@@ -71,9 +71,6 @@ TIM_HandleTypeDef htim4;
 TIM_HandleTypeDef htim5;
 TIM_HandleTypeDef htim8;
 TIM_HandleTypeDef htim10;
-DMA_HandleTypeDef hdma_tim4_ch3;
-DMA_HandleTypeDef hdma_tim5_ch1;
-DMA_HandleTypeDef hdma_tim5_ch2;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart3;
@@ -95,7 +92,7 @@ const osThreadAttr_t defaultTask_attributes = {
 osThreadId_t chassisTaskHandle;
 const osThreadAttr_t chassisTask_attributes = {
   .name = "chassisTask",
-  .stack_size = 1124 * 4,
+  .stack_size = 1024 * 4,
   .priority = (osPriority_t) osPriorityHigh,
 };
 /* Definitions for IMUtempPIDtask */
@@ -110,7 +107,7 @@ osThreadId_t turretTaskHandle;
 const osThreadAttr_t turretTask_attributes = {
   .name = "turretTask",
   .stack_size = 1024 * 4,
-  .priority = (osPriority_t) osPriorityHigh,
+  .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
 const RC_ctrl_t *local_rc_ctrl;
@@ -190,7 +187,6 @@ void TaskTurret(void *argument);
   */
 int main(void)
 {
-
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -276,9 +272,7 @@ int main(void)
 
   /* Start scheduler */
   osKernelStart();
-
   /* We should never get here as control is now taken by the scheduler */
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -582,7 +576,7 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 83;
+  htim4.Init.Prescaler = 0;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 20999;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -640,9 +634,9 @@ static void MX_TIM5_Init(void)
 
   /* USER CODE END TIM5_Init 1 */
   htim5.Instance = TIM5;
-  htim5.Init.Prescaler = 83;
+  htim5.Init.Prescaler = 42;
   htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim5.Init.Period = 1999;
+  htim5.Init.Period = 19999;
   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim5) != HAL_OK)
@@ -910,15 +904,6 @@ static void MX_DMA_Init(void)
   /* DMA1_Stream1_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
-  /* DMA1_Stream2_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream2_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream2_IRQn);
-  /* DMA1_Stream4_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream4_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream4_IRQn);
-  /* DMA1_Stream7_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream7_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream7_IRQn);
   /* DMA2_Stream1_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream1_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream1_IRQn);
@@ -977,6 +962,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PA4 */
   GPIO_InitStruct.Pin = GPIO_PIN_4;
@@ -1070,6 +1061,7 @@ void TaskChassis(void *argument)
     	int16_t maxAmp = 1*819.2; // 819.2 is the scaler for 1 amp
     	int8_t incrementer = 1;
     	int16_t turnVal = 0;
+    	int16_t stallCounter = 0;
     	rpmOutput = currentPos- 1000;
 
     	float scalerValThing = 0.05;
@@ -1115,7 +1107,35 @@ void TaskChassis(void *argument)
     		}
 
         }
+
+    	/*
     	setMotorRPM(Bus1, M3508, 1, (getRotorPosition(Bus1, M2006, 5)-1000)*1.5, CMT);
+    	*/
+
+    	/*
+    	usart_printf("%d, %d\r\n", getMotorRPM(Bus1, M3508, 1), stallCounter);
+    	if(getMotorRPM(Bus1, M3508, 1) < -8000) {
+    		stallCounter = 10;
+    	}
+
+    	if (stallCounter > 0) {
+    		stallCounter--;
+    	}
+    	if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == 0 && stallCounter == 0) {
+    		CAN_setMotorCtrlVal(Bus1, M3508, 1, -1*1600*5);
+    	} else if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == 0 && stallCounter > 0) {
+    		// setMotorRPM(Bus1, M3508, 1, 0, CMT);
+    		CAN_setMotorCtrlVal(Bus1, M3508, 1, 1600);
+    	} else {
+    		CAN_setMotorCtrlVal(Bus1, M3508, 1, 0);
+    	}
+    	*/
+    	if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == 0) {
+    		CAN_setMotorCtrlVal(Bus1, M3508, 1, 1600*5);
+    	} else {
+    		CAN_setMotorCtrlVal(Bus1, M3508, 1, 0);
+    	}
+
 
     	/*
     	usart_printf("%d %d %d %d\r\n", -1*getMotorRPM(Bus1, M3508, 1), getMotorRPM(Bus1, M3508, 2), getMotorRPM(Bus1, M3508, 3), -1*getMotorRPM(Bus1, M3508, 4));

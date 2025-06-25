@@ -29,6 +29,8 @@
 #include "CAN_FD.h"
 #include "cybergear.h"
 #include "remote_control.h"
+#include "stdlib.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,7 +104,6 @@ PID_preset_t customPreset = {0, 0, 0};
 RC_ctrl_t local_rc_ctrl;
 
 const int16_t maxValAllowed = 800;
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -237,7 +238,7 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 256);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 1024);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -283,8 +284,8 @@ int main(void)
 	  //HAL_UART_Transmit(&huart1, "UART 1", 6, 100);
 	  //HAL_UART_Transmit(&huart2, "UART 2", 6, 100);
 	  //HAL_UART_Transmit(&huart3, "UART 3", 6, 100); //use this for debugging
-	  CAN_State = fdcanx_send_data(&hfdcan1, 0x01, &CAN_Data, 8);
-	  usart_printf("CAN_State=%d \r\n", CAN_State);
+	  //CAN_State = fdcanx_send_data(&hfdcan1, 0x01, &CAN_Data, 8);
+	  //usart_printf("CAN_State=%d \r\n", CAN_State);
 
 	  HAL_Delay(500);
 	  //usart_printf("ABC\r\n",100);
@@ -1516,7 +1517,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-float determiningTrigAngle (int16_t motorAngle[4]) {
+float determiningTrigAngle (int16_t motorAngle[5]) {
 	if (motorAngle[0] < 0 && motorAngle[1] < 0) {
 		return (-M_PI + atanf(((float)motorAngle[0])/((float)motorAngle[1])));
 	} else if (motorAngle[0] >= 0 && motorAngle[1] < 0) {
@@ -1543,18 +1544,14 @@ int16_t wheelRotation (int16_t currentRotation, int16_t destinationRotation) {
     return ((destinationRotation + (8191*newTargetRotationCounter)) - currentRotation);
 }
 
-float swerveScaler (int16_t motorInfo[4][4]) {
+float swerveScaler (int16_t motorInfo[4][5]) {
 	int16_t largestVal = 0;
 	for (int8_t i = 0; i < 4; i++) {
 		if (motorInfo[i][2] > largestVal) {
 			largestVal = motorInfo[i][2];
 		}
 	}
-	/*
-	if (largestVal == 0) {
-		usart_printf("ERROR_WITH_SCALER\r\n");
-	}
-	*/
+
 	// usart_printf("Hello %d there!\r\n", 5);
 	if (largestVal <= maxValAllowed) {
 		return 1;
@@ -1567,6 +1564,44 @@ int16_t PD (MotorType_ID motorType, int16_t *previousDelta, int16_t currentDelta
 
 	return applyCtrlLimit(motorType, (currentDelta*kP + (*previousDelta - currentDelta)*kD));
 }
+
+void fondlerAutoReverse (int8_t allVars[5], int8_t RCSwitch, int8_t M2006IDX, int8_t reverseRotation, PID_preset_t indexerPreset) {
+	int16_t flywheelSpeed = getMotorRPM(Bus1, M3508, 1);
+    if ((/*(pc_control.left_button_down == 1) && */(flywheelSpeed > 7000) && (allVars[4] == 0)) || (RCSwitch == 1)) {
+    	// setMotorRPM(Bus2, M2006, 6, (100), indexerPreset);
+    	allVars[0] = 1;
+
+		if (allVars[3] > 0 && allVars[2] == 0) {
+			setMotorRPM(Bus1, M2006, M2006IDX, reverseRotation*15000, indexerPreset);
+			allVars[3]--;
+		} else {
+			allVars[2] = 0;
+			usart_printf("BeansOutput1\r\n");
+			setMotorRPM(Bus1, M2006, M2006IDX, -270*16*reverseRotation, indexerPreset);
+			if (reverseRotation == 1) {
+				if (allVars[1] == 0 && getMotorRPM(Bus1, M2006, M2006IDX) <= -10) {
+					allVars[1] = 1;
+				} else if (getMotorRPM(Bus1, M2006, M2006IDX) > -1 && allVars[1] == 1) {         // jammed
+					allVars[3] = 12;
+					allVars[1] = 0;
+				}
+			} else {
+				if (allVars[1] == 0 && getMotorRPM(Bus1, M2006, M2006IDX) >= 10) {
+					allVars[1] = 1;
+				} else if (getMotorRPM(Bus1, M2006, M2006IDX) < 1 && allVars[1] == 1) {         // jammed
+					allVars[3] = 12;
+					allVars[1] = 0;
+				}
+			}
+		}
+    } else {
+    	allVars[0] = 0;
+    	allVars[2] = 1;
+    	allVars[1] = 0;
+    	setMotorRPM(Bus1, M2006, M2006IDX, 0, indexerPreset);
+    }
+}
+
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
@@ -1579,30 +1614,13 @@ int16_t PD (MotorType_ID motorType, int16_t *previousDelta, int16_t currentDelta
 void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN 5 */
-
-	PID_preset_t test = {25.0, 0.0, 0.0};
-
-	int16_t wheelPrev[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-
-		/*  Fronts
-			1   0
-
-			2   3
-		*/
-
-	int8_t rotationVectors[4][2] =  {{1,  -1},
-							 		 {-1, -1},
-									 {-1,  1},
-									 {1,   1}};
-
-	int16_t forwardsID[4] = {380, 5070, 348, 5140};
-
-	// [MotorID][0 = MotorXVal, 1 = MotorYVal, 2 = MotorABSVal, 3 = MotorConvertedAngle]
-	int16_t motorInfo[4][4];
-
-
+	uint8_t CAN_Data[] = {0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07};
+	uint32_t CAN_Extended_Header = 0xFFF0000;
+	uint8_t CAN_Extended_Data = 0x00;
+	uint8_t CAN_State = 0;
 	uint16_t value_adc[] = {0, 0, 0, 0};
 	uint16_t value_adc2[] = {0, 0};
+	uint32_t voltage = 0;
 	HAL_ADCEx_Calibration_Start(&hadc1, ADC_CALIB_OFFSET, ADC_SINGLE_ENDED);
 	HAL_ADCEx_Calibration_Start(&hadc2, ADC_CALIB_OFFSET, ADC_SINGLE_ENDED);
 	HAL_ADC_Start_DMA(&hadc1, (uint32_t *)value_adc, 4);
@@ -1610,45 +1628,151 @@ void StartDefaultTask(void const * argument)
 	HAL_OPAMP_Start(&hopamp1);
 	HAL_OPAMP_Start(&hopamp2);
 	//remote_control_init();
-
+	/*
+	osDelay(25000);
 	//set_CANID_cybergear(&mi_motor[0], 0x34);          //DO NOT ENABLE - needs target motor CANID to be changed in cybergear.c to function
-	init_cybergear(&mi_motor[0], 0x31, Speed_mode);
-	init_cybergear(&mi_motor[1], 0x32, Speed_mode);
-	init_cybergear(&mi_motor[2], 0x33, Speed_mode);
-	init_cybergear(&mi_motor[3], 0x34, Speed_mode);
 
-	// Sets max current (SUCKS ASS)
-	set_maxCurrent_cybergear(&mi_motor[0], 1);
+	init_cybergear(&mi_motor[0], 0x31, Speed_mode);
+	osDelay(50);
+	init_cybergear(&mi_motor[1], 0x32, Speed_mode);
+	osDelay(50);
+	init_cybergear(&mi_motor[2], 0x33, Speed_mode);
+	osDelay(50);
+	init_cybergear(&mi_motor[3], 0x34, Speed_mode);
+	// set_maxCurrent_cybergear(&mi_motor[0], 1);
 	//set_refSpd_cybergear(&mi_motor[0], 1);
 	osDelay(500);
+	*/
+
+	PID_preset_t test = {8.0, 0.0, 0.0};
+	PID_preset_t test2 = {50.0, 0.0, 0.0};
+
+	//
+	int16_t wheelPrev[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+	/*  Fronts
+		3   0
+
+		2   1
+	*/
+
+	int8_t rotationVectors[4][2] =  {{1,  1},
+							 		 {-1,  1},
+									 {-1,  -1},
+									 {1, -1}};
+
+	int16_t forwardsID[4] = {637, 7135, 6562, 2532};
+
+	// [MotorID][0 = MotorXVal, 1 = MotorYVal, 2 = MotorABSVal, 3 = MotorConvertedAngle], 4 = Reversal Of Motor
+	int16_t motorInfo[4][5];
+	int16_t DP[3] = {0, 0, 0};
+	int8_t noVelocity = 0;
+	int8_t fondlerVars[5] = {0, 0, 0, 0, 0};
+
 	//start_cybergear(&mi_motor[0]);
 	//HAL_ADC_Stop(&hadc1);
 	//value = map(ADC_VAL, 0, 65535, 0, 100);
   /* Infinite loop */
   for(;;)
   {
-	  usart_printf("Beans\r\n");
-	  setMotorRPM(Bus2, GM6020, 1, 10, test);
+	  // fdcanx_send_data(&hfdcan1, CAN_b2b_A_RC_Val_ID, CAN_Data, 8);
+	  // setMotorRPM(Bus1, GM6020, 1, 20, test2);
+	  // usart_printf("%d\r\n", getMotorRPM(Bus1, GM6020, 1));
+	  usart_printf("%d %d %d %d %d %d %d\r\n", getRCfakechannel(0), getRCfakechannel(1), getRCfakechannel(2), getRCfakechannel(3), getRCfakechannel(4), getRCfakechannel(5), getRCfakechannel(6));
+	  // usart_printf("Beans Output?");
+	  // usart_printf("%d\r\n", getRCfakechannel(4));
 		//fdcanx_send_data(&hfdcan1, 0x01, &CAN_Data, 8);
 		//CAN_State = fdcanx_send_extended(&hfdcan2, CAN_Extended_Header, &CAN_Extended_Data, 8);
 	  	//set_refSpd_cybergear(&mi_motor[0], 10);
 	  //setMotorRPM(Bus1, M3508, 1, 2000, indexerPreset);
-		//set_refSpd_cybergear(&mi_motor[0], 10);
-		//osDelay(500);
-		//set_refSpd_cybergear(&mi_motor[0], -10);
-		//osDelay(500);
-		//set_refSpd_cybergear(&mi_motor[0], -20);
-		//osDelay(500);
-		//cybergear_rx_callback(&hfdcan2);
-		//HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_2);
-		//value_adc2 = HAL_ADC_GetValue(&hadc2);
-		//voltage = value_adc2[0]*2400/65535;
-		//value_adc = HAL_ADC_GetValue(&hadc1);
-		//usart_printf("CAN_State = %d, ADC 1 =  %d, ADC 2 =  %d, ADC 3 =  %d, ADC 4 =  %d,\r\n", CAN_State, value_adc[0], value_adc[1], value_adc[2], value_adc[3]);
-		//usart_printf("Vcap = %d \r\n", value_adc2[0]);
-		//usart_printf("CAN_Ext_State = %d \r\n", 0);
 
-		osDelay(5);
+	  int16_t FB = 1*getRCfakechannel(0);
+	  int16_t LR = -1*getRCfakechannel(1);
+	  int16_t Rotate = -1*getRCfakechannel(3);
+
+	  // int8_t altDrivingMode = getRCswitch(0);
+
+	  if (FB == 0 && LR == 0 && Rotate == 0) {
+		  FB = DP[0];
+	  	  LR = DP[1];
+	  	  Rotate = DP[2];
+	  	  noVelocity = 1;
+	  } else {
+		  noVelocity = 0;
+	  }
+	  DP[0] = FB;
+	  DP[1] = LR;
+	  DP[2] = Rotate;
+// usart_printf("%d\r\n", altDrivingMode);
+	  for (int8_t i = 0; i < 4; i++ ) {
+		  motorInfo[i][0] = LR + (Rotate * rotationVectors[i][0]);
+		  motorInfo[i][1] = FB + (Rotate * rotationVectors[i][1]);
+		  if (noVelocity == 0) {
+			  motorInfo[i][2] = (int16_t)(sqrtf((float)((motorInfo[i][0]*motorInfo[i][0])+(motorInfo[i][1]*motorInfo[i][1]))));
+		  } else {
+			  motorInfo[i][2] = 0;
+		  }
+	  }
+
+	  float SScalerVal = swerveScaler(motorInfo);
+
+	  // Swerve Motor
+	  for (int8_t j = 0; j < 4; j++) {
+		  // Scales Motor Speed Output
+		  // 800*11.25 = 9000
+		  motorInfo[j][2] = (float)motorInfo[j][2] * SScalerVal * 11.25;
+
+		  int16_t trigAng = (int16_t)(4095.5f*(determiningTrigAngle(motorInfo[j])/M_PI));
+
+		  int16_t tempAngle = trigAng+forwardsID[j];
+		  if (tempAngle > 8191) {
+			  tempAngle = tempAngle-8191;
+		  } else if (tempAngle < 0) {
+			  tempAngle = tempAngle+8191;
+		  }
+		  motorInfo[j][3] = tempAngle;
+	  }
+
+	  // Drive Motor
+
+	  for (int8_t k = 0; k < 4; k++) {
+		  // CAN_setMotorCtrlVal(Bus1, GM6020, k+1, PD(GM6020, &wheelPrev[k], wheelRotation (getRotorPosition(Bus1, GM6020, k+1), motorInfo[k][3]), 40, 30));
+		  osDelay(1);
+		  if (motorInfo[k][4] == 1) {
+			  	// setMotorRPM(Bus1, M3508, k+1, -1*motorInfo[k][2], test);
+		  } else {
+			  // setMotorRPM(Bus1, M3508, k+1, motorInfo[k][2], test);
+		  }
+	  }
+	  // setMotorRPM(Bus1, GM6020, 6, 100, test2);
+	  osDelay(1);
+	  // setMotorRPM(Bus1, GM6020, 5, getRCfakechannel(4), test2);//getRCfakechannel(4)
+	  osDelay(1);
+	  //usart_printf("%d\r\n", getRCfakechannel(4));
+	  /*
+	  set_speed_cybergear(&mi_motor[0], (float)((motorInfo[0][2])/200));
+	  osDelay(1);
+	  set_speed_cybergear(&mi_motor[1], (float)((motorInfo[1][2])/200));
+	  osDelay(1);
+	  set_speed_cybergear(&mi_motor[2], (float)((motorInfo[2][2])/200));
+	  osDelay(1);
+	  set_speed_cybergear(&mi_motor[3], (float)((motorInfo[3][2])/200));
+	  osDelay(1);
+	  */
+	  // uint16_t tempor = getRotorPosition(Bus1, GM6020, 1);
+	  // usart_printf("%d\r\n", getRotorPosition(Bus1, GM6020, 1));
+	  // setMotorRPM(Bus1, GM6020, 0, 10, test2);
+	  if (getRCfakechannel(5) == 2) {
+		  fondlerAutoReverse (fondlerVars, 1, 1, -1, test);
+		  setMotorRPM(Bus1, M2006, 1, 6000, test);
+	  } else {
+		  fondlerAutoReverse (fondlerVars, 0, 1, -1, test);
+		  setMotorRPM(Bus1, M2006, 1, 0, test);
+	  }
+
+
+	  // setMotorRPM(Bus1, M2006, 1, 6000, test);
+		osDelay(1);
   }
   /* USER CODE END 5 */
 }

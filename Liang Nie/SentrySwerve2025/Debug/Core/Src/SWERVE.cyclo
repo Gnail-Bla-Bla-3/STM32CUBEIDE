@@ -1,0 +1,5 @@
+../Core/Src/SWERVE.c:35:7:determiningTrigAngle	7
+../Core/Src/SWERVE.c:47:9:wheelRotation	5
+../Core/Src/SWERVE.c:62:7:swerveScaler	4
+../Core/Src/SWERVE.c:82:9:PD	1
+../Core/Src/SWERVE.c:88:6:Loop	11

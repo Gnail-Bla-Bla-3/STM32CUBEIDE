@@ -1,0 +1,3 @@
+../Core/Src/UART.c:55:6:usart_Init	8	static
+../Core/Src/UART.c:60:6:usart_printf	8	static
+../Core/Src/UART.c:70:6:HAL_UARTEx_RxEventCallback	16	static

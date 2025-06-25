@@ -1,0 +1,6 @@
+../Core/Src/IST8310.c:21:6:processData	24	static
+../Core/Src/IST8310.c:39:6:IST8310_Init	40	static
+../Core/Src/IST8310.c:77:6:IST8310_Update	32	static
+../Core/Src/IST8310.c:102:9:getIST8310_X	4	static
+../Core/Src/IST8310.c:106:9:getIST8310_Y	4	static
+../Core/Src/IST8310.c:109:9:getIST8310_Z	4	static

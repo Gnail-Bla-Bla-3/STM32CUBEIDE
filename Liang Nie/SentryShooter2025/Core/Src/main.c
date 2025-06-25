@@ -999,6 +999,43 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+// allVars[] 0 = wasShooting, 1 = indexerTargetReached, 2 = indexerStopped, 3 = jammed, 4 = cantShoot;
+void fondlerAutoReverse (int8_t allVars[5], int8_t RCSwitch, int8_t M2006IDX, int8_t reverseRotation, PID_preset_t indexerPreset) {
+	int16_t flywheelSpeed = getMotorRPM(Bus1, M3508, 1);
+    if (((pc_control.left_button_down == 1) && (flywheelSpeed > 7000) && (allVars[4] == 0)) || (RCSwitch == 1)) {
+    	// setMotorRPM(Bus2, M2006, 6, (100), indexerPreset);
+    	allVars[0] = 1;
+
+		if (allVars[3] > 0 && allVars[2] == 0) {
+			setMotorRPM(Bus1, M2006, M2006IDX, reverseRotation*15000, indexerPreset);
+			allVars[3]--;
+		} else {
+			allVars[2] = 0;
+			// usart_printf("BeansOutput1\r\n");
+			setMotorRPM(Bus1, M2006, M2006IDX, -270*16*reverseRotation, indexerPreset);
+			if (reverseRotation == 1) {
+				if (allVars[1] == 0 && getMotorRPM(Bus1, M2006, M2006IDX) <= -10) {
+					allVars[1] = 1;
+				} else if (getMotorRPM(Bus1, M2006, M2006IDX) > -1 && allVars[1] == 1) {         // jammed
+					allVars[3] = 12;
+					allVars[1] = 0;
+				}
+			} else {
+				if (allVars[1] == 0 && getMotorRPM(Bus1, M2006, M2006IDX) >= 10) {
+					allVars[1] = 1;
+				} else if (getMotorRPM(Bus1, M2006, M2006IDX) < 1 && allVars[1] == 1) {         // jammed
+					allVars[3] = 12;
+					allVars[1] = 0;
+				}
+			}
+		}
+    } else {
+    	allVars[0] = 0;
+    	allVars[2] = 1;
+    	allVars[1] = 0;
+    	setMotorRPM(Bus1, M2006, M2006IDX, 0, indexerPreset);
+    }
+}
 
 /* USER CODE END 4 */
 
@@ -1033,48 +1070,109 @@ void TaskChassis(void *argument)
   /* USER CODE BEGIN TaskChassis */
 	PWMInit(&htim1, &htim4, &htim5, &htim8);
 
-	PID_preset_t YPVoltageRPM = {1.0, 0.0, 0.0};
-	PID_preset_t CyawPresetVoltageRPM = {7.0, 0.0, 0.0};
+	PID_preset_t fondler = {3.0, 0.0, 0.0};
+	PID_preset_t flywheels2 = {3.0, 0.0, 0.0};
+	PID_preset_t flywheels = {7.0, 0.0, 0.0};
 	PID_preset_t yawPresetVoltageRPM = {18.0, 0.0, 0.0};
-	PID_preset_t pitchBoi = {50.0, 0.0, 0.0};
+	PID_preset_t pitchBoi = {20.0, 0.0, 80.0};
+	PID_preset_t yawBoi = {50.0, 0.0, 0.0};
 
 	int16_t returnScaler = 2;
+	int8_t fondlerVars[2][5] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}};
+
+	int16_t currentAim = 2850;
   /* Infinite loop */
     for(;;) {
     	/*
     	setMotorRPM(Bus1, M2006, 5, 7000, YPVoltageRPM);
     	*/
     	// usart_printf("Beans %d\r\n", getMotorRPM(Bus1, M2006, 5));
-    	// TURRET PITCH TOP = 3800
-    	// TURRET PITCH BOTTOM = 5000
-    	// DELTA PITCH = 1200
-    	uint16_t currentPos = getRCchannel(1);
-    	uint16_t togoVal = ((currentPos)*1.36)+3800;
+    	// TURRET PITCH TOP = 3700
+    	// TURRET PITCH BOTTOM = 2000
+    	// DELTA PITCH = 1700
 
-    	setMotorPosition(Bus1, GM6020, 6, togoVal, pitchBoi);
 
+    	// FLywheel ID = 1, 2, 3, 4
+    	// Indexers = 5, 6
+    	// Pitch = 3
+    	int16_t currentPos = getRCchannel(1);
+    	if (getRCswitch(0) >= 2) {
+    		uint16_t togoVal = ((currentPos)*1.28)+2850;
+    		currentAim = togoVal;
+    		setMotorPosition(Bus1, GM6020, 3, togoVal, pitchBoi);
+    	} else {
+    	// usart_printf("%d\r\n", getRotorPosition(Bus1, GM6020, 3));
+    		int16_t currentPos1 = getRCchannel(1)*0.1;
+    		currentAim -= currentPos1;
+    		if (currentAim > 3700) {
+    			currentAim = 3700;
+    		} else if (currentAim < 2000) {
+    			currentAim = 2000;
+    		}
+    	setMotorPosition(Bus1, GM6020, 3, currentAim, pitchBoi);
+    	}
     	// usart_printf("%d\r\n", getRotorPosition(Bus1, GM6020, 6));
     	// usart_printf("%d %d %d %d\r\n", -1*getMotorRPM(Bus1, M3508, 1), getMotorRPM(Bus1, M3508, 2), getMotorRPM(Bus1, M3508, 3), -1*getMotorRPM(Bus1, M3508, 4));
         uint16_t speed = 5000;
 
+        CAN_transmit(Bus2, 0x104, fourBitShift((uint16_t)(getRCchannel(0)+660), (uint16_t)(getRCchannel(1)+660), (uint16_t)(getRCchannel(2)+660), (uint16_t)(getRCchannel(3)+660)));
+        //CAN_transmit(Bus1, 0x105, 0x1122334455667788);
+        CAN_transmit(Bus2, 0x105, otherSignals((uint16_t)(getRCchannel(4)+660), getRCswitch(0), getRCswitch(1)));
+        // CAN_transmit(Bus2, 0x105, 0x11223344);
+        osDelay(2);
 
-        if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == 0) {
+        CAN_setMotorCtrlVal(Bus1, M3508, 3, getRCchannel(0)*24);
+        usart_printf("RPM: %d || Temp: %d\r\n",getMotorRPM(Bus1, M3508, 3), getMotorTemperature(Bus1, M3508, 3));
+
+        if (getRCswitch(1) > 1) {
             // setMotorRPM(Bus1, M3508, 1, -1*speed, yawPresetVoltageRPM);
-            setMotorRPM(Bus1, M3508, 2, speed, yawPresetVoltageRPM);
-            setMotorRPM(Bus1, M3508, 3, speed, CyawPresetVoltageRPM);
-            setMotorRPM(Bus1, M3508, 4, -1*speed, CyawPresetVoltageRPM);
-            setMotorRPM(Bus1, M2006, 1, 5000, YPVoltageRPM);
-            usart_printf("On\r\n");
+            setMotorRPM(Bus1, M3508, 2, speed, flywheels);
+            osDelay(2);
+            // setMotorRPM(Bus1, M3508, 3, speed, flywheels);
+            osDelay(2);
+            setMotorRPM(Bus1, M3508, 4, -1*speed, flywheels);
+            osDelay(2);
+            // setMotorRPM(Bus1, M3508, 1, -1*speed, flywheels);
+            // usart_printf("Shooting\r\n");
+            // usart_printf("On\r\n");
         } else {
-
         	// setMotorRPM(Bus1, M3508, 1, 0, yawPresetVoltageRPM);
-        	setMotorRPM(Bus1, M3508, 2, 0, yawPresetVoltageRPM);
-        	setMotorRPM(Bus1, M3508, 3, 0, CyawPresetVoltageRPM);
-        	setMotorRPM(Bus1, M3508, 4, 0, CyawPresetVoltageRPM);
-        	setMotorRPM(Bus1, M2006, 1, 0, YPVoltageRPM);
-        	usart_printf("Off\r\n");
+        	setMotorRPM(Bus1, M3508, 2, 0, flywheels);
+        	osDelay(2);
+        	// setMotorRPM(Bus1, M3508, 3, 0, flywheels);
+        	osDelay(2);
+        	setMotorRPM(Bus1, M3508, 4, 0, flywheels);
+        	osDelay(2);
+        	// setMotorRPM(Bus1, M3508, 1, 0, flywheels);
+        	// usart_printf("Off\r\n");
         }
+        osDelay(2);
 
+        setMotorRPM(Bus1, M2006, 1, getRCchannel(1)*14, flywheels2);
+        osDelay(2);
+        if (getRCswitch(1) == 2) {
+        	fondlerAutoReverse (fondlerVars[0], 1, 5, -1, fondler);
+        	osDelay(2);
+        	fondlerAutoReverse (fondlerVars[1], 1, 6, 1, fondler);
+        	/*
+        	setMotorRPM(Bus1, M2006, 5, 5000, fondler);
+        	osDelay(2);
+        	setMotorRPM(Bus1, M2006, 6, -5000, fondler);
+        	*/
+        } else {
+        	fondlerAutoReverse (fondlerVars[0], 0, 5, -1, fondler);
+        	osDelay(2);
+        	fondlerAutoReverse (fondlerVars[1], 0, 6, 1, fondler);
+        	/*
+        	setMotorRPM(Bus1, M3508, 5, 0, fondler);
+        	osDelay(2);
+        	setMotorRPM(Bus1, M2006, 6, 0, fondler);
+        	*/
+        }
+        osDelay(2);
+        setMotorRPM(Bus1, GM6020, 5, getRCchannel(4)*0.5, yawBoi);
+
+        osDelay(2);
 		PWMTimerStarter();
 		RCkeysRefresh();
         osDelay(10);

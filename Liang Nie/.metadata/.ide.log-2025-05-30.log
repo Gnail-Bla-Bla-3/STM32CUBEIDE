@@ -1,0 +1,56 @@
+2025-05-30 13:29:28,856 [INFO] WebApp:189 - Connection lost
+2025-05-30 15:11:26,733 [INFO] WebApp:186 - Connection restablished
+2025-05-30 15:12:25,334 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 562153536 Bytes (1073741824)
+2025-05-30 15:12:27,532 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 549040592 Bytes (1073741824)
+2025-05-30 15:12:30,568 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 746695120 Bytes (1073741824)
+2025-05-30 15:12:31,440 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2025-05-30 15:12:31,440 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-05-30 15:12:31,440 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-05-30 15:12:31,440 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2025-05-30 15:12:31,440 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-05-30 15:12:31,441 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-05-30 15:12:31,445 [INFO] CodeGenerator:807 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.12.0.202406281431//db/
+2025-05-30 15:12:31,452 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-30 15:12:31,452 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-30 15:12:31,664 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/MXTmpFiles/license.tmp_save
+2025-05-30 15:12:31,858 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/MXTmpFiles/license.tmp
+2025-05-30 15:12:31,957 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/MXTmpFiles/gpio.tmp_save
+2025-05-30 15:12:32,134 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/MXTmpFiles/gpio.tmp
+2025-05-30 15:12:32,563 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Src/stm32f4xx_it.c_save
+2025-05-30 15:12:33,064 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Src/stm32f4xx_it.c
+2025-05-30 15:12:33,069 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Inc/stm32f4xx_it.h_save
+2025-05-30 15:12:33,244 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Inc/stm32f4xx_it.h
+2025-05-30 15:12:33,286 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Src/stm32f4xx_hal_msp.c_save
+2025-05-30 15:12:33,690 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Src/stm32f4xx_hal_msp.c
+2025-05-30 15:12:33,722 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/MXTmpFiles/system.tmp_save
+2025-05-30 15:12:33,834 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/MXTmpFiles/system.tmp
+2025-05-30 15:12:33,844 [INFO] CodeEngine:311 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Inc/stm32f4xx_hal_conf.h_save
+2025-05-30 15:12:33,998 [INFO] CodeEngine:335 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Inc/stm32f4xx_hal_conf.h
+2025-05-30 15:12:34,182 [WARN] IPConfigManager:3554 - IP not found : TIM
+2025-05-30 15:12:34,183 [WARN] CodeGenerator:4002 - IP not found : null
+2025-05-30 15:12:34,190 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Inc/main.h_save
+2025-05-30 15:12:34,375 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Inc/main.h
+2025-05-30 15:12:34,380 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Src/main.c_save
+2025-05-30 15:12:34,764 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/Core/Src/main.c
+2025-05-30 15:12:35,553 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 205mS.
+2025-05-30 15:12:35,557 [INFO] ProjectBuilder:4828 - Project Generator version: 4.4.0-B60
+2025-05-30 15:12:35,812 [INFO] ConfigFileManager:1531 - The Die is : DIE431
+2025-05-30 15:12:35,866 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2025-05-30 15:12:35,978 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS
+2025-05-30 15:12:35,994 [INFO] ApiDbMcu:508 - Load IP Config File for LIBJPEG
+2025-05-30 15:12:36,133 [INFO] ApiDbMcu:508 - Load IP Config File for MBEDTLS
+2025-05-30 15:12:36,312 [INFO] ApiDbMcu:508 - Load IP Config File for USB_DEVICE
+2025-05-30 15:12:36,336 [INFO] ApiDbMcu:508 - Load IP Config File for USB_HOST
+2025-05-30 15:12:38,070 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 2512mS.
+2025-05-30 15:12:38,072 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 1mS.
+2025-05-30 15:12:38,073 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2025-05-30 18:26:09,144 [INFO] WebApp:189 - Connection lost
+2025-05-30 18:27:20,442 [INFO] WebApp:186 - Connection restablished
+2025-05-30 18:29:10,976 [INFO] WebApp:189 - Connection lost
+2025-05-30 19:12:35,987 [INFO] WebApp:186 - Connection restablished
+2025-05-30 19:12:36,560 [INFO] WebApp:189 - Connection lost
+2025-05-30 19:12:36,704 [INFO] WebApp:186 - Connection restablished
+2025-05-30 22:20:25,022 [INFO] WebApp:189 - Connection lost
+2025-05-30 22:20:26,669 [INFO] WebApp:186 - Connection restablished
+2025-05-30 22:20:27,975 [INFO] WebApp:189 - Connection lost
+2025-05-30 22:20:28,260 [INFO] WebApp:186 - Connection restablished

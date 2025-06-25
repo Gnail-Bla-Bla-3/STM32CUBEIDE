@@ -1,0 +1,1304 @@
+2025-05-24 15:13:51,997 [INFO] WebApp:189 - Connection lost
+2025-05-24 15:14:03,927 [INFO] WebApp:186 - Connection restablished
+2025-05-24 15:22:26,212 [INFO] MainUpdater:2873 - connection check result : 10
+2025-05-24 15:22:26,212 [INFO] MainUpdater:2873 - connection check result : 10
+2025-05-24 15:22:26,841 [INFO] MicroXplorer:468 - Change Database Path : 
+2025-05-24 15:22:26,842 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.120
+2025-05-24 15:22:26,851 [ERROR] ProjectManagerView:394 - 
+java.lang.NullPointerException: Cannot invoke "javax.swing.JTextField.getText()" because the return value of "java.util.List.get(int)" is null
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab$10.caretUpdate(ProjectChoiceTab.java:2622) ~[filemanager.jar:?]
+	at javax.swing.text.JTextComponent.fireCaretUpdate(JTextComponent.java:412) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.fire(JTextComponent.java:4491) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.stateChanged(JTextComponent.java:4513) ~[?:?]
+	at javax.swing.text.DefaultCaret.fireStateChanged(DefaultCaret.java:842) ~[?:?]
+	at javax.swing.text.DefaultCaret.changeCaretPosition(DefaultCaret.java:1313) ~[?:?]
+	at javax.swing.text.DefaultCaret.handleSetDot(DefaultCaret.java:1212) ~[?:?]
+	at javax.swing.text.DefaultCaret.setDot(DefaultCaret.java:1193) ~[?:?]
+	at javax.swing.text.DefaultCaret$Handler.insertUpdate(DefaultCaret.java:1789) ~[?:?]
+	at javax.swing.text.AbstractDocument.fireInsertUpdate(AbstractDocument.java:226) ~[?:?]
+	at javax.swing.text.AbstractDocument.handleInsertString(AbstractDocument.java:780) ~[?:?]
+	at javax.swing.text.AbstractDocument.insertString(AbstractDocument.java:739) ~[?:?]
+	at javax.swing.text.PlainDocument.insertString(PlainDocument.java:131) ~[?:?]
+	at javax.swing.text.AbstractDocument.replace(AbstractDocument.java:698) ~[?:?]
+	at javax.swing.text.JTextComponent.setText(JTextComponent.java:1729) ~[?:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.createHeapStackFields(ProjectChoiceTab.java:972) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.buildLinkSettingsPanel(ProjectChoiceTab.java:3597) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.defineWindowsFields(ProjectChoiceTab.java:1940) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.updateSettings(ProjectChoiceTab.java:550) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectSettingsPanel.UpdateDialog(ProjectSettingsPanel.java:245) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.ProjectManagerView.propertyChange(ProjectManagerView.java:391) ~[filemanager.jar:?]
+	at java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:343) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:335) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:268) ~[?:?]
+	at com.st.microxplorer.util.MXPropertyChangeSupport.firePropertyChange(MXPropertyChangeSupport.java:54) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.mxsystem.MxSystem.closeConfig(MxSystem.java:900) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.maingui.MainPanel.closeConfig(MainPanel.java:781) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.OpenFileManager.loadConfigurationFile(OpenFileManager.java:265) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:352) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:330) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.FileManagerView.getSpecificTask(FileManagerView.java:246) ~[filemanager.jar:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor.getMxTabbedPaneInstance(CubeMxEditor.java:1198) ~[com.st.stm32cube.common.mx_6.12.0.202406281431/:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor$12$1.createSwingComponent(CubeMxEditor.java:1068) ~[com.st.stm32cube.common.mx_6.12.0.202406281431/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite.doComponentCreation(EmbeddedSwingComposite.java:492) ~[com.st.stm32cube.common.mx.oss_6.12.0.202406281431/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite$4.run(EmbeddedSwingComposite.java:291) ~[com.st.stm32cube.common.mx.oss_6.12.0.202406281431/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.AwtEnvironment$2.run(AwtEnvironment.java:166) ~[com.st.stm32cube.common.mx.oss_6.12.0.202406281431/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) ~[?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) ~[?:?]
+2025-05-24 15:22:26,854 [WARN] ThirdParty:871 - waiting for thirdparty lock release [close project]
+2025-05-24 15:22:26,854 [INFO] ThirdParty:873 - entering critical section [close project]
+2025-05-24 15:22:26,854 [INFO] ThirdParty:883 - exiting critical section [close project]
+2025-05-24 15:22:26,857 [INFO] PinOutPanel:1561 - setPackage(No Configuration,No Configuration)
+2025-05-24 15:22:26,872 [WARN] IpParametersView:151 - Warning: This peripheral hasn't parameters
+2025-05-24 15:22:26,876 [WARN] MainPanel:284 - <html><b><center>Warning: This peripheral has no parameters to be configured<br></b></html>
+2025-05-24 15:22:26,879 [INFO] UtilMem:75 - Begin LoadConfig() Used Memory: 707199512 Bytes (1073741824)
+2025-05-24 15:22:26,880 [INFO] MicroXplorer:468 - Change Database Path : 
+2025-05-24 15:22:26,880 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.120
+2025-05-24 15:22:26,880 [INFO] OpenFileManager:332 - Change cursor
+2025-05-24 15:22:26,893 [INFO] Mcu:2032 - Initializing MCU STM32F407I(E-G)Hx STM32F407IGHx STM32F407IGH6TR
+2025-05-24 15:22:28,950 [INFO] Context:742 - Trying to add GPIOservice into a context  which must be forbidden
+2025-05-24 15:22:29,325 [INFO] RtosManager:555 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2025-05-24 15:22:29,325 [INFO] RtosManager:555 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2025-05-24 15:22:29,325 [INFO] RtosManager:555 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2025-05-24 15:22:29,325 [INFO] RtosManager:555 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2025-05-24 15:22:29,325 [WARN] ModelIntegratedComponent:184 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2025-05-24 15:22:29,327 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,327 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,327 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,327 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,327 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,327 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,327 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 15:22:29,328 [WARN] ModelPack:524 - Component already loaded: STMicroelectronics:HAL Drivers:0.0.0:STMicroelectronics:Device:STMicro_Driver:XSPI:HAL::0.0.1:HAL_XSPI
+2025-05-24 15:22:29,610 [INFO] ThirdPartyModel:298 - Start build external matchings
+2025-05-24 15:22:31,411 [INFO] ThirdPartyModel:316 - End build external matchings
+2025-05-24 15:22:31,446 [INFO] RtosManager:919 - Current active RTOS is FREERTOS [Cortex-M4NS]
+2025-05-24 15:22:31,566 [INFO] ImportTextPane:205 - (OptionalMessage_ERROR) IP (RCC) : Parameter (48MHZClocksFreq_Value) has invalid value (84000000)
+2025-05-24 15:22:31,567 [INFO] ImportTextPane:205 - (OptionalMessage_ERROR) IP (RCC) : Parameter (RTCHSEDivFreq_Value) has invalid value (6000000)
+2025-05-24 15:22:31,831 [INFO] UtilMem:75 - End LoadConfig() Used Memory: 838015080 Bytes (1073741824)
+2025-05-24 15:22:31,881 [WARN] ThirdParty:833 - waiting for thirdparty lock release [change project]
+2025-05-24 15:22:31,881 [INFO] ThirdParty:835 - entering critical section [change project]
+2025-05-24 15:22:31,881 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USBPD 4.1
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 6.0.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENVWB1 1.4.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F4 1.1.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics LIBJPEG 8.0.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.2
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.1
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SMBUS 2.1.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-WB05N 1.1.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 2.1.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.2.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 5.6.6
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.23.1
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.23.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.23.2
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F7 1.1.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 2.0.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.1.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :ITTIA_DB I-CUBE-ITTIADB 8.8.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENV1 4.3.2
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.0.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DPower 1.2.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-FLIGHT1 5.0.2
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 9.0.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 3.0.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.0.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC10 1.0.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 4.0.0
+2025-05-24 15:22:31,882 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.3.1
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :emotas I-CUBE-CANOPEN 1.3.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.3.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 1.0.1
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfTPM 3.2.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.0.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 3.1.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 10.0.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-SMARTAG2 1.2.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.1.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DPower 1.3.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENV1 5.0.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 8.1.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfMQTT 1.19.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 2.0.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 0.0.2
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :WES I-CUBE-Cesium 1.3.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 4.0.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.3.0
+2025-05-24 15:22:31,883 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.3.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC9 1.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.1.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TCPP 4.1.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-IPS 3.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WB 2.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 7.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 7.0.1
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.25.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-STBOX1 2.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.3.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.2.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G0 1.1.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SAFEA1 1.2.2
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 3.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 5.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7RS 1.1.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics STM32_WPAN 1.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfMQTT 1.18.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :EmbeddedOffice I-CUBE-FS-RTOS 1.0.1
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G4 2.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-WB05N 2.0.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Infineon AIROC-Wi-Fi-Bluetooth-STM32 1.5.1
+2025-05-24 15:22:31,884 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 3.0.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 2.0.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :RealThread X-CUBE-RT-Thread_Nano 4.1.1
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENVWB1 1.3.1
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-SIGFOX1 3.2.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :quantropi X-CUBE-qispace-sdk-base 1.9.3
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 2.0.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 5.1.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.2
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 10.0.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.1.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.24.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.24.2
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.24.1
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :portGmbH I-Cube-SoM-uGOAL 1.1.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.1
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 1.0.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.3.1
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.4.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7RS 1.0.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.4.2
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 9.1.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.4.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.4.1
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.2.0
+2025-05-24 15:22:31,885 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSH 1.4.17
+2025-05-24 15:22:31,885 [INFO] ThirdParty:841 - exiting critical section [change project]
+2025-05-24 15:22:32,150 [INFO] PinOutPanel:1561 - setPackage(No Configuration,No Configuration)
+2025-05-24 15:22:32,151 [INFO] PinOutPanel:1561 - setPackage(STM32F407IGHx,UFBGA176)
+2025-05-24 15:22:32,469 [INFO] UtilMem:75 - Before build in PCC Used Memory: 742372152 Bytes (1073741824)
+2025-05-24 15:22:32,651 [INFO] UtilMem:75 - After build in PCC Used Memory: 767537976 Bytes (1073741824)
+2025-05-24 15:22:32,722 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS
+2025-05-24 15:22:32,749 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,749 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,749 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,749 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,750 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,750 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,750 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,750 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,750 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,750 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,751 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,751 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,751 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,751 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,752 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,752 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,752 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,752 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,752 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,753 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,753 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,753 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,753 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,754 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,754 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,754 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,754 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,754 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,755 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,755 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,755 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,755 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,755 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,756 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,756 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,756 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,756 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,756 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,756 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,756 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,756 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,756 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,756 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,756 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,757 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,757 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,757 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,757 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,757 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,757 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,758 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,758 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,758 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,759 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,759 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,760 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,761 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,761 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 15:22:32,766 [INFO] ApiDbMcu:508 - Load IP Config File for PDM2PCM
+2025-05-24 15:22:32,773 [WARN] FreeRTOS:1023 - Null or empty value: should not occur! (nothing added to the table)
+2025-05-24 15:22:32,816 [INFO] CADModel:165 - CPN selected for project levelSTM32F407IGH6TR
+2025-05-24 15:22:32,816 [INFO] CADModel:114 - Register for checkConnection events
+2025-05-24 15:22:32,819 [INFO] RtosManager:697 - Active RTOS found at IOC load: FREERTOS [Cortex-M4NS]
+2025-05-24 15:22:32,856 [INFO] OpenFileManager:363 - Restore cursor
+2025-05-24 15:30:16,742 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:16,743 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:16,761 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:16,761 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:16,761 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:16,761 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:16,813 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:16,814 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:16,815 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:16,815 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:19,329 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x271,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 15:30:20,832 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:20,833 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:22,848 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:22,848 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:22,848 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:22,848 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:22,893 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:22,893 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:22,900 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:22,900 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:34,984 [INFO] Gpio:277 - dependency for GPIO [I2C3, RCC]
+2025-05-24 15:30:52,628 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 862529576 Bytes (1073741824)
+2025-05-24 15:30:54,265 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 896606248 Bytes (1073741824)
+2025-05-24 15:30:56,552 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 685805744 Bytes (1073741824)
+2025-05-24 15:30:58,765 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: FREERTOS
+2025-05-24 15:30:58,765 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-05-24 15:30:58,765 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-05-24 15:30:58,765 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2025-05-24 15:30:58,765 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-05-24 15:30:58,766 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-05-24 15:30:58,771 [INFO] CodeGenerator:807 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.12.0.202406281431//db/
+2025-05-24 15:30:58,783 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:58,783 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:30:58,895 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp_save
+2025-05-24 15:30:58,987 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp
+2025-05-24 15:30:59,034 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp_save
+2025-05-24 15:30:59,110 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp
+2025-05-24 15:30:59,222 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 15:30:59,225 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 15:30:59,277 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 15:30:59,278 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 15:30:59,328 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 15:30:59,329 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 15:30:59,378 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 15:30:59,379 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 15:30:59,428 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 15:30:59,429 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 15:30:59,483 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 15:30:59,485 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 15:30:59,535 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 15:30:59,537 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 15:30:59,660 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 15:30:59,661 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 15:30:59,710 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 15:30:59,711 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 15:30:59,759 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 15:30:59,767 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 15:30:59,771 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 15:30:59,892 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 15:30:59,893 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 15:30:59,941 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 15:30:59,943 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 15:30:59,990 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 15:30:59,991 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 15:31:00,039 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 15:31:00,041 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 15:31:00,093 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 15:31:00,095 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 15:31:00,143 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 15:31:00,145 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 15:31:00,195 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 15:31:00,196 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 15:31:00,248 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 15:31:00,249 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 15:31:00,314 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 15:31:00,317 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h_save
+2025-05-24 15:31:00,395 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h
+2025-05-24 15:31:00,397 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c_save
+2025-05-24 15:31:00,448 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c
+2025-05-24 15:31:00,454 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c_save
+2025-05-24 15:31:00,595 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c
+2025-05-24 15:31:00,598 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h_save
+2025-05-24 15:31:00,646 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h
+2025-05-24 15:31:00,655 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c_save
+2025-05-24 15:31:00,762 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c
+2025-05-24 15:31:00,765 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp_save
+2025-05-24 15:31:00,822 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp
+2025-05-24 15:31:00,826 [INFO] CodeEngine:311 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h_save
+2025-05-24 15:31:00,889 [INFO] CodeEngine:335 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h
+2025-05-24 15:31:00,928 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h_save
+2025-05-24 15:31:00,998 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h
+2025-05-24 15:31:01,001 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c_save
+2025-05-24 15:31:01,099 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c
+2025-05-24 15:31:01,571 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 261mS.
+2025-05-24 15:31:01,580 [INFO] ProjectBuilder:4828 - Project Generator version: 4.4.0-B60
+2025-05-24 15:31:01,705 [INFO] ConfigFileManager:1531 - The Die is : DIE413
+2025-05-24 15:31:01,719 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2025-05-24 15:31:01,727 [INFO] ApiDbMcu:508 - Load IP Config File for LIBJPEG
+2025-05-24 15:31:02,398 [INFO] ApiDbMcu:508 - Load IP Config File for LWIP
+2025-05-24 15:31:02,502 [INFO] ApiDbMcu:508 - Load IP Config File for MBEDTLS
+2025-05-24 15:31:02,596 [INFO] ApiDbMcu:508 - Load IP Config File for USB_DEVICE
+2025-05-24 15:31:02,614 [INFO] ApiDbMcu:508 - Load IP Config File for USB_HOST
+2025-05-24 15:31:03,233 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 1654mS.
+2025-05-24 15:31:03,234 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 1mS.
+2025-05-24 15:31:03,236 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2025-05-24 15:46:48,066 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 583892952 Bytes (1073741824)
+2025-05-24 15:46:49,778 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: FREERTOS
+2025-05-24 15:46:49,778 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-05-24 15:46:49,778 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-05-24 15:46:49,778 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2025-05-24 15:46:49,778 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-05-24 15:46:49,779 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-05-24 15:46:49,780 [INFO] CodeGenerator:807 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.12.0.202406281431//db/
+2025-05-24 15:46:49,784 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 15:46:49,784 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 15:46:49,902 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp_save
+2025-05-24 15:46:49,972 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp
+2025-05-24 15:46:49,989 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp_save
+2025-05-24 15:46:50,046 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp
+2025-05-24 15:46:50,143 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 15:46:50,146 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 15:46:50,196 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 15:46:50,197 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 15:46:50,248 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 15:46:50,249 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 15:46:50,309 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 15:46:50,310 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 15:46:50,376 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 15:46:50,378 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 15:46:50,446 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 15:46:50,447 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 15:46:50,511 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 15:46:50,512 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 15:46:50,567 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 15:46:50,569 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 15:46:50,619 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 15:46:50,620 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 15:46:50,670 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 15:46:50,678 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 15:46:50,682 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 15:46:50,731 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 15:46:50,733 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 15:46:50,782 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 15:46:50,784 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 15:46:50,832 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 15:46:50,834 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 15:46:50,884 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 15:46:50,885 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 15:46:50,936 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 15:46:50,937 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 15:46:50,986 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 15:46:50,988 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 15:46:51,038 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 15:46:51,040 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 15:46:51,088 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 15:46:51,089 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 15:46:51,138 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 15:46:51,141 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h_save
+2025-05-24 15:46:51,233 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h
+2025-05-24 15:46:51,236 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c_save
+2025-05-24 15:46:51,288 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c
+2025-05-24 15:46:51,294 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c_save
+2025-05-24 15:46:51,485 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c
+2025-05-24 15:46:51,487 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h_save
+2025-05-24 15:46:51,536 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h
+2025-05-24 15:46:51,545 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c_save
+2025-05-24 15:46:51,627 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c
+2025-05-24 15:46:51,629 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp_save
+2025-05-24 15:46:51,677 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp
+2025-05-24 15:46:51,682 [INFO] CodeEngine:311 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h_save
+2025-05-24 15:46:51,739 [INFO] CodeEngine:335 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h
+2025-05-24 15:46:51,774 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h_save
+2025-05-24 15:46:51,836 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h
+2025-05-24 15:46:51,839 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c_save
+2025-05-24 15:46:51,928 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c
+2025-05-24 15:46:52,294 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 174mS.
+2025-05-24 15:46:52,297 [INFO] ProjectBuilder:4828 - Project Generator version: 4.4.0-B60
+2025-05-24 15:46:52,420 [INFO] ConfigFileManager:1531 - The Die is : DIE413
+2025-05-24 15:46:53,223 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 926mS.
+2025-05-24 15:46:53,223 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2025-05-24 15:46:53,226 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2025-05-24 16:17:44,892 [INFO] Gpio:277 - dependency for GPIO [I2C3, RCC]
+2025-05-24 16:19:10,736 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 16:19:45,156 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 852394296 Bytes (1073741824)
+2025-05-24 16:19:45,897 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 938840264 Bytes (1073741824)
+2025-05-24 16:19:49,422 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: FREERTOS
+2025-05-24 16:19:49,423 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2025-05-24 16:19:49,423 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-05-24 16:19:49,423 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-05-24 16:19:49,423 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2025-05-24 16:19:49,423 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-05-24 16:19:49,423 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-05-24 16:19:49,424 [INFO] CodeGenerator:807 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.12.0.202406281431//db/
+2025-05-24 16:19:49,434 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 16:19:49,435 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 16:19:49,582 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp_save
+2025-05-24 16:19:49,729 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp
+2025-05-24 16:19:49,788 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp_save
+2025-05-24 16:19:49,906 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp
+2025-05-24 16:19:50,333 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 16:19:50,339 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 16:19:51,508 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 16:19:51,512 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 16:19:51,603 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 16:19:51,605 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 16:19:51,691 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 16:19:51,692 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 16:19:51,771 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 16:19:51,773 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 16:19:51,853 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 16:19:51,855 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 16:19:51,935 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 16:19:51,936 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 16:19:52,021 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 16:19:52,023 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 16:19:52,095 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 16:19:52,098 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 16:19:52,173 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 16:19:52,182 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 16:19:52,186 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 16:19:52,250 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 16:19:52,251 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 16:19:52,303 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 16:19:52,305 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 16:19:52,359 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 16:19:52,361 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 16:19:52,426 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 16:19:52,432 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 16:19:52,497 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 16:19:52,499 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 16:19:52,557 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 16:19:52,559 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 16:19:52,622 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 16:19:52,624 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 16:19:52,688 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 16:19:52,690 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 16:19:52,746 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 16:19:52,749 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h_save
+2025-05-24 16:19:52,827 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h
+2025-05-24 16:19:52,831 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c_save
+2025-05-24 16:19:52,895 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c
+2025-05-24 16:19:52,903 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c_save
+2025-05-24 16:19:53,102 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c
+2025-05-24 16:19:53,104 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h_save
+2025-05-24 16:19:53,194 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h
+2025-05-24 16:19:53,204 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c_save
+2025-05-24 16:19:53,326 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c
+2025-05-24 16:19:53,330 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp_save
+2025-05-24 16:19:53,389 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp
+2025-05-24 16:19:53,394 [INFO] CodeEngine:311 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h_save
+2025-05-24 16:19:53,472 [INFO] CodeEngine:335 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h
+2025-05-24 16:19:53,518 [WARN] IPConfigManager:3554 - IP not found : TIM
+2025-05-24 16:19:53,519 [WARN] CodeGenerator:4002 - IP not found : null
+2025-05-24 16:19:53,523 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h_save
+2025-05-24 16:19:53,620 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h
+2025-05-24 16:19:53,625 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c_save
+2025-05-24 16:19:53,743 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c
+2025-05-24 16:19:54,267 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 233mS.
+2025-05-24 16:19:54,269 [INFO] ProjectBuilder:4828 - Project Generator version: 4.4.0-B60
+2025-05-24 16:19:54,401 [INFO] ConfigFileManager:1531 - The Die is : DIE413
+2025-05-24 16:19:55,414 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 1142mS.
+2025-05-24 16:19:55,415 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 1mS.
+2025-05-24 16:19:55,418 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2025-05-24 16:57:10,368 [INFO] MainUpdater:2873 - connection check result : 10
+2025-05-24 16:57:10,369 [INFO] MainUpdater:2873 - connection check result : 10
+2025-05-24 16:57:11,013 [INFO] MicroXplorer:468 - Change Database Path : 
+2025-05-24 16:57:11,013 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.120
+2025-05-24 16:57:11,028 [ERROR] ProjectManagerView:394 - 
+java.lang.NullPointerException: Cannot invoke "javax.swing.JTextField.getText()" because the return value of "java.util.List.get(int)" is null
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab$10.caretUpdate(ProjectChoiceTab.java:2622) ~[filemanager.jar:?]
+	at javax.swing.text.JTextComponent.fireCaretUpdate(JTextComponent.java:412) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.fire(JTextComponent.java:4491) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.stateChanged(JTextComponent.java:4513) ~[?:?]
+	at javax.swing.text.DefaultCaret.fireStateChanged(DefaultCaret.java:842) ~[?:?]
+	at javax.swing.text.DefaultCaret.changeCaretPosition(DefaultCaret.java:1313) ~[?:?]
+	at javax.swing.text.DefaultCaret.handleSetDot(DefaultCaret.java:1212) ~[?:?]
+	at javax.swing.text.DefaultCaret.setDot(DefaultCaret.java:1193) ~[?:?]
+	at javax.swing.text.DefaultCaret$Handler.insertUpdate(DefaultCaret.java:1789) ~[?:?]
+	at javax.swing.text.AbstractDocument.fireInsertUpdate(AbstractDocument.java:226) ~[?:?]
+	at javax.swing.text.AbstractDocument.handleInsertString(AbstractDocument.java:780) ~[?:?]
+	at javax.swing.text.AbstractDocument.insertString(AbstractDocument.java:739) ~[?:?]
+	at javax.swing.text.PlainDocument.insertString(PlainDocument.java:131) ~[?:?]
+	at javax.swing.text.AbstractDocument.replace(AbstractDocument.java:698) ~[?:?]
+	at javax.swing.text.JTextComponent.setText(JTextComponent.java:1729) ~[?:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.createHeapStackFields(ProjectChoiceTab.java:972) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.buildLinkSettingsPanel(ProjectChoiceTab.java:3597) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.defineWindowsFields(ProjectChoiceTab.java:1940) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.updateSettings(ProjectChoiceTab.java:550) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectSettingsPanel.UpdateDialog(ProjectSettingsPanel.java:245) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.ProjectManagerView.propertyChange(ProjectManagerView.java:391) ~[filemanager.jar:?]
+	at java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:343) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:335) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:268) ~[?:?]
+	at com.st.microxplorer.util.MXPropertyChangeSupport.firePropertyChange(MXPropertyChangeSupport.java:54) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.mxsystem.MxSystem.closeConfig(MxSystem.java:900) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.maingui.MainPanel.closeConfig(MainPanel.java:781) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.OpenFileManager.loadConfigurationFile(OpenFileManager.java:265) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:352) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:330) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.FileManagerView.getSpecificTask(FileManagerView.java:246) ~[filemanager.jar:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor.getMxTabbedPaneInstance(CubeMxEditor.java:1198) ~[com.st.stm32cube.common.mx_6.12.0.202406281431/:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor$12$1.createSwingComponent(CubeMxEditor.java:1068) ~[com.st.stm32cube.common.mx_6.12.0.202406281431/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite.doComponentCreation(EmbeddedSwingComposite.java:492) ~[com.st.stm32cube.common.mx.oss_6.12.0.202406281431/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite$4.run(EmbeddedSwingComposite.java:291) ~[com.st.stm32cube.common.mx.oss_6.12.0.202406281431/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.AwtEnvironment$2.run(AwtEnvironment.java:166) ~[com.st.stm32cube.common.mx.oss_6.12.0.202406281431/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:399) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) ~[?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) ~[?:?]
+2025-05-24 16:57:11,030 [WARN] ThirdParty:871 - waiting for thirdparty lock release [close project]
+2025-05-24 16:57:11,030 [INFO] ThirdParty:873 - entering critical section [close project]
+2025-05-24 16:57:11,030 [INFO] ThirdParty:883 - exiting critical section [close project]
+2025-05-24 16:57:11,033 [INFO] PinOutPanel:1561 - setPackage(No Configuration,No Configuration)
+2025-05-24 16:57:11,043 [WARN] IpParametersView:151 - Warning: This peripheral hasn't parameters
+2025-05-24 16:57:11,045 [WARN] MainPanel:284 - <html><b><center>Warning: This peripheral has no parameters to be configured<br></b></html>
+2025-05-24 16:57:11,050 [INFO] UtilMem:75 - Begin LoadConfig() Used Memory: 728677584 Bytes (1073741824)
+2025-05-24 16:57:11,051 [INFO] MicroXplorer:468 - Change Database Path : 
+2025-05-24 16:57:11,051 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.120
+2025-05-24 16:57:11,051 [INFO] OpenFileManager:332 - Change cursor
+2025-05-24 16:57:11,070 [INFO] RulesReader:64 - Compatibility file has been processed (297 Rules)
+2025-05-24 16:57:11,075 [INFO] Mcu:2032 - Initializing MCU STM32F407I(E-G)Hx STM32F407IGHx STM32F407IGH6TR
+2025-05-24 16:57:12,215 [INFO] Context:742 - Trying to add GPIOservice into a context  which must be forbidden
+2025-05-24 16:57:12,569 [INFO] RtosManager:555 - Registered RTOS mode: class=CMSIS, group=RTOS, mode=CMSIS_V1, owner=FREERTOS
+2025-05-24 16:57:12,569 [INFO] RtosManager:555 - Registered RTOS mode: class=CMSIS, group=RTOS2, mode=CMSIS_V2, owner=FREERTOS
+2025-05-24 16:57:12,569 [INFO] RtosManager:555 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V1, owner=FREERTOS
+2025-05-24 16:57:12,569 [INFO] RtosManager:555 - Registered RTOS mode: class=RTOS, group=Core, mode=CMSIS_V2, owner=FREERTOS
+2025-05-24 16:57:12,569 [WARN] ModelIntegratedComponent:184 - Missing modes for component STMicroelectronics:FreeRTOS:0.0.1:STMicroelectronics:RTOS:FreeRTOS:Core:::10.2.0:
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,584 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-05-24 16:57:12,585 [WARN] ModelPack:524 - Component already loaded: STMicroelectronics:HAL Drivers:0.0.0:STMicroelectronics:Device:STMicro_Driver:XSPI:HAL::0.0.1:HAL_XSPI
+2025-05-24 16:57:12,761 [INFO] ThirdPartyModel:298 - Start build external matchings
+2025-05-24 16:57:14,340 [INFO] ThirdPartyModel:316 - End build external matchings
+2025-05-24 16:57:14,364 [INFO] RtosManager:919 - Current active RTOS is FREERTOS [Cortex-M4NS]
+2025-05-24 16:57:14,367 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 16:57:14,367 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 16:57:14,367 [INFO] ImportTextPane:205 - (OptionalMessage_ERROR) IP (RCC) : Parameter (48MHZClocksFreq_Value) has invalid value (84000000)
+2025-05-24 16:57:14,368 [INFO] ImportTextPane:205 - (OptionalMessage_ERROR) IP (RCC) : Parameter (RTCHSEDivFreq_Value) has invalid value (6000000)
+2025-05-24 16:57:14,613 [INFO] UtilMem:75 - End LoadConfig() Used Memory: 586196448 Bytes (1073741824)
+2025-05-24 16:57:14,665 [WARN] ThirdParty:833 - waiting for thirdparty lock release [change project]
+2025-05-24 16:57:14,665 [INFO] ThirdParty:835 - entering critical section [change project]
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USBPD 4.1
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 6.0.0
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENVWB1 1.4.0
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F4 1.1.0
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics LIBJPEG 8.0.0
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.2
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.1
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SMBUS 2.1.0
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-WB05N 1.1.0
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 2.1.0
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.2.0
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 5.6.6
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.23.1
+2025-05-24 16:57:14,665 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.23.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.23.2
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F7 1.1.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 2.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.1.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :ITTIA_DB I-CUBE-ITTIADB 8.8.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENV1 4.3.2
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DPower 1.2.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-FLIGHT1 5.0.2
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 9.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 3.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC10 1.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 4.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.3.1
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :emotas I-CUBE-CANOPEN 1.3.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.3.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 1.0.1
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfTPM 3.2.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 3.1.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 10.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-SMARTAG2 1.2.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.1.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0
+2025-05-24 16:57:14,666 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DPower 1.3.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENV1 5.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 8.1.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfMQTT 1.19.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 2.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 0.0.2
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :WES I-CUBE-Cesium 1.3.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 4.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.3.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.3.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC9 1.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.1.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TCPP 4.1.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-IPS 3.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WB 2.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 7.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 7.0.1
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.25.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-STBOX1 2.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.3.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.2.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G0 1.1.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SAFEA1 1.2.2
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 3.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 5.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7RS 1.1.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics STM32_WPAN 1.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfMQTT 1.18.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :EmbeddedOffice I-CUBE-FS-RTOS 1.0.1
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G4 2.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-WB05N 2.0.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Infineon AIROC-Wi-Fi-Bluetooth-STM32 1.5.1
+2025-05-24 16:57:14,667 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 3.0.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 2.0.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :RealThread X-CUBE-RT-Thread_Nano 4.1.1
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENVWB1 1.3.1
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-SIGFOX1 3.2.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :quantropi X-CUBE-qispace-sdk-base 1.9.3
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 2.0.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 5.1.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.2
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 10.0.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.1.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.24.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.24.2
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.24.1
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :portGmbH I-Cube-SoM-uGOAL 1.1.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.1
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 1.0.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.3.1
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.4.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7RS 1.0.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.4.2
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 9.1.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.4.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.4.1
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.2.0
+2025-05-24 16:57:14,668 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSH 1.4.17
+2025-05-24 16:57:14,668 [INFO] ThirdParty:841 - exiting critical section [change project]
+2025-05-24 16:57:14,876 [INFO] PinOutPanel:1561 - setPackage(No Configuration,No Configuration)
+2025-05-24 16:57:14,877 [INFO] PinOutPanel:1561 - setPackage(STM32F407IGHx,UFBGA176)
+2025-05-24 16:57:15,097 [INFO] UtilMem:75 - Before build in PCC Used Memory: 680731304 Bytes (1073741824)
+2025-05-24 16:57:15,226 [INFO] UtilMem:75 - After build in PCC Used Memory: 724771496 Bytes (1073741824)
+2025-05-24 16:57:15,283 [INFO] ApiDbMcu:508 - Load IP Config File for FREERTOS
+2025-05-24 16:57:15,309 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,309 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,309 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,310 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,310 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,310 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,310 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,310 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,310 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,310 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,311 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,311 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,311 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,311 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,311 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,312 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,312 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,312 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,312 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,312 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,312 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,313 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,313 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,313 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,313 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,313 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,313 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,314 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,314 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,314 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,314 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,314 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,314 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,314 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,314 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,314 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,314 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,315 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,316 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,316 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,316 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,316 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,316 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,317 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,317 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,318 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,318 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-05-24 16:57:15,323 [INFO] ApiDbMcu:508 - Load IP Config File for PDM2PCM
+2025-05-24 16:57:15,323 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 16:57:15,323 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 16:57:15,330 [WARN] FreeRTOS:1023 - Null or empty value: should not occur! (nothing added to the table)
+2025-05-24 16:57:15,402 [INFO] CADModel:165 - CPN selected for project levelSTM32F407IGH6TR
+2025-05-24 16:57:15,402 [INFO] CADModel:114 - Register for checkConnection events
+2025-05-24 16:57:15,405 [INFO] RtosManager:697 - Active RTOS found at IOC load: FREERTOS [Cortex-M4NS]
+2025-05-24 16:57:15,441 [INFO] OpenFileManager:363 - Restore cursor
+2025-05-24 16:57:15,733 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 16:57:15,733 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 16:57:15,733 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 16:57:15,733 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 16:58:25,195 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 16:58:46,559 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 871272448 Bytes (1073741824)
+2025-05-24 16:58:49,284 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 661065352 Bytes (1073741824)
+2025-05-24 16:59:04,518 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: FREERTOS
+2025-05-24 16:59:04,518 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2025-05-24 16:59:04,518 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-05-24 16:59:04,518 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-05-24 16:59:04,521 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2025-05-24 16:59:04,521 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-05-24 16:59:04,521 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DMA
+2025-05-24 16:59:04,522 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-05-24 16:59:04,523 [INFO] CodeGenerator:807 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.12.0.202406281431//db/
+2025-05-24 16:59:04,532 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 16:59:04,532 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 16:59:04,622 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp_save
+2025-05-24 16:59:04,687 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp
+2025-05-24 16:59:04,727 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp_save
+2025-05-24 16:59:04,788 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp
+2025-05-24 16:59:05,051 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 16:59:05,055 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 16:59:05,107 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 16:59:05,109 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 16:59:05,157 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 16:59:05,158 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 16:59:05,206 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 16:59:05,207 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 16:59:05,255 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 16:59:05,257 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 16:59:05,344 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 16:59:05,345 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 16:59:05,395 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 16:59:05,397 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 16:59:05,449 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 16:59:05,451 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 16:59:05,533 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 16:59:05,534 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 16:59:05,582 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 16:59:05,589 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 16:59:05,593 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 16:59:05,642 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 16:59:05,644 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 16:59:05,691 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 16:59:05,692 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 16:59:05,740 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 16:59:05,741 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 16:59:05,789 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 16:59:05,791 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 16:59:05,841 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 16:59:05,843 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 16:59:05,891 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 16:59:05,893 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 16:59:05,945 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 16:59:05,947 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 16:59:05,994 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 16:59:05,996 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 16:59:06,043 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 16:59:06,046 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h_save
+2025-05-24 16:59:06,114 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h
+2025-05-24 16:59:06,117 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c_save
+2025-05-24 16:59:06,168 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c
+2025-05-24 16:59:06,176 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma.tmp_save
+2025-05-24 16:59:06,228 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma.tmp
+2025-05-24 16:59:06,230 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma_GV.tmp_save
+2025-05-24 16:59:06,277 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma_GV.tmp
+2025-05-24 16:59:06,286 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c_save
+2025-05-24 16:59:06,422 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c
+2025-05-24 16:59:06,425 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h_save
+2025-05-24 16:59:06,477 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h
+2025-05-24 16:59:06,487 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c_save
+2025-05-24 16:59:06,578 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c
+2025-05-24 16:59:06,581 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp_save
+2025-05-24 16:59:06,629 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp
+2025-05-24 16:59:06,633 [INFO] CodeEngine:311 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h_save
+2025-05-24 16:59:06,698 [INFO] CodeEngine:335 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h
+2025-05-24 16:59:06,734 [WARN] IPConfigManager:3554 - IP not found : TIM
+2025-05-24 16:59:06,734 [WARN] CodeGenerator:4002 - IP not found : null
+2025-05-24 16:59:06,738 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h_save
+2025-05-24 16:59:06,807 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h
+2025-05-24 16:59:06,809 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c_save
+2025-05-24 16:59:06,918 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c
+2025-05-24 16:59:07,301 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 194mS.
+2025-05-24 16:59:07,303 [INFO] ProjectBuilder:4828 - Project Generator version: 4.4.0-B60
+2025-05-24 16:59:07,388 [INFO] ConfigFileManager:1531 - The Die is : DIE413
+2025-05-24 16:59:07,433 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2025-05-24 16:59:07,441 [INFO] ApiDbMcu:508 - Load IP Config File for LIBJPEG
+2025-05-24 16:59:07,574 [INFO] ApiDbMcu:508 - Load IP Config File for LWIP
+2025-05-24 16:59:07,655 [INFO] ApiDbMcu:508 - Load IP Config File for MBEDTLS
+2025-05-24 16:59:07,736 [INFO] ApiDbMcu:508 - Load IP Config File for USB_DEVICE
+2025-05-24 16:59:07,758 [INFO] ApiDbMcu:508 - Load IP Config File for USB_HOST
+2025-05-24 16:59:08,447 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 1143mS.
+2025-05-24 16:59:08,448 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 1mS.
+2025-05-24 16:59:08,451 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2025-05-24 17:04:30,107 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x177,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 17:18:40,065 [INFO] Gpio:277 - dependency for GPIO [I2C3, RCC, TIM4]
+2025-05-24 17:19:22,957 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:22,958 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:22,958 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:22,958 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:22,987 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:22,987 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:23,009 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:23,009 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:25,175 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:25,175 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:25,175 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:25,175 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:25,205 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:25,205 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:25,230 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:25,230 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:28,833 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:28,833 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:28,834 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:28,834 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:28,855 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:28,855 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:28,877 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:28,877 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:52,504 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:52,504 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:52,505 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:19:52,505 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:20:19,040 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 17:20:21,088 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 17:20:24,941 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 17:20:27,164 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 564403952 Bytes (1073741824)
+2025-05-24 17:20:30,431 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 700405720 Bytes (1073741824)
+2025-05-24 17:21:23,341 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: FREERTOS
+2025-05-24 17:21:23,341 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2025-05-24 17:21:23,341 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-05-24 17:21:23,341 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-05-24 17:21:23,341 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2025-05-24 17:21:23,341 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-05-24 17:21:23,341 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DMA
+2025-05-24 17:21:23,342 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-05-24 17:21:23,343 [INFO] CodeGenerator:807 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.12.0.202406281431//db/
+2025-05-24 17:21:23,350 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 17:21:23,350 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 17:21:23,359 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-24 17:21:23,359 [INFO] Argument:327 - 	 sub Args: 
+2025-05-24 17:21:23,359 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream7
+2025-05-24 17:21:23,359 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream7
+2025-05-24 17:21:23,359 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-24 17:21:23,359 [INFO] Argument:327 - 	 sub Args: 
+2025-05-24 17:21:23,359 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_2
+2025-05-24 17:21:23,359 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_2
+2025-05-24 17:21:23,359 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-24 17:21:23,359 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-24 17:21:23,359 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-24 17:21:23,359 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-24 17:21:23,359 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-24 17:21:23,359 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-24 17:21:23,359 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-05-24 17:21:23,359 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-05-24 17:21:23,359 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-05-24 17:21:23,359 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-05-24 17:21:23,359 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-24 17:21:23,359 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-24 17:21:23,360 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-24 17:21:23,452 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp_save
+2025-05-24 17:21:23,520 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp
+2025-05-24 17:21:23,541 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp_save
+2025-05-24 17:21:23,603 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp
+2025-05-24 17:21:23,843 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 17:21:23,849 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 17:21:23,903 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 17:21:23,904 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 17:21:23,953 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 17:21:23,955 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 17:21:24,002 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 17:21:24,003 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 17:21:24,052 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 17:21:24,053 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 17:21:24,112 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 17:21:24,114 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 17:21:24,172 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 17:21:24,173 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 17:21:24,234 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 17:21:24,236 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 17:21:24,292 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 17:21:24,293 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 17:21:24,349 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 17:21:24,359 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 17:21:24,363 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 17:21:24,415 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 17:21:24,417 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 17:21:24,467 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 17:21:24,469 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 17:21:24,518 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 17:21:24,520 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 17:21:24,571 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 17:21:24,573 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 17:21:24,625 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 17:21:24,627 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 17:21:24,678 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 17:21:24,681 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 17:21:24,734 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 17:21:24,735 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 17:21:24,783 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 17:21:24,785 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 17:21:24,835 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 17:21:24,839 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h_save
+2025-05-24 17:21:24,910 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h
+2025-05-24 17:21:24,912 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c_save
+2025-05-24 17:21:24,973 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c
+2025-05-24 17:21:24,981 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma.tmp_save
+2025-05-24 17:21:25,039 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma.tmp
+2025-05-24 17:21:25,041 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma_GV.tmp_save
+2025-05-24 17:21:25,131 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma_GV.tmp
+2025-05-24 17:21:25,139 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c_save
+2025-05-24 17:21:25,349 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c
+2025-05-24 17:21:25,351 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h_save
+2025-05-24 17:21:25,407 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h
+2025-05-24 17:21:25,417 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c_save
+2025-05-24 17:21:25,525 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c
+2025-05-24 17:21:25,529 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp_save
+2025-05-24 17:21:25,585 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp
+2025-05-24 17:21:25,591 [INFO] CodeEngine:311 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h_save
+2025-05-24 17:21:25,659 [INFO] CodeEngine:335 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h
+2025-05-24 17:21:25,696 [WARN] IPConfigManager:3554 - IP not found : TIM
+2025-05-24 17:21:25,696 [WARN] CodeGenerator:4002 - IP not found : null
+2025-05-24 17:21:25,700 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h_save
+2025-05-24 17:21:25,766 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h
+2025-05-24 17:21:25,768 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c_save
+2025-05-24 17:21:25,861 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c
+2025-05-24 17:21:26,292 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 257mS.
+2025-05-24 17:21:26,295 [INFO] ProjectBuilder:4828 - Project Generator version: 4.4.0-B60
+2025-05-24 17:21:26,381 [INFO] ConfigFileManager:1531 - The Die is : DIE413
+2025-05-24 17:21:27,007 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 712mS.
+2025-05-24 17:21:27,007 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2025-05-24 17:21:27,010 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2025-05-24 18:46:58,607 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:46:58,607 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:46:58,608 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:46:58,608 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:46:58,646 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:46:58,646 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:46:58,701 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:46:58,701 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:04,482 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:04,482 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:04,483 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:04,483 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:04,508 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:04,508 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:04,530 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:04,530 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:13,097 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:13,097 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:13,097 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:13,097 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:13,123 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:13,123 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:13,149 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:13,150 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:47,484 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:47,485 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:47,486 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:47:47,486 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:48:29,447 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,450x222,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 18:48:36,441 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 18:48:41,553 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 18:48:47,534 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 18:48:52,162 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 18:48:53,426 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-05-24 18:48:56,216 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 548062336 Bytes (1073741824)
+2025-05-24 18:48:59,066 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 720551040 Bytes (1073741824)
+2025-05-24 18:49:01,457 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: FREERTOS
+2025-05-24 18:49:01,457 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8
+2025-05-24 18:49:01,457 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-05-24 18:49:01,457 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-05-24 18:49:01,457 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2025-05-24 18:49:01,457 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-05-24 18:49:01,457 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-05-24 18:49:01,457 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-05-24 18:49:01,457 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DMA
+2025-05-24 18:49:01,457 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-05-24 18:49:01,458 [INFO] CodeGenerator:807 - code generatio: config db path: /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.common.mx_6.12.0.202406281431//db/
+2025-05-24 18:49:01,463 [WARN] IP:2191 - I2C_Coeff_DF not found: check if there is a RefParameter without a condition.
+2025-05-24 18:49:01,463 [WARN] IP:2191 - Analog_Filter not found: check if there is a RefParameter without a condition.
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:327 - 	 sub Args: 
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream7
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream7
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : Initvalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:327 - 	 sub Args: 
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : Channelvalue: DMA_CHANNEL_2
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : Channelvalue: DMA_CHANNEL_2
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : Statevalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:335 - Argument : Statevalue: null
+2025-05-24 18:49:01,475 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-05-24 18:49:01,476 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-05-24 18:49:01,476 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-05-24 18:49:01,476 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-05-24 18:49:01,476 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-24 18:49:01,476 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-05-24 18:49:01,476 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2025-05-24 18:49:01,476 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2025-05-24 18:49:01,476 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-05-24 18:49:01,476 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-05-24 18:49:01,476 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-05-24 18:49:01,476 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-05-24 18:49:01,562 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp_save
+2025-05-24 18:49:01,626 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/license.tmp
+2025-05-24 18:49:01,647 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp_save
+2025-05-24 18:49:01,706 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/gpio.tmp
+2025-05-24 18:49:02,199 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 18:49:02,203 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 18:49:02,255 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 18:49:02,256 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 18:49:02,307 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 18:49:02,308 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 18:49:02,357 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 18:49:02,359 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 18:49:02,407 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 18:49:02,409 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 18:49:02,459 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 18:49:02,461 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 18:49:02,512 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 18:49:02,513 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 18:49:02,563 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 18:49:02,564 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 18:49:02,641 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 18:49:02,643 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 18:49:02,692 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 18:49:02,700 [INFO] Middleware:1439 - No code input for Bsp Dependency
+2025-05-24 18:49:02,703 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp_save
+2025-05-24 18:49:02,772 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_inc.tmp
+2025-05-24 18:49:02,774 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp_save
+2025-05-24 18:49:02,821 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelInit.tmp
+2025-05-24 18:49:02,823 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp_save
+2025-05-24 18:49:02,870 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_kernelStart.tmp
+2025-05-24 18:49:02,871 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp_save
+2025-05-24 18:49:02,917 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_typedefs.tmp
+2025-05-24 18:49:02,919 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp_save
+2025-05-24 18:49:02,968 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_vars.tmp
+2025-05-24 18:49:02,970 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp_save
+2025-05-24 18:49:03,018 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_pfp.tmp
+2025-05-24 18:49:03,019 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp_save
+2025-05-24 18:49:03,072 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_obj_creat.tmp
+2025-05-24 18:49:03,074 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp_save
+2025-05-24 18:49:03,122 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_default_thread.tmp
+2025-05-24 18:49:03,123 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp_save
+2025-05-24 18:49:03,171 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/rtos_threads.tmp
+2025-05-24 18:49:03,174 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h_save
+2025-05-24 18:49:03,240 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/FreeRTOSConfig.h
+2025-05-24 18:49:03,243 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c_save
+2025-05-24 18:49:03,293 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/freertos.c
+2025-05-24 18:49:03,335 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma.tmp_save
+2025-05-24 18:49:03,385 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma.tmp
+2025-05-24 18:49:03,387 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma_GV.tmp_save
+2025-05-24 18:49:03,432 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/dma_GV.tmp
+2025-05-24 18:49:03,443 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c_save
+2025-05-24 18:49:03,592 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_it.c
+2025-05-24 18:49:03,596 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h_save
+2025-05-24 18:49:03,646 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_it.h
+2025-05-24 18:49:03,662 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c_save
+2025-05-24 18:49:03,761 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/stm32f4xx_hal_msp.c
+2025-05-24 18:49:03,764 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp_save
+2025-05-24 18:49:03,815 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/MXTmpFiles/system.tmp
+2025-05-24 18:49:03,820 [INFO] CodeEngine:311 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h_save
+2025-05-24 18:49:03,878 [INFO] CodeEngine:335 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/stm32f4xx_hal_conf.h
+2025-05-24 18:49:03,912 [WARN] IPConfigManager:3554 - IP not found : TIM
+2025-05-24 18:49:03,913 [WARN] CodeGenerator:4002 - IP not found : null
+2025-05-24 18:49:03,918 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h_save
+2025-05-24 18:49:03,980 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Inc/main.h
+2025-05-24 18:49:03,984 [INFO] CodeEngine:255 - oldGeneratedFile, /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c_save
+2025-05-24 18:49:04,109 [INFO] CodeEngine:279 - Generated code: /Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/LibraryTestingProject/Core/Src/main.c
+2025-05-24 18:49:04,553 [INFO] ProjectBuilder:3249 - Time for Copy HAL[1] : 249mS.
+2025-05-24 18:49:04,556 [INFO] ProjectBuilder:4828 - Project Generator version: 4.4.0-B60
+2025-05-24 18:49:04,657 [INFO] ConfigFileManager:1531 - The Die is : DIE413
+2025-05-24 18:49:05,476 [INFO] ProjectBuilder:5097 - Time for Generating toolchain IDE Files: 920mS.
+2025-05-24 18:49:05,477 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2025-05-24 18:49:05,479 [INFO] ProjectBuilder:3107 - Time for Copy CMSIS : 0mS.
+2025-05-24 19:22:32,344 [INFO] WebApp:189 - Connection lost
+2025-05-24 19:22:34,649 [INFO] WebApp:186 - Connection restablished
+2025-05-24 19:36:43,694 [INFO] WebApp:189 - Connection lost
+2025-05-24 19:36:57,930 [INFO] WebApp:186 - Connection restablished
+2025-05-24 20:30:56,719 [INFO] WebApp:189 - Connection lost
+2025-05-24 21:31:50,600 [INFO] WebApp:186 - Connection restablished
+2025-05-24 23:32:17,798 [INFO] WebApp:189 - Connection lost
+2025-05-24 23:32:20,360 [INFO] WebApp:186 - Connection restablished
+2025-05-24 23:32:20,839 [INFO] WebApp:189 - Connection lost
+2025-05-24 23:32:21,993 [INFO] WebApp:186 - Connection restablished

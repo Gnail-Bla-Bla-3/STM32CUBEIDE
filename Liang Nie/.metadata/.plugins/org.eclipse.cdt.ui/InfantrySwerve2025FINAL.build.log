@@ -1,0 +1,22 @@
+02:23:06 **** Build of configuration Debug for project InfantrySwerve2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/CAL_RM25.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/CAL_RM25.d" -MT"Core/Src/CAL_RM25.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/CAL_RM25.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartChassisTask':
+../Core/Src/main.c:1028:22: warning: unused variable 'test' [-Wunused-variable]
+ 1028 |         PID_preset_t test = {5.0, 0.0, 0.0};
+      |                      ^~~~
+arm-none-eabi-gcc -o "InfantrySwerve2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/InfantrySwerve2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="InfantrySwerve2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: InfantrySwerve2025FINAL.elf
+ 
+arm-none-eabi-size  InfantrySwerve2025FINAL.elf 
+arm-none-eabi-objdump -h -S InfantrySwerve2025FINAL.elf  > "InfantrySwerve2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  77168	    564	  24320	 102052	  18ea4	InfantrySwerve2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: InfantrySwerve2025FINAL.list
+ 
+
+02:23:09 Build Finished. 0 errors, 1 warnings. (took 2s.886ms)
+

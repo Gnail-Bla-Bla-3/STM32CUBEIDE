@@ -1,0 +1,9 @@
+../Core/Src/remote_control.c:49:6:remote_control_init	8	static
+../Core/Src/remote_control.c:57:18:get_remote_control_point	4	static
+../Core/Src/remote_control.c:61:6:USART3_IRQHandler	16	static
+../Core/Src/remote_control.c:116:6:usart_printRC	80	static
+../Core/Src/remote_control.c:134:13:sbus_to_rc	16	static
+../Core/Src/remote_control.c:161:9:getRCchannel	16	static
+../Core/Src/remote_control.c:165:8:getRCswitch	16	static
+../Core/Src/remote_control.c:169:9:getRCmouseMovement	16	static
+../Core/Src/remote_control.c:181:6:RCkeysRefresh	16	static

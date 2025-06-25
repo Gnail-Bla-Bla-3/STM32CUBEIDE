@@ -1,0 +1,6 @@
+../Core/Src/custom_math.c:12:7:getAngle	40	static
+../Core/Src/custom_math.c:28:7:getNorm	16	static
+../Core/Src/custom_math.c:32:7:angSmallestDiff	16	static
+../Core/Src/custom_math.c:53:7:getY	24	static
+../Core/Src/custom_math.c:57:7:getX	16	static
+../Core/Src/custom_math.c:61:7:normalize3D	24	static

@@ -497,7 +497,7 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 83;
+  htim1.Init.Prescaler = 335;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim1.Init.Period = 19999;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -574,7 +574,7 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 0;
+  htim4.Init.Prescaler = 83;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 20999;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -632,9 +632,9 @@ static void MX_TIM5_Init(void)
 
   /* USER CODE END TIM5_Init 1 */
   htim5.Instance = TIM5;
-  htim5.Init.Prescaler = 42;
+  htim5.Init.Prescaler = 83;
   htim5.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim5.Init.Period = 19999;
+  htim5.Init.Period = 1999;
   htim5.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim5.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_PWM_Init(&htim5) != HAL_OK)
@@ -690,7 +690,7 @@ static void MX_TIM8_Init(void)
 
   /* USER CODE END TIM8_Init 1 */
   htim8.Instance = TIM8;
-  htim8.Init.Prescaler = 83;
+  htim8.Init.Prescaler = 335;
   htim8.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim8.Init.Period = 19999;
   htim8.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -1028,17 +1028,30 @@ void TaskMain(void *argument)
 * @retval None
 */
 /* USER CODE END Header_TaskChassis */
-void TaskChassis(void *argument)
-{
+void TaskChassis(void *argument) {
+
   /* USER CODE BEGIN TaskChassis */
 	PWMInit(&htim1, &htim4, &htim5, &htim8);
 
 	PID_preset_t YPVoltageRPM = {10.0, 0.0, 0.0};
-	PID_preset_t CyawPresetVoltageRPM = {7.0, 0.0, 0.0};
-	PID_preset_t yawPresetVoltageRPM = {18.0, 0.0, 0.0};
-	PID_preset_t pitchBoi = {30.0, 0.0, 0.0};
+	// 12, 0, 10
+	PID_preset_t testBoi = {1.0, 0.0, 0.5};
+	PID_preset_t testBoi2 = {100.0, 0.0, 10};
+	PID_preset_t yawPresetVoltageRPM = {12.0, 0.0, 0.0};
+	PID_preset_t pitchBoi = {40.0, 0.0, 120.0};
 
-	int16_t returnScaler = 2;
+	int8_t prevTog = 1;
+	int8_t tog = 0;
+
+
+
+	// int8_t FondlerOn = 0;
+	int8_t initialCounter = 0;
+	int8_t jammed = 0;
+	int16_t reverseCounter = 30;
+
+	int16_t upAdd = 0;
+	int16_t currentAim = 6150+upAdd;
   /* Infinite loop */
     for(;;) {
     	/*
@@ -1048,23 +1061,131 @@ void TaskChassis(void *argument)
     	// TURRET PITCH TOP = 6800
     	// TURRET PITCH BOTTOM = 5500
     	// DELTA PITCH = 1300
-    	uint16_t currentPos = ((1.4*(getRCchannel(3)))+6150);
+    	/*
+    	uint16_t currentPos = ((1.4*(getRCchannel(1)))+6150);
     	setMotorPosition(Bus1, GM6020, 7, currentPos, pitchBoi);
+    	*/
+
+
+    	int16_t currentPos = getRCchannel(1);
+    	/*
+    	if (getRCswitch(0) >= 2) {
+    		uint16_t togoVal = ((currentPos)*1.4)+6150+upAdd;
+    		currentAim = togoVal;
+    		setMotorPosition(Bus2, GM6020, 7, togoVal, pitchBoi);
+    	} else {
+    	// usart_printf("%d\r\n", getRotorPosition(Bus1, GM6020, 3));
+    		int16_t currentPos1 = getRCchannel(1)*0.1;
+    		currentAim -= currentPos1;
+    		if (currentAim > 7100+upAdd) {
+    			currentAim = 7100+upAdd;
+    		} else if (currentAim < 5200+upAdd) {
+    			currentAim = 5200+upAdd;
+    		}
+    		setMotorPosition(Bus2, GM6020, 7, currentAim, pitchBoi);
+    	}
+		*/
+
+    	// 0.75
+		uint16_t togoVal = currentPos*0.757575f + 7000;
+		setMotorPosition(Bus2, GM6020, 7, togoVal, pitchBoi);
+    	usart_printf("%d %d\r\n", getRotorPosition(Bus2, GM6020, 7), togoVal);
+
+
+    	osDelay(2);
 
         uint16_t speed = 9000;
 
-
-        if (getRCswitch(1) == 3) {
-            setMotorRPM(Bus1, M3508, 1, -1*speed, yawPresetVoltageRPM);
-            setMotorRPM(Bus1, M3508, 2, speed, yawPresetVoltageRPM);
-        } else {
-        	setMotorRPM(Bus1, M3508, 1, 0, yawPresetVoltageRPM);
-        	setMotorRPM(Bus1, M3508, 2, 0,yawPresetVoltageRPM);
+        uint16_t RCVal[4] = {0, 0, 0, 0};
+        for (int8_t j = 0; j < 4; j++) {
+        	RCVal[j] = (uint16_t)(getRCchannel(j)+660);
         }
+        CAN_transmit(Bus1, 0x104, fourBitShift(RCVal[0], RCVal[1], RCVal[2], RCVal[3]));
+        //CAN_transmit(Bus1, 0x105, 0x1122334455667788);
+        CAN_transmit(Bus1, 0x105, otherSignals((uint16_t)(getRCchannel(4)+660), getRCswitch(0), getRCswitch(1)));
+        osDelay(2);
+        //CAN_transmit(Bus1, 0x306, otherSignals((uint16_t)(getRCchannel(4)+660), getRCswitch(0), getRCswitch(1)));
+        // otherSignals((uint16_t)(getRCchannel(4)+660), getRCswitch(0), getRCswitch(1))
+// getRCchannel(0), getRCchannel(1), getRCchannel(2), getRCchannel(3)
+        if (getRCswitch(1) >= 2) {
+            setMotorRPM(Bus2, M3508, 1, -1*speed, yawPresetVoltageRPM);
+            setMotorRPM(Bus2, M3508, 2, speed, yawPresetVoltageRPM);
+        } else {
+        	setMotorRPM(Bus2, M3508, 1, 0, yawPresetVoltageRPM);
+        	setMotorRPM(Bus2, M3508, 2, 0,yawPresetVoltageRPM);
+        }
+        /*
+	    PWMOutput(LED, 1, 500);
+	    PWMOutput(LED, 3, 500);
+	    PWMInitialize(LED, FR, 1, 0.9);
+	    PWMInitialize(LED, FR, 3, 0.9);
+    	PWMOutput(Buzzer, 1, 440);
+    	PWMInitialize(Buzzer, FR, 1, 0.5);
+
+    	if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == 0 && prevTog == 1) {
+    		tog = !tog;
+    	}
+    	prevTog = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+
+    	if (tog == 1 && initialCounter < 10) {
+    		initialCounter++;
+    	}
+    	*/
+    	/*
+    	if (initialCounter == 9) {
+    		usart_printf("%d, %d\r\n", initialCounter, getMotorRPM(Bus1, M2006, 5));
+    	}
+		*/
+        /*
+    	if (initialCounter == 10 && getMotorRPM(Bus1, M2006, 5) < 1000 && reverseCounter == 30) {
+    		jammed = 1;
+    		tog = 0;
+    	}
+    	// usart_printf("%d, %d, %d\r\n", initialCounter, getMotorRPM(Bus1, M2006, 5), reverseCounter);
+    	// usart_printf("%d\r\n", jammed);
+    	if (jammed == 1 && reverseCounter > 0) {
+    		reverseCounter--;
+    	}
+
+    	if (reverseCounter == 0) {
+    		reverseCounter = 30;
+    		jammed = 0;
+    		tog = 1;
+    	}
+
+    	if (tog == 1) {
+    		setMotorRPM(Bus1, M2006, 5, 5000, testBoi);
+    		PWMOff(Buzzer, 3);
+    		PWMOn(LED, 1);
+    		PWMOn(LED, 3);
+    		if (initialCounter == 10) {
+    			// PWMOn(Buzzer, 3);
+    		}
+    	} else {
+    		setMotorRPM(Bus1, M2006, 5, 0, testBoi);
+    		PWMOff(Buzzer, 3);
+    		PWMOff(LED, 1);
+    		PWMOff(LED, 3);
+    		initialCounter = 0;
+    	}
+
+
+    	if (tog == 1 && jammed != 1) {
+    		setMotorRPM(Bus1, M2006, 5, 5000, testBoi);
+    		//usart_printf("FORWARD\r\n");
+    	} else {
+    		CAN_setMotorCtrlVal(Bus1, M2006, 5, 0);
+    		// setMotorRPM(Bus1, M2006, 5, -5000, testBoi2);
+
+    		//usart_printf("REVERSE\r\n");
+    	}
+		*/
+    	osDelay(2);
+
 
 		PWMTimerStarter();
 		RCkeysRefresh();
-        osDelay(10);
+        osDelay(2);
     }
 
   /* USER CODE END TaskChassis */
