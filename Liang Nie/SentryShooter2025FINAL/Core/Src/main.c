@@ -49,7 +49,7 @@ uint8_t currentGameStatus = 0;
 int16_t sentryAutoState = 0;
 uint8_t driveChassisForwards = 0;
 int16_t turretCVAimingSum = 0;
-int32_t SentryTurnAngle = 0;
+int32_t SentryTurnAngle = 2000;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -1123,6 +1123,21 @@ uint8_t isRobotEnemy(int16_t SentryTeam, int16_t enemyTeamColour) {
 	}
 }
 
+int16_t wheelRotation (int16_t currentRotation, int16_t destinationRotation) {
+	int8_t newTargetRotationCounter = 0;
+	int16_t ACD = abs(destinationRotation - currentRotation);
+	int16_t ALD = abs((destinationRotation - 8191) - currentRotation);
+	int16_t AUD = abs((destinationRotation + 8191) - currentRotation);
+	if (ACD < ALD && ACD < AUD) { // Normal Delta is best case
+		newTargetRotationCounter = 0;
+	} else if (ALD < ACD && ALD < AUD) { // Lower Delta (Flip) is best case
+		newTargetRotationCounter = -1;
+	} else { // Upper Delta is best case here
+		newTargetRotationCounter = 1;
+	}
+    return ((destinationRotation + (8191*newTargetRotationCounter)) - currentRotation);
+}
+
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartFlowManager */
@@ -1215,6 +1230,7 @@ void StartTurretTask(void *argument)
 	PID_preset_t flywheels = {4.0, 0.0, 0.0};
 
 	float gyroidValue = 0;
+	float gyroVelAll[3] = {0, 0, 0};
 
 	float targetTurretAng = 0;
 	float currentTurretAng = 0;
@@ -1231,6 +1247,8 @@ void StartTurretTask(void *argument)
 	int32_t toGoVelue = 0;
 
 	int16_t turretYawVal = 0;
+	SentryTurnAngle = 2000;
+	uint8_t firingNow = 1;
 	// X, Y, Width, Height, TimeoutLength
 
 
@@ -1259,12 +1277,12 @@ void StartTurretTask(void *argument)
 
 
 	  } else if (sentryAutoState == 4) {
-		  turretPitchPos = 0;// turretRotationForCV[1];
-		  setMotorRPM(Bus2, GM6020, 3, turretPitchPos, turretPitch);
+		  int16_t turretPitchVel = turretRotationForCV[1];// turretRotationForCV[1];
+		  setMotorRPM(Bus2, GM6020, 3, turretPitchVel, turretPitch);
 
 
 	  } else {
-		  turretPitchPos = 4400;
+		  turretPitchPos = 4100;
 		  setMotorPosition(Bus2, GM6020, 3,  turretPitchPos, turretPitch);
 
 	  }
@@ -1317,10 +1335,19 @@ void StartTurretTask(void *argument)
 	  // 6607
 	  UART_Printf(&huart6, "%d\r\n", getRotorPosition(Bus1, GM6020, 5));
 	  */
-	  float kP = 50.0;
+	  float kP = 25.0;
 	  // Tuned to KD of 125
-	  float kD = 80.0;
-	  float gyroVel2 = IMU_get_gyro(2);
+	  float kD = 200.0;
+
+	  for (uint8_t i = 2; i > 0; i--) {
+		  gyroVelAll[i] = gyroVelAll[i-1];
+	  }
+
+	  gyroVelAll[0] = IMU_get_gyro(2);
+	  float gyroVel2 = (gyroVelAll[0] + gyroVelAll[1] + gyroVelAll[2])/3;
+
+
+
 	  if (gyroVel2 < 0.05 || gyroVel2 > -0.05) {
 		  gyroVel2 = 0;
 	  }
@@ -1338,6 +1365,8 @@ void StartTurretTask(void *argument)
 		  }
 		*/
 
+
+
 		  float gVP = gyroVel2 + (float)(CAL_getCH2()+turretRotationForCV[0])*0.01;
 		  gyroidValue += gyroVel2 + (float)(CAL_getCH2()+turretRotationForCV[0])*0.01;
 		  setMotorRPM(Bus1, GM6020, 5, (int16_t)(-1*gyroidValue + -200*gVP), test2);
@@ -1346,12 +1375,15 @@ void StartTurretTask(void *argument)
 		  // setMotorPosition(Bus1, GM6020, 5, turretRotationForCV[0], test3);
 	  } else {
 
-		  toGoVelue = 1850 + CAL_getCH2();
+		  toGoVelue = SentryTurnAngle + CAL_getCH2();
+
+
+		  int16_t velue = wheelRotation (getRotorPosition(Bus1, GM6020, 5), toGoVelue);
 		  // 2811
 		   // turretYawVal = 1850;
 		   // setMotorPosition(Bus1, GM6020, 5, turretYawVal, test3);
-		  int32_t beans = kP*(toGoVelue - getRotorPosition(Bus1, GM6020, 5)) + kD*(((toGoVelue - getRotorPosition(Bus1, GM6020, 5)) - previousPeans) + -80*gyroVel2);
-		  previousPeans = (toGoVelue - getRotorPosition(Bus1, GM6020, 5));
+		  int32_t beans = kP*(velue) + kD*((velue - previousPeans) + -80*gyroVel2);
+		  previousPeans = (velue);
 
 		  int32_t beans2 = applyCtrlLimit(GM6020, beans);
 		  CAN_setMotorCtrlVal(Bus1, GM6020, 5, beans2);
@@ -1441,8 +1473,8 @@ void StartTurretTask(void *argument)
       float heatBufferFraction1 = 0;
       float heatBufferFraction2 = 0;
       if (CAL_getHeatLimit() != 0) {
-    	  heatBufferFraction1 = (float)(CAL_getBarrel1Heat())/(float)(CAL_getHeatLimit());
-    	  heatBufferFraction2 = (float)(CAL_getBarrel2Heat())/(float)(CAL_getHeatLimit());
+    	  heatBufferFraction1 = (float)(CAL_getBarrel1Heat())/(400.0);
+    	  heatBufferFraction2 = (float)(CAL_getBarrel2Heat())/(400.0);
       }
 
       uint8_t flywheelReved = 0;
@@ -1451,6 +1483,13 @@ void StartTurretTask(void *argument)
       } else {
     	  flywheelReved = 0;
       }
+
+      if (firingNow == 1 && (heatBufferFraction1 > 0.8 || heatBufferFraction2 > 0.8)) {
+    	  firingNow = 0;
+      } else if (firingNow == 0 && ((heatBufferFraction1 < 0.3 && heatBufferFraction2 < 0.3))) {
+    	  firingNow = 1;
+      }
+
 
 	  if (CAL_getS1() == 2) {
 		  // Motors 2 & 4 (Left)
@@ -1463,8 +1502,7 @@ void StartTurretTask(void *argument)
 			osDelay(2);
 			setMotorRPM(Bus1, M2006, 6, -5000, fondler);
 			*/
-
-	  } else if ((( SENTRYSHOOT[1] == 1) && flywheelReved == 1 && (heatBufferFraction1 < 0.8 && heatBufferFraction2 < 0.8))) {
+	  } else if (( SENTRYSHOOT[1] == 1 && flywheelReved == 1 && firingNow == 1)) {
 		  if (getMotorRPM(Bus1, M3508, 2) < 4800 && getMotorRPM(Bus1, M3508, 4) > -4800 && barrelToggle == 1) {
 			  barrelToggle = 0;
 		  } else if (getMotorRPM(Bus1, M3508, 3) < 4800 && getMotorRPM(Bus1, M3508, 1) > -4800 && barrelToggle == 0) {
@@ -1526,6 +1564,7 @@ void StartSentryAutonomy(void *argument)
 	int16_t stateCounter = 0;
 
 	int16_t tempTurretRot[2] = {0, 0};
+	int16_t preVTTR[2] = {0, 0};
 
 	int16_t motorYawPrev = 0;
 
@@ -1555,6 +1594,7 @@ void StartSentryAutonomy(void *argument)
 		*/
 	  if (getDR16_S2() == 1) {
 		  currentGameStatus = 0;
+		  SENTRYSHOOT[1] = 0;
 	  } else if (getDR16_S2() == 3) {
 		  currentGameStatus = 1;
 	  } else if (getDR16_S2() == 2) {
@@ -1648,25 +1688,32 @@ void StartSentryAutonomy(void *argument)
 		  // MOVE INTO WALL STATE
 		  case 1: {
 
-			  driveChassisForwards = 1;
+			  driveChassisForwards = 0;
+			  SENTRYSHOOT[1] = 1;
+			  /*
 			  if (stateCounter > 600) {
 				  sentryAutoState = 2;
 			  }
+			  */
+			  /*
 			  if (CVArray[4] < 5) {
 				  sentryAutoState = 4;
 			  }
+
 			  SENTRYSHOOT[1] = 0;
 			  break;
 		  }
 		  // DRYFIRESTATE & SCAN CHECKING STATE
 		  case 2:  {
 			  driveChassisForwards = 0;
+
 			  if (CVArray[4] < 5) {
 				  sentryAutoState = 4;
 			  }
 			  if (stateCounter > 1000) {
 				  sentryAutoState = 3;
 			  }
+			  */
 			  SENTRYSHOOT[1] = 1;
 			  break;
 		  }
@@ -1686,14 +1733,19 @@ void StartSentryAutonomy(void *argument)
 				  sentryAutoState = 3;
 			  }
 			  */
-			  if (CVArray[4] < 75) {
+			  if (CVArray[4] < 40) {
 				  // Seeing Someone
 				  turretRotationForCV[2] = 1;
 
 				  // Delta Value Thing
+				  // Original Tune was 0.25 for yaw and -0.25 for pitch
+				  // Im planning on tuning this kP Value first and then ill see if adding a D value will help, Hopefully it will
+				  tempTurretRot[0] = 0.2*(float)(CVArray[0]) + 10.0*(float)(CVArray[0]-preVTTR[0]);
+				  tempTurretRot[1] = -1.2*(float)(CVArray[1]) - 24.0*(float)((CVArray[1])-preVTTR[1]);
 
-				  tempTurretRot[0] = 0.25*(float)(CVArray[0]);
-				  tempTurretRot[1] = -0.25*(float)(CVArray[1]);
+				  preVTTR[0] = CVArray[0];
+				  preVTTR[1] = CVArray[1];
+
 				  /*
 				  tempTurretRot[0] = ((float)(getRotorPosition(Bus1, GM6020, 5)) - (float)(CVArray[0])*2.0 - (float)(getRotorPosition(Bus1, GM6020, 5)-motorYawPrev));
 				  tempTurretRot[1] = ((float)(getRotorPosition(Bus1, GM6020, 5)) + (float)(CVArray[1])*2.0);
@@ -1728,13 +1780,13 @@ void StartSentryAutonomy(void *argument)
 
 
 
-		  if ((oldSequenceNumber == CAL_getCVSeq() && CVArray[4] < 75) || (isRobotEnemy(CAL_getRobotId(), CAL_getTargetColour()) == 1)) {
+		  if ((oldSequenceNumber == CAL_getCVSeq() && CVArray[4] < 40) || (isRobotEnemy(CAL_getRobotId(), CAL_getTargetColour()) == 1)) {
 			  CVArray[4] += 1;
-		  } else if (oldSequenceNumber == CAL_getCVSeq() && CVArray[4] >= 75) {
-			  CVArray[4] = 75;
+		  } else if (oldSequenceNumber == CAL_getCVSeq() && CVArray[4] >= 40) {
+			  CVArray[4] = 40;
 		  } else {
 			  CVArray[0] = CAL_getTargetX();
-			  CVArray[1] = CAL_getTargetY();
+			  CVArray[1] = CAL_getTargetY() + 75;
 			  CVArray[2] = CAL_getTargetWidth();
 			  CVArray[3] = CAL_getTargetHeight();
 			  CVArray[4] = 0;

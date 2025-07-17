@@ -21,8 +21,9 @@
 ../Core/Src/main.c:1094:6:leadCalculator	1
 ../Core/Src/main.c:1100:9:WithinRangeCalculator	3
 ../Core/Src/main.c:1108:9:isRobotEnemy	4
-../Core/Src/main.c:1135:6:StartFlowManager	5
-../Core/Src/main.c:1189:13:imu_temp_control_task	1
-../Core/Src/main.c:1207:6:StartTurretTask	29
-../Core/Src/main.c:1513:6:StartSentryAutonomy	36
-../Core/Src/main.c:1797:6:Error_Handler	1
+../Core/Src/main.c:1126:9:wheelRotation	5
+../Core/Src/main.c:1150:6:StartFlowManager	5
+../Core/Src/main.c:1204:13:imu_temp_control_task	1
+../Core/Src/main.c:1222:6:StartTurretTask	35
+../Core/Src/main.c:1551:6:StartSentryAutonomy	31
+../Core/Src/main.c:1849:6:Error_Handler	1

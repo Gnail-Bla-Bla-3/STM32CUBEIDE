@@ -3,6 +3,8 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="pwminit"/>
+		<item value="PWM_init"/>
 		<item value="M3508AndGM6020"/>
 		<item value="usart_printf"/>
 	</list>

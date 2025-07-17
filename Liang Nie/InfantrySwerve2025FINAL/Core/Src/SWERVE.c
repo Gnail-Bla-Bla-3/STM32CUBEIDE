@@ -29,7 +29,10 @@ int8_t rotationVectors[4][2] =  {{-1,-1},
 						 		 {1, -1},
 								 {1,  1},
 								 {-1, 1}};
-int16_t forwardsID[4] = {2754, 6880, 128, 4880};
+
+
+// 2754 for first
+int16_t forwardsID[4] = {7064, 6880, 128, 4880};
 // [MotorID][0 = MotorXVal, 1 = MotorYVal, 2 = MotorABSVal, 3 = MotorConvertedAngle], 4 = Reversal Of Motor
 int16_t motorInfo[4][5];
 int16_t DP[3] = {0, 0, 0};
@@ -106,7 +109,7 @@ void Loop(int16_t Axies[3], int16_t GM6020TurretAngle) {
 	int16_t Rotate = Axies[2];
 	*/
 
-	UART_Printf(&huart1, "%d\r\n", GM6020TurretAngle);
+	UART_Printf(&huart1, "%d, %d, %d, %d\r\n", getRotorPosition(Bus1, GM6020, 1), getRotorPosition(Bus1, GM6020, 2), getRotorPosition(Bus1, GM6020, 3), getRotorPosition(Bus1, GM6020, 4));
 	int16_t FB = Axies[0]*cosf(CAngle) + Axies[1]*sinf(CAngle);
 	int16_t LR = Axies[0]*sinf(CAngle) - Axies[1]*cosf(CAngle);
 	int16_t Rotate = -1*Axies[2];

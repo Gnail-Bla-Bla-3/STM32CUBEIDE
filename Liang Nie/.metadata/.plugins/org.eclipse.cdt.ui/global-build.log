@@ -7681,3 +7681,1983 @@ Finished building: default.size.stdout
  
 Finished building: SentryShooter2025FINAL.list
  
+10:52:18 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1220:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1220 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1219:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1219 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1213:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1213 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1210:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1210 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1532:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1532 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+../Core/Src/main.c:1530:17: warning: variable 'preVTTR' set but not used [-Wunused-but-set-variable]
+ 1530 |         int16_t preVTTR[2] = {0, 0};
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82140	    528	  24008	 106676	  1a0b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+13:51:39 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1220:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1220 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1219:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1219 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1213:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1213 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1210:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1210 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1532:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1532 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+../Core/Src/main.c:1530:17: warning: variable 'preVTTR' set but not used [-Wunused-but-set-variable]
+ 1530 |         int16_t preVTTR[2] = {0, 0};
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82140	    528	  24008	 106676	  1a0b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+13:53:01 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82140	    528	  24008	 106676	  1a0b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+13:53:28 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82140	    528	  24008	 106676	  1a0b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+13:53:41 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82140	    528	  24008	 106676	  1a0b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+13:53:58 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82140	    528	  24008	 106676	  1a0b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+13:54:30 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82140	    528	  24008	 106676	  1a0b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+13:59:26 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82140	    528	  24008	 106676	  1a0b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+13:59:48 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82140	    528	  24008	 106676	  1a0b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:02:56 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1220:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1220 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1219:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1219 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1213:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1213 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1210:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1210 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1532:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1532 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+../Core/Src/main.c:1530:17: warning: variable 'preVTTR' set but not used [-Wunused-but-set-variable]
+ 1530 |         int16_t preVTTR[2] = {0, 0};
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+14:03:17 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:03:41 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:04:18 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:04:40 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:05:14 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:09:57 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1220:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1220 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1219:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1219 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1213:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1213 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1210:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1210 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1532:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1532 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+../Core/Src/main.c:1530:17: warning: variable 'preVTTR' set but not used [-Wunused-but-set-variable]
+ 1530 |         int16_t preVTTR[2] = {0, 0};
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+14:10:19 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:10:45 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:11:15 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:11:37 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:22:47 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:26:26 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1220:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1220 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1219:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1219 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1213:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1213 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1210:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1210 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1532:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1532 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+../Core/Src/main.c:1530:17: warning: variable 'preVTTR' set but not used [-Wunused-but-set-variable]
+ 1530 |         int16_t preVTTR[2] = {0, 0};
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+14:26:37 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:26:47 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82156	    528	  24008	 106692	  1a0c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+14:29:29 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1220:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1220 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1219:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1219 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1213:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1213 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1210:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1210 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1532:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1532 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+../Core/Src/main.c:1530:17: warning: variable 'preVTTR' set but not used [-Wunused-but-set-variable]
+ 1530 |         int16_t preVTTR[2] = {0, 0};
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82172	    528	  24008	 106708	  1a0d4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+23:26:57 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1235:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1235 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1234:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1234 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1550:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1550 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+../Core/Src/main.c:1548:17: warning: variable 'preVTTR' set but not used [-Wunused-but-set-variable]
+ 1548 |         int16_t preVTTR[2] = {0, 0};
+      |                 ^~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82348	    528	  24008	 106884	  1a184	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+23:27:18 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82348	    528	  24008	 106884	  1a184	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+23:27:37 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82348	    528	  24008	 106884	  1a184	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+23:28:11 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82348	    528	  24008	 106884	  1a184	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+23:43:21 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1235:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1235 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1234:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1234 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1550:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1550 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82444	    528	  24008	 106980	  1a1e4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+23:48:32 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1235:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1235 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1234:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1234 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1550:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1550 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82444	    528	  24008	 106980	  1a1e4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+23:48:46 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82444	    528	  24008	 106980	  1a1e4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+00:04:17 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1235:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1235 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1234:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1234 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1550:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1550 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82444	    528	  24008	 106980	  1a1e4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+00:07:53 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1235:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1235 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1234:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1234 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1550:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1550 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82444	    528	  24008	 106980	  1a1e4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+00:10:05 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1235:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1235 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1234:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1234 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1550:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1550 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82444	    528	  24008	 106980	  1a1e4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+00:21:05 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82556	    528	  24008	 107092	  1a254	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+00:24:37 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82572	    528	  24008	 107108	  1a264	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+00:25:11 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82572	    528	  24008	 107108	  1a264	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+00:25:21 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82572	    528	  24008	 107108	  1a264	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+00:25:32 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82572	    528	  24008	 107108	  1a264	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+00:26:04 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82572	    528	  24008	 107108	  1a264	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+00:28:33 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82556	    528	  24008	 107092	  1a254	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+00:30:59 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82556	    528	  24008	 107092	  1a254	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+00:49:46 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82556	    528	  24008	 107092	  1a254	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+00:50:01 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82556	    528	  24008	 107092	  1a254	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+01:08:52 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82556	    528	  24008	 107092	  1a254	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+01:09:00 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82556	    528	  24008	 107092	  1a254	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+01:09:11 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82556	    528	  24008	 107092	  1a254	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+01:21:39 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82588	    528	  24008	 107124	  1a274	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+01:21:53 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82588	    528	  24008	 107124	  1a274	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+01:25:18 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82572	    528	  24008	 107108	  1a264	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+01:25:41 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82572	    528	  24008	 107108	  1a264	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+01:29:57 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82572	    528	  24008	 107108	  1a264	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+01:30:10 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82572	    528	  24008	 107108	  1a264	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+01:34:16 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82588	    528	  24008	 107124	  1a274	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+01:40:24 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82588	    528	  24008	 107124	  1a274	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+01:40:37 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82588	    528	  24008	 107124	  1a274	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+01:45:17 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82588	    528	  24008	 107124	  1a274	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+01:57:49 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82588	    528	  24008	 107124	  1a274	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+01:58:06 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82588	    528	  24008	 107124	  1a274	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+02:03:00 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82588	    528	  24008	 107124	  1a274	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+02:08:36 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82604	    528	  24008	 107140	  1a284	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+02:08:47 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82604	    528	  24008	 107140	  1a284	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+02:16:14 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82604	    528	  24008	 107140	  1a284	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+02:20:50 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82604	    528	  24008	 107140	  1a284	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+02:24:33 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1560:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1560 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82604	    528	  24008	 107140	  1a284	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+02:24:45 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82604	    528	  24008	 107140	  1a284	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+08:53:10 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1504:81: error: lvalue required as left operand of assignment
+ 1504 |           } else if ((( SENTRYSHOOT[1] == 1) && flywheelReved == 1 && firingNow = 1)) {
+      |                                                                                 ^
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1704:27: warning: "/*" within comment [-Wcomment]
+ 1704 |                           /*
+      |                            
+../Core/Src/main.c:1568:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1568 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:70: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+08:53:52 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1504:74: error: lvalue required as left operand of assignment
+ 1504 |           if ((( SENTRYSHOOT[1] == 1) && flywheelReved == 1 && firingNow = 1)) {
+      |                                                                          ^
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1704:27: warning: "/*" within comment [-Wcomment]
+ 1704 |                           /*
+      |                            
+../Core/Src/main.c:1568:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1568 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:70: Core/Src/main.o] Error 1
+"make -j3 all" terminated with exit code 2. Build might be incomplete.
+08:54:48 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1704:27: warning: "/*" within comment [-Wcomment]
+ 1704 |                           /*
+      |                            
+../Core/Src/main.c:1568:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1568 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+08:55:22 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1703:27: warning: "/*" within comment [-Wcomment]
+ 1703 |                           /*
+      |                            
+../Core/Src/main.c:1567:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1567 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+08:55:41 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+08:56:12 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+08:57:29 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1705:27: warning: "/*" within comment [-Wcomment]
+ 1705 |                           /*
+      |                            
+../Core/Src/main.c:1569:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1569 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+08:57:44 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+09:02:44 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1705:27: warning: "/*" within comment [-Wcomment]
+ 1705 |                           /*
+      |                            
+../Core/Src/main.c:1569:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1569 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+09:03:03 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+09:03:41 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+09:03:51 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+09:09:16 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1705:27: warning: "/*" within comment [-Wcomment]
+ 1705 |                           /*
+      |                            
+../Core/Src/main.c:1569:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1569 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+09:09:28 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+09:46:24 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1569:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1569 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82668	    528	  24008	 107204	  1a2c4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+09:46:46 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1569:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1569 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82652	    528	  24008	 107188	  1a2b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+09:46:59 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1569:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1569 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82652	    528	  24008	 107188	  1a2b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+10:06:43 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1569:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1569 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82652	    528	  24008	 107188	  1a2b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+10:07:10 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82652	    528	  24008	 107188	  1a2b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+10:07:21 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82652	    528	  24008	 107188	  1a2b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+10:15:15 **** Incremental Build of configuration Debug for project InfantrySwerve2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/SWERVE.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SWERVE.d" -MT"Core/Src/SWERVE.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SWERVE.o"
+arm-none-eabi-gcc -o "InfantrySwerve2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/InfantrySwerve2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="InfantrySwerve2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: InfantrySwerve2025FINAL.elf
+ 
+arm-none-eabi-size  InfantrySwerve2025FINAL.elf 
+arm-none-eabi-objdump -h -S InfantrySwerve2025FINAL.elf  > "InfantrySwerve2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  77168	    564	  24320	 102052	  18ea4	InfantrySwerve2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: InfantrySwerve2025FINAL.list
+ 
+10:17:19 **** Incremental Build of configuration Debug for project InfantrySwerve2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/SWERVE.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SWERVE.d" -MT"Core/Src/SWERVE.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SWERVE.o"
+arm-none-eabi-gcc -o "InfantrySwerve2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/InfantrySwerve2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="InfantrySwerve2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: InfantrySwerve2025FINAL.elf
+ 
+arm-none-eabi-size  InfantrySwerve2025FINAL.elf 
+arm-none-eabi-objdump -h -S InfantrySwerve2025FINAL.elf  > "InfantrySwerve2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  77240	    564	  24320	 102124	  18eec	InfantrySwerve2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: InfantrySwerve2025FINAL.list
+ 
+10:19:41 **** Incremental Build of configuration Debug for project InfantrySwerve2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/SWERVE.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SWERVE.d" -MT"Core/Src/SWERVE.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SWERVE.o"
+arm-none-eabi-gcc -o "InfantrySwerve2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/InfantrySwerve2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="InfantrySwerve2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: InfantrySwerve2025FINAL.elf
+ 
+arm-none-eabi-size  InfantrySwerve2025FINAL.elf 
+arm-none-eabi-objdump -h -S InfantrySwerve2025FINAL.elf  > "InfantrySwerve2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  77240	    564	  24320	 102124	  18eec	InfantrySwerve2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: InfantrySwerve2025FINAL.list
+ 
+16:20:31 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'wheelRotation':
+../Core/Src/main.c:1128:23: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+ 1128 |         int16_t ACD = abs(destinationRotation - currentRotation);
+      |                       ^~~
+../Core/Src/main.c:37:1: note: include '<stdlib.h>' or provide a declaration of 'abs'
+   36 | #include "pwm.h"
+  +++ |+#include <stdlib.h>
+   37 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'StartTurretTask':
+../Core/Src/main.c:1236:15: warning: unused variable 'currentTurretAng' [-Wunused-variable]
+ 1236 |         float currentTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:1235:15: warning: unused variable 'targetTurretAng' [-Wunused-variable]
+ 1235 |         float targetTurretAng = 0;
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/main.c:1228:22: warning: unused variable 'test3' [-Wunused-variable]
+ 1228 |         PID_preset_t test3 = {160.0, 0.0, 100.0};
+      |                      ^~~~~
+../Core/Src/main.c:1225:22: warning: unused variable 'turretRotation' [-Wunused-variable]
+ 1225 |         PID_preset_t turretRotation = {110.0, 0.0, 15.0};
+      |                      ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'StartSentryAutonomy':
+../Core/Src/main.c:1569:17: warning: unused variable 'motorYawPrev' [-Wunused-variable]
+ 1569 |         int16_t motorYawPrev = 0;
+      |                 ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "SentryShooter2025FINAL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/SentryShooter2025FINAL/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SentryShooter2025FINAL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SentryShooter2025FINAL.elf
+ 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+arm-none-eabi-objdump -h -S SentryShooter2025FINAL.elf  > "SentryShooter2025FINAL.list"
+   text	   data	    bss	    dec	    hex	filename
+  82652	    528	  24008	 107188	  1a2b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+Finished building: SentryShooter2025FINAL.list
+ 
+16:20:48 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82652	    528	  24008	 107188	  1a2b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+16:21:11 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82652	    528	  24008	 107188	  1a2b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+16:21:51 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82652	    528	  24008	 107188	  1a2b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
+16:22:03 **** Incremental Build of configuration Debug for project SentryShooter2025FINAL ****
+make -j3 all 
+arm-none-eabi-size  SentryShooter2025FINAL.elf 
+   text	   data	    bss	    dec	    hex	filename
+  82652	    528	  24008	 107188	  1a2b4	SentryShooter2025FINAL.elf
+Finished building: default.size.stdout
+ 
