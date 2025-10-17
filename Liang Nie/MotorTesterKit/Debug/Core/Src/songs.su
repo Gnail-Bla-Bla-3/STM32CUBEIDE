@@ -1,6 +1,0 @@
-../Core/Src/songs.c:46:6:initializeCaliforniaGirls	4	static
-../Core/Src/songs.c:52:10:CountryRoadsNotes	4	static
-../Core/Src/songs.c:69:10:MarryHadALittleLambNotes	4	static
-../Core/Src/songs.c:86:10:HampsterNotes	16	static
-../Core/Src/songs.c:131:10:CaliforniaGirlsNotes	16	static
-../Core/Src/songs.c:165:10:NeverGonnaGiveYouUpNotes	4	static

@@ -1,10 +1,51 @@
-14:41:29 **** Incremental Build of configuration Debug for project STM_BLACKPILL ****
+12:41:35 **** Incremental Build of configuration Debug for project STM_BLACKPILL ****
 make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'USART_PrintF':
+../Core/Src/main.c:72:35: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+   72 |         HAL_UART_Transmit(huart6, str, lengthOfString, 10);
+      |                                   ^~~
+      |                                   |
+      |                                   char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:745:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  745 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'usart_printf':
+../Core/Src/main.c:80:11: warning: implicit declaration of function 'vsprintf' [-Wimplicit-function-declaration]
+   80 |     len = vsprintf((char *)tx_buf, fmt, ap);           //return length of string
+      |           ^~~~~~~~
+../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'vsprintf'
+   25 | #include "string.h"
+  +++ |+#include <stdio.h>
+   26 | /* USER CODE END Includes */
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:136:11: warning: unused variable 'prevButtonState' [-Wunused-variable]
+  136 |   uint8_t prevButtonState = 0;
+      |           ^~~~~~~~~~~~~~~
+../Core/Src/main.c:135:11: warning: unused variable 'LEDBlinkingIncrement' [-Wunused-variable]
+  135 |   int16_t LEDBlinkingIncrement = 0;
+      |           ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:134:12: warning: unused variable 'blinkingDutyCycle' [-Wunused-variable]
+  134 |   uint16_t blinkingDutyCycle = 0;
+      |            ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:133:11: warning: unused variable 'LEDstate' [-Wunused-variable]
+  133 |   uint8_t LEDstate = 0;
+      |           ^~~~~~~~
+arm-none-eabi-gcc -o "STM_BLACKPILL.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/STM_BLACKPILL/STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM_BLACKPILL.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM_BLACKPILL.elf
+ 
 arm-none-eabi-size  STM_BLACKPILL.elf 
+arm-none-eabi-objdump -h -S STM_BLACKPILL.elf  > "STM_BLACKPILL.list"
    text	   data	    bss	    dec	    hex	filename
-   8600	     12	   1644	  10256	   2810	STM_BLACKPILL.elf
+  11696	     12	   1956	  13664	   3560	STM_BLACKPILL.elf
 Finished building: default.size.stdout
  
+Finished building: STM_BLACKPILL.list
+ 
 
-14:41:30 Build Finished. 0 errors, 0 warnings. (took 529ms)
+12:41:38 Build Finished. 0 errors, 6 warnings. (took 3s.93ms)
 

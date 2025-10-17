@@ -119,6 +119,11 @@ uint32_t calculateOutputPeriodValue (TypesThatUsePWM_t Type, msOrFullRange micro
 	return returnVal;
 }
 
+void PWMSet(TypesThatUsePWM_t Type, uint32_t desiredFrequency, msOrFullRange microsecondOrFullrange, int8_t position, float val) {
+	initializePeriod (Type, position, desiredFrequency);
+	PWMInitalize(Type, microsecondOrFullrange, position, val);
+}
+
 void PWMInitialize(TypesThatUsePWM_t Type, msOrFullRange microsecondOrFullrange, int8_t position, float val) {
 
 	// usart_printf("beanis2 %d\r\n", position);
@@ -215,12 +220,8 @@ void initializePeriod (TypesThatUsePWM_t Type, int8_t Position, uint32_t desired
 	return;
 }
 
-// (Type, Position, ms or fullrange, val)
-void PWMOutput(TypesThatUsePWM_t Type, int8_t Position, uint32_t desiredFrequency) {
 
-	initializePeriod(Type, Position, desiredFrequency);
-
-	// usart_printf("beanis3 %d\r\n", Position);
+void PWMOn(TypesThatUsePWM_t Type, int8_t Position) {
 	switch (Type) {
 	case 0:
 		whichPWMisOn[Position-1] = 1;
@@ -235,9 +236,6 @@ void PWMOutput(TypesThatUsePWM_t Type, int8_t Position, uint32_t desiredFrequenc
 		// usart_printf("Buzzer %d\r\n", Position);
 		return;
 	}
-	// whichPWMisOn[7]= 1;
-	// usart_printf("beanis7 %d %d\r\n", Position, whichPWMisOn[Position-1]);
-	// return;
 }
 
 void PWMOff(TypesThatUsePWM_t Type, int8_t Position) {
@@ -265,20 +263,7 @@ int32_t subPeriod[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 int32_t period[11] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 */
 
-void mainPrint() {
-
-
-	/*
-	usart_printf("-----------------------------MAIN PWM INFORMATION-------------------------------\r\n");
-	usart_printf("          |                  Motors                 |       LED       | Buzzer |\r\n");
-	usart_printf("          |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  1  |  2  |  3  |   1    |\r\n");
-	*/
-	// usart_printf("Is it on? |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |  ‰d  |\r\n", whichPWMisOn[0], whichPWMisOn[1], whichPWMisOn[2], whichPWMisOn[3], whichPWMisOn[4], whichPWMisOn[5], whichPWMisOn[6], whichPWMisOn[7], whichPWMisOn[8], whichPWMisOn[9], whichPWMisOn[10]);
-
-	// usart_printf("||| %d | %d | %d \r\n", whichPWMisOn[10], period[10], subPeriod[10]);
-}
-
-void PWMTimerStarter() {
+void PWM_Update() {
 	for (int i = 0; i < 11; i++) {
 		switch (i) {
 		case 0:
@@ -340,8 +325,10 @@ void PWMTimerStarter() {
 		case 8:
 			if (whichPWMisOn[8] == 1) {
 				HAL_TIM_PWM_Start(tim5, TIM_CHANNEL_2);
+
 			} else {
 				HAL_TIM_PWM_Stop(tim5, TIM_CHANNEL_2);
+				// usart_printf("beanis\r\n");
 			}
 			break;
 		case 9:

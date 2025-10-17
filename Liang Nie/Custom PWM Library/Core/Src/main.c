@@ -1150,6 +1150,7 @@ void TaskChassis(void *argument)
 	// usart_printf("beanis7\r\n");
 
 	// (TypesThatUsePWM_t Type, msOrFullRange microsecondOrFullrange, int8_t position, float val)
+	/*
 	PWMInitialize(LED, FR, 3, realVal2);
 	PWMInitialize(LED, FR, 2, realVal);
 	PWMInitialize(LED, FR, 1, realVal1);
@@ -1157,6 +1158,7 @@ void TaskChassis(void *argument)
 
 	// PWMInitialize(Motor, FR, 1, 0.5);
 	PWMInitialize(Motor, MS, 2, MotorCycle);
+	*/
 	// PWMInitialize(Motor, MS, 1, servoPosition);
 
 	// PWMInitialize(Buzzer, FR, 1, 0.5);
@@ -1185,7 +1187,7 @@ void TaskChassis(void *argument)
 	// htim5.Init.Period = 1000;
 
 	// htim5.Instance->CCR2=400;
-	mainPrint();
+	// mainPrint();
 
 	PWMTimerStarter();
 

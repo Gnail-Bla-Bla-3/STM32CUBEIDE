@@ -1,0 +1,30 @@
+15:33:05 **** Incremental Build of configuration Debug for project MotorTestKit2025_REV00 ****
+make -j3 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'StartChassisTask':
+../Core/Src/main.c:1031:18: warning: unused variable 'counter' [-Wunused-variable]
+ 1031 |         uint16_t counter = 0;
+      |                  ^~~~~~~
+../Core/Src/main.c:1029:15: warning: unused variable 'SmartAve' [-Wunused-variable]
+ 1029 |         float SmartAve[4][3] = {0};
+      |               ^~~~~~~~
+../Core/Src/main.c:1025:17: warning: variable 'gyroR' set but not used [-Wunused-but-set-variable]
+ 1025 |         int16_t gyroR[3] = {0, 0, 0};
+      |                 ^~~~~
+../Core/Src/main.c:1024:15: warning: variable 'accelR' set but not used [-Wunused-but-set-variable]
+ 1024 |         float accelR[3] = {0, 0, 0};
+      |               ^~~~~~
+arm-none-eabi-gcc -o "MotorTestKit2025_REV00.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/MotorTestKit2025_REV00/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotorTestKit2025_REV00.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotorTestKit2025_REV00.elf
+ 
+arm-none-eabi-size  MotorTestKit2025_REV00.elf 
+arm-none-eabi-objdump -h -S MotorTestKit2025_REV00.elf  > "MotorTestKit2025_REV00.list"
+   text	   data	    bss	    dec	    hex	filename
+  68076	    536	  23784	  92396	  168ec	MotorTestKit2025_REV00.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotorTestKit2025_REV00.list
+ 
+
+15:33:08 Build Finished. 0 errors, 4 warnings. (took 3s.58ms)
+

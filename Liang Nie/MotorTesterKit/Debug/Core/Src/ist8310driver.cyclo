@@ -1,4 +1,0 @@
-../Core/Src/ist8310driver.c:47:9:ist8310_init	4
-../Core/Src/ist8310driver.c:84:6:ist8310_read_over	2
-../Core/Src/ist8310driver.c:106:6:ist8310_read_mag	1
-../Core/Src/ist8310driver.c:120:7:getMagnetometerData	4

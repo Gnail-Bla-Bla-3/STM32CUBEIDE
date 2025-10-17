@@ -1,5 +1,0 @@
-../Core/Src/I2C.c:9:6:I2C2_init	8	static
-../Core/Src/I2C.c:14:6:HAL_I2C_MasterRxCpltCallback	16	static
-../Core/Src/I2C.c:22:9:get_openMV_status	4	static
-../Core/Src/I2C.c:26:9:get_openMV_x	4	static
-../Core/Src/I2C.c:30:9:get_openMV_y	4	static

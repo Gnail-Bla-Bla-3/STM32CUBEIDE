@@ -8,4 +8,4 @@
 ../Core/Src/main.c:408:13:MX_GPIO_Init	1
 ../Core/Src/main.c:459:6:StartDefaultTask	7
 ../Core/Src/main.c:521:6:StartLibraryManager	1
-../Core/Src/main.c:537:6:Error_Handler	1
+../Core/Src/main.c:540:6:Error_Handler	1

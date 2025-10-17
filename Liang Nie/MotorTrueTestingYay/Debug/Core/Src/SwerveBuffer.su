@@ -1,0 +1,8 @@
+../Core/Src/SwerveBuffer.c:24:7:AbsoluteSumOfAllWASDQE	24	static
+../Core/Src/SwerveBuffer.c:35:6:AllBufferCalculations	24	static
+../Core/Src/SwerveBuffer.c:87:6:M3508MaxBufferCurve	24	static
+../Core/Src/SwerveBuffer.c:105:6:GM6020MaxBufferCurve	24	static
+../Core/Src/SwerveBuffer.c:123:6:DriveAllMotors	16	static
+../Core/Src/SwerveBuffer.c:130:6:M3508Scaling	24	static
+../Core/Src/SwerveBuffer.c:136:6:GM6020Scaling	24	static
+../Core/Src/SwerveBuffer.c:142:6:AllCheShit2	16	static

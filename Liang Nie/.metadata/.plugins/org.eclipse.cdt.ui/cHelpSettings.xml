@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <cHelpSettings>
+            
+    
     <project name="SentryShooter2025FINAL">
+                        
+        
+        <provider id="org.eclipse.cdt.ui.provider1"/>
+                    
+    
+    </project>
+        
+    
+    <project name="MotorTesterKit">
+                
+        <provider id="org.eclipse.cdt.ui.provider1"/>
+            
+    </project>
+    
+    <project name="MotorTestKit2025_REV00">
         <provider id="org.eclipse.cdt.ui.provider1"/>
     </project>
 </cHelpSettings>

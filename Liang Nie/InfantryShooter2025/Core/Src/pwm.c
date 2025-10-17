@@ -119,6 +119,11 @@ uint32_t calculateOutputPeriodValue (TypesThatUsePWM_t Type, msOrFullRange micro
 	return returnVal;
 }
 
+void PWMSet(TypesThatUsePWM_t Type, uint32_t desiredFrequency, msOrFullRange microsecondOrFullrange, int8_t position, float val) {
+	initializePeriod (Type, position, desiredFrequency);
+	PWMInitalize(Type, microsecondOrFullrange, position, val);
+}
+
 void PWMInitialize(TypesThatUsePWM_t Type, msOrFullRange microsecondOrFullrange, int8_t position, float val) {
 
 	// usart_printf("beanis2 %d\r\n", position);
@@ -215,30 +220,6 @@ void initializePeriod (TypesThatUsePWM_t Type, int8_t Position, uint32_t desired
 	return;
 }
 
-// (Type, Position, ms or fullrange, val)
-void PWMOutput(TypesThatUsePWM_t Type, int8_t Position, uint32_t desiredFrequency) {
-
-	initializePeriod(Type, Position, desiredFrequency);
-
-	// usart_printf("beanis3 %d\r\n", Position);
-	switch (Type) {
-	case 0:
-		whichPWMisOn[Position-1] = 1;
-		// usart_printf("PWM %d\r\n", Position);
-		return;
-	case 1:
-		whichPWMisOn[Position+6] = 1;
-		// usart_printf("LED %d\r\n", Position);
-		return;
-	case 2:
-		whichPWMisOn[10] = 1;
-		// usart_printf("Buzzer %d\r\n", Position);
-		return;
-	}
-	// whichPWMisOn[7]= 1;
-	// usart_printf("beanis7 %d %d\r\n", Position, whichPWMisOn[Position-1]);
-	// return;
-}
 
 void PWMOn(TypesThatUsePWM_t Type, int8_t Position) {
 	switch (Type) {
