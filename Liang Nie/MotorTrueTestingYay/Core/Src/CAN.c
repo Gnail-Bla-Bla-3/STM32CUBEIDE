@@ -384,6 +384,7 @@ void CAN_setMotorCtrlVal(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, in
 				case (2):
 				case (3):
 				case (4): {             // 0x1FF
+					UART_Printf(&huart1, "SENDING motorID: %d!\r\n", motorID);
 					motorControlBuffer[bus - 1].Group2[motorID - 1] = ctrlVal;
 					CAN_DriveMotor(bus, CAN_DJI_GROUP2_ID, motorControlBuffer[bus - 1].Group2[0], motorControlBuffer[bus - 1].Group2[1], motorControlBuffer[bus - 1].Group2[2], motorControlBuffer[bus - 1].Group2[3]);
 					break;

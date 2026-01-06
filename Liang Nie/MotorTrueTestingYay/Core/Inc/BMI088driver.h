@@ -92,7 +92,7 @@ extern uint8_t BMI088_init(void);
 extern uint8_t BMI088_accel_init(void);
 extern uint8_t BMI088_gyro_init(void);
 
-extern int16_t IMU_get_gyro(uint8_t axis);
+extern float IMU_get_gyro(uint8_t axis);
 
 extern float IMU_get_accel(uint8_t axis);
 

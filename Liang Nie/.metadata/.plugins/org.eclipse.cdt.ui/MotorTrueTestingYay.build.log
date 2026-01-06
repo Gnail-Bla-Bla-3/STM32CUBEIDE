@@ -1,24 +1,24 @@
-18:49:27 **** Incremental Build of configuration Debug for project MotorTrueTestingYay ****
+19:53:52 **** Incremental Build of configuration Debug for project MotorTrueTestingYay ****
 make -j3 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'StartChassisTask':
-../Core/Src/main.c:1029:17: warning: unused variable 'activate' [-Wunused-variable]
- 1029 |         uint8_t activate = 0;
-      |                 ^~~~~~~~
-../Core/Src/main.c:1025:22: warning: unused variable 'preset2' [-Wunused-variable]
- 1025 |         PID_preset_t preset2 = {0.0, 0.0, 0.0};
-      |                      ^~~~~~~
-arm-none-eabi-gcc -o "MotorTrueTestingYay.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/MotorTrueTestingYay/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotorTrueTestingYay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+../Core/Src/main.c:1032:25: warning: unused variable 'tempHolder' [-Wunused-variable]
+ 1032 |                   float tempHolder = (axiesPrevPrev[0][i] + axies[0][i])*0.5;;
+      |                         ^~~~~~~~~~
+../Core/Src/main.c:1025:15: warning: unused variable 'totalAngle' [-Wunused-variable]
+ 1025 |         float totalAngle[3] = {0};
+      |               ^~~~~~~~~~
+arm-none-eabi-gcc -o "MotorTrueTestingYay.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/liangnie/Documents/GitHub/STM32CUBEIDE/Liang Nie/MotorTrueTestingYay/STM32F407IGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotorTrueTestingYay.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: MotorTrueTestingYay.elf
  
 arm-none-eabi-size  MotorTrueTestingYay.elf 
 arm-none-eabi-objdump -h -S MotorTrueTestingYay.elf  > "MotorTrueTestingYay.list"
    text	   data	    bss	    dec	    hex	filename
-  57512	    140	  24216	  81868	  13fcc	MotorTrueTestingYay.elf
+  68436	    536	  23784	  92756	  16a54	MotorTrueTestingYay.elf
 Finished building: default.size.stdout
  
 Finished building: MotorTrueTestingYay.list
  
 
-18:49:30 Build Finished. 0 errors, 2 warnings. (took 3s.581ms)
+19:53:53 Build Finished. 0 errors, 2 warnings. (took 1s.49ms)
 

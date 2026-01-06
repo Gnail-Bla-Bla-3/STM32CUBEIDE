@@ -1,7 +1,7 @@
 ../Core/Src/BMI088driver.c:93:9:BMI088_init	1
 ../Core/Src/BMI088driver.c:106:9:BMI088_accel_init	4
 ../Core/Src/BMI088driver.c:151:9:BMI088_gyro_init	4
-../Core/Src/BMI088driver.c:195:9:IMU_get_gyro	4
+../Core/Src/BMI088driver.c:195:7:IMU_get_gyro	4
 ../Core/Src/BMI088driver.c:208:7:IMU_get_accel	4
 ../Core/Src/BMI088driver.c:220:7:IMU_get_temp	1
 ../Core/Src/BMI088driver.c:224:6:BMI088_read	3

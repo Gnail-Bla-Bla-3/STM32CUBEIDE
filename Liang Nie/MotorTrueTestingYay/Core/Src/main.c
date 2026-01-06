@@ -33,6 +33,7 @@
 #include "BMI088reg.h"
 #include "SWERVE.h"
 #include "SwerveBuffer.h"
+#include "math.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -961,6 +962,7 @@ void StartFlowManager(void *argument)
 	UART_Ex_Init(&huart6);
 	CAN_Init();
 	BMI088_gyro_init();
+	BMI088_accel_init();
   /* Infinite loop */
   for(;;)
   {
@@ -1014,148 +1016,68 @@ __weak void imu_temp_control_task(void *argument)
 void StartChassisTask(void *argument)
 {
   /* USER CODE BEGIN StartChassisTask */
-
-	/*
-	You can write PID presets here
-	EXAMPLE: PID_preset_t motorDrive1 = {300.0, 0.0001, 120.5};
-		This will create a struct of PID_preset_t with PID values of 300.0f, 0.0001f, and 120.5f accordingly
-	*/
-
-	// PID_preset_t preset1 = {0.8, 0.0, 0.0};
-	PID_preset_t preset2 = {0.0, 0.0, 0.0};
-	PID_preset_t preset = {20.0, 0.0, 8.0};
-
-	int16_t rotationSpeed = 0;
-	uint8_t activate = 0;
-
-	uint8_t toggle = 0;
-	uint8_t previous = 0;
-
-	uint16_t minMaxCounter = 0;
-	uint16_t M1min = 9000;
-	uint16_t M2min = 9000;
-
+	float axies[2][3] = {0};
+	float axiesPrev[2][3] = {0};
+	float axiesPrevPrev[2][3] = {0};
+	float average[3][120] = {0};
+	float sumer[3] = {0};
+	uint8_t counter = 0;
+	float totalAngle[3] = {0};
   /* Infinite loop */
   for(;;)
   {
-	  /*
-		Hello!!! Welcome to the motor testing kit!
+	  for (uint8_t i = 0; i < 3; i++) {
+		  axies[0][i] = IMU_get_gyro(i);
 
-		Given Commands:
-			UART_Printf(&huart1, "%d %d\r\n", CAL_getBufferEnergy(), CAL_getPowerLimit());
-				Used to send TXT through UART such that the computer can read
-				Uses default printf formatting except for an extra parameter at the front.
-				This parameter will dictate which UART port is used.
-					&huart1 = 4 pin UART
-					&huart2 = 3 pin UART
+		  float tempHolder = (axiesPrevPrev[0][i] + axies[0][i])*0.5;;
 
-				EXAMPLE: UART_Printf(&huart1, "Beanis: %d\r\n", 50);
-					This will output: Beanis: 50
-					this function returns nothing
-
-			CAL_getCHX
-				Replace X with 0 to 3, This allows
-
-		CAN COMMANDS:
-			getRotorPosition(CAN_Bus bus, MotorType_ID motorType, int8_t motorID);
-				Used to get the current Rotor Position from 0 - 8191
-				Note that this is the rotor side. This means that for the 3508, it's the fast spinning side, and not the gearbox side
-
-				EXAMPLE: uint16_t pos = getRotorPosition(Bus1, M3508, 1);
-					This will get the position encoder of the rotor from Bus 1 and motor ID of 1
-					This function outputs an unsigned 16 bit integer.
-
-			getMotorRPM(CAN_Bus bus, MotorType_ID motorType, int8_t motorID);
-				Used to get the current Motor RPM
-				Note that this is the Rotor side. This means that for the 3508, it's the fast spinning side, and not the gearbox side
-
-				EXAMPLE: int16_t rps = getRotorRPM(Bus1, M3508, 1);
-					This will get the position encoder of the Motor from Bus 1 and motor ID of 1
-					This function outputs an unsigned 16 bit integer.
-
-			setMotorRPM(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16_t RPMtarget, PID_preset_t preset);
-				Used to set the motor RPM
-				This function automatically uses the "getMotorRPM()" as the RPM process variable
-				Do note you will have to tune your own custom PID
-
-				EXAMPLE: setMotorRPM(Bus1, M3508, 1, 10, motorDrive1);
-					This will set the PID for Bus 1 of ID 1 of the M3508 to PID_preset_t motorDrive1;
-
-			setMotorPosition(CAN_Bus bus, MotorType_ID motorType, int8_t motorID, int16_t RPMtarget, PID_preset_t preset);
-				Same as RPM but for Position
-
-				EXAMPLE: setMotorPosition(Bus1, M3508, 1, 10, motorDrive1);
-
-		MISCELANEOUS COMMANDS:
-			HAL_GPIO_ReadPin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-				Base HAL Library to read GPIO Pins
-				The Key button has already been set up in the IOC so all you need is the example code
-
-				EXAMPLE: if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == 0) {}
-					Note that in this case, 0 is Pressed and 1 is Not Pressed
-		 */
-
-	  if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == 0) && previous == 1) {
-		  if (toggle == 1) {
-			  toggle = 0;
-		  } else {
-			  toggle = 1;
-		  }
-	  }
-	  previous = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
-
-	  if (toggle == 1) {
-		  rotationSpeed = 6000;
-		  setMotorRPM(Bus1, M3508, 1, rotationSpeed, preset);
-		  setMotorRPM(Bus1, M3508, 2, -1*rotationSpeed, preset);
-		  setMotorRPM(Bus1, M3508, 3, rotationSpeed, preset);
-		  setMotorRPM(Bus1, M3508, 4, -1*rotationSpeed, preset);
-		  if (minMaxCounter >= 500) {
-			  if (M1min > -1*getMotorRPM(Bus1, M3508, 1)) {
-				  M1min = -1*getMotorRPM(Bus1, M3508, 1);
-			  }
-			  if (M2min > getMotorRPM(Bus1, M3508, 2)) {
-				  M2min = getMotorRPM(Bus1, M3508, 2);
-			  }
-		  } else {
-			  minMaxCounter++;
-		  }
-
-	  } else {
 		  /*
-		  M1min = 9000;
-		  M2min = 9000;
-		  */
-		  rotationSpeed = 0;
-		  minMaxCounter = 0;
-		  setMotorRPM(Bus1, M3508, 1, 0, preset);
-		  setMotorRPM(Bus1, M3508, 2, 0, preset);
-		  setMotorRPM(Bus1, M3508, 3, 0, preset);
-		  setMotorRPM(Bus1, M3508, 4, 0, preset);
+		  if ((axies[0][i] < 0.01) && (axies[0][i] > -0.01)) {
+			  axies[0][i] = 0;
+		  }
+
+		  if ((axiesPrevPrev[0][i] == 0) && (axies[0][i] == 0) && ((axiesPrev[0][i] <= -0.01) || (axiesPrev[0][i] >= 0.01))) {
+			  axiesPrev[0][i] = 0;
+			  // UART_Printf(&huart1, "BEANISED\r\n");
+		  } else if ((axiesPrevPrev[0][i] > 0) && (axies[0][i] > 0) && ((axiesPrev[0][i]/tempHolder) < 0.2)) {
+			  axiesPrev[0][i] = tempHolder;
+		  } else if ((axiesPrevPrev[0][i] < 0) && (axies[0][i] < 0) && ((axiesPrev[0][i]/tempHolder) < 0.2)) {
+			  axiesPrev[0][i] = tempHolder;
+		  }
+
+		  totalAngle[i] = totalAngle[i] + (axiesPrevPrev[0][i]*0.001);
+
+			*/
+		  sumer[i] -= average[i][counter];
+		  average[i][counter] = axies[0][i]/120;
+		  sumer[i] += average[i][counter];
+
+
+		  axies[1][i] = IMU_get_accel(i);
+
+
+		  counter++;
+		  if (counter == 120) {
+			  counter = 0;
+		  }
 	  }
 
-	  UART_Printf(&huart1, "%d %d %d %d\r\n", getMotorRPM(Bus1, M3508, 1), -1*getMotorRPM(Bus1, M3508, 2),  getMotorRPM(Bus1, M3508, 3),  -1*getMotorRPM(Bus1, M3508, 4));
-	  /*
-	  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == 0) {
-		  rotationSpeed = 6000;
-		  setMotorRPM(Bus1, M3508, 1, rotationSpeed, preset);
-		  setMotorRPM(Bus1, M3508, 2, -1*rotationSpeed, preset);
-	  } else {
-		  rotationSpeed = 0;
-		  setMotorRPM(Bus1, M3508, 1, 0, preset2);
-		  setMotorRPM(Bus1, M3508, 2, 0, preset2);
-	  }
-	  UART_Printf(&huart1, "Beanis: %d\r\n", rotationSpeed);
-	  */
-	  // setMotorRPM(Bus1, M3508, 1, -1*rotationSpeed, preset1);
-	  /*
-	  setMotorRPM(Bus1, M3508, 1, -1*rotationSpeed, preset);
-	  setMotorRPM(Bus1, M3508, 2, rotationSpeed, preset);
-	  */
+	  UART_Printf(&huart1, "%f %f %f\r\n", sumer[0], sumer[1], sumer[2]);
+	  // UART_Printf(&huart1, "%f %f %f\r\n", axies[0][0], axies[0][1], axies[0][2]);
+	  // UART_Printf(&huart1, "%f %f %f\r\n", axiesPrevPrev[0][0], axiesPrevPrev[0][1], axiesPrevPrev[0][2]);
+	  // UART_Printf(&huart1, "%f %f %f\r\n", ((totalAngle[0]*360)/(2*M_PI)), ((totalAngle[1]*360)/(2*M_PI)), ((totalAngle[2]*360)/(2*M_PI)));
 
+
+
+	  for (uint8_t j = 0; j < 3; j++) {
+		  for (uint8_t k = 0; k < 2; k++) {
+			  axiesPrevPrev[k][j] = axiesPrev[k][j];
+			  axiesPrev[k][j] = axies[k][j];
+		  }
+	  }
 
 	  // DO NOT DELETE THIS!!!!
-	  osDelay(5);
+	 osDelay(1);
 
   }
   /* USER CODE END StartChassisTask */

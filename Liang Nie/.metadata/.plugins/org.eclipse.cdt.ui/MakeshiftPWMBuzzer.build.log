@@ -1,0 +1,10 @@
+17:20:34 **** Incremental Build of configuration Debug for project MakeshiftPWMBuzzer ****
+make -j3 all 
+arm-none-eabi-size  MakeshiftPWMBuzzer.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31740	     16	   3608	  35364	   8a24	MakeshiftPWMBuzzer.elf
+Finished building: default.size.stdout
+ 
+
+17:20:34 Build Finished. 0 errors, 0 warnings. (took 211ms)
+

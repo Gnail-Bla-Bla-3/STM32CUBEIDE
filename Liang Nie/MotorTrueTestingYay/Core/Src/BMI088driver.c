@@ -192,14 +192,14 @@ uint8_t BMI088_gyro_init(void)
 
     return BMI088_NO_ERROR;
 }
-int16_t IMU_get_gyro(uint8_t axis) {
+float IMU_get_gyro(uint8_t axis) {
     BMI088_read(gyro, accel, &temp);
     if(axis == 0){
-        return (100.0*gyro[0]);
+        return (gyro[0]);
     } else if (axis == 1) {
-        return (100.0*gyro[1]);
+        return (gyro[1]);
     } else if (axis == 2) {
-        return (100.0*gyro[2]);
+        return (gyro[2]);
     } else {
         return 0;
     }
